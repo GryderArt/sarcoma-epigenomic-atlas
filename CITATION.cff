@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: Sarcoma Epigenomic Data Atlas
+message: >-
+  If you use this atlas, please cite it. Please also cite the SASS Epigenetics
+  Working Group white paper once it appears.
+type: dataset
+authors:
+  - family-names: Gryder
+    given-names: Berkley
+    affiliation: Case Western Reserve University
+repository-code: "https://github.com/<user>/sarcoma-epigenomic-atlas"
+abstract: >-
+  A sample-level census of every publicly recorded epigenomic experiment on
+  sarcoma, all ages, spanning 16,394 de-duplicated samples across 901 studies
+  and 45 named diagnostic entities. Harvested from GEO, ArrayExpress, ENA, EGA
+  and the St Jude Childhood Solid Tumor Network, classified to the resolution of
+  one assay on one model in one study, and joined to curated disease incidence
+  so coverage can be read against burden. Separates open data from
+  controlled-access holdings and from genuine absence. Includes a recovery of
+  the entity labels for GSE140686, the largest sarcoma epigenomic deposit in
+  existence, which is published without a diagnosis on any sample.
+keywords:
+  - sarcoma
+  - epigenomics
+  - ChIP-seq
+  - ATAC-seq
+  - DNA methylation
+  - rhabdomyosarcoma
+  - data reuse
+  - FAIR data
+license: CC-BY-4.0
+license-url: "https://creativecommons.org/licenses/by/4.0/"
