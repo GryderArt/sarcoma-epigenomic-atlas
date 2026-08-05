@@ -87,7 +87,7 @@ def main():
         try:
             j = json.loads(t)
             if isinstance(j, list): j = j[0] if j else {}
-            pmap[p] = {"policy_title": (j.get("title") or "")[:160],
+            pmap[p] = {"policy_title": " ".join(str(j.get("title") or "").split())[:160],
                        "dac": j.get("dac_accession_id") or ""}
         except Exception:
             pass
@@ -100,7 +100,7 @@ def main():
         try:
             j = json.loads(t)
             if isinstance(j, list): j = j[0] if j else {}
-            dmap[dd] = (j.get("title") or j.get("contact_email") or "")[:160]
+            dmap[dd] = " ".join(str(j.get("title") or j.get("contact_email") or "").split())[:160]
         except Exception:
             pass
         time.sleep(0.12)
@@ -113,8 +113,13 @@ def main():
     cols = ["accession","title","n_samples","is_epigenomic","technologies","dataset_types",
             "access_type","released","policy","policy_title","dac","dac_name","description","url"]
     hits.sort(key=lambda h: (h["is_epigenomic"] != "Y", -int(h["n_samples"] or 0)))
+    # EGA free text carries newlines and tabs in several fields; flatten everything on the
+    # way out so the TSV is exactly one line per dataset and needs no quoted-CSV parser
+    hits = [{k: (" ".join(v.split()) if isinstance(v, str) else v) for k, v in h.items()}
+            for h in hits]
     with twrite("T14_ega_sarcoma_datasets.tsv") as f:
-        w = csv.DictWriter(f, fieldnames=cols, delimiter="\t", extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=cols, delimiter="\t", extrasaction="ignore",
+                           lineterminator="\n")
         w.writeheader(); [w.writerow(h) for h in hits]
 
     epi = [h for h in hits if h["is_epigenomic"] == "Y"]
