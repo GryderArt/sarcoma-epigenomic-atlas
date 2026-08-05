@@ -89,6 +89,16 @@ workbooks/     the same tables as Excel, built for clean Google Sheets import
 docs/          the interactive gap map, and the working briefing note
 ```
 
+## Publishing your own copy
+
+```powershell
+.\setup-github.ps1 -User <your-github-username>     # Windows
+./setup-github.sh <your-github-username>            # macOS / Linux
+```
+
+Installs the GitHub CLI if needed, signs in through the browser once, creates the
+repository, pushes, and enables Pages so the gap map is live.
+
 ## Reproducing it
 
 ```bash
