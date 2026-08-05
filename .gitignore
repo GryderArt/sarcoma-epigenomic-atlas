@@ -1,0 +1,15 @@
+# harvest intermediates: large, regenerable, and not the point of the repository
+.work/
+*.pyc
+__pycache__/
+
+# uncompressed copies of tables that ship gzipped
+data/samples/*.tsv
+!data/samples/*.tsv.gz
+data/ega_datasets_raw.json
+
+# local scratch
+*.log
+shot*.png
+*.tar.gz
+.DS_Store

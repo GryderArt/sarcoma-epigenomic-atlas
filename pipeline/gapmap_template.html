@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarcoma Epigenomic Gap Map — all ages</title>
+<style>
+  :root{
+    color-scheme: light;
+    --surface-1:#fcfcfb; --plane:#f9f9f7;
+    --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+    --open:#2a78d6; --ctrl:#eda100; --absent:#d03b3b;
+    --s100:#cde2fb; --s200:#9ec5f4; --s300:#6da7ec; --s450:#2a78d6;
+    --s550:#1c5cab; --s700:#0d366b;
+    --ped:#2a78d6; --both:#1baf7a; --adult:#eb6834;
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --surface-1:#1a1a19; --plane:#0d0d0d;
+    --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --open:#3987e5; --ctrl:#c98500; --absent:#d03b3b;
+    --s100:#104281; --s200:#184f95; --s300:#256abf; --s450:#3987e5;
+    --s550:#6da7ec; --s700:#9ec5f4;
+    --ped:#3987e5; --both:#199e70; --adult:#d95926;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --surface-1:#1a1a19; --plane:#0d0d0d;
+      --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+      --open:#3987e5; --ctrl:#c98500; --absent:#d03b3b;
+      --s100:#104281; --s200:#184f95; --s300:#256abf; --s450:#3987e5;
+      --s550:#6da7ec; --s700:#9ec5f4;
+      --ped:#3987e5; --both:#199e70; --adult:#d95926;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--plane);color:var(--ink);
+       font:14px/1.5 Arial,Helvetica,"Liberation Sans",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--open)}
+  .wrap{max-width:1500px;margin:0 auto;padding:22px 20px 80px}
+  header{display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+  h1{font-size:21px;margin:0 0 3px;letter-spacing:-.01em}
+  .sub{color:var(--ink-2);font-size:12.5px;max-width:820px;margin:0}
+  .defn{max-width:820px;margin:7px 0 0;font-size:12px;color:var(--ink-2)}
+  .defn summary{cursor:pointer;color:var(--open);font-size:12px;width:max-content}
+  .defn p{margin:7px 0} .defn ul{margin:5px 0 5px 18px;padding:0} .defn li{margin:3px 0}
+  .defn b{color:var(--ink)}
+  .spacer{flex:1}
+  button,select,input{font:inherit;color:inherit}
+  .btn{background:var(--surface-1);border:1px solid var(--ring);border-radius:7px;
+       padding:6px 11px;cursor:pointer;font-size:12.5px}
+  .btn:hover{border-color:var(--axis)}
+  .btn[aria-pressed="true"]{background:var(--open);color:#fff;border-color:transparent}
+  .stats{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 14px}
+  .tile{background:var(--surface-1);border:1px solid var(--ring);border-radius:10px;
+        padding:11px 14px;min-width:132px}
+  .tile .v{font-size:23px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+  .tile .k{font-size:11px;color:var(--ink-2);margin-top:2px}
+  .tile.alert .v{color:var(--absent)}
+  .tile.ctrl .v{color:var(--ctrl)}
+  .bar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:6px 0 16px;
+       background:var(--surface-1);border:1px solid var(--ring);border-radius:10px;padding:10px 12px}
+  .bar label{font-size:11.5px;color:var(--ink-2);margin-right:4px}
+  select,input[type=search]{background:var(--plane);border:1px solid var(--ring);
+       border-radius:6px;padding:5px 8px;font-size:12.5px}
+  input[type=search]{min-width:230px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--ink-2);
+          margin:0 0 10px;align-items:center}
+  .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;
+      vertical-align:-1px}
+  .panel{background:var(--surface-1);border:1px solid var(--ring);border-radius:12px;
+         overflow:hidden;margin-bottom:18px}
+  .ptitle{padding:12px 14px 9px;font-size:13.5px;font-weight:700;border-bottom:1px solid var(--grid)}
+  .ptitle span{font-weight:400;color:var(--ink-2);font-size:11.5px;display:block;margin-top:3px}
+  table{border-collapse:separate;border-spacing:0;width:100%;font-size:12px}
+  th{position:sticky;top:0;background:var(--surface-1);text-align:left;font-size:10.5px;
+     font-weight:700;color:var(--ink-2);padding:8px 7px;border-bottom:1px solid var(--axis);
+     white-space:nowrap;z-index:2;cursor:pointer;user-select:none}
+  th.num,td.num{text-align:right}
+  th:hover{color:var(--ink)}
+  td{padding:5px 7px;border-bottom:1px solid var(--grid);vertical-align:middle}
+  tbody tr{cursor:pointer}
+  tbody tr:hover td{background:color-mix(in srgb,var(--open) 7%,transparent)}
+  tbody tr.sel td{background:color-mix(in srgb,var(--open) 13%,transparent)}
+  .ent{font-weight:600;white-space:nowrap;max-width:270px;overflow:hidden;text-overflow:ellipsis}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;
+       vertical-align:1px}
+  .cell{display:block;border-radius:4px;text-align:center;padding:3px 0;font-size:10.5px;
+        font-variant-numeric:tabular-nums;min-width:38px}
+  .r0{background:var(--s100)} .r1{background:var(--s200)} .r2{background:var(--s300)}
+  .r3{background:var(--s450)} .r4{background:var(--s550)} .r5{background:var(--s700)}
+  .r0,.r1,.r2{color:#0b0b0b} .r3,.r4,.r5{color:#fff}
+  :root[data-theme="dark"] .r0,:root[data-theme="dark"] .r1,
+  :root[data-theme="dark"] .r2{color:#fff}
+  :root[data-theme="dark"] .r3,:root[data-theme="dark"] .r4,
+  :root[data-theme="dark"] .r5{color:#0b0b0b}
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])) .r0,
+    :root:where(:not([data-theme="light"])) .r1,
+    :root:where(:not([data-theme="light"])) .r2{color:#fff}
+    :root:where(:not([data-theme="light"])) .r3,
+    :root:where(:not([data-theme="light"])) .r4,
+    :root:where(:not([data-theme="light"])) .r5{color:#0b0b0b}
+  }
+  .z{color:var(--absent);font-weight:700}
+  .state{font-size:10px;font-weight:700;letter-spacing:.03em;padding:2px 6px;border-radius:4px;
+         white-space:nowrap}
+  .st-open{background:color-mix(in srgb,var(--open) 16%,transparent);color:var(--open)}
+  .st-ctrl{background:color-mix(in srgb,var(--ctrl) 22%,transparent);
+           color:color-mix(in srgb,var(--ctrl) 78%,var(--ink))}
+  .st-abs{background:color-mix(in srgb,var(--absent) 15%,transparent);color:var(--absent)}
+  .st-res{background:var(--plane);border:1px solid var(--ring);color:var(--muted);
+          font-weight:700}
+  .st-meth{background:color-mix(in srgb,#ec835a 20%,transparent);
+           color:color-mix(in srgb,#ec835a 72%,var(--ink))}
+  .scroll{max-height:640px;overflow:auto}
+  .detail{padding:14px}
+  .dhead{display:flex;gap:16px;flex-wrap:wrap;align-items:baseline;margin-bottom:4px}
+  .dhead h2{font-size:16px;margin:0}
+  .kv{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin:8px 0 12px}
+  .kv b{color:var(--ink);font-weight:700}
+  .note{font-size:11.5px;color:var(--ink-2);background:var(--plane);border-left:2px solid var(--axis);
+        padding:8px 11px;border-radius:0 6px 6px 0;margin:9px 0}
+  .note.warn{border-left-color:var(--absent);color:var(--ink-2)}
+  .chip{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:11px;
+        background:var(--plane);border:1px solid var(--ring);margin:0 5px 5px 0;color:var(--ink-2)}
+  .muted{color:var(--muted)}
+  .tip{position:fixed;pointer-events:none;background:var(--surface-1);border:1px solid var(--axis);
+       border-radius:7px;padding:7px 10px;font-size:11.5px;box-shadow:0 4px 14px rgba(0,0,0,.14);
+       z-index:60;max-width:330px;opacity:0;transition:opacity .08s}
+  .tip b{display:block;margin-bottom:2px}
+  svg text{font-family:Arial,Helvetica,sans-serif}
+  .hide{display:none}
+  footer{color:var(--muted);font-size:11px;margin-top:26px;line-height:1.7}
+  @media (max-width:900px){ .ent{max-width:170px} .scroll{max-height:520px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1>Sarcoma Epigenomic Gap Map</h1>
+    <p class="sub">Every public epigenomic sample for sarcoma, all ages, at the resolution of
+      one assay on one model in one study. Open data from GEO, controlled-access holdings from
+      EGA and the St&nbsp;Jude Childhood Solid Tumor Network. Click any entity for its full record.</p>
+    <details class="defn"><summary>What counts as an entity?</summary>
+      <p>An <b>entity</b> is one diagnostic category in the atlas taxonomy — a WHO&nbsp;2020
+      diagnosis, except that rhabdomyosarcoma and liposarcoma are split to molecular subtype
+      (FP-RMS, FN-RMS, MYOD1-mutant; WD/DD/myxoid/pleomorphic/NOS) because that is the
+      resolution the paper argues at. It is the unit each sample is assigned to.</p>
+      <p>The atlas also carries bins that are <b>not</b> entities, and they are excluded from
+      every count and denominator on this page:</p>
+      <ul>
+        <li><b>Unresolved residual bins</b> — "Sarcoma NOS", "RMS-NOS" and two one-off cases.
+        These hold samples whose diagnosis the deposit never states. They are a measure of
+        metadata quality, not a disease.</li>
+        <li><b>Control tissue</b> — non-malignant fetal osteoblast, profiled as a reference.</li>
+      </ul>
+      <p>So: <b id="dcount"></b>. Every "of N" figure on this page uses the named entities only.
+      A sample in a residual bin still appears in the sample and record totals — it exists, we
+      just cannot say what it is.</p>
+    </details>
+  </div>
+  <div class="spacer"></div>
+  <button class="btn" id="theme">Dark mode</button>
+  <button class="btn" id="tableview" aria-pressed="false">Table view</button>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<div class="legend">
+  <span><span class="sw" style="background:var(--open)"></span>Open — reusable today</span>
+  <span><span class="sw" style="background:var(--ctrl)"></span>Controlled — exists, needs a data-access agreement</span>
+  <span><span class="sw" style="background:#ec835a"></span>Methylation only — open, but cannot answer a regulatory question</span>
+  <span><span class="sw" style="background:var(--absent)"></span>Absent — no record anywhere</span>
+  <span class="muted">·</span>
+  <span><span class="sw" style="background:var(--ped)"></span>Paediatric-predominant</span>
+  <span><span class="sw" style="background:var(--both)"></span>Both ages</span>
+  <span><span class="sw" style="background:var(--adult)"></span>Adult-predominant</span>
+</div>
+
+<div class="bar">
+  <label for="q">Search</label>
+  <input type="search" id="q" placeholder="entity, model, GEO/EGA accession, target…">
+  <label for="fage">Age class</label>
+  <select id="fage"><option value="">all</option><option>paediatric</option>
+    <option>both</option><option>adult</option></select>
+  <label for="fsrc">Material</label>
+  <select id="fsrc"><option value="">all</option><option value="patient">patient-derived only</option>
+    <option value="tissue">tumour tissue only</option><option value="model">models only</option></select>
+  <label for="flane">Assay</label>
+  <select id="flane"><option value="">all</option></select>
+  <label for="fkind">Show</label>
+  <select id="fkind"><option value="named">named entities only</option>
+    <option value="">everything, including unresolved bins</option></select>
+  <label for="fstate">Coverage</label>
+  <select id="fstate"><option value="">all</option>
+    <option value="absent">no regulatory data at all</option>
+    <option value="nopat">nothing from a patient</option>
+    <option value="ctrl">has controlled-access data</option></select>
+  <span class="spacer"></span>
+  <button class="btn" id="reset">Reset</button>
+</div>
+
+<div class="panel" id="matrixPanel">
+  <div class="ptitle">Coverage matrix
+    <span>Cell shading is the sample count on a light&rarr;dark blue ramp within each column;
+      a red <b>0</b> means nothing exists. Sort by clicking a header.</span></div>
+  <div class="scroll"><table id="matrix"><thead></thead><tbody></tbody></table></div>
+</div>
+
+<div class="panel" id="scatterPanel">
+  <div class="ptitle">Disease burden against regulatory epigenomics
+    <span>US cases per year (all ages) versus open regulatory samples. Entities on the red
+      floor line have none. Hover a point for detail.</span></div>
+  <div style="padding:6px 10px 14px"><svg id="scatter" width="100%" height="380"
+       viewBox="0 0 1000 380" preserveAspectRatio="xMidYMid meet" role="img"
+       aria-label="Scatter of US cases per year against regulatory epigenomic samples"></svg></div>
+</div>
+
+<div class="panel hide" id="detailPanel"><div class="detail" id="detail"></div></div>
+
+<footer id="foot"></footer>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+const P = /*__PAYLOAD__*/null;
+const D = P.dict, R = P.recs, E = P.ents, LANES = P.lanes, REG = new Set(P.reglanes);
+const PATIENT = new Set(["primary_tumor","metastasis","recurrence"]);
+const PDER = new Set([...PATIENT,"PDX","organoid"]);
+const AGEC = {paediatric:"var(--ped)", both:"var(--both)", adult:"var(--adult)"};
+const $ = s => document.querySelector(s);
+const fmt = n => (n||0).toLocaleString("en-US");
+
+/* ---------- state ---------- */
+let state = {q:"", age:"", src:"", lane:"", cover:"", kind:"named", sort:"cases",
+             dir:-1, sel:null};
+
+/* ---------- record helpers ---------- */
+const recDis = i => D.disease[R[i][0]], recSt = i => D.stype[R[i][1]];
+const recMod = i => D.model[R[i][2]],  recAs = i => D.assay[R[i][3]];
+const recTg  = i => D.target[R[i][4]], recGse = i => D.gse[R[i][5]];
+const recN   = i => R[i][6],           recLane = i => D.lane[R[i][7]];
+const recPm  = i => R[i][8],           recYr = i => R[i][9], recTitle = i => D.title[R[i][10]];
+
+const byEnt = {};
+R.forEach((_,i)=>{ (byEnt[recDis(i)] ||= []).push(i); });
+
+function passSrc(i){
+  const s = recSt(i);
+  if(state.src==="patient") return PDER.has(s);
+  if(state.src==="tissue")  return PATIENT.has(s);
+  if(state.src==="model")   return !PDER.has(s) || s==="PDX" || s==="organoid" ? !PATIENT.has(s) : false;
+  return true;
+}
+function entRecs(e){
+  let ids = byEnt[e.d] || [];
+  if(state.src) ids = ids.filter(passSrc);
+  if(state.lane) ids = ids.filter(i => recLane(i)===state.lane);
+  return ids;
+}
+function matches(e){
+  if(state.kind && e.kind!==state.kind) return false;
+  if(state.age && e.age!==state.age) return false;
+  const ids = entRecs(e);
+  if(state.lane && !ids.length && !e.creg && !e.cdna) return false;
+  if(state.cover==="absent" && (e.reg>0 || e.creg>0)) return false;
+  if(state.cover==="nopat"  && e.pd_reg>0) return false;
+  if(state.cover==="ctrl"   && !(e.creg+e.cdna)) return false;
+  if(state.q){
+    const q = state.q.toLowerCase();
+    if(e.name.toLowerCase().includes(q) || e.d.toLowerCase().includes(q)) return true;
+    if((e.cds||[]).some(c => (c.acc+" "+c.title).toLowerCase().includes(q))) return true;
+    return ids.some(i => (recMod(i)+" "+recGse(i)+" "+recTg(i)+" "+recAs(i)+" "+recTitle(i))
+                          .toLowerCase().includes(q));
+  }
+  return true;
+}
+
+/* ---------- stat tiles ---------- */
+function stats(list){
+  const T = P.totals;
+  const named = E.filter(e => e.kind==="named");      // the ONLY denominator used anywhere
+  const N = named.length;
+  const zeroReg = named.filter(e => e.reg===0 && e.creg===0).length;
+  const zeroRated = named.filter(e => e.reg===0 && e.creg===0 && e.cases>0).length;
+  const zeroPat = named.filter(e => e.pd_reg===0).length;
+  const tiles = [
+    ["v", fmt(T.samples), "sarcoma epigenomic samples"],
+    ["v", fmt(T.records), "assay × model × study records"],
+    ["v", fmt(T.series),  "studies"],
+    ["v", `${N}`, `named entities &middot; plus ${P.kinds.residual} unresolved bins
+      and ${P.kinds.control} control`],
+    ["ctrl", fmt(T.ctrl_reg), "regulatory samples locked behind a DAC"],
+    ["alert", `${zeroPat}<span style="font-size:14px;color:var(--ink-2)">/${N}</span>`,
+      "named entities with nothing from a patient"],
+    ["alert", `${zeroReg}<span style="font-size:14px;color:var(--ink-2)">/${N}</span>`,
+      `named entities with no regulatory data &mdash; ${zeroRated} of them with a
+       published incidence rate`],
+  ];
+  $("#stats").innerHTML = tiles.map(([c,v,k]) =>
+    `<div class="tile ${c==='v'?'':c}"><div class="v">${v}</div><div class="k">${k}</div></div>`
+  ).join("");
+}
+
+/* ---------- matrix ---------- */
+const COLS = [
+  {k:"name",  t:"Entity",             cls:"ent"},
+  {k:"state", t:"Coverage",           cls:""},
+  {k:"cases", t:"US cases / yr",      cls:"num"},
+  {k:"reg",   t:"Regulatory",         cls:"num"},
+  {k:"pd_reg",t:"From a patient",     cls:"num"},
+  {k:"creg",  t:"Controlled",         cls:"num"},
+];
+function laneMax(lane, list){
+  return Math.max(1, ...list.map(e => e.lanes[lane]||0));
+}
+function ramp(v, max){
+  if(!v) return "";
+  const t = Math.log10(v+1)/Math.log10(max+1);
+  return "r" + Math.min(5, Math.floor(t*6));
+}
+function kindTag(e){
+  if(e.kind==="named") return "";
+  return `<span class="state st-res" title="${e.kind==="control"
+     ? "Non-malignant reference tissue — not a disease"
+     : "Samples whose entity the deposit never states — excluded from every denominator"}">${
+     e.kind==="control" ? "CONTROL" : "UNRESOLVED"}</span> `;
+}
+function coverState(e){
+  if(e.reg>0) return ["st-open","OPEN"];
+  if(e.creg>0 || e.cdna>0) return ["st-ctrl","CONTROLLED"];
+  if(e.n>0) return ["st-meth","METHYLATION ONLY"];
+  return ["st-abs","ABSENT"];
+}
+function drawMatrix(list){
+  const showLanes = state.lane ? [state.lane] : LANES.filter(l => l!=="Input / control");
+  const maxes = {}; showLanes.forEach(l => maxes[l] = laneMax(l, list));
+  const th = COLS.map(c=>`<th class="${c.cls==='num'?'num':''}" data-s="${c.k}">${c.t}</th>`).join("")
+    + showLanes.map(l=>`<th class="num" data-s="lane:${l}" title="${l}">${l.replace(" / ","/")}</th>`).join("");
+  $("#matrix thead").innerHTML = `<tr>${th}</tr>`;
+  const body = list.map(e=>{
+    const [sc,st] = coverState(e);
+    const cells = showLanes.map(l=>{
+      const v = e.lanes[l]||0;
+      return `<td class="num">${v?`<span class="cell ${ramp(v,maxes[l])}">${fmt(v)}</span>`
+                                :`<span class="cell z">0</span>`}</td>`;
+    }).join("");
+    return `<tr data-e="${encodeURIComponent(e.d)}" class="${state.sel===e.d?'sel':''}">
+      <td class="ent"><span class="dot" style="background:${AGEC[e.age]||'var(--muted)'}"></span>${kindTag(e)}${e.name}</td>
+      <td><span class="state ${sc}">${st}</span></td>
+      <td class="num">${e.cases?fmt(e.cases):'<span class="muted">n/a</span>'}</td>
+      <td class="num">${e.reg?fmt(e.reg):'<span class="z">0</span>'}</td>
+      <td class="num">${e.pd_reg?fmt(e.pd_reg):'<span class="z">0</span>'}</td>
+      <td class="num">${(e.creg+e.cdna)?fmt(e.creg+e.cdna):'<span class="muted">—</span>'}</td>
+      ${cells}</tr>`;
+  }).join("");
+  $("#matrix tbody").innerHTML = body || `<tr><td colspan="20" class="muted"
+     style="padding:22px;text-align:center">No entity matches these filters.</td></tr>`;
+}
+
+/* ---------- scatter ---------- */
+function drawScatter(list){
+  const svg = $("#scatter"), W=1000, H=380, L=68, Rr=18, T=16, B=44;
+  const pts = list.filter(e => e.cases>0);
+  const xs = v => L + (Math.log10(Math.max(v,8))-Math.log10(8))/(Math.log10(30000)-Math.log10(8))*(W-L-Rr);
+  const FLOOR = H-B-8;
+  const ys = v => v<=0 ? FLOOR
+    : (H-B-26) - (Math.log10(v)/Math.log10(20000))*(H-B-26-T);
+  let g = "";
+  [10,100,1000,10000].forEach(v=>{
+    g += `<line x1="${xs(v)}" y1="${T}" x2="${xs(v)}" y2="${H-B}" stroke="var(--grid)" stroke-width="1"/>
+          <text x="${xs(v)}" y="${H-B+15}" font-size="11" fill="var(--muted)" text-anchor="middle">${fmt(v)}</text>`;
+  });
+  [1,10,100,1000,10000].forEach(v=>{
+    g += `<line x1="${L}" y1="${ys(v)}" x2="${W-Rr}" y2="${ys(v)}" stroke="var(--grid)" stroke-width="1"/>
+          <text x="${L-7}" y="${ys(v)+3.5}" font-size="11" fill="var(--muted)" text-anchor="end">${fmt(v)}</text>`;
+  });
+  g += `<line x1="${L}" y1="${FLOOR}" x2="${W-Rr}" y2="${FLOOR}" stroke="var(--absent)"
+        stroke-width="1.5" stroke-dasharray="3 3" opacity=".55"/>
+        <text x="${L-7}" y="${FLOOR+3.5}" font-size="11" fill="var(--absent)" text-anchor="end"
+        font-weight="700">0</text>`;
+  pts.forEach(e=>{
+    const zero = e.reg===0, x = xs(e.cases), y = ys(e.reg);
+    const col = zero ? "var(--absent)" : (AGEC[e.age]||"var(--muted)");
+    g += zero
+      ? `<path d="M${x-5.5},${y-5} L${x+5.5},${y-5} L${x},${y+5.5} Z" fill="${col}"
+           stroke="var(--surface-1)" stroke-width="2" class="pt" data-e="${encodeURIComponent(e.d)}"/>`
+      : `<circle cx="${x}" cy="${y}" r="5.5" fill="${col}" stroke="var(--surface-1)"
+           stroke-width="2" class="pt" data-e="${encodeURIComponent(e.d)}"/>`;
+  });
+  const big = pts.filter(e => e.cases>900 || e.reg>900).slice(0,14);
+  big.forEach(e=>{
+    g += `<text x="${xs(e.cases)}" y="${ys(e.reg)-10}" font-size="10.5" fill="var(--ink-2)"
+           text-anchor="middle">${e.name.split(" (")[0].slice(0,30)}</text>`;
+  });
+  g += `<text x="${(L+W-Rr)/2}" y="${H-6}" font-size="11.5" fill="var(--ink-2)"
+         text-anchor="middle">US cases per year (all ages, log scale)</text>
+        <text transform="translate(15,${(T+H-B)/2}) rotate(-90)" font-size="11.5"
+         fill="var(--ink-2)" text-anchor="middle">Open regulatory epigenomic samples</text>`;
+  svg.innerHTML = g;
+}
+
+/* ---------- detail ---------- */
+function drawDetail(e){
+  const ids = entRecs(e);
+  const rows = ids.slice().sort((a,b)=>
+     (PDER.has(recSt(b))-PDER.has(recSt(a))) || recMod(a).localeCompare(recMod(b))
+     || recAs(a).localeCompare(recAs(b)));
+  const laneChips = LANES.filter(l=>e.lanes[l]).map(l=>
+    `<span class="chip">${l}: <b style="color:var(--ink)">${fmt(e.lanes[l])}</b></span>`).join("");
+  const ctrl = (e.cds||[]).map(c=>`<tr>
+      <td><span class="state st-ctrl">CONTROLLED</span></td>
+      <td>${c.url?`<a href="${c.url}" target="_blank" rel="noopener">${c.acc}</a>`:c.acc}</td>
+      <td>${c.fam}</td><td class="num">${fmt(c.n)}</td>
+      <td>${c.title}</td><td class="muted">${c.dac||c.src}</td></tr>`).join("");
+  const body = rows.map(i=>`<tr>
+      <td>${PATIENT.has(recSt(i))?'<span class="state st-open">PATIENT</span>':
+            (recSt(i)==="PDX"||recSt(i)==="organoid")?'<span class="state st-ctrl">PATIENT-DERIVED</span>':
+            `<span class="muted">${recSt(i)}</span>`}</td>
+      <td>${recMod(i)}</td>
+      <td>${recAs(i)}</td>
+      <td>${recTg(i)==="unspecified"?'<span class="muted">—</span>':recTg(i)}</td>
+      <td class="num">${fmt(recN(i))}</td>
+      <td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=${recGse(i)}"
+             target="_blank" rel="noopener">${recGse(i)}</a></td>
+      <td>${recPm(i)?`<a href="https://pubmed.ncbi.nlm.nih.gov/${recPm(i)}/" target="_blank"
+             rel="noopener">${recPm(i)}</a>`:'<span class="muted">—</span>'}</td>
+      <td class="muted">${recYr(i)||""}</td>
+      <td class="muted" style="max-width:340px;overflow:hidden;text-overflow:ellipsis;
+          white-space:nowrap">${recTitle(i)}</td></tr>`).join("");
+  $("#detail").innerHTML = `
+    <div class="dhead"><h2>${e.name}</h2>
+      <span class="muted">${e.age||"age class not assigned"}</span>
+      ${e.kind!=="named"?`<span class="state st-res">${e.kind==="control"?"CONTROL TISSUE"
+        :"UNRESOLVED BIN — not a diagnostic entity"}</span>`:""}</div>
+    <div class="kv">
+      <span>US cases/yr <b>${e.cases?fmt(e.cases)+(e.lo?` (${fmt(e.lo)}–${fmt(e.hi)})`:""):"no published rate"}</b></span>
+      <span>Epigenomic samples <b>${fmt(e.n)}</b></span>
+      <span>Regulatory <b class="${e.reg?'':'z'}">${fmt(e.reg)}</b></span>
+      <span>From patient-derived material <b class="${e.pd_reg?'':'z'}">${fmt(e.pd_reg)}</b></span>
+      <span>From tumour tissue <b class="${e.pt_reg?'':'z'}">${fmt(e.pt_reg)}</b></span>
+      <span>Controlled-access <b>${fmt(e.creg+e.cdna)}</b></span>
+      <span>Distinct models in the atlas, any assay <b>${fmt(e.models)}</b></span>
+      <span>Studies <b>${fmt(e.series)}</b></span>
+    </div>
+    <div>${laneChips}</div>
+    ${e.basis?`<div class="note"><b>Incidence basis.</b> ${e.basis}</div>`:""}
+    ${e.caveat?`<div class="note warn"><b>Verification caveat.</b> ${e.caveat}</div>`:""}
+    ${ctrl?`<div class="ptitle" style="padding-left:0;border:0">Controlled-access holdings</div>
+      <div class="scroll" style="max-height:230px"><table><thead><tr><th>Access</th><th>Accession</th>
+      <th>Assay</th><th class="num">Samples</th><th>Title</th><th>Governed by</th></tr></thead>
+      <tbody>${ctrl}</tbody></table></div>`:""}
+    <div class="ptitle" style="padding-left:0;border:0">Open records
+      <span>${fmt(rows.length)} assay × model × study combinations${state.lane||state.src?" (filtered)":""}</span></div>
+    ${rows.length?`<div class="scroll" style="max-height:420px"><table><thead><tr>
+      <th>Material</th><th>Model / sample</th><th>Assay</th><th>Target</th><th class="num">n</th>
+      <th>GEO</th><th>PubMed</th><th>Year</th><th>Study</th></tr></thead><tbody>${body}</tbody></table></div>`
+      :`<div class="note warn">No open records match the current filters.</div>`}`;
+  $("#detailPanel").classList.remove("hide");
+  $("#detailPanel").scrollIntoView({behavior:"smooth", block:"nearest"});
+}
+
+/* ---------- render ---------- */
+function sortList(list){
+  const k = state.sort, d = state.dir;
+  const lane = k.startsWith("lane:") ? k.slice(5) : null;
+  return list.slice().sort((a,b)=>{
+    let va, vb;
+    if(lane){ va=a.lanes[lane]||0; vb=b.lanes[lane]||0; }
+    else if(k==="name"){ return a.name.localeCompare(b.name)*d*-1; }
+    else if(k==="state"){ va=a.reg?2:(a.creg+a.cdna?1:0); vb=b.reg?2:(b.creg+b.cdna?1:0); }
+    else if(k==="creg"){ va=a.creg+a.cdna; vb=b.creg+b.cdna; }
+    else { va=a[k]||0; vb=b[k]||0; }
+    return (va-vb)*d;
+  });
+}
+function render(){
+  const list = sortList(E.filter(matches));
+  stats(list); drawMatrix(list); drawScatter(list);
+  const plain = $("#tableview").getAttribute("aria-pressed")==="true";
+  $("#scatterPanel").classList.toggle("hide", list.filter(e=>e.cases>0).length < 3 || plain);
+  if(plain) document.querySelectorAll("#matrix .cell").forEach(c=>{
+    if(!c.classList.contains("z")){ c.dataset.bg = c.className; c.className = "cell"; } });
+  $("#foot").innerHTML =
+    `Showing <b>${list.length}</b> of ${P.kinds.named} named entities
+     (${P.kinds.residual} unresolved bins and ${P.kinds.control} control tissue excluded) ·
+     payload built from ${P.built}.
+     Regulatory = ChIP-seq, CUT&amp;RUN, CUT&amp;Tag, ChIP-exo/chip, ATAC, scATAC, DNase, FAIRE,
+     MNase, Hi-C, HiChIP, Micro-C, Capture-HiC, ChIA-PET, 4C — input and IgG controls excluded.
+     Patient-derived = tumour tissue, metastasis, recurrence, PDX or patient-derived organoid.<br>
+     Controlled-access counts come from the EGA metadata API and the St&nbsp;Jude CSTN inventory;
+     ${fmt(P.unres.filter(u=>u.fam==="regulatory").reduce((s,u)=>s+u.n,0))} further regulatory samples sit in EGA in cohorts whose
+     subtype EGA does not state and are therefore not attributed to any entity here.<br>
+     Absence means no public, entity-labelled deposit — not proof no experiment was done.`;
+}
+
+/* ---------- events ---------- */
+$("#matrix").addEventListener("click", ev=>{
+  const th = ev.target.closest("th");
+  if(th && th.dataset.s){
+    if(state.sort===th.dataset.s) state.dir *= -1;
+    else { state.sort = th.dataset.s; state.dir = th.dataset.s==="name" ? 1 : -1; }
+    render(); return;
+  }
+  const tr = ev.target.closest("tr[data-e]");
+  if(tr){ const d = decodeURIComponent(tr.dataset.e);
+    state.sel = state.sel===d ? null : d;
+    render();
+    if(state.sel) drawDetail(E.find(x=>x.d===state.sel));
+    else $("#detailPanel").classList.add("hide");
+  }
+});
+const tip = $("#tip");
+$("#scatter").addEventListener("mousemove", ev=>{
+  const p = ev.target.closest(".pt");
+  if(!p){ tip.style.opacity=0; return; }
+  const e = E.find(x=>x.d===decodeURIComponent(p.dataset.e));
+  tip.innerHTML = `<b>${e.name}</b>${fmt(e.cases)} US cases/yr<br>
+    ${e.reg?fmt(e.reg)+" open regulatory samples":"<span style='color:var(--absent)'>no regulatory data</span>"}
+    ${e.creg?`<br>${fmt(e.creg)} controlled-access`:""}
+    <br><span style="color:var(--muted)">click the row in the table for the full record</span>`;
+  tip.style.opacity=1;
+  tip.style.left = Math.min(ev.clientX+14, innerWidth-350)+"px";
+  tip.style.top  = (ev.clientY+14)+"px";
+});
+$("#scatter").addEventListener("mouseleave", ()=> tip.style.opacity=0);
+$("#scatter").addEventListener("click", ev=>{
+  const p = ev.target.closest(".pt"); if(!p) return;
+  state.sel = decodeURIComponent(p.dataset.e); render();
+  drawDetail(E.find(x=>x.d===state.sel));
+});
+let qt; $("#q").addEventListener("input", e=>{
+  clearTimeout(qt); qt = setTimeout(()=>{ state.q = e.target.value.trim(); render(); }, 160); });
+$("#fage").addEventListener("change", e=>{ state.age=e.target.value; render(); });
+$("#fsrc").addEventListener("change", e=>{ state.src=e.target.value; render();
+  if(state.sel) drawDetail(E.find(x=>x.d===state.sel)); });
+$("#flane").addEventListener("change", e=>{ state.lane=e.target.value; render();
+  if(state.sel) drawDetail(E.find(x=>x.d===state.sel)); });
+$("#fkind").addEventListener("change", e=>{ state.kind=e.target.value; render(); });
+$("#fstate").addEventListener("change", e=>{ state.cover=e.target.value; render(); });
+$("#reset").addEventListener("click", ()=>{
+  state = {q:"",age:"",src:"",lane:"",cover:"",kind:"named",sort:"cases",dir:-1,sel:null};
+  $("#q").value=""; ["#fage","#fsrc","#flane","#fstate"].forEach(s=>$(s).value="");
+  $("#fkind").value="named";
+  $("#detailPanel").classList.add("hide"); render(); });
+$("#theme").addEventListener("click", ()=>{
+  const cur = document.documentElement.getAttribute("data-theme");
+  const next = cur==="dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  $("#theme").textContent = next==="dark" ? "Light mode" : "Dark mode";
+  drawScatter(sortList(E.filter(matches))); });
+$("#tableview").addEventListener("click", ()=>{
+  const on = $("#tableview").getAttribute("aria-pressed")==="true";
+  $("#tableview").setAttribute("aria-pressed", String(!on));
+  $("#scatterPanel").classList.toggle("hide", !on ? true : false);
+  $("#matrixPanel").querySelector(".ptitle span").textContent = !on
+    ? "Plain numeric table — no colour encoding."
+    : "Cell shading is the sample count on a light→dark blue ramp within each column; a red 0 means nothing exists. Sort by clicking a header.";
+  document.querySelectorAll("#matrix .cell").forEach(c=>{
+    if(!on){ c.dataset.bg = c.className; c.className = "cell" + (c.classList.contains("z")?" z":""); }
+    else if(c.dataset.bg){ c.className = c.dataset.bg; }
+  });
+});
+
+LANES.forEach(l=>{ const o=document.createElement("option"); o.textContent=l; $("#flane").append(o); });
+$("#dcount").textContent = `${P.kinds.named} named entities, ${P.kinds.residual} unresolved bins,`
+  + ` ${P.kinds.control} control`;
+render();
+</script>
+</body>
+</html>
