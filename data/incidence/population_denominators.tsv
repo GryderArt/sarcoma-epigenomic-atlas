@@ -1,0 +1,35 @@
+population_group	age_range	population	source	year	URL_or_PMID
+World	0-14	2016800738	UN WPP 2024 revision (medium variant)	2024 (estimate)	https://population.un.org/wpp/
+World	0-19	2667941640	UN WPP 2024 revision (medium variant)	2024 (estimate)	https://population.un.org/wpp/
+World	0-24	3287364222	UN WPP 2024 revision (medium variant)	2024 (estimate)	https://population.un.org/wpp/
+World	15-19	651140902	UN WPP 2024 revision (derived: 0-19 minus 0-14)	2024	https://population.un.org/wpp/
+World	0-14	1999255031	UN WPP 2024 revision (medium variant)	2026 (projection)	https://population.un.org/wpp/
+World	0-19	2665591952	UN WPP 2024 revision (medium variant)	2026 (projection)	https://population.un.org/wpp/
+World	0-24	3294628939	UN WPP 2024 revision (medium variant)	2026 (projection)	https://population.un.org/wpp/
+United States	0-14	58899693	US Census Bureau, Vintage 2025 national estimates (NC-EST2025-AGESEX-RES)	2025 (1 July)	https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/national/asrh/nc-est2025-agesex-res.csv
+United States	0-19	81014973	US Census Bureau, Vintage 2025 national estimates	2025 (1 July)	https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/national/asrh/nc-est2025-agesex-res.csv
+United States	0-24	103958207	US Census Bureau, Vintage 2025 national estimates	2025 (1 July)	https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/national/asrh/nc-est2025-agesex-res.csv
+United States	0-14	59255622	US Census Bureau, Vintage 2025 national estimates	2024 (1 July)	https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/national/asrh/nc-est2025-agesex-res.csv
+United States	0-19	81449691	US Census Bureau, Vintage 2025 national estimates	2024 (1 July)	https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/national/asrh/nc-est2025-agesex-res.csv
+United States	0-24	104644072	US Census Bureau, Vintage 2025 national estimates	2024 (1 July)	https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/national/asrh/nc-est2025-agesex-res.csv
+United States (UN cross-check)	0-19	82611598	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+EU27	0-14	64776015	Eurostat demo_pjangroup (population on 1 January)	2025 (1 Jan)	https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup
+EU27	0-19	89008455	Eurostat demo_pjangroup (population on 1 January)	2025 (1 Jan)	https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup
+EU27	0-24	113193473	Eurostat demo_pjangroup (population on 1 January)	2025 (1 Jan)	https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup
+EU27	0-19	89646866	Eurostat demo_pjangroup (population on 1 January)	2024 (1 Jan)	https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup
+Europe (UN region, incl. Russia)	0-14	113886321	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Europe (UN region, incl. Russia)	0-19	154209449	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Africa	0-14	592526182	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Africa	0-19	752434067	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Asia	0-14	1084867139	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Asia	0-19	1455042179	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Latin America & Caribbean	0-19	201756753	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Northern America	0-19	90821757	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Oceania	0-19	13677436	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Sub-Saharan Africa	0-14	505751885	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Sub-Saharan Africa	0-19	641019628	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Northern Africa	0-19	111414439	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Eastern Asia	0-19	350866643	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Central & Southern Asia	0-19	769955925	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+South-Eastern Asia	0-19	222215335	UN WPP 2024 revision	2024	https://population.un.org/wpp/
+Western Asia	0-19	112004275	UN WPP 2024 revision	2024	https://population.un.org/wpp/

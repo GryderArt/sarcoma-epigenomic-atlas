@@ -1,0 +1,218 @@
+level	region	cancer_group	age_range	ASR_per_million	source	year	PMID_or_URL	notes
+world	World	All cancer (ICCC I-XII)	0-14	140.6	IICC3-LO17	2017	PMID 28410997	WSR; 284649 cases 2001-10
+world	World	All cancer (ICCC I-XII)	0-19	155.8	IICC3-LO17	2017	PMID 28410997	WSR; 311227 cases
+world	World	All cancer (ICCC I-XII)	15-19	185.3	IICC3-LO17	2017	PMID 28410997	age-specific; 100860 cases
+world	World	VIII Bone tumours	0-14	5.7	IICC3-LO17	2017	PMID 28410997	WSR; 13320 cases
+world	World	VIII Bone tumours	15-19	14.4	IICC3-LO17	2017	PMID 28410997	7851 cases
+world	World	IX Soft tissue sarcomas	0-14	8.9	IICC3-LO17	2017	PMID 28410997	WSR; 18323 cases
+world	World	IX Soft tissue sarcomas	15-19	12.9	IICC3-LO17	2017	PMID 28410997	7011 cases
+region	North Africa	VIII Bone tumours	0-14	5.3	IICC3-LO17	2017	PMID 28410997	
+region	North Africa	VIII Bone tumours	15-19	14.3	IICC3-LO17	2017	PMID 28410997	
+region	North Africa	IX Soft tissue sarcomas	0-14	7.2	IICC3-LO17	2017	PMID 28410997	
+region	North Africa	IX Soft tissue sarcomas	15-19	12.2	IICC3-LO17	2017	PMID 28410997	
+region	Sub-Saharan Africa	VIII Bone tumours	0-14	2.1	IICC3-LO17	2017	PMID 28410997	
+region	Sub-Saharan Africa	VIII Bone tumours	15-19	14.9	IICC3-LO17	2017	PMID 28410997	
+region	Sub-Saharan Africa	IX Soft tissue sarcomas	0-14	7.6	IICC3-LO17	2017	PMID 28410997	46% of 0-14 STS = Kaposi
+region	Sub-Saharan Africa	IX Soft tissue sarcomas	15-19	30.7	IICC3-LO17	2017	PMID 28410997	57% of 0-19 STS = Kaposi
+region	Central America & Caribbean	VIII Bone tumours	0-14	5.2	IICC3-LO17	2017	PMID 28410997	
+region	Central America & Caribbean	VIII Bone tumours	15-19	13.0	IICC3-LO17	2017	PMID 28410997	
+region	Central America & Caribbean	IX Soft tissue sarcomas	0-14	6.9	IICC3-LO17	2017	PMID 28410997	
+region	Central America & Caribbean	IX Soft tissue sarcomas	15-19	8.0	IICC3-LO17	2017	PMID 28410997	
+region	South America	VIII Bone tumours	0-14	5.8	IICC3-LO17	2017	PMID 28410997	
+region	South America	VIII Bone tumours	15-19	16.5	IICC3-LO17	2017	PMID 28410997	
+region	South America	IX Soft tissue sarcomas	0-14	7.7	IICC3-LO17	2017	PMID 28410997	
+region	South America	IX Soft tissue sarcomas	15-19	10.7	IICC3-LO17	2017	PMID 28410997	
+region	Canada	VIII Bone tumours	0-14	6.0	IICC3-LO17	2017	PMID 28410997	
+region	Canada	VIII Bone tumours	15-19	14.8	IICC3-LO17	2017	PMID 28410997	
+region	Canada	IX Soft tissue sarcomas	0-14	10.1	IICC3-LO17	2017	PMID 28410997	
+region	Canada	IX Soft tissue sarcomas	15-19	14.2	IICC3-LO17	2017	PMID 28410997	
+region	USA Native American	VIII Bone tumours	0-14	3.7	IICC3-LO17	2017	PMID 28410997	
+region	USA Native American	VIII Bone tumours	15-19	7.9	IICC3-LO17	2017	PMID 28410997	
+region	USA Native American	IX Soft tissue sarcomas	0-14	4.6	IICC3-LO17	2017	PMID 28410997	
+region	USA Native American	IX Soft tissue sarcomas	15-19	8.2	IICC3-LO17	2017	PMID 28410997	
+region	USA Asian/Pacific Isl	VIII Bone tumours	0-14	4.1	IICC3-LO17	2017	PMID 28410997	
+region	USA Asian/Pacific Isl	VIII Bone tumours	15-19	10.3	IICC3-LO17	2017	PMID 28410997	
+region	USA Asian/Pacific Isl	IX Soft tissue sarcomas	0-14	5.8	IICC3-LO17	2017	PMID 28410997	
+region	USA Asian/Pacific Isl	IX Soft tissue sarcomas	15-19	10.6	IICC3-LO17	2017	PMID 28410997	
+region	USA Black	VIII Bone tumours	0-14	4.8	IICC3-LO17	2017	PMID 28410997	
+region	USA Black	VIII Bone tumours	15-19	11.9	IICC3-LO17	2017	PMID 28410997	
+region	USA Black	IX Soft tissue sarcomas	0-14	10.8	IICC3-LO17	2017	PMID 28410997	
+region	USA Black	IX Soft tissue sarcomas	15-19	16.8	IICC3-LO17	2017	PMID 28410997	
+region	USA White Hispanic	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	USA White Hispanic	VIII Bone tumours	15-19	13.9	IICC3-LO17	2017	PMID 28410997	
+region	USA White Hispanic	IX Soft tissue sarcomas	0-14	10.2	IICC3-LO17	2017	PMID 28410997	
+region	USA White Hispanic	IX Soft tissue sarcomas	15-19	14.0	IICC3-LO17	2017	PMID 28410997	
+region	USA White non-Hispanic	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	USA White non-Hispanic	VIII Bone tumours	15-19	15.5	IICC3-LO17	2017	PMID 28410997	
+region	USA White non-Hispanic	IX Soft tissue sarcomas	0-14	10.9	IICC3-LO17	2017	PMID 28410997	
+region	USA White non-Hispanic	IX Soft tissue sarcomas	15-19	16.0	IICC3-LO17	2017	PMID 28410997	
+region	East Asia	VIII Bone tumours	0-14	6.2	IICC3-LO17	2017	PMID 28410997	
+region	East Asia	VIII Bone tumours	15-19	12.3	IICC3-LO17	2017	PMID 28410997	
+region	East Asia	IX Soft tissue sarcomas	0-14	7.2	IICC3-LO17	2017	PMID 28410997	
+region	East Asia	IX Soft tissue sarcomas	15-19	9.6	IICC3-LO17	2017	PMID 28410997	
+region	South Asia	VIII Bone tumours	0-14	4.3	IICC3-LO17	2017	PMID 28410997	
+region	South Asia	VIII Bone tumours	15-19	11.5	IICC3-LO17	2017	PMID 28410997	
+region	South Asia	IX Soft tissue sarcomas	0-14	4.5	IICC3-LO17	2017	PMID 28410997	IICC-3 grouping incl India/Pakistan/Thailand
+region	South Asia	IX Soft tissue sarcomas	15-19	6.6	IICC3-LO17	2017	PMID 28410997	IICC-3 grouping incl India/Pakistan/Thailand
+region	Southeast Asia	VIII Bone tumours	0-14	5.6	IICC3-LO17	2017	PMID 28410997	
+region	Southeast Asia	VIII Bone tumours	15-19	14.5	IICC3-LO17	2017	PMID 28410997	
+region	Southeast Asia	IX Soft tissue sarcomas	0-14	5.2	IICC3-LO17	2017	PMID 28410997	
+region	Southeast Asia	IX Soft tissue sarcomas	15-19	6.2	IICC3-LO17	2017	PMID 28410997	
+region	West Asia	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	West Asia	VIII Bone tumours	15-19	19.2	IICC3-LO17	2017	PMID 28410997	
+region	West Asia	IX Soft tissue sarcomas	0-14	8.2	IICC3-LO17	2017	PMID 28410997	
+region	West Asia	IX Soft tissue sarcomas	15-19	12.7	IICC3-LO17	2017	PMID 28410997	
+region	Eastern Europe	VIII Bone tumours	0-14	6.0	IICC3-LO17	2017	PMID 28410997	
+region	Eastern Europe	VIII Bone tumours	15-19	13.2	IICC3-LO17	2017	PMID 28410997	
+region	Eastern Europe	IX Soft tissue sarcomas	0-14	8.6	IICC3-LO17	2017	PMID 28410997	
+region	Eastern Europe	IX Soft tissue sarcomas	15-19	9.9	IICC3-LO17	2017	PMID 28410997	
+region	Northern Europe	VIII Bone tumours	0-14	5.5	IICC3-LO17	2017	PMID 28410997	
+region	Northern Europe	VIII Bone tumours	15-19	15.1	IICC3-LO17	2017	PMID 28410997	
+region	Northern Europe	IX Soft tissue sarcomas	0-14	9.7	IICC3-LO17	2017	PMID 28410997	
+region	Northern Europe	IX Soft tissue sarcomas	15-19	12.2	IICC3-LO17	2017	PMID 28410997	
+region	Southern Europe	VIII Bone tumours	0-14	7.9	IICC3-LO17	2017	PMID 28410997	
+region	Southern Europe	VIII Bone tumours	15-19	15.5	IICC3-LO17	2017	PMID 28410997	
+region	Southern Europe	IX Soft tissue sarcomas	0-14	10.1	IICC3-LO17	2017	PMID 28410997	
+region	Southern Europe	IX Soft tissue sarcomas	15-19	16.1	IICC3-LO17	2017	PMID 28410997	
+region	Western Europe	VIII Bone tumours	0-14	6.5	IICC3-LO17	2017	PMID 28410997	
+region	Western Europe	VIII Bone tumours	15-19	17.0	IICC3-LO17	2017	PMID 28410997	
+region	Western Europe	IX Soft tissue sarcomas	0-14	9.7	IICC3-LO17	2017	PMID 28410997	
+region	Western Europe	IX Soft tissue sarcomas	15-19	13.5	IICC3-LO17	2017	PMID 28410997	
+region	Oceania	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	Oceania	VIII Bone tumours	15-19	17.2	IICC3-LO17	2017	PMID 28410997	
+region	Oceania	IX Soft tissue sarcomas	0-14	9.0	IICC3-LO17	2017	PMID 28410997	
+region	Oceania	IX Soft tissue sarcomas	15-19	14.8	IICC3-LO17	2017	PMID 28410997	
+country/registry	USA all races 1998-2012	VIIIa Osteosarcoma	0-14	3.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	VIIIa Osteosarcoma	0-19	4.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	VIIIc Ewing & related bone sarcomas	0-14	2.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	VIIIc Ewing & related bone sarcomas	0-19	2.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	IXa Rhabdomyosarcoma	0-14	5.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	IXa Rhabdomyosarcoma	0-19	4.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	IXc Kaposi sarcoma	0-14	0.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA all races 1998-2012	IXc Kaposi sarcoma	0-19	0.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA White non-Hispanic	VIIIa Osteosarcoma	0-14	3.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA White non-Hispanic	VIIIa Osteosarcoma	0-19	4.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA White non-Hispanic	VIIIc Ewing & related bone sarcomas	0-14	2.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA White non-Hispanic	VIIIc Ewing & related bone sarcomas	0-19	3.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA White non-Hispanic	IXa Rhabdomyosarcoma	0-14	5.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA White non-Hispanic	IXa Rhabdomyosarcoma	0-19	4.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Black	VIIIa Osteosarcoma	0-14	3.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Black	VIIIa Osteosarcoma	0-19	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Black	VIIIc Ewing & related bone sarcomas	0-14	0.4	IICC3-V3	2025	https://publications.iarc.who.int/658	7x lower than USA White NH
+country/registry	USA Black	VIIIc Ewing & related bone sarcomas	0-19	0.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Black	IXa Rhabdomyosarcoma	0-14	4.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Black	IXa Rhabdomyosarcoma	0-19	4.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Asian/Pacific Isl	VIIIa Osteosarcoma	0-14	3.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Asian/Pacific Isl	VIIIa Osteosarcoma	0-19	3.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Asian/Pacific Isl	VIIIc Ewing & related bone sarcomas	0-14	1.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Asian/Pacific Isl	VIIIc Ewing & related bone sarcomas	0-19	1.6	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Asian/Pacific Isl	IXa Rhabdomyosarcoma	0-14	3.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Asian/Pacific Isl	IXa Rhabdomyosarcoma	0-19	3.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Hispanic White	VIIIa Osteosarcoma	0-14	3.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Hispanic White	VIIIa Osteosarcoma	0-19	4.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Hispanic White	VIIIc Ewing & related bone sarcomas	0-14	2.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Hispanic White	VIIIc Ewing & related bone sarcomas	0-19	2.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Hispanic White	IXa Rhabdomyosarcoma	0-14	4.6	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	USA Hispanic White	IXa Rhabdomyosarcoma	0-19	4.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	South Africa paed, White	VIIIa Osteosarcoma	0-14	2.5	IICC3-V3	2025	https://publications.iarc.who.int/658	within-country ancestry control
+country/registry	South Africa paed, White	VIIIc Ewing & related bone sarcomas	0-14	2.5	IICC3-V3	2025	https://publications.iarc.who.int/658	within-country ancestry control
+country/registry	South Africa paed, White	IXa Rhabdomyosarcoma	0-14	4.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	South Africa paed, White	IXc Kaposi sarcoma	0-14	0.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	South Africa paed, Black	VIIIa Osteosarcoma	0-14	1.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	South Africa paed, Black	VIIIc Ewing & related bone sarcomas	0-14	0.2	IICC3-V3	2025	https://publications.iarc.who.int/658	12.5x lower than SA White, same registry
+country/registry	South Africa paed, Black	IXa Rhabdomyosarcoma	0-14	2.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	South Africa paed, Black	IXc Kaposi sarcoma	0-14	1.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	VIIIa Osteosarcoma	0-14	2.6	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	VIIIa Osteosarcoma	0-19	3.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	VIIIc Ewing & related bone sarcomas	0-14	0.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	VIIIc Ewing & related bone sarcomas	0-19	0.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	IXa Rhabdomyosarcoma	0-14	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	IXa Rhabdomyosarcoma	0-19	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Uganda Kyadondo	IXc Kaposi sarcoma	0-14	28.4	IICC3-V3	2025	https://publications.iarc.who.int/658	highest paediatric KS rate in IICC-3
+country/registry	Uganda Kyadondo	IXc Kaposi sarcoma	0-19	29.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	VIIIa Osteosarcoma	0-14	3.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	VIIIa Osteosarcoma	0-19	4.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	VIIIc Ewing & related bone sarcomas	0-14	0.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	VIIIc Ewing & related bone sarcomas	0-19	0.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	IXa Rhabdomyosarcoma	0-14	6.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	IXa Rhabdomyosarcoma	0-19	5.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	IXc Kaposi sarcoma	0-14	20.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Zimbabwe Harare African	IXc Kaposi sarcoma	0-19	20.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	VIIIa Osteosarcoma	0-14	3.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	VIIIa Osteosarcoma	0-19	7.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	VIIIc Ewing & related bone sarcomas	0-14	0.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	VIIIc Ewing & related bone sarcomas	0-19	0.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	IXa Rhabdomyosarcoma	0-14	7.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	IXa Rhabdomyosarcoma	0-19	6.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	IXc Kaposi sarcoma	0-14	3.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Kenya 2 registries	IXc Kaposi sarcoma	0-19	3.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Botswana	VIIIa Osteosarcoma	0-14	1.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Botswana	VIIIc Ewing & related bone sarcomas	0-14	0.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Botswana	IXa Rhabdomyosarcoma	0-14	2.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Botswana	IXc Kaposi sarcoma	0-14	7.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Botswana	IXc Kaposi sarcoma	0-19	8.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	VIIIa Osteosarcoma	0-14	3.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	VIIIa Osteosarcoma	0-19	4.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	VIIIc Ewing & related bone sarcomas	0-14	0.6	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	VIIIc Ewing & related bone sarcomas	0-19	0.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	IXa Rhabdomyosarcoma	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	IXa Rhabdomyosarcoma	0-19	2.6	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	China 6 registries	IXc Kaposi sarcoma	0-14	0.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Japan 8 registries	VIIIa Osteosarcoma	0-14	2.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Japan 8 registries	VIIIa Osteosarcoma	0-19	3.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Japan 8 registries	VIIIc Ewing & related bone sarcomas	0-14	1.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Japan 8 registries	VIIIc Ewing & related bone sarcomas	0-19	1.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Japan 8 registries	IXa Rhabdomyosarcoma	0-14	3.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Japan 8 registries	IXa Rhabdomyosarcoma	0-19	3.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Republic of Korea	VIIIa Osteosarcoma	0-14	4.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Republic of Korea	VIIIa Osteosarcoma	0-19	5.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Republic of Korea	VIIIc Ewing & related bone sarcomas	0-14	1.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Republic of Korea	VIIIc Ewing & related bone sarcomas	0-19	1.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Republic of Korea	IXa Rhabdomyosarcoma	0-14	3.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Republic of Korea	IXa Rhabdomyosarcoma	0-19	3.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	India 7 registries	VIIIa Osteosarcoma	0-14	2.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	India 7 registries	VIIIa Osteosarcoma	0-19	3.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	India 7 registries	VIIIc Ewing & related bone sarcomas	0-14	2.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	India 7 registries	VIIIc Ewing & related bone sarcomas	0-19	2.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	India 7 registries	IXa Rhabdomyosarcoma	0-14	2.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	India 7 registries	IXa Rhabdomyosarcoma	0-19	2.1	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Thailand 6 registries	VIIIa Osteosarcoma	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Thailand 6 registries	VIIIc Ewing & related bone sarcomas	0-14	0.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Thailand 6 registries	IXa Rhabdomyosarcoma	0-14	2.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Philippines 2 registries	VIIIa Osteosarcoma	0-14	4.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Philippines 2 registries	VIIIa Osteosarcoma	0-19	7.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Philippines 2 registries	VIIIc Ewing & related bone sarcomas	0-14	1.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Philippines 2 registries	IXa Rhabdomyosarcoma	0-14	3.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Viet Nam Ho Chi Minh City	VIIIa Osteosarcoma	0-14	2.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Viet Nam Ho Chi Minh City	VIIIc Ewing & related bone sarcomas	0-14	0.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	UK	VIIIa Osteosarcoma	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	UK	VIIIa Osteosarcoma	0-19	3.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	UK	VIIIc Ewing & related bone sarcomas	0-14	2.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	UK	VIIIc Ewing & related bone sarcomas	0-19	2.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Germany paediatric	VIIIa Osteosarcoma	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Germany paediatric	VIIIc Ewing & related bone sarcomas	0-14	2.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Spain 11 registries	VIIIa Osteosarcoma	0-14	4.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Spain 11 registries	VIIIa Osteosarcoma	0-19	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Spain 11 registries	VIIIc Ewing & related bone sarcomas	0-14	4.3	IICC3-V3	2025	https://publications.iarc.who.int/658	highest national Ewing rate in IICC-3
+country/registry	Spain 11 registries	VIIIc Ewing & related bone sarcomas	0-19	4.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Italy 26 registries	VIIIa Osteosarcoma	0-14	3.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Italy 26 registries	VIIIc Ewing & related bone sarcomas	0-14	3.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Australia	VIIIa Osteosarcoma	0-14	2.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Australia	VIIIc Ewing & related bone sarcomas	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	New Zealand Pacific peoples	VIIIa Osteosarcoma	0-14	8.7	IICC3-V3	2025	https://publications.iarc.who.int/658	highest osteosarcoma rate in IICC-3
+country/registry	New Zealand Pacific peoples	VIIIc Ewing & related bone sarcomas	0-14	7.5	IICC3-V3	2025	https://publications.iarc.who.int/658	
+region	Sub-Saharan Africa	Ewing sarcoma (all sites)	10-19	0.77	CI5-SP21	2021	PMID 33961701	CI5 2008-12; peak-incidence band
+region	Eastern Asia	Ewing sarcoma (all sites)	10-19	1.59	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Central America	Ewing sarcoma (all sites)	10-19	1.67	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	South-Eastern Asia	Ewing sarcoma (all sites)	10-19	2.11	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Southern Asia	Ewing sarcoma (all sites)	10-19	2.47	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	South America	Ewing sarcoma (all sites)	10-19	3.16	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Northern Africa	Ewing sarcoma (all sites)	10-19	3.62	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Eastern Europe	Ewing sarcoma (all sites)	10-19	4.42	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	North America	Ewing sarcoma (all sites)	10-19	4.58	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Northern Europe	Ewing sarcoma (all sites)	10-19	5.04	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Caribbean	Ewing sarcoma (all sites)	10-19	5.39	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Oceania	Ewing sarcoma (all sites)	10-19	5.95	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Western Asia	Ewing sarcoma (all sites)	10-19	6.51	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Western Europe	Ewing sarcoma (all sites)	10-19	6.93	CI5-SP21	2021	PMID 33961701	CI5 2008-12
+region	Southern Europe	Ewing sarcoma (all sites)	10-19	7.75	CI5-SP21	2021	PMID 33961701	CI5 2008-12

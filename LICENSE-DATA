@@ -1,0 +1,31 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Berkley Gryder and the SASS Epigenetics Working Group
+
+The contents of data/, figures/, workbooks/ and docs/ in this repository are
+licensed under the Creative Commons Attribution 4.0 International License.
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the license, and
+indicate if changes were made.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+HOW TO ATTRIBUTE
+
+  Sarcoma Epigenomic Data Atlas, Gryder Lab / SASS Epigenetics Working Group,
+  https://github.com/<user>/sarcoma-epigenomic-atlas, CC BY 4.0
+
+A NOTE ON THE UNDERLYING RECORDS
+
+This licence covers the atlas -- the curation, classification, aggregation and
+annotation assembled here. It does not and cannot re-license the primary data
+it describes. Records harvested from GEO, ArrayExpress, ENA, EGA, dbGaP and the
+St Jude Childhood Solid Tumor Network remain governed by their source archives
+and by the consent under which they were collected.
+
+In particular, every EGA dataset listed in T14 and T15 is CONTROLLED ACCESS.
+What is published here is metadata only -- the fact that the experiment exists,
+its scale, and which data access committee governs it. Obtaining the data
+requires a data access agreement with the committee named in each row.

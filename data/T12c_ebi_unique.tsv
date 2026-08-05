@@ -1,0 +1,24 @@
+repository	accession	title	query_term	is_geo_mirror	epigenomic_hint	release_date	n_files	access	url
+ArrayExpress/BioStudies	E-ERAD-23	Brachyury ChIP sequencing of human chordoma UCH-1 cell line	chordoma		Y	2011-10-17		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-ERAD-23
+ArrayExpress/BioStudies	E-MEXP-1748	Chromatin immunoprecipitation with p53-antibody of human osteosarcoma cell line Saos-2 infected with adenomviruses encoding GFP, or GFP with p53 H1 helix mutants EL or RE	osteosarcoma		Y	2010-05-13		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MEXP-1748
+ArrayExpress/BioStudies	E-MTAB-10825	MBD-Seq was applied to study the CpG methylation map of rhabdomyosarcoma cells after DiPRO1/ZNF555 inhibition	rhabdomyosarcoma		Y	2022-07-28		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-10825
+ArrayExpress/BioStudies	E-MTAB-11031	Methylation profiling of chondrosarcoma tumour samples	chondrosarcoma		Y	2022-03-01		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-11031
+ArrayExpress/BioStudies	E-MTAB-12292	ChIP-seq of ADNP and TRIM28 in the U2OS cell line (Human Bone Osteosarcoma Epithelial Cells)	osteosarcoma		Y	2023-06-01		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-12292
+ArrayExpress/BioStudies	E-MTAB-12758	Single-cell RNA-seq of JBT19 - a novel PD-L1- and collagen-expressing patient-derived cell line of undifferentiated pleomorphic sarcoma as a model for cancer immunotherapy	sarcoma		Y	2024-01-31		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-12758
+ArrayExpress/BioStudies	E-MTAB-13947	Transcriptomic analysis of 162 myxofibrosarcomas and undifferentiated pleomorphic sarcomas	sarcoma		Y	2024-09-30		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-13947
+ArrayExpress/BioStudies	E-MTAB-13948	Segment files from SNP array analysis of 145 myxofibrosarcoma and undifferentiated pleomorphic sarcoma	sarcoma		Y	2024-09-30		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-13948
+ArrayExpress/BioStudies	E-MTAB-6111	DNAseq of human Ewing cell line - CADO-ES1	sarcoma		Y	2017-10-02		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-6111
+ArrayExpress/BioStudies	E-MTAB-6708	Methylation profiling of Malignant Rhabdoid Tumours	malignant peripheral nerve sheath tumour		Y	2020-07-15		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-6708
+ArrayExpress/BioStudies	E-MTAB-6961	Methylation array profiling of undifferentiated sarcomas of adults	sarcoma		Y	2019-04-02		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-6961
+ArrayExpress/BioStudies	E-MTAB-8864	Methylation profiling of malignant peripheral nerve sheath tumour samples	sarcoma		Y	2020-07-02		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8864
+ArrayExpress/BioStudies	E-MTAB-9875	Methylation profiling (450K and EPIC array) for sarcoma classification	sarcoma		Y	2021-05-01		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-9875
+ArrayExpress/BioStudies	E-TABM-1022	Methylation profiling by array of human gastrointestinal stromal tumors MCAM GIST	gastrointestinal stromal tumour		Y	2011-06-29		open	https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-TABM-1022
+ENA	PRJDB12634	Hi-C analysis of sarcoma and renal cell carcinoma	sarcoma		Y	2022-12-03		open	https://www.ebi.ac.uk/ena/browser/view/PRJDB12634
+ENA	PRJDB8273	CHIP-seq experiment of ZNF217 in leiomyosarcoma cell line, UT1	sarcoma		Y	2021-04-29		open	https://www.ebi.ac.uk/ena/browser/view/PRJDB8273
+ENA	PRJDB9199	ChIP/ATAC-seq data of a primary mouse osteosarcoma cell line.	sarcoma		Y	2020-01-26		open	https://www.ebi.ac.uk/ena/browser/view/PRJDB9199
+ENA	PRJEB104098	DIFFERENTIAL DIAGNOSIS OF HISTIOCYTIC SARCOMAS AND UNDIFFERENTIATED PLEOMORPHIC SARCOMAS	sarcoma		Y	2025-11-23		open	https://www.ebi.ac.uk/ena/browser/view/PRJEB104098
+ENA	PRJEB112272	Methylation Analysis of iPSC model of MPNST progression	MPNST		Y	2026-04-30		open	https://www.ebi.ac.uk/ena/browser/view/PRJEB112272
+ENA	PRJEB21614	Epigenetic consequences of latent infection with Kaposi-sarcoma associated herpesvirus	sarcoma			2019-06-29		open	https://www.ebi.ac.uk/ena/browser/view/PRJEB21614
+ENA	PRJEB46871	MBD-Seq was applied to study the CpG methylation map of rhabdomyosarcoma cells after DiPRO1/ZNF555 inhibition	sarcoma		Y	2022-07-27		open	https://www.ebi.ac.uk/ena/browser/view/PRJEB46871
+ENA	PRJEB56686	ChIP-seq of ADNP and TRIM28 in the U2OS cell line (Human Bone Osteosarcoma Epithelial Cells)	sarcoma		Y	2023-05-31		open	https://www.ebi.ac.uk/ena/browser/view/PRJEB56686
+ENA	PRJEB74484	ChIP-Seq of myxoid liposarcoma patient-derived xenograft models	sarcoma		Y	2025-04-02		open	https://www.ebi.ac.uk/ena/browser/view/PRJEB74484
