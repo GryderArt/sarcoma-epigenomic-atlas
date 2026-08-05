@@ -21,8 +21,24 @@ git diff --cached --quiet || git commit -q -m "Point documentation at $USER/$REP
 git remote remove origin 2>/dev/null || true
 git remote add origin "$URL.git"
 
-if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
-  echo "Creating the repository with the GitHub CLI..."
+if ! command -v gh >/dev/null 2>&1; then
+  echo "The GitHub CLI is not installed. Install it with one of:"
+  echo "    brew install gh                 # macOS"
+  echo "    sudo apt install gh             # Debian/Ubuntu"
+  echo "    winget install GitHub.cli       # Windows"
+  echo "Then re-run this script."
+  exit 1
+fi
+
+if ! gh auth status >/dev/null 2>&1; then
+  echo "Signing in to GitHub (a browser window will open)..."
+  gh auth login --hostname github.com --git-protocol https --web
+fi
+
+if gh auth status >/dev/null 2>&1; then
+  WHO=$(gh api user --jq .login)
+  [ "$WHO" != "$USER" ] && { echo "Signed in as $WHO, not $USER - using $WHO"; USER="$WHO"; URL="https://github.com/$USER/$REPO"; }
+  echo "Creating the repository as $USER..."
   gh repo create "$USER/$REPO" --public --source=. --remote=origin --push \
     --description "A sample-level census of every public epigenomic experiment on sarcoma, all ages, built to find the holes."
   echo "Enabling GitHub Pages from main /docs..."
@@ -30,10 +46,8 @@ if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
     >/dev/null 2>&1 || echo "  (enable Pages by hand: Settings -> Pages -> main, /docs)"
 else
   echo
-  echo "The GitHub CLI is not installed or not signed in."
-  echo "Create an EMPTY repository at https://github.com/new named '$REPO'"
-  echo "  - public, and do NOT add a README, .gitignore or licence"
-  echo "Then run:"
+  echo "Sign-in did not complete. Create an EMPTY repository at https://github.com/new"
+  echo "named '$REPO' - public, and do NOT add a README, .gitignore or licence - then:"
   echo "    git push -u origin main"
 fi
 
