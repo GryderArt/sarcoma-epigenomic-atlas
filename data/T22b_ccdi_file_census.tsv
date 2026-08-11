@@ -1,0 +1,159 @@
+library_strategy	file_type	data_category	files
+WGS	fastq	[Sequencing]	48640
+WXS	fastq	[Sequencing]	44490
+WGS	vcf	[Sequencing]	17364
+WGS	txt	[Genomics]	16078
+WGS	tbi	[Sequencing]	12744
+RNA-Seq	fastq	[Sequencing]	11837
+WGS	txt	[Sequencing]	10259
+WGS	maf	[Sequencing]	9940
+(no strategy: array or derived)	dicom	[Pathology Imaging]	9014
+RNA-Seq	txt	[Sequencing]	5841
+WXS	cram	[Sequencing]	5656
+RNA-Seq	tsv	[Sequencing]	5220
+WGS	vcf	[Genomics]	5035
+WXS	json	[Copy Number Variation, Sequencing]	4845
+WGS	tsv	[Sequencing]	3504
+WXS	crai	[Sequencing]	3230
+(no strategy: array or derived)	idat	[Methylation Analysis]	3188
+WGS	tbi	[Genomics]	3114
+WGS	seg	[Sequencing]	2931
+WGS	png	[Sequencing]	2722
+(no strategy: array or derived)	json	[Methylation Analysis]	2721
+(no strategy: array or derived)	html	[Methylation Analysis]	2721
+WGS	pdf	[Genomics]	2704
+WXS	vcf	[Sequencing]	2701
+WXS	txt	[Genomics]	2601
+WGS	cram	[Sequencing]	2563
+WGS	tsv	[Genomics]	2533
+Other	bam	[Sequencing]	2530
+WGS	csv	[Genomics]	2510
+RNA-Seq	bam	[Sequencing]	2443
+WGS	pdf	[Sequencing]	2426
+(no strategy: array or derived)	json	[Clinical, COG Clinical Data]	2262
+WXS	txt	[Sequencing]	2108
+Archer Fusion	bai	[Sequencing]	1772
+Archer Fusion	bam	[Sequencing]	1772
+Archer Fusion	txt	[Sequencing]	1762
+AMPLICON	txt	[Sequencing]	1743
+WXS	vcf	[Sequencing, Simple Nucleotide Variation]	1670
+Other	vcf	[Sequencing]	1665
+WXS	pdf	[Sequencing]	1655
+(no strategy: array or derived)	json	[Clinical, Tumor Normal Clinical Data]	1617
+WGS	maf	[Genomics]	1480
+WGS	csv	[Sequencing]	1438
+WGS	crai	[Sequencing]	1428
+WGS	cns	[Sequencing]	1425
+WGS	html	[Genomics]	1358
+WXS	cram_index	[Sequencing]	1327
+Archer Fusion	pdf	[Sequencing]	1244
+(no strategy: array or derived)	json	[Clinical, Gene Fusion Clinical Data]	1244
+WGS	png	[Genomics]	1240
+RNA-Seq	bai	[Sequencing]	1183
+WXS	bam	[Sequencing]	1159
+WGS	gvcf	[Sequencing]	1123
+Targeted-Capture	fastq	[Sequencing]	1103
+WXS	gvcf	[Sequencing]	1099
+WXS	vcf	[Genomics]	1026
+WGS	crai	[Genomics]	950
+WGS	cram	[Genomics]	950
+WXS	tbi	[Genomics]	914
+RNA-Seq	tsv	[Transcriptome Profiling]	864
+Other	fastq	[Sequencing]	864
+WGS	bam	[Sequencing]	842
+AMPLICON	bam	[Sequencing]	793
+WXS	bai	[Sequencing]	788
+WGS	seg	[Genomics]	755
+WGS	html	[Sequencing]	736
+RNA-Seq	html	[Sequencing]	726
+WGS	ped	[Genomics]	679
+(no strategy: array or derived)	txt	[Copy Number Variation]	679
+RNA-Seq	pdf	[Sequencing]	653
+(no strategy: array or derived)	png	[Copy Number Variation]	645
+WGS	parquet	[Genomics]	629
+WXS	pdf	[Genomics]	608
+RNA-Seq	cram	[Sequencing]	605
+WXS	maf	[Genomics]	560
+Targeted-Capture	cram	[Sequencing]	559
+Targeted-Capture	cram_index	[Sequencing]	559
+RNA-Seq	txt	[Transcriptome Profiling]	504
+WGS	vcf_index	[Simple Nucleotide Variation]	494
+WGS	vcf	[Simple Nucleotide Variation]	494
+AMPLICON	html	[Sequencing]	477
+RNA-Seq	tar	[Sequencing]	476
+RNA-Seq	crai	[Sequencing]	476
+WXS	html	[Sequencing]	438
+RNA-Seq	txt	[Gene Expression, Sequencing]	412
+AMPLICON	vcf	[Sequencing, Simple Nucleotide Variation]	406
+AMPLICON	tsv	[Sequencing, Simple Nucleotide Variation]	404
+WGS	bam	[Genomics]	380
+RNA-Seq	fastq	[Transcriptome Profiling]	370
+WGS	ped	[Sequencing]	368
+RNA-Seq	txt	[Genomic Structural Variation, Sequencing]	344
+WGS	tar	[Sequencing]	336
+Other	seg	[Sequencing]	336
+WGS	cns	[Genomics]	325
+WGS	bam_index	[Sequencing]	295
+(no strategy: array or derived)	pdf	[Methylation Analysis]	280
+(no strategy: array or derived)	json	[Clinical, Methylation Clinical Data]	271
+WXS	tsv	[Genomics]	259
+WXS	seg	[Genomics]	251
+WGS	vcf	[Structural Variation]	247
+WGS	txt	[Copy Number Variation]	247
+AMPLICON	bai	[Sequencing]	237
+(no strategy: array or derived)	tiff	[Pathology Imaging]	217
+RNA-Seq	txt	[Gene Expression]	210
+WXS	cns	[Genomics]	195
+WXS	csv	[Genomics]	184
+WXS	cram	[Genomics]	184
+WXS	crai	[Genomics]	184
+WXS	txt	[Sequencing, Simple Nucleotide Variation]	183
+RNA-Seq	bam_index	[Sequencing]	177
+Other	cns	[Sequencing]	168
+WXS	png	[Genomics]	168
+RNA-Seq	h5	[Sequencing]	157
+WXS	tsv	[Sequencing, Simple Nucleotide Variation]	149
+RNA-Seq	cram_index	[Sequencing]	129
+(no strategy: array or derived)	txt	[Simple Nucleotide Variation]	90
+WGS	bai	[Sequencing]	89
+Other	png	[Sequencing]	85
+WGS	tbi	[Sequencing, Simple Nucleotide Variation]	80
+WGS	vcf	[Sequencing, Simple Nucleotide Variation]	80
+RNA-Seq	tar	[Transcriptome Profiling]	72
+RNA-Seq	pdf	[Transcriptome Profiling]	72
+RNA-Seq	cram	[Transcriptome Profiling]	72
+RNA-Seq	crai	[Transcriptome Profiling]	72
+AMPLICON	tsv	[Sequencing]	70
+WXS	tsv	[Sequencing]	68
+AMPLICON	vcf	[Sequencing]	68
+WXS	tbi	[Sequencing, Simple Nucleotide Variation]	54
+WXS	png	[Sequencing]	39
+WXS	svg	[Sequencing]	39
+(no strategy: array or derived)	nifti	[Radiology Imaging]	35
+Other	hdf5	[Gene Expression]	30
+(no strategy: array or derived)	xlsx	[Clinical]	29
+RNA-Seq	bw	[Sequencing]	18
+(no strategy: array or derived)	rdata	[Copy Number Variation]	15
+(no strategy: array or derived)	tsv	[Copy Number Variation]	13
+(no strategy: array or derived)	vcf	[Copy Number Variation]	13
+miRNA-Seq	fastq	[Sequencing]	12
+WGS	cram_index	[Sequencing]	12
+(no strategy: array or derived)	tsv	[Methylation Analysis]	6
+(no strategy: array or derived)	txt	[Generic]	6
+(no strategy: array or derived)	bed	[Generic]	5
+(no strategy: array or derived)	tbi	[Generic]	5
+(no strategy: array or derived)	bed	[Sequencing]	4
+(no strategy: array or derived)	tsv	[Simple Nucleotide Variation]	4
+WXS	json	[Sequencing]	4
+(no strategy: array or derived)	vcf	[Simple Nucleotide Variation]	3
+RNA-Seq	json	[Sequencing]	3
+AMPLICON	json	[Sequencing]	3
+(no strategy: array or derived)	tbi	[Simple Nucleotide Variation]	3
+(no strategy: array or derived)	html	[Generic]	2
+(no strategy: array or derived)	tsv	[Clinical]	2
+(no strategy: array or derived)	dict	[Generic]	2
+(no strategy: array or derived)	fasta	[Generic]	2
+(no strategy: array or derived)	bed	[Generic, Sequencing]	2
+(no strategy: array or derived)	pdf	[Clinical]	1
+(no strategy: array or derived)	json	[Clinical]	1
+(no strategy: array or derived)	maf	[Clinical]	1

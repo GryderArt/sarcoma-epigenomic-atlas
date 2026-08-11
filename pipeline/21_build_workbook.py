@@ -29,6 +29,11 @@ SHEETS = [
     ("T14_EGA_sarcoma",   "T14_ega_sarcoma_datasets.tsv"),
     ("T15_Controlled_epigenomics", "T15_controlled_access.tsv"),
     ("T16_StJude_CSTN",   "T16_stjude_cstn_inventory.tsv"),
+    ("T20_CCDI_studies",  "T20_ccdi_studies.tsv"),
+    ("T24_CCDI_entity_counts", "T24_ccdi_entity_counts.tsv"),
+    ("T25_CCDI_unmapped", "T25_ccdi_unmapped.tsv"),
+    ("T21_CCDI_samples",  "T21_ccdi_samples.tsv"),
+    ("T23_CCDI_participants", "T23_ccdi_participants.tsv"),
     ("T17_StJude_OPDX_models", "T17_stjude_opdx_models.tsv"),
     ("T12c_EBI_unique",   "T12c_ebi_unique.tsv"),
     ("T12b_EBI_sarcoma_epi", "T12b_ebi_sarcoma_epigenomic.tsv"),
@@ -80,6 +85,21 @@ README = [
   "central-pathology-review series (NETSARC), which for several entities differ 2-fold. "
   "Entities flagged no_population_rate=Y have NO published population rate anywhere; "
   "they are shown but excluded from every per-case ratio.", ""),
+ ("", ""),
+ ("NEW IN THIS BUILD: CCDI", "head"),
+ ("The NCI Childhood Cancer Data Initiative is harvested in full through its open "
+  "GraphQL API: 42 studies, 61,854 participants, 70,820 samples, and every file "
+  "belonging to a sarcoma-cohort participant (319,084). Tabs T20-T25.", ""),
+ ("The finding: CCDI has NO ChIP-seq in its assay vocabulary at all, for any disease. "
+  "Its 91 ATAC-seq and 108 bisulfite-seq participants are entirely leukaemia. Across "
+  "319,084 sarcoma-cohort files there is not one regulatory epigenomic file. CCDI's "
+  "entire epigenomic contribution to sarcoma is DNA methylation array.", ""),
+ ("What it does add: 1,592 sarcoma participants with raw methylation IDATs, 1,382 of "
+  "them primary tumours - larger than GSE140686, the current largest entity-labelled "
+  "sarcoma methylation resource. Controlled access via dbGaP.", ""),
+ ("A counting caution baked into the harvester: 76% of CCDI SAMPLE rows carry no "
+  "diagnosis of their own - it lives on the participant. Flagging sarcoma from the "
+  "sample row alone undercounts 17-fold (1,350 against a true 23,143).", ""),
  ("", ""),
  ("NEW IN THIS BUILD: CONTROLLED-ACCESS AND ST JUDE", "head"),
  ("T14 is the full EGA sarcoma catalogue: 560 datasets, 22,832 samples, 100% controlled "

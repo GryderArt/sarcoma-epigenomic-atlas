@@ -84,6 +84,27 @@ def main():
                 "governing_body": d.get("access",""), "title": d.get("resource",""),
                 "url": "", "released": ""})
 
+    # ---- CCDI (NCI Childhood Cancer Data Initiative), dbGaP-controlled
+    ccdi = os.path.join(DATA, "T24_ccdi_entity_counts.tsv")
+    if os.path.exists(ccdi):
+        n_ccdi = 0
+        for c in csv.DictReader(open(ccdi, newline=""), delimiter="\t"):
+            n = int(c["ccdi_participants_with_methylation"] or 0)
+            if not n: continue
+            rows.append({
+                "source": "CCDI", "accession": "dbGaP (multiple studies)",
+                "entity": c["atlas_entity"], "assay_family": "DNA methylation",
+                "n_samples": n, "access": "CONTROLLED",
+                "governing_body": "NCI CCDI / dbGaP Data Access Committee",
+                "title": f"CCDI methylation arrays, {c['ccdi_participants']} participants "
+                         f"/ {c['ccdi_samples']} samples in cohort",
+                "url": "https://ccdi.cancer.gov/explore", "released": ""})
+            n_ccdi += n
+        print(f"  + CCDI: {n_ccdi:,} participants with methylation arrays across "
+              f"{sum(1 for r in rows if r['source']=='CCDI')} entities")
+        print("    CCDI regulatory epigenomics for sarcoma: 0 "
+              "(no ChIP-seq/ATAC/bisulfite in the sarcoma cohort at all)")
+
     rows.sort(key=lambda r: (r["entity"], r["assay_family"] != "regulatory", -r["n_samples"]))
     cols = ["source","accession","entity","assay_family","n_samples","access",
             "governing_body","title","released","url"]

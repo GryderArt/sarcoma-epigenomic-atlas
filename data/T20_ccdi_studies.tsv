@@ -1,0 +1,43 @@
+study_id	study_name	num_of_participants	num_of_diagnoses	num_of_samples	num_of_files	num_of_publications
+phs001327	Childhood Cancer Survivor Study (CCSS)	30717	124	12287	35675	0
+phs002790	Molecular Characterization Initiative	7842	336	18281	245739	0
+phs002517	Molecular Characterization across Pediatric Brain Tumors and Other Solid and Hematologic Malignancies for Research, Diagnostic, and Precision Medicine	4033	87	9457	475759	1
+phs000465	TARGET: Acute Myeloid Leukemia (AML)	2146	1	124	7	6
+phs001846	Gabriella Miller Kids First Pediatric Research Program in Genetics at the Intersection of Childhood Cancer and Birth Defects	1777	112	1776	26788	0
+phs000464	TARGET: Acute Lymphoblastic Leukemia (ALL) Expansion Phase 2	1701	2	0	9	3
+phs002276	Gabriella Miller Kids First Pediatric Research Program in Pediatric T-Cell Acute Lymphoblastic Leukemia	1358	1	5128	205863	2
+phs001228	Gabriella Miller Kids First (GMKF) Pediatric Research Program in Susceptibility to Ewing Sarcoma Based on Germline Risk and Familial History of Cancer	1287	12	1460	49518	0
+phs002883	NCI-COG Pediatric MATCH Precision Medicine Clinical Trial	1239	136	8594	113236	8
+phs004222	Childhood Cancer Data Initiative (CCDI): Admixture Analysis of Acute Lymphoblastic Leukemia in African American Children - The ADMIRAL Study	1232	2	1232	3	0
+phs000467	TARGET: Neuroblastoma (NBL)	1119	2	0	2	6
+phs002518	OncoKids - NGS Panel for Pediatric Malignancies	1039	90	2246	2253	0
+phs002677	Integrating Longitudinal Clinical, Sociodemographic and Genomic Data into the NCCR	835	105	835	3	0
+phs001878	Gabriella Miller Kids First Pediatric Research Program in Novel Cancer Susceptibility in Families (from BASIC3)	718	92	276	7353	0
+phs000471	TARGET: Kidney, Wilms Tumor (WT)	652	1	270	5	5
+phs002431	Enhancement of Data Sharing in Pediatric, Adolescent and Young Adult Cancers	611	156	1448	13841	0
+phs000720	Genomic sequencing of Pediatric Rhabdomyosarcoma	403	5	403	3483	0
+phs002322	Kids First: Genetics of Pediatric Germ Cell Tumors	356	5	358	10667	0
+phs000468	TARGET: Osteosarcoma (OS)	282	1	226	4	1
+phs001437	Pediatric Preclinical Testing Consortium (PPTC)	267	28	602	6688	2
+phs000463	TARGET: Acute Lymphoblastic Leukemia (ALL) Pilot Phase 1	233	1	0	3	9
+phs002430	Genomic Analysis in Pediatric Malignancies	231	52	554	2864	1
+phs002504	UCSF Database for the Advancement of JMML - Integration of Metadata with Omic Data	220	1	438	1327	11
+phs002529	Comprehensive Genomic Sequencing of Pediatric Cancer Cases (CMRI/KUCC)	200	62	392	5411	0
+phs001738	Kids First Pediatric Research Study in Familial Predisposition to Hematopoietic Malignancies	185	26	192	4728	0
+phs003161	Pediatric In Vivo Testing Program – Sarcomas and other Solid Tumors	175	41	883	12274	0
+phs003111	Clonal evolution during metastatic spread in high-risk neuroblastoma	129	1	487	2170	1
+phs002620	Feasibility and Clinical Utility of Whole Genome Profiling in Pediatric and Young Adult Cancers	113	42	326	652	1
+phs002599	NCI CCSG CCDI Supplement Additional Genomic Submission	104	21	154	313	0
+phs000469	TARGET: Cancer Model Systems (MDLS): Cell Lines and Xenografts (including PPTP)	95	17	115	3	1
+phs001714	Gabriella Miller Kids First Pediatric Research Program: An Integrated Clinical and Genomic Analysis of Treatment Failure in Pediatric Osteosarcoma	84	1	311	12727	0
+phs000470	TARGET: Kidney, Rhabdoid Tumor (RT)	69	1	105	5	2
+phs002371	Human Tumor Atlas Network (HTAN)	69	5	332	361	1
+phs002187	Gabriella Miller Kids First Pediatric Research Program in Germline and Somatic Variants in Myeloid Malignancies in Children	60	1	119	3342	0
+phs003160	Pediatric In Vivo Testing Program –Sarcoma, Kidney, and Liver Cancers	53	12	370	4441	0
+phs003215	Texas Pediatric Patient Derived Xenograft	51	14	362	620	2
+phs003432	Identification and Targeting of Treatment Resistant Progenitor Populations in T-cell Acute Lymphoblastic Leukemia	43	1	59	1421	0
+phs003164	CCDI Pediatric In Vivo Testing Program - Leukemia	40	2	284	3418	0
+phs003163	Pediatric In Vivo Testing Program - Neuroblastoma	36	2	250	2997	0
+phs003519	Single-Cell Atlas of NF1 Nerve Sheath Tumors	29	1	55	3644	4
+phs000466	TARGET: Kidney, Clear Cell Sarcoma of the Kidney (CCSK)	13	1	19	3	1
+phs003975	Metastatic Osteosarcoma Spatial Profiling	8	1	10	244	0

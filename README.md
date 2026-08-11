@@ -16,7 +16,7 @@ Epigenetics Working Group white paper.
 |---|---|
 | **16,394** | sarcoma epigenomic samples, de-duplicated |
 | **4,416** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
-| **901** | studies across GEO, ArrayExpress, ENA, EGA and the St Jude CSTN |
+| **943** | studies across GEO, ArrayExpress, ENA, EGA, St Jude CSTN and NCI CCDI |
 | **45** | named diagnostic entities (plus 4 unresolved bins and 1 control tissue) |
 | **550** | catalogued cell lines and PDX models, 95 flagged for identity problems |
 
@@ -50,12 +50,36 @@ diagnosis appears anywhere in the GEO record. **This repository recovers the map
 1,505 samples across 46 entities. Ten entities depend on that one metadata-dark deposit
 for 100% of their public epigenome.
 
-**5. A third of the field's regulatory epigenomics is locked, not missing.** 560 sarcoma
+**5. The US national cancer data infrastructure has no regulatory epigenomics for sarcoma
+at all.** The NCI Childhood Cancer Data Initiative — 42 studies, 61,854 participants,
+1,259,864 files — has **no ChIP-seq in its assay vocabulary**, for any disease. Its 91
+ATAC-seq and 108 bisulfite-seq participants are entirely leukaemia. Across all **319,084
+files belonging to a sarcoma-cohort participant there is not one regulatory epigenomic
+file**. The GDC is the same: no ChIP-seq in the vocabulary, and its 410 ATAC-seq files
+belong to 23 TCGA cohorts, none of them SARC or any TARGET sarcoma project.
+
+What CCDI does hold is worth having: **1,592 sarcoma participants with raw methylation
+IDATs, 1,382 of them primary tumours** — larger than GSE140686, and with clinical
+annotation attached. `data/T24_ccdi_entity_counts.tsv`.
+
+The CCDI tables ship trimmed to what an epigenomics atlas needs: the sarcoma cohort, and
+within it the epigenomic files. The full harvest is run in every case — that is how the
+cohort and the absence are established — but 163,547 WGS and 78,836 WXS rows are not
+carried. `T22b` and `T26` keep the full denominators, so every claim above remains
+checkable from this repository.
+
+**6. A third of the field's regulatory epigenomics is locked, not missing.** 560 sarcoma
 datasets in EGA, all controlled access — 1,207 regulatory epigenomes behind data-access
 committees. The entire St Jude CSTN epigenome (756 ChIP-seq libraries plus WGBS) is
 EGA-only; none of it is in GEO, and it is not in St Jude Cloud either. Crucially, **none
 of the controlled holdings cover the thirteen entities with nothing** — those zeros
 survive.
+
+And the model resources are the opportunity: PIVOT, PPTC, TARGET Model Systems and the
+Texas PDX bank hold roughly 500 paediatric sarcoma models with WGS, WXS and RNA-seq and
+**no epigenomics whatsoever**. Those models are already derived, consented and federally
+funded — adding H3K27ac and ATAC to an existing panel is incremental cost on
+infrastructure that exists.
 
 Separating *open*, *controlled* and *absent* is the point of
 [`figures/F24_open_vs_controlled_vs_absent.pdf`](figures/F24_open_vs_controlled_vs_absent.pdf).
@@ -80,7 +104,7 @@ FN-RMS carry none. Every call carries its evidence in `rms_call_basis`.
 ## Layout
 
 ```
-data/          the atlas tables, T1–T17, tab-separated (see data/README.md)
+data/          the atlas tables, T1–T25, tab-separated (see data/README.md)
   samples/     the atomic sample table — one row per GSM, 85,698 rows, gzipped
   incidence/   the curated incidence evidence behind every rate in T13
 pipeline/      the harvest → classify → aggregate → publish stages, numbered in order

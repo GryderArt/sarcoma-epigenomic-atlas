@@ -1,0 +1,325 @@
+ccdi_diagnosis	reason	samples
+see diagnosis_comment	unmapped sarcoma-category diagnosis	3556
+Neuroblastoma, NOS	not a sarcoma	3064
+Nephroblastoma, NOS	not a sarcoma	2120
+Hepatoblastoma, NOS	not a sarcoma	239
+Ganglioglioma, NOS	not a sarcoma	92
+Retinoblastoma, NOS	not a sarcoma	90
+CNS embryonal tumor	unmapped sarcoma-category diagnosis	85
+(none)	no diagnosis recorded	81
+Neurofibromatosis, NOS	not a sarcoma	66
+Ganglioneuroblastoma	not a sarcoma	64
+Hemangioma, NOS	not a sarcoma	58
+Melanotic schwannoma;Other	not a sarcoma	58
+Other;Melanotic schwannoma	not a sarcoma	57
+Ganglioglioma, benign;Glioneuronal and neuronal tumors	not a sarcoma	55
+Ganglioglioma;Glioneuronal and neuronal tumors;Ganglioglioma, NOS	not a sarcoma	55
+Small cell sarcoma	unmapped sarcoma-category diagnosis	54
+Glioneuronal and neuronal tumors;Ganglioglioma, NOS;Ganglioglioma	not a sarcoma	50
+Ganglioglioma, NOS;Glioneuronal and neuronal tumors;Ganglioglioma	not a sarcoma	49
+Plexiform neurofibroma;Other	not a sarcoma	47
+Pleuropulmonary blastoma	not a sarcoma	46
+Ganglioglioma, NOS;Ganglioglioma;Glioneuronal and neuronal tumors	not a sarcoma	46
+Other;Plexiform neurofibroma	not a sarcoma	44
+Ganglioglioma;Ganglioglioma, NOS;Glioneuronal and neuronal tumors	not a sarcoma	39
+Glioneuronal and neuronal tumors;Ganglioglioma;Ganglioglioma, NOS	not a sarcoma	39
+Osteoblastoma, NOS	not a sarcoma	38
+Glioneuronal and neuronal tumors;Ganglioglioma, benign	not a sarcoma	31
+Neoplasm, malignant	unmapped sarcoma-category diagnosis	30
+CNS Sarcoma;Sarcoma, NOS	unmapped sarcoma-category diagnosis	27
+Sarcoma, NOS;CNS Sarcoma	unmapped sarcoma-category diagnosis	26
+Carcinoma, NOS;Ewing sarcoma	not a sarcoma	23
+Pancreatoblastoma	unmapped sarcoma-category diagnosis	20
+Ganglioglioma;Ganglioglioma, NOS	not a sarcoma	20
+CNS Sarcoma, NOS or NEC	unmapped sarcoma-category diagnosis	18
+Ganglioglioma	not a sarcoma	18
+Neurofibroma, NOS	not a sarcoma	18
+Neuroepithelioma, NOS	unmapped sarcoma-category diagnosis	17
+Hemangioblastoma;Other	not a sarcoma	17
+Carcinoma, NOS;Nephroblastoma, NOS	not a sarcoma	17
+Neuroblastoma, NOS;Other CNS Embryonal tumors	not a sarcoma	16
+Hemangioendothelioma, malignant	unmapped sarcoma-category diagnosis	15
+Neoplasm, malignant;Neuroblastoma, NOS	not a sarcoma	15
+Osteosarcoma, NOS;Carcinoma, NOS	not a sarcoma	15
+Hemangioblastoma	not a sarcoma	14
+Other;Hemangioblastoma	not a sarcoma	14
+Other;Cavernous hemangioma	not a sarcoma	14
+Ganglioneuroblastoma;Other	not a sarcoma	14
+Plexiform neurofibroma	not a sarcoma	13
+Myofibromatosis	unmapped sarcoma-category diagnosis	13
+Other;Low-Grade Glioma;Plexiform neurofibroma;Melanotic schwannoma;Meningioma, NOS;Meningioma;Astrocytoma, benign	not a sarcoma	13
+Ganglioglioma, NOS;Ganglioglioma	not a sarcoma	12
+Ganglioglioma, anaplastic	not a sarcoma	12
+Ewing sarcoma;Carcinoma, NOS	not a sarcoma	12
+Nephroblastoma, NOS;Carcinoma, NOS	not a sarcoma	12
+Olfactory neuroblastoma	not a sarcoma	11
+Meningioma;Other;Meningioma, NOS;Melanotic schwannoma	not a sarcoma	11
+Histiocytic sarcoma	unmapped sarcoma-category diagnosis	10
+Other	unmapped sarcoma-category diagnosis	10
+Malignant peripheral nerve sheath tumor, NOS;Other;Plexiform neurofibroma	not a sarcoma	10
+Lymphoid leukemia, NOS	not a sarcoma	10
+Carcinoma, NOS;Osteosarcoma, NOS	not a sarcoma	10
+Choroid plexus carcinoma	not a sarcoma	10
+Embryonal sarcoma	unmapped sarcoma-category diagnosis	9
+Hemangioendothelioma, NOS	unmapped sarcoma-category diagnosis	9
+Central neurocytoma;Glioneuronal and neuronal tumors	unmapped sarcoma-category diagnosis	9
+Medulloblastoma, NOS;Meningioma;Meningioma, NOS;Sarcoma, NOS;CNS Sarcoma;Other;Medulloblastoma	not a sarcoma	9
+Lymphangioma, NOS	unmapped sarcoma-category diagnosis	9
+Desmoplastic nodular medulloblastoma	not a sarcoma	9
+Ganglioneuroma	not a sarcoma	8
+High-Grade Glioma;Other;Astrocytoma, NOS;Plexiform neurofibroma	not a sarcoma	8
+Other CNS Embryonal tumors;Neuroblastoma, NOS	not a sarcoma	8
+Neoplasm, malignant;Neurofibromatosis, NOS	not a sarcoma	8
+Osteosarcoma, NOS;Papillary carcinoma, follicular variant	not a sarcoma	8
+Papillary carcinoma, follicular variant;Osteosarcoma, NOS	not a sarcoma	8
+Myoepithelial carcinoma	not a sarcoma	8
+Meningioma;Atypical Meningioma	not a sarcoma	7
+Myofibroma	unmapped sarcoma-category diagnosis	7
+Central neurocytoma	unmapped sarcoma-category diagnosis	7
+Lipoblastomatosis	unmapped sarcoma-category diagnosis	7
+Neurofibroma, NOS;Neurofibromatosis, NOS	not a sarcoma	7
+Neuroblastoma, NOS;Neoplasm, malignant	not a sarcoma	7
+Melanotic schwannoma;Meningioma;Other;Meningioma, NOS	not a sarcoma	7
+Subependymal giant cell astrocytoma	not a sarcoma	7
+Ependymoma, anaplastic	not a sarcoma	7
+Other;Melanotic schwannoma;Plexiform neurofibroma	not a sarcoma	6
+Cavernous hemangioma;Other	not a sarcoma	6
+Other;Meningioma, NOS;Meningioma;Plexiform neurofibroma	not a sarcoma	6
+Plexiform neurofibroma;Neurofibromatosis, NOS	not a sarcoma	6
+Unknown;Neuroblastoma, NOS	not a sarcoma	6
+Glioblastoma, NOS	not a sarcoma	6
+Nephroblastoma, NOS;Papillary carcinoma, follicular variant	not a sarcoma	6
+Schwannoma, NOS;Schwannoma	not a sarcoma	5
+Giant cell tumor of soft parts, NOS	unmapped sarcoma-category diagnosis	5
+Schwannoma, NOS	not a sarcoma	5
+Sarcoma, NOS;CNS Sarcoma;Other	unmapped sarcoma-category diagnosis	5
+Ganglioglioma, benign;Glioneuronal and neuronal tumors;Astrocytoma, benign;Low-Grade Glioma	not a sarcoma	5
+Ganglioglioma;Glioneuronal and neuronal tumors;Dysembryoplastic neuroepithelial tumor;Ganglioglioma, NOS	not a sarcoma	5
+Neurofibromatosis, NOS;Plexiform neurofibroma	not a sarcoma	5
+Hemangioma, NOS;Neoplasm, benign	not a sarcoma	5
+Glioneuronal and neuronal tumors;Ganglioglioma, benign;Ganglioglioma;Ganglioglioma, NOS	not a sarcoma	5
+Ganglioglioma, benign;Low-Grade Glioma;Astrocytoma, benign;Glioneuronal and neuronal tumors	not a sarcoma	5
+Medulloblastoma, NOS;Medulloblastoma;Sarcoma, NOS;CNS Sarcoma	not a sarcoma	5
+Cavernous hemangioma;Medulloblastoma;Medulloblastoma, NOS;Other	not a sarcoma	5
+Melanotic schwannoma;Other;Meningioma;Meningioma, NOS	not a sarcoma	5
+Glioneuronal and neuronal tumors;Central neurocytoma	unmapped sarcoma-category diagnosis	5
+Meningioma, NOS;Rhabdomyosarcoma, NOS	not a sarcoma	5
+Carcinoma, NOS;Rhabdomyosarcoma, NOS	not a sarcoma	5
+Low-grade glioma, NOS or NEC;Ganglioglioma, NOS	not a sarcoma	4
+Abdominal fibromatosis	unmapped sarcoma-category diagnosis	4
+Atypical Meningioma;Meningioma	not a sarcoma	4
+Not Reported	unmapped sarcoma-category diagnosis	4
+Ganglioneuroblastoma;Chordoma, NOS	not a sarcoma	4
+Neoplasm, benign;Hemangioma, NOS	not a sarcoma	4
+Glioma, malignant;Neoplasm, malignant;Neurofibromatosis, NOS	not a sarcoma	4
+Neurofibromatosis, NOS;Neurofibroma, NOS	not a sarcoma	4
+Hemangioma, NOS;Lymphangioma, NOS	not a sarcoma	4
+Other CNS Embryonal tumors;Glioneuronal and neuronal tumors;CNS embryonal tumor, NOS;Ganglioglioma, benign	not a sarcoma	4
+Ganglioneuroblastoma;Other;Neuroblastoma, NOS;Other CNS Embryonal tumors	not a sarcoma	4
+Carcinoma, NOS;Alveolar rhabdomyosarcoma	not a sarcoma	4
+Nephroblastoma, NOS;Papillary adenocarcinoma, NOS	not a sarcoma	4
+Neuroblastoma, NOS;Unknown	not a sarcoma	4
+Embryonal rhabdomyosarcoma, NOS;Papillary adenocarcinoma, NOS	not a sarcoma	4
+Embryonal rhabdomyosarcoma, NOS;Meningioma, NOS	not a sarcoma	4
+Papillary adenocarcinoma, NOS;Ewing sarcoma	not a sarcoma	4
+Astrocytoma, NOS	not a sarcoma	4
+Meningothelial meningioma;Fibrosarcoma, NOS	not a sarcoma	4
+Osteosarcoma, NOS;Meningioma, NOS	not a sarcoma	4
+Nephroblastoma, NOS;Unknown	not a sarcoma	4
+Astroblastoma	unmapped sarcoma-category diagnosis	4
+Sarcoma, NOS;Unknown	unmapped sarcoma-category diagnosis	4
+Papillary carcinoma, follicular variant;Neuroblastoma, NOS	not a sarcoma	4
+Carcinoma, NOS;Embryonal rhabdomyosarcoma, NOS	not a sarcoma	4
+Papillary carcinoma, NOS;Embryonal rhabdomyosarcoma, NOS	not a sarcoma	4
+Schwannoma;Schwannoma, NOS	not a sarcoma	3
+Neuroblastoma, NOS;CNS neuroblastoma, FOXR2-activated	not a sarcoma	3
+Rhabdomyoma, NOS	unmapped sarcoma-category diagnosis	3
+Meningioma	not a sarcoma	3
+Mesoblastic nephroma	unmapped sarcoma-category diagnosis	3
+Malignant peripheral nerve sheath tumor, NOS;Ganglioglioma, NOS	not a sarcoma	3
+Hepatocellular carcinoma, NOS;Nephroblastoma, NOS	not a sarcoma	3
+Glioma, malignant;Malignant peripheral nerve sheath tumor, NOS	not a sarcoma	3
+Meningioma, NOS;Other;Melanotic schwannoma;Meningioma	not a sarcoma	3
+Other CNS Embryonal tumors;Neoplasm, metastatic;Other;Neuroblastoma, NOS	not a sarcoma	3
+Ganglioglioma, NOS;Glioneuronal and neuronal tumors;High-Grade Glioma;Astrocytoma, NOS;Ganglioglioma	not a sarcoma	3
+Neurofibromatosis, NOS;Neoplasm, malignant;Glioma, malignant	not a sarcoma	3
+Neuroblastoma, NOS;Other CNS Embryonal tumors;Neoplasm, metastatic;Other	not a sarcoma	3
+Neoplasm, malignant;Hepatoblastoma, NOS	not a sarcoma	3
+Malignant lymphoma, NOS;Sarcoma, NOS	not a sarcoma	3
+Neoplasm, metastatic;Other;Sarcoma, NOS;CNS Sarcoma	unmapped sarcoma-category diagnosis	3
+Glioma, malignant;Neurofibromatosis, NOS	not a sarcoma	3
+Glioneuronal and neuronal tumors;Dysembryoplastic neuroepithelial tumor;Ganglioglioma, NOS;Ganglioglioma	not a sarcoma	3
+Ganglioglioma, NOS;Ganglioglioma;Other;Glioneuronal and neuronal tumors	not a sarcoma	3
+Neoplasm, malignant;Glioma, malignant;Neurofibromatosis, NOS	not a sarcoma	3
+Neoplasm, metastatic;CNS Sarcoma;Sarcoma, NOS;Other	unmapped sarcoma-category diagnosis	3
+Other;Neuroblastoma, NOS;Neoplasm, metastatic;Other CNS Embryonal tumors	not a sarcoma	3
+Meningioma, NOS;Meningioma;Other;Melanotic schwannoma	not a sarcoma	3
+Neurofibromatosis, NOS;Neoplasm, malignant	not a sarcoma	3
+Low-Grade Glioma;Ganglioglioma, NOS;Ganglioglioma;Glioneuronal and neuronal tumors;Astrocytoma, benign	not a sarcoma	3
+Parosteal osteosarcoma;Carcinoma, NOS	not a sarcoma	3
+Fibromyxosarcoma	unmapped sarcoma-category diagnosis	2
+Adenosarcoma	unmapped sarcoma-category diagnosis	2
+Soft tissue tumor, benign	unmapped sarcoma-category diagnosis	2
+Primary intracranial sarcoma, DICER1-mutant;Neoplasm, uncertain whether benign or malignant	unmapped sarcoma-category diagnosis	2
+Tenosynovial giant cell tumor, NOS	unmapped sarcoma-category diagnosis	2
+CNS embryonal tumor, NOS or NEC	unmapped sarcoma-category diagnosis	2
+Angiomyofibroblastoma	unmapped sarcoma-category diagnosis	2
+Astrocytoma, NOS;Periosteal osteosarcoma	not a sarcoma	2
+Neuroblastoma, NOS;Follicular adenocarcinoma, well differentiated	not a sarcoma	2
+Osteosarcoma, NOS;Malignant melanoma, NOS	not a sarcoma	2
+Leiomyoma, NOS	not a sarcoma	2
+Neoplasm, malignant;Neurofibromatosis, NOS;Glioma, malignant	not a sarcoma	2
+Neurofibroma, NOS;Neurofibromatosis, NOS;Neoplasm, uncertain whether benign or malignant	not a sarcoma	2
+Ganglioneuroblastoma;Neoplasm, malignant	not a sarcoma	2
+Neoplasm, benign;Neurofibromatosis, NOS	not a sarcoma	2
+Other;Ganglioglioma;Ganglioglioma, NOS;Dysembryoplastic neuroepithelial tumor;Glioneuronal and neuronal tumors	not a sarcoma	2
+Acute Lymphoblastic Leukemia, NOS;Malignant lymphoma, NOS;Sarcoma, NOS	not a sarcoma	2
+Neoplasm, malignant;Retinoblastoma, NOS	not a sarcoma	2
+Neurofibromatosis, NOS;Glioma, malignant	not a sarcoma	2
+Neurofibroma, NOS;Neurofibromatosis, NOS;Neoplasm, malignant	not a sarcoma	2
+Neurofibromatosis, NOS;Neoplasm, benign	not a sarcoma	2
+Medulloblastoma	not a sarcoma	2
+Ependymoma, NOS	not a sarcoma	2
+Subependymoma	not a sarcoma	2
+Medulloepithelioma, NOS	unmapped sarcoma-category diagnosis	2
+Ewing sarcoma;Papillary adenocarcinoma, NOS	not a sarcoma	2
+Rhabdomyosarcoma, NOS;Atypical Meningioma	not a sarcoma	2
+Papillary adenocarcinoma, NOS;Osteosarcoma, NOS	not a sarcoma	2
+Papillary carcinoma, follicular variant;Ewing sarcoma	not a sarcoma	2
+Papillary glioneuronal tumor	unmapped sarcoma-category diagnosis	2
+CNS embryonal tumor with rhabdoid features	unmapped sarcoma-category diagnosis	2
+Ganglioglioma, NOS;Low-grade glioma, NOS or NEC	not a sarcoma	1
+Ganglioneuroma;High-grade glioma, NOS or NEC	not a sarcoma	1
+Low-grade glioma, NOS or NEC;Mesenchymal chondrosarcoma	not a sarcoma	1
+Glioma, malignant;CNS Sarcoma, NOS or NEC	not a sarcoma	1
+Central neurocytoma;Subependymal giant cell astrocytoma	not a sarcoma	1
+Diffuse astrocytoma, MYB- or MYBL1-altered;Ganglioglioma, NOS	not a sarcoma	1
+CNS Sarcoma, NOS or NEC;Malignant tumor, spindle cell type	unmapped sarcoma-category diagnosis	1
+Ganglioneuroma;Schwannoma	not a sarcoma	1
+Schwannoma, NOS;Low-grade glioma, NOS or NEC	not a sarcoma	1
+Neurofibroma, NOS;Solitary fibrous tumor	not a sarcoma	1
+Myxoid glioneuronal tumor;Ganglioglioma, NOS	not a sarcoma	1
+Smooth muscle tumor of uncertain malignant potential	unmapped sarcoma-category diagnosis	1
+Ganglioglioma, NOS;Supratentorial ependymoma	not a sarcoma	1
+Other CNS tumor, NOS or NEC;Neuroepithelioma, NOS	unmapped sarcoma-category diagnosis	1
+Sarcoma, NOS;Primary intracranial sarcoma, DICER1-mutant	unmapped sarcoma-category diagnosis	1
+ATRT-TYR;Medulloblastoma, NOS	not a sarcoma	1
+Sarcoma, NOS;Intracranial mesenchymal tumor, FET-CREB fusion-positive	unmapped sarcoma-category diagnosis	1
+Plexiform fibrohistiocytic tumor	unmapped sarcoma-category diagnosis	1
+Hemangiomas and vascular malformations;Hemangioma, NOS	not a sarcoma	1
+Neuroepithelioma, NOS;High-grade glioma, NOS or NEC	not a sarcoma	1
+Polymorphous low-grade neuroepithelial tumor of the young;Neuroepithelioma, NOS	unmapped sarcoma-category diagnosis	1
+Supratentorial ependymoma, ZFTA fusion-positive;Neuroepithelioma, NOS	not a sarcoma	1
+Hemangiomas and vascular malformations;Hemangioblastoma	not a sarcoma	1
+Retinoblastoma, diffuse	not a sarcoma	1
+ATRT, NOS or NEC;Astrocytoma, NOS	not a sarcoma	1
+Neuroma, NOS;Schwannoma	not a sarcoma	1
+ATRT-SHH;Astrocytoma, NOS	not a sarcoma	1
+Ganglioglioma, NOS;Meningioma	not a sarcoma	1
+Ganglioglioma, NOS;Pleomorphic xanthoastrocytoma	not a sarcoma	1
+Stromal tumor, NOS	unmapped sarcoma-category diagnosis	1
+Ganglioglioma, NOS;Diffuse leptomeningeal glioneuronal tumor	not a sarcoma	1
+Embryonal tumor with multilayered rosettes, NOS;Medulloepithelioma, NOS	unmapped sarcoma-category diagnosis	1
+Neoplasm, malignant, uncertain whether primary or metastatic;Primary intracranial sarcoma, DICER1-mutant	unmapped sarcoma-category diagnosis	1
+Atypical Meningioma;Ganglioglioma	not a sarcoma	1
+Embryonal carcinoma, NOS;ATRT, NOS or NEC	not a sarcoma	1
+Ganglioglioma, NOS;Dysembryoplastic neuroepithelial tumor	not a sarcoma	1
+Myxoid glioneuronal tumor;Ganglioneuroma	not a sarcoma	1
+Pleomorphic xanthoastrocytoma;Ganglioglioma, NOS	not a sarcoma	1
+Ganglioglioma, NOS;Glioneuronal and neuronal tumors, NOS or NEC	not a sarcoma	1
+Pilocytic astrocytoma;Ganglioglioma, NOS	not a sarcoma	1
+Meningioma;Neuroepithelioma, NOS	not a sarcoma	1
+Glioma, malignant;Ewing sarcoma	not a sarcoma	1
+Diffuse low-grade glioma, MAPK pathway-altered;Ganglioglioma, NOS	not a sarcoma	1
+Sarcoma, NOS;CNS Sarcoma, NOS or NEC	unmapped sarcoma-category diagnosis	1
+Normal	unmapped sarcoma-category diagnosis	1
+Atypical Meningioma	not a sarcoma	1
+Meningioma;Schwannoma	not a sarcoma	1
+Other;CNS Sarcoma, NOS or NEC	unmapped sarcoma-category diagnosis	1
+Schwannoma;Meningioma	not a sarcoma	1
+Neurofibromatosis, NOS;Neurofibroma, NOS;Glioma, malignant	not a sarcoma	1
+Melanotic schwannoma;Schwannoma;Other	not a sarcoma	1
+Low-grade glioma, NOS or NEC;Neurofibromatosis, NOS;Glioma, malignant	not a sarcoma	1
+Sarcoma, NOS;Acute Lymphoblastic Leukemia, NOS;Leukemia, NOS;Anaplastic Large Cell Lymphoma;Neoplasm, malignant;Burkitt lymphoma, NOS	not a sarcoma	1
+Neoplasm, benign;Teratoma, NOS;Lymphangioma, NOS	not a sarcoma	1
+Gliomatosis cerebri;Neurofibromatosis, NOS;Carcinoma, NOS	not a sarcoma	1
+Ganglioneuroma;Neoplasm, benign	not a sarcoma	1
+Rhabdomyoma, NOS;Neoplasm, benign	unmapped sarcoma-category diagnosis	1
+Neoplasm, malignant;Nephroblastoma, NOS	not a sarcoma	1
+Hemangioma, NOS;Neurofibromatosis, NOS	not a sarcoma	1
+Neuroblastoma, NOS;Neoplasm, malignant;Neoplasm, uncertain whether benign or malignant	not a sarcoma	1
+Hemangioendothelioma, NOS;Neoplasm, uncertain whether benign or malignant	unmapped sarcoma-category diagnosis	1
+Neoplasm, malignant;Neurofibroma, NOS	not a sarcoma	1
+Acute Lymphoblastic Leukemia, NOS;Hepatoblastoma, NOS	not a sarcoma	1
+Lymphangioma, NOS;Neoplasm, benign	unmapped sarcoma-category diagnosis	1
+Neuroblastoma, NOS;Malignant lymphoma, NOS;Neoplasm, malignant	not a sarcoma	1
+Rhabdomyosarcoma, NOS;Neurofibroma, NOS;Neoplasm, malignant;Neurofibromatosis, NOS	not a sarcoma	1
+Neoplasm, benign;Rhabdomyoma, NOS	unmapped sarcoma-category diagnosis	1
+Pilocytic astrocytoma;Neurofibromatosis, NOS;Low-Grade Glioma;Glioma, malignant	not a sarcoma	1
+Neoplasm, benign;Neurofibromatosis, NOS;Granulosa cell tumor, malignant	not a sarcoma	1
+Neoplasm, malignant;Ganglioglioma, NOS;Glioma, malignant	not a sarcoma	1
+Neurofibroma, NOS;Neuroma, NOS;Neoplasm, benign	not a sarcoma	1
+Neoplasm, malignant;Rhabdomyosarcoma;Neurofibromatosis, NOS	not a sarcoma	1
+Sarcoma, NOS;Neoplasm, malignant	unmapped sarcoma-category diagnosis	1
+Neoplasm, malignant;Neurofibromatosis, NOS;Astrocytoma, NOS	not a sarcoma	1
+Neoplasm, malignant;Neurofibromatosis, NOS;Neoplasm, uncertain whether benign or malignant	not a sarcoma	1
+Plexiform neurofibroma;Neurofibroma, NOS	not a sarcoma	1
+Hodgkin lymphoma, NOS;Embryonal sarcoma;Neoplasm, malignant	not a sarcoma	1
+Acute erythroid leukemia;Rhabdomyosarcoma, NOS;Myeloid leukemia, NOS;Alveolar rhabdomyosarcoma;Neoplasm, malignant;Acute myeloid leukemia, NOS	not a sarcoma	1
+Neurofibromatosis, NOS;Wilms	not a sarcoma	1
+Myofibroma;Hemangioma, NOS	not a sarcoma	1
+Neuroblastoma, NOS;Neoplasm, malignant;Ganglioneuroblastoma	not a sarcoma	1
+Neoplasm, malignant;Low-Grade Glioma;Neurofibromatosis, NOS;Glioma, malignant	not a sarcoma	1
+Other, NOS or NEC;Cavernous hemangioma;Other	not a sarcoma	1
+Neoplasm, malignant;Neurofibromatosis, NOS;Glioma, malignant;Low-grade glioma, NOS or NEC	not a sarcoma	1
+Neurofibromatosis, NOS;Plexiform neurofibroma;Neurofibroma;Neurofibroma, NOS	not a sarcoma	1
+Neoplasm, malignant;Sarcoma, NOS	unmapped sarcoma-category diagnosis	1
+Neoplasm, benign;Neurofibroma, NOS	not a sarcoma	1
+Burkitt lymphoma, NOS;Sarcoma, NOS;Malignant lymphoma, NOS	not a sarcoma	1
+Neoplasm, malignant;Malignant melanoma, NOS;Rhabdomyosarcoma, NOS	not a sarcoma	1
+Neoplasm, malignant;Pleuropulmonary blastoma	not a sarcoma	1
+Neoplasm, malignant;Neuroblastoma, NOS;Sarcoma, NOS	not a sarcoma	1
+Neurofibromatosis, NOS;Neoplasm, uncertain whether benign or malignant	not a sarcoma	1
+Glioma, malignant;Neurofibromatosis, NOS;Neoplasm, malignant	not a sarcoma	1
+Glioma, malignant;Neoplasm, malignant;Gliomatosis cerebri;Neurofibromatosis, NOS;Malignant lymphoma, NOS	not a sarcoma	1
+Neoplasm, uncertain whether benign or malignant;Neurofibroma, NOS	not a sarcoma	1
+Neoplasm, malignant;Ganglioneuroblastoma	not a sarcoma	1
+Astrocytoma, NOS;Neurofibromatosis, NOS;Fibrillary astrocytoma;Low-Grade Glioma	not a sarcoma	1
+Fibroma, NOS;Neoplasm, benign	unmapped sarcoma-category diagnosis	1
+Neurofibromatosis, NOS;Low-grade glioma, NOS or NEC	not a sarcoma	1
+Neuroma, NOS	unmapped sarcoma-category diagnosis	1
+Neoplasm, malignant;Low-Grade Glioma;Neurofibromatosis, NOS;Pilocytic astrocytoma	not a sarcoma	1
+Retinoblastoma, NOS;Neoplasm, malignant	not a sarcoma	1
+Glioma, malignant;Low-grade glioma, NOS or NEC;Neurofibromatosis, NOS	not a sarcoma	1
+Low-grade glioma, NOS or NEC;Neoplasm, malignant;Neurofibromatosis, NOS	not a sarcoma	1
+Myofibroma;Leiomyoma, NOS	not a sarcoma	1
+Plexiform neurofibroma;Neoplasm, benign;Neurofibromatosis, NOS;Neurofibroma, NOS	not a sarcoma	1
+Neoplasm, malignant;Hepatoblastoma, NOS;Astrocytoma, NOS	not a sarcoma	1
+Sarcoma, NOS;Mycosis fungoides;Malignant lymphoma, NOS;Acute Lymphoblastic Leukemia, NOS	not a sarcoma	1
+Chondroblastic osteosarcoma;Neuroblastoma, NOS	not a sarcoma	1
+Neoplasm, malignant;Low-grade glioma, NOS or NEC;Glioma, malignant;Neurofibromatosis, NOS	not a sarcoma	1
+Neoplasm, malignant;Neurofibromatosis, NOS;Low-grade glioma, NOS or NEC	not a sarcoma	1
+Neoplasm, malignant;Rhabdomyosarcoma, NOS;Acute Lymphoblastic Leukemia, NOS	not a sarcoma	1
+Neurofibromatosis, NOS;Low-Grade Glioma;Neoplasm, malignant;Glioma, malignant	not a sarcoma	1
+Neoplasm, malignant;Low-grade glioma, NOS or NEC;Glioma, malignant;Neurofibromatosis, NOS;Neurofibroma, NOS	not a sarcoma	1
+Hepatoblastoma, NOS;Neoplasm, malignant	not a sarcoma	1
+Neurofibromatosis, NOS;Glioma, malignant;Neoplasm, malignant	not a sarcoma	1
+Plexiform neurofibroma;Hemangioma, NOS;Neurofibromatosis, NOS	not a sarcoma	1
+Neurofibromatosis, NOS;Neurofibroma, NOS;Neoplasm, benign;Plexiform neurofibroma	not a sarcoma	1
+Schwannoma, NOS;Neuroma, NOS;Neoplasm, benign	not a sarcoma	1
+Glioma, malignant;Low-Grade Glioma;Neurofibromatosis, NOS	not a sarcoma	1
+Neurofibromatosis, NOS;Plexiform neurofibroma;Neurofibroma, NOS	not a sarcoma	1
+Other;Ganglioneuroblastoma	not a sarcoma	1
+Neoplasm, malignant;Acute Lymphoblastic Leukemia, NOS;Acute leukemia, NOS;Nephroblastoma, NOS;Wilms	not a sarcoma	1
+Neurofibromatosis, NOS;Fibroma, NOS	not a sarcoma	1
+Carcinoma, NOS;Neoplasm, uncertain whether benign or malignant;Neuroblastoma, NOS	not a sarcoma	1
+Neoplasm, uncertain whether benign or malignant;Giant cell tumor of soft parts, NOS	unmapped sarcoma-category diagnosis	1
+Plexiform neurofibroma;Neurofibromatosis, NOS;Neoplasm, benign	not a sarcoma	1
+Neurofibromatosis, NOS;Plexiform neurofibroma;Chondroblastic osteosarcoma	not a sarcoma	1
+Neoplasm, benign;Plexiform neurofibroma;Neurofibromatosis, NOS	not a sarcoma	1
+Acute Lymphoblastic Leukemia, NOS;Neuroblastoma, NOS;Neoplasm, malignant	not a sarcoma	1
+Neurofibromatosis, NOS;Neoplasm, benign;Plexiform neurofibroma	not a sarcoma	1
+Embryonal rhabdomyosarcoma, NOS;Acute Lymphoblastic Leukemia, NOS;Rhabdomyosarcoma, NOS;Neoplasm, malignant	not a sarcoma	1
+Pilocytic astrocytoma;Glioma, malignant;Neurofibromatosis, NOS	not a sarcoma	1
+Carcinoma, NOS;Neuroblastoma, NOS;Neoplasm, malignant	not a sarcoma	1
+Neoplasm, malignant;Neurofibroma, NOS;Glioma, malignant;Neurofibromatosis, NOS	not a sarcoma	1

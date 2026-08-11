@@ -1,0 +1,87 @@
+diagnosis_category	sample_tumor_status	samples
+(none)	Normal	30710
+(none)	Tumor	22434
+Not Reported	Tumor	11915
+Not Reported	Normal	2374
+Neuroepitheliomatous neoplasms	Tumor	897
+Lymphoid leukemias	Tumor	566
+(none)	Not Reported	374
+High-Grade Glioma	Tumor	185
+Gliomas	Tumor	163
+Myomatous neoplasms	Tumor	119
+Osseous and chondromatous neoplasms	Tumor	117
+Lymphoid leukemias	Normal	91
+Medulloblastoma	Tumor	86
+Complex mixed and stromal neoplasms	Tumor	85
+CNS Sarcoma;Mesenchymal, non-meningothelial tumors;Miscellaneous bone tumors;Miscellaneous tumors;Uncertain differentiation	Tumor	69
+Ependymoma	Tumor	63
+Neuroepitheliomatous neoplasms	Normal	43
+Gliomas, glioneuronal tumors, and neuronal tumors;Glioneuronal and neuronal tumors	Tumor	42
+Other leukemias	Tumor	35
+Soft tissue tumors and sarcomas, NOS	Tumor	27
+Craniopharyngioma	Tumor	26
+Embryonal tumors;Gliomas;Medulloblastoma	Tumor	26
+Myeloid leukemias	Tumor	25
+Myeloid leukemias	Normal	24
+Meningiomas;Other	Tumor	20
+Low-Grade Glioma	Tumor	20
+Atypical teratoid/rhabdoid tumor;Embryonal tumors;Neuroepitheliomatous neoplasms;Other CNS Embryonal tumors	Tumor	19
+Choroid Plexus tumors;Gliomas	Tumor	18
+Choroid Plexus tumors	Tumor	15
+CNS Sarcoma	Tumor	13
+Complex mixed and stromal neoplasms	Normal	13
+Craniopharyngioma;Tumors of the sellar region	Tumor	12
+Other CNS Embryonal tumors	Tumor	10
+Atypical teratoid/rhabdoid tumor	Tumor	9
+Ependymal tumors;Ependymoma;Gliomas, glioneuronal tumors, and neuronal tumors	Tumor	9
+CNS Sarcoma;Mesenchymal, non-meningothelial tumors;Uncertain differentiation	Tumor	9
+Nevi and melanomas	Tumor	8
+Other	Tumor	8
+Epithelial neoplasms, NOS	Tumor	8
+Hodgkin and non-Hodgkin lymphomas	Tumor	8
+Nerve sheath tumors	Tumor	7
+Embryonal tumors;Gliomas;Medulloblastoma	Normal	7
+Gliomas, glioneuronal tumors, and neuronal tumors;High-Grade Glioma;Pediatric-type diffuse high-grade gliomas	Tumor	6
+CNS Sarcoma;Mesenchymal, non-meningothelial tumors;Skeletal muscle tumors	Tumor	6
+Hodgkin and non-Hodgkin lymphomas	Normal	6
+Gliomas	Normal	6
+Granular cell tumors and alveolar soft part sarcomas	Tumor	5
+Myomatous neoplasms	Normal	5
+Miscellaneous tumors;Other CNS Embryonal tumors;Pineal tumors	Tumor	4
+Miscellaneous tumors	Tumor	4
+Unknown	Normal	4
+Synovial-like neoplasms	Tumor	4
+Circumscribed astrocytic gliomas;Gliomas, glioneuronal tumors, and neuronal tumors;High-Grade Glioma;Low-Grade Glioma	Tumor	3
+Embryonal tumors;Medulloblastoma	Tumor	3
+Embryonal tumors;Gliomas;Medulloblastoma	Not Reported	3
+Germ cell neoplasms;Germ cell tumors	Tumor	3
+Germ cell neoplasms	Tumor	3
+Atypical teratoid/rhabdoid tumor;Embryonal tumors;Neuroepitheliomatous neoplasms;Other CNS Embryonal tumors	Normal	3
+Adenomas and adenocarcinomas	Tumor	3
+Adenomas and adenocarcinomas	Normal	3
+CNS Sarcoma;Mesenchymal, non-meningothelial tumors;Miscellaneous bone tumors;Miscellaneous tumors;Uncertain differentiation	Normal	3
+Glioneuronal and neuronal tumors	Tumor	2
+Leukemias, NOS	Tumor	2
+Leukemias, NOS	Normal	2
+Circumscribed astrocytic gliomas;Gliomas;Gliomas, glioneuronal tumors, and neuronal tumors;Low-Grade Glioma	Tumor	2
+Myelodysplastic syndromes	Tumor	2
+Myelodysplastic syndromes	Normal	2
+Germ cell neoplasms	Normal	2
+Osseous and chondromatous neoplasms	Normal	2
+Soft tissue tumors and sarcomas, NOS	Normal	2
+Meningiomas;Other;Cranial and paraspinal nerve tumors	Tumor	1
+Not Reported;CNS Sarcoma	Tumor	1
+Cranial and paraspinal nerve tumors;Meningiomas;Other	Tumor	1
+Blood vessel tumors	Tumor	1
+Chondro-osseous tumors;CNS Sarcoma;Mesenchymal, non-meningothelial tumors;Osseous and chondromatous neoplasms	Tumor	1
+Ductal and lobular neoplasms	Tumor	1
+Fibromatous neoplasms	Tumor	1
+Neoplasms, NOS	Tumor	1
+Mature T- and NK-cell lymphomas	Tumor	1
+Squamous cell neoplasms	Tumor	1
+Circumscribed astrocytic gliomas;Gliomas;Gliomas, glioneuronal tumors, and neuronal tumors;Low-Grade Glioma	Normal	1
+Ependymal tumors;Ependymoma;Gliomas;Gliomas, glioneuronal tumors, and neuronal tumors	Tumor	1
+Specialized gonadal neoplasms	Tumor	1
+Specialized gonadal neoplasms	Normal	1
+Meningiomas	Tumor	1
+Meningiomas	Normal	1

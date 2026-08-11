@@ -19,6 +19,14 @@ Large tables are gzipped; the pipeline reads either form transparently (`pipelin
 | `T16_stjude_cstn_inventory.tsv` | 11 KB | 50 rows | St Jude Childhood Solid Tumor Network resource inventory: accessions, repository, access model, assay, sample counts, diseases, PMIDs. |
 | `T17_stjude_opdx_models.tsv` | 95 KB | 389 rows | 389 St Jude O-PDX and cell models with diagnosis, sample type, assays available and source publication. |
 | `T1_taxonomy.tsv` | 63 KB | 142 rows | Sarcoma taxonomy. One row per subtype: WHO 2020 category, defining lesion, key epigenetic mechanism, markers, paediatric relevance, reference PMID. |
+| `T20_ccdi_studies.tsv` | 4 KB | 42 rows | Every study in the NCI Childhood Cancer Data Initiative, with participant, sample and file counts. |
+| `T21_ccdi_samples.tsv.gz` | 0.2 MB | 23,143 rows | The sarcoma-cohort samples. All 70,820 CCDI samples are fetched and the participant join runs over all of them — that is how the cohort is defined — but only sarcoma rows are kept. `sarcoma_call_basis` records which route made each call. All-disease totals survive in `T26`. |
+| `T22_ccdi_files.tsv.gz` | 0.5 MB | 9,187 rows | The EPIGENOMIC files belonging to a sarcoma-cohort participant. All 319,084 are fetched and examined; the 97% that are WGS, WXS, RNA-seq, panels and their indexes are dropped — they say nothing about chromatin and cost 23 MB. |
+| `T22b_ccdi_file_census.tsv` | 6 KB | 158 rows | `library_strategy` × `file_type` × `data_category` across ALL 319,084 files. This is what keeps "not one regulatory epigenomic file among 319,084" checkable without shipping the rows. |
+| `T23_ccdi_participants.tsv.gz` | 0.2 MB | 16,729 rows | The sarcoma-cohort participants, with diagnosis, ICD-O category, anatomic site and survival status. The authoritative diagnosis source — sample rows are blank 76% of the time. |
+| `T26_ccdi_disease_census.tsv` | 6 KB | 86 rows | Samples by ICD-O category and tumour status across ALL of CCDI, so the all-disease denominators — and the finding that CCDI's 91 ATAC-seq and 108 bisulfite-seq participants are entirely leukaemia — stay checkable after the sarcoma trim. |
+| `T24_ccdi_entity_counts.tsv` | 2 KB | 36 rows | CCDI mapped onto atlas entities: participants, samples, tumour/normal split, and the methylation-array subset. All CONTROLLED access. |
+| `T25_ccdi_unmapped.tsv` | 22 KB | 324 rows | CCDI diagnoses the mapping could not place, with the reason — mostly correctly-excluded non-sarcomas (neuroblastoma, Wilms) plus MCI's `see diagnosis_comment` placeholder. The residual is visible, not silently dropped. |
 | `T2_models.tsv` | 160 KB | 550 rows | Cell line and PDX catalogue. 550 models with aliases, type, disease, subtype or fusion, key alterations, RRID/Cellosaurus, source repository, origin PMID and a problematic_flag for the 95 with identity problems. |
 | `T3_entity_counts.tsv` | 5 KB | 72 rows | Per-entity roll-up: epigenomic samples by assay family, distinct models, distinct PDX, patient epigenomes, and H3K27ac / accessibility / 3D / methylation counts split by model versus patient. |
 | `T9b_rms_subtype_log.tsv` | 203 KB | 1,705 rows | Every RMS subtype reassignment with the rule that fired: mutant MYOD1 named, PAX fusion named, curated model identity, explicit fusion-negative wording, driver genotype annotated, or systematically-genotyped series. |
@@ -54,6 +62,19 @@ The curated evidence behind every rate in T13 — extracted rates with their sou
 | `subtype_evidence` | for GSE140686: whether the subtype came from a stated fusion, the methylation class, or histology alone |
 | `rms_call_basis` | for RMS: which rule assigned the subtype |
 | `disease_source` | how the entity was determined |
+
+## A CCDI counting trap worth knowing
+
+76% of CCDI **sample** rows carry no `diagnosis_category` of their own. The diagnosis lives
+on the **participant**, and the Explore Dashboard's sample counts come from a server-side
+join. Flagging sarcoma from the sample row alone undercounts roughly 17-fold — 1,350
+against a true 23,143. `T21` therefore carries `sarcoma_call_basis` showing which route
+made each call.
+
+A second trap: CCDI returns file-level ids wrapped in brackets (`[1794211]`) while
+sample-level ids are bare (`003-1`), and several studies use different id spaces in the two
+tables entirely. Joins between `T21` and `T22` are unreliable at sample level and are done
+participant-to-file instead.
 
 ## Counting conventions
 
