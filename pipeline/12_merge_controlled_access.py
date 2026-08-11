@@ -67,22 +67,51 @@ def main():
             "access": "CONTROLLED", "governing_body": d["dac_name"] or d["dac"],
             "title": d["title"], "url": d["url"], "released": d["released"]})
 
-    # St Jude CSTN -- the epigenomic rows of the inventory the agent assembled
+    # St Jude CSTN. Three exclusions matter here, and each was a real double-count:
+    #   * EGA rows -- the CSTN epigenome IS the EGA deposit, already counted above.
+    #     St Jude is recorded as its CONTRIBUTOR, not as a separate source.
+    #   * GEO rows -- open, and already counted in the GEO atlas (T4). Putting them in a
+    #     controlled-access table both mis-tiers them and counts them twice.
+    #   * rows with no accession -- COMET's "4,700 samples" has no public accession
+    #     anywhere. It is undeposited, which is a different state from controlled, and
+    #     counting it would assert an accessible resource that does not exist.
+    undeposited = []
     if os.path.exists(f"{O}/T16_stjude_cstn_inventory.tsv"):
+        SJ_EGA = set()
         for d in csv.DictReader(topen("T16_stjude_cstn_inventory.tsv"), delimiter="\t"):
             blob = " ".join(str(v) for v in d.values())
             if not (REG.search(blob) or DNAME.search(blob)): continue
-            if d.get("repository","").upper().startswith("EGA"): continue   # already above
+            repo = (d.get("repository") or "").upper()
+            acc = (d.get("accession") or "").strip()
             n = re.search(r"\d+", str(d.get("n_samples") or ""))
+            n = int(n.group()) if n else 0
+            if repo.startswith("EGA"):
+                SJ_EGA.add(acc); continue
+            if repo.startswith("GEO"):
+                continue
+            if not re.match(r"^(phs|EGA|GSE|SRP|PRJ)", acc):
+                if n: undeposited.append({"resource": d.get("resource", ""),
+                                          "n_samples": n, "note": acc or "no accession"})
+                continue
             rows.append({
-                "source": "St Jude CSTN", "accession": d.get("accession",""),
+                "source": "St Jude CSTN", "accession": acc,
                 "entity": entity(str(d.get("diseases","")) + " " + str(d.get("resource",""))),
                 "assay_family": "regulatory" if REG.search(str(d.get("assay",""))) else "DNA methylation",
-                "n_samples": int(n.group()) if n else 0,
-                "access": ("OPEN" if d.get("repository","").upper().startswith("GEO")
-                           else "CONTROLLED"),
+                "n_samples": n, "access": "CONTROLLED",
                 "governing_body": d.get("access",""), "title": d.get("resource",""),
                 "url": "", "released": ""})
+        # attribute the EGA deposits to their contributor rather than counting them twice
+        for r in rows:
+            if r["source"] == "EGA" and r["accession"] in SJ_EGA:
+                r["contributor"] = "St Jude CSTN"
+        if undeposited:
+            print(f"  St Jude: {len(undeposited)} resource(s) exist but are NOT deposited "
+                  f"anywhere ({sum(u['n_samples'] for u in undeposited):,} samples) -- "
+                  f"excluded from every count, see T27")
+            with twrite("T27_undeposited.tsv", gz=False) as f:
+                w = csv.DictWriter(f, fieldnames=["resource", "n_samples", "note"],
+                                   delimiter="\t", lineterminator="\n")
+                w.writeheader(); [w.writerow(u) for u in undeposited]
 
     # ---- CCDI (NCI Childhood Cancer Data Initiative), dbGaP-controlled
     ccdi = os.path.join(DATA, "T24_ccdi_entity_counts.tsv")
@@ -106,8 +135,9 @@ def main():
               "(no ChIP-seq/ATAC/bisulfite in the sarcoma cohort at all)")
 
     rows.sort(key=lambda r: (r["entity"], r["assay_family"] != "regulatory", -r["n_samples"]))
+    for r in rows: r.setdefault("contributor", "")
     cols = ["source","accession","entity","assay_family","n_samples","access",
-            "governing_body","title","released","url"]
+            "contributor","governing_body","title","released","url"]
     with twrite("T15_controlled_access.tsv") as f:
         w = csv.DictWriter(f, fieldnames=cols, delimiter="\t", extrasaction="ignore")
         w.writeheader(); [w.writerow(r) for r in rows]

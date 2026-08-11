@@ -1,0 +1,5 @@
+resource	n_samples	note
+St. Jude Cloud CSTN dataset	143	SJC-DS-1008 (CSTN)
+CSTN epigenetic browsers (visualisation only)	6	https://cstn.stjude.cloud (R Shiny at cstn-r-prod.stjude.cloud)
+CSTN COMET methylation (Blue Sky project)	4700	no public accession found
+CSTN ChIP-seq SOPs (15 protocols)	15	cstn.stjude.cloud/resources
