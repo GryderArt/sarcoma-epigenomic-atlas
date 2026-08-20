@@ -90,8 +90,22 @@ def main():
             if repo.startswith("GEO"):
                 continue
             if not re.match(r"^(phs|EGA|GSE|SRP|PRJ)", acc):
-                if n: undeposited.append({"resource": d.get("resource", ""),
-                                          "n_samples": n, "note": acc or "no accession"})
+                # No archive accession. That is not the same as unobtainable -- CSTN
+                # publishes a request route for all of it. Record the route, and record
+                # separately whether an accession exists, because a resource you can only
+                # get by emailing a coordinator is still worse than one with an accession.
+                res = d.get("resource", "")
+                if "SOP" in res or "protocol" in res.lower():
+                    continue          # protocols are documents, not samples
+                if n:
+                    undeposited.append({
+                        "resource": res, "n_samples": n,
+                        "access_route": ("St Jude Cloud data access agreement"
+                                         if "Cloud" in str(d.get("repository", ""))
+                                         else "CSTN request (ncichildhoodcancerdatainitiative"
+                                              "@mail.nih.gov / CSTN@stjude.org)"),
+                        "has_accession": "no",
+                        "note": acc or "no accession published"})
                 continue
             rows.append({
                 "source": "St Jude CSTN", "accession": acc,
@@ -104,12 +118,31 @@ def main():
         for r in rows:
             if r["source"] == "EGA" and r["accession"] in SJ_EGA:
                 r["contributor"] = "St Jude CSTN"
+        # Replace the placeholder browser row with the real enumeration from T28.
+        t28 = os.path.join(DATA, "T28_stjude_viz_tracks.tsv")
+        if os.path.exists(t28):
+            tk = list(csv.DictReader(open(t28, newline=""), delimiter="\t"))
+            nsamp = len({r["sample_label"] for r in tk})
+            nreg = sum(1 for r in tk if r["assay_family"] == "regulatory"
+                       and r["is_control"] != "Y")
+            undeposited = [u for u in undeposited
+                           if "browser" not in u["resource"].lower()]
+            undeposited.append({
+                "resource": f"CSTN epigenetic browsers, enumerated ({nreg} regulatory "
+                            f"tracks on {nsamp} samples)",
+                "n_samples": nsamp,
+                "access_route": "CSTN request / EGA data access agreement",
+                "has_accession": "the same material is deposited in EGA",
+                "note": "viz.stjude.cloud ProteinPaint embeds; see T28 for the "
+                        "sample x assay manifest. Not added to any total."})
+
         if undeposited:
-            print(f"  St Jude: {len(undeposited)} resource(s) exist but are NOT deposited "
-                  f"anywhere ({sum(u['n_samples'] for u in undeposited):,} samples) -- "
-                  f"excluded from every count, see T27")
-            with twrite("T27_undeposited.tsv", gz=False) as f:
-                w = csv.DictWriter(f, fieldnames=["resource", "n_samples", "note"],
+            print(f"  St Jude: {len(undeposited)} resource(s) with a request route but no "
+                  f"archive accession ({sum(u['n_samples'] for u in undeposited):,} "
+                  f"samples) -- see T27_access_routes")
+            with twrite("T27_access_routes.tsv", gz=False) as f:
+                w = csv.DictWriter(f, fieldnames=["resource", "n_samples", "access_route",
+                                                  "has_accession", "note"],
                                    delimiter="\t", lineterminator="\n")
                 w.writeheader(); [w.writerow(u) for u in undeposited]
 

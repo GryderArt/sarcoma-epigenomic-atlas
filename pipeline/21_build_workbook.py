@@ -29,6 +29,8 @@ SHEETS = [
     ("T14_EGA_sarcoma",   "T14_ega_sarcoma_datasets.tsv"),
     ("T15_Controlled_epigenomics", "T15_controlled_access.tsv"),
     ("T16_StJude_CSTN",   "T16_stjude_cstn_inventory.tsv"),
+    ("T27_Access_routes", "T27_access_routes.tsv"),
+    ("T28_StJude_viz_tracks", "T28_stjude_viz_tracks.tsv"),
     ("T20_CCDI_studies",  "T20_ccdi_studies.tsv"),
     ("T24_CCDI_entity_counts", "T24_ccdi_entity_counts.tsv"),
     ("T25_CCDI_unmapped", "T25_ccdi_unmapped.tsv"),

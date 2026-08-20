@@ -30,7 +30,7 @@ plt.rcParams.update({
     "figure.dpi": 200, "savefig.bbox": "tight", "savefig.pad_inches": 0.04,
 })
 
-OPEN, WALL, NONE = "#2a78d6", "#eda100", "#d03b3b"
+OPEN, WALL, NONE = "#2a78d6", "#eda100", "#d03b3b"   # NONE now = "none exists"
 DARK, MUTED, GRID = "#2b3440", "#898781", "#e1e0d9"
 K = FuncFormatter(lambda v, p: f"{int(v):,}")
 
@@ -67,10 +67,23 @@ def main():
     ccdi_dna = ctl("CCDI", "DNA methylation")
     sj = sum(int(r["n_samples"] or 0) for r in t15 if r.get("contributor") == "St Jude CSTN")
 
-    undep = 0
+    # Resources with a formal request route but no archive accession. These are behind
+    # the same paperwork wall as EGA and dbGaP, not unobtainable -- so they are counted
+    # with the wall, and flagged in the footnote as the weakest case within it.
+    noacc = 0
     try:
-        undep = sum(int(r["n_samples"] or 0) for r in
-                    csv.DictReader(topen("T27_undeposited.tsv"), delimiter="\t"))
+        noacc = sum(int(r["n_samples"] or 0) for r in
+                    csv.DictReader(topen("T27_access_routes.tsv"), delimiter="\t")
+                    if r.get("has_accession", "").startswith("no"))
+    except Exception:
+        pass
+    # sample x assay manifest recovered from the CSTN ProteinPaint browsers
+    viz_reg = viz_samples = 0
+    try:
+        tk = list(csv.DictReader(topen("T28_stjude_viz_tracks.tsv"), delimiter="\t"))
+        viz_reg = sum(1 for r in tk if r["assay_family"] == "regulatory"
+                      and r["is_control"] != "Y")
+        viz_samples = len({r["sample_label"] for r in tk})
     except Exception:
         pass
 
@@ -82,7 +95,7 @@ def main():
         ("EBI EGA",                        "wall", ega_reg, ega_dna, "b"),
         ("NCI CCDI\n(dbGaP)",              "wall", 0, ccdi_dna, "c"),
         ("NCI GDC\n(TARGET / TCGA)",       "wall", 0, 0, "d"),
-        ("St Jude CSTN\n(never deposited)", "none", 0, undep, "e"),
+        ("St Jude CSTN\n(no accession)",   "wall", 0, noacc, "e"),
     ]
     COL = {"open": OPEN, "wall": WALL, "none": NONE}
 
@@ -121,12 +134,13 @@ def main():
     tot_reg_open = geo_reg + EBI_REG
     tot_reg_wall = ega_reg
     tot_dna_open = geo_dna + EBI_DNA
-    tot_dna_wall = ega_dna + ccdi_dna
+    tot_dna_wall = ega_dna + ccdi_dna + noacc
 
     fig.legend(handles=[
         Patch(facecolor=OPEN, label="Freely available — download and reanalyse today"),
-        Patch(facecolor=WALL, label="Behind a paperwork wall — data-access agreement per study"),
-        Patch(facecolor=NONE, label="Exists but deposited nowhere — no paperwork will get it")],
+        Patch(facecolor=WALL, label="Behind a formal request wall — a data-access "
+                                    "agreement per study, signed by the PI and an institution"),
+        Patch(facecolor=NONE, label="None exists")],
         fontsize=6.9, frameon=False, loc="upper left", bbox_to_anchor=(0.005, -0.005),
         ncol=1, handlelength=1.1, handleheight=0.8)
 
@@ -135,8 +149,8 @@ def main():
     fig.text(0.0, 1.075,
              f"{100*tot_reg_open/(tot_reg_open+tot_reg_wall):.0f}% of the "
              f"{tot_reg_open+tot_reg_wall:,} regulatory samples can be downloaded today, "
-             f"against only {100*tot_dna_open/(tot_dna_open+tot_dna_wall+undep):.0f}% of "
-             f"the {tot_dna_open+tot_dna_wall+undep:,} methylation samples.",
+             f"against only {100*tot_dna_open/(tot_dna_open+tot_dna_wall):.0f}% of "
+             f"the {tot_dna_open+tot_dna_wall:,} methylation samples.",
              fontsize=7.6, color=DARK, ha="left")
 
     fig.text(0.0, -0.20,
@@ -151,8 +165,15 @@ def main():
         "(d) The GDC has no ChIP-seq in its vocabulary either, and its 410 ATAC-seq files "
         "belong to 23 TCGA cohorts, none of them SARC. Methylation-array files exist for "
         "TARGET and TCGA sarcoma projects but are\n      not sample-resolved here, so they "
-        "are not counted.  (e) St Jude's COMET methylation project and the portal's "
-        "epigenetic browsers, which have no accession in any archive.",
+        "are not counted.\n"
+        f"(e) St Jude's COMET methylation project and the St Jude Cloud CSTN dataset. A "
+        f"request route exists for both, so they sit behind the same wall as EGA and "
+        f"dbGaP — but neither has an archive\n      accession, which makes them the "
+        f"weakest case within it.\n"
+        f"Also recovered this round: the CSTN ProteinPaint browsers resolve to "
+        f"{viz_reg} regulatory tracks on {viz_samples} models (T28). That material is "
+        f"already counted once inside the EGA bar, so it is not added again — what it "
+        f"adds is\n      assay-level resolution EGA does not publish.",
         fontsize=5.9, color=MUTED, ha="left", va="top", linespacing=1.55)
 
     os.makedirs(FIGURES, exist_ok=True)
@@ -161,9 +182,11 @@ def main():
     print("wrote", p)
     print(f"\n  regulatory : {tot_reg_open:,} open / {tot_reg_wall:,} behind a wall "
           f"({100*tot_reg_open/(tot_reg_open+tot_reg_wall):.1f}% free)")
-    print(f"  methylation: {tot_dna_open:,} open / {tot_dna_wall:,} behind a wall / "
-          f"{undep:,} undeposited "
-          f"({100*tot_dna_open/(tot_dna_open+tot_dna_wall+undep):.1f}% free)")
+    print(f"  methylation: {tot_dna_open:,} open / {tot_dna_wall:,} behind a formal "
+          f"request ({100*tot_dna_open/(tot_dna_open+tot_dna_wall):.1f}% free), of which "
+          f"{noacc:,} have no archive accession")
+    print(f"  CSTN browsers recovered: {viz_reg} regulatory tracks on {viz_samples} "
+          f"models (not added -- already inside the EGA bar)")
 
 
 if __name__ == "__main__":
