@@ -1,4 +1,4 @@
 resource	n_samples	access_route	has_accession	note
 St. Jude Cloud CSTN dataset	143	St Jude Cloud data access agreement	no	SJC-DS-1008 (CSTN)
 CSTN COMET methylation (Blue Sky project)	4700	St Jude Cloud data access agreement	no	no public accession found
-CSTN epigenetic browsers, enumerated (289 regulatory tracks on 28 samples)	28	CSTN request / EGA data access agreement	the same material is deposited in EGA	viz.stjude.cloud ProteinPaint embeds; see T28 for the sample x assay manifest. Not added to any total.
+CSTN epigenetic browsers, enumerated (278 regulatory tracks on 27 models)	27	CSTN request / EGA data access agreement	the same material is deposited in EGA	viz.stjude.cloud ProteinPaint embeds; see T28 for the sample x assay manifest, with entity calls supplied by the St Jude data administrator. Not added to any total. A further 1 model still shown on the browser page has been withdrawn from CSTN and is excluded here.

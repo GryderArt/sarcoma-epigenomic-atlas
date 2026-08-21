@@ -23,7 +23,8 @@ not found yet.
 EpiRR; `10_harvest_ega.py` enumerates the whole EGA dataset catalogue, because EGA's
 apparent `query=` parameter is silently ignored and the catalogue must be pulled whole and
 filtered locally. The St Jude CSTN inventory came from the portal's undocumented JSON
-gateway plus the source publications.
+gateway plus the source publications, and `15_harvest_stjude_viz.py` resolves its two
+epigenetic browsers to sample x assay grain (§3b).
 
 Harvest is at **sample level**, not series level. A series is a bag of heterogeneous
 samples; only `!Sample_characteristics`, `!Sample_title`, `!Sample_source_name` and
@@ -81,6 +82,62 @@ Subtype evidence is graded, because the sources differ in strength: a stated fus
 a methylation class, which beats histology alone. The grade is carried in
 `subtype_evidence` for every recovered sample. Benign mimics and non-sarcoma controls are
 retained and labelled rather than deleted — they are part of what the deposit contains.
+
+## 3b. The St Jude CSTN browsers, and who says what a sample is
+
+The two CSTN "epigenetic landscape" pages on `viz.stjude.cloud` are ProteinPaint embeds
+that ship their whole track manifest inline, so the browser contents can be enumerated
+exactly — 398 tracks on 28 models — at a resolution EGA's own description ("ChIP-Seq files
+for RMS, 242 samples") does not reach. `15_harvest_stjude_viz.py` does that.
+
+**The entity calls are curated, not inferred.** The first version of that stage read the
+subtype off the label suffix — `(ERMS)`, `(ARMS)`, `(SCLEROS)`. The St Jude data
+administrator then supplied the definitive per-sample list, which is transcribed verbatim
+in the `ADMIN_EMAIL` block of the stage and is the primary source for every call. The
+CSTN portal's own model table (`T17`, harvested independently) is read as a second source
+and supplies the fusion partner, which the administrator's list does not give: two models
+are PAX3::FOXO1 and two are PAX7::FOXO1. Every row of `T28` carries `entity_call_basis`,
+`subtype_evidence`, `fusion_or_driver` and `fusion_source`, so no call in that table has to
+be taken on trust.
+
+Applying the administrator's list confirmed eleven fusion-negative and three
+fusion-positive models against the label suffix and corrected two calls the suffix had got
+wrong:
+
+- `SJHGS015726_X2` is **"high grade sarcoma"** to both the administrator and the portal.
+  The label-based rule had mapped `SJHGS` to UPS/MFH. Undifferentiated pleomorphic sarcoma
+  is a specific diagnosis; "high grade sarcoma" is the absence of one, so it now sits in
+  the `Sarcoma NOS` residual bin and is out of every "of 45 entities" denominator.
+- `SJRHB015720_X1` is **"sclerosal RMS"** — a histology. The suffix rule had asserted
+  `RMS-MYOD1`, which is the WHO entity's defining genotype. Neither the administrator, the
+  portal, nor the literature states MYOD1 status for this model; the portal reports PIK3CA,
+  which co-occurs in roughly a third of MYOD1 L122R cases (PMID 24793135) and is
+  suggestive, not confirmatory. The atlas bin is kept but `subtype_evidence` reads
+  `histology_spindle_sclerosing`, not a genotype.
+
+**Three discrepancies are reported and left standing**, printed by the stage on every run:
+
+1. `SJRHB010463_X16` is on the browser page and in the portal (PAX3::FOXO1, with ChIP-seq
+   deposited as EGAD00001003432) but does **not** appear in the administrator's list. It is
+   kept, with its entity taken from the browser label and flagged as such.
+2. `SJOS010930_X1` has been **withdrawn from CSTN and is no longer available** — a fact
+   available from nowhere but the administrator. Its 16 tracks are still drawn on the
+   browser page. They are kept, marked `withdrawn`, and excluded from the enumerated
+   resource count in `T27`. The withdrawal is independently corroborated: the live CSTN
+   portal API does not return this model either.
+3. `SJRHB013757_X1` is on the browser page; the portal carries only `SJRHB013757_X2`. A
+   fusion is a property of the patient's tumour rather than of the passage, so the sibling
+   row supplies PAX7::FOXO1 — recorded as `fusion_source = sibling passage`, not as an
+   exact match.
+
+One near miss is worth recording because it would trip a naive parser: the portal lists
+`PAX3` in the mutation field for `SJRHB012405_X1`, which both the administrator and the
+portal's own subtype field call **fusion negative**. A *PAX3 point mutation* is not a
+*PAX3::FOXO1 fusion*, and the RMS rule in §2 turns on the fusion.
+
+None of this material is added to any sample total. It is already counted once inside the
+EGA bar of F25; what the enumeration adds is the assay-level resolution EGA does not
+publish, shown in **F26**.
 
 ## 4. Counting
 
@@ -150,6 +207,7 @@ Each was a real error caught against ground truth, and each is logged.
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
 | 10 | "Entities catalogued" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 11 | St Jude CSTN entity calls were read off the browser label suffix — `SJHGS` became UPS/MFH, `(SCLEROS)` asserted a MYOD1 genotype | the data administrator supplied the definitive per-sample list | curated calls keyed on model ID, with `entity_call_basis` per row; three discrepancies reported rather than resolved; `15`, §3b |
 
 ## 8. What this cannot tell you
 
@@ -165,4 +223,4 @@ distinct models, distinct PDX and distinct patients alongside them.
 
 **The classifier is rules over free text**, and free text is written by humans in a hurry.
 The correction table above is not a list of problems that have been solved — it is a
-demonstration of the error rate, and the eleventh error has not been found yet.
+demonstration of the error rate, and the twelfth error has not been found yet.

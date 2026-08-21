@@ -82,8 +82,17 @@ funded — adding H3K27ac and ATAC to an existing panel is incremental cost on
 infrastructure that exists.
 
 Separating *open*, *controlled* and *absent* is the point of
-[`figures/F24_open_vs_controlled_vs_absent.pdf`](figures/F24_open_vs_controlled_vs_absent.pdf).
-A GEO-only survey cannot tell the three apart.
+[`figures/F24_open_vs_controlled_vs_absent.pdf`](figures/F24_open_vs_controlled_vs_absent.pdf)
+and [`F25_where_the_data_lives.pdf`](figures/F25_where_the_data_lives.pdf). A GEO-only
+survey cannot tell the three apart. Regulatory epigenomics for sarcoma turns out to be
+92% open; DNA methylation is only 39%.
+
+The walled material is not thin, which is what makes it worth arguing over.
+[`F26_cstn_assay_matrix.pdf`](figures/F26_cstn_assay_matrix.pdf) enumerates the St Jude
+CSTN browsers model by model and mark by mark: the same ten-mark panel plus WGBS on all 28
+models, and no ATAC, no DNase, no CUT&RUN and no Hi-C anywhere in it. Diagnoses there are
+the St Jude data administrator's, not inferred — see
+[`docs/methods.md` §3b](docs/methods.md).
 
 ## What counts as an "entity"
 
@@ -104,11 +113,11 @@ FN-RMS carry none. Every call carries its evidence in `rms_call_basis`.
 ## Layout
 
 ```
-data/          the atlas tables, T1–T25, tab-separated (see data/README.md)
+data/          the atlas tables, T1–T28, tab-separated (see data/README.md)
   samples/     the atomic sample table — one row per GSM, 85,698 rows, gzipped
   incidence/   the curated incidence evidence behind every rate in T13
 pipeline/      the harvest → classify → aggregate → publish stages, numbered in order
-figures/       F18–F24 as editable PDFs (Arial, TrueType-embedded)
+figures/       F18–F26 as editable PDFs (Arial, TrueType-embedded)
 workbooks/     the same tables as Excel, built for clean Google Sheets import
 docs/          the interactive gap map, and the working briefing note
 ```
@@ -136,6 +145,8 @@ python3 08_aggregate_entities.py      # entity-level counts        -> T3
 python3 13_join_incidence.py          # incidence join             -> T13
 python3 12_merge_controlled_access.py # EGA + St Jude mapping      -> T15
 python3 20_make_figures.py            # F18–F24
+python3 25_figure_where_data_lives.py # F25: open vs behind a request wall
+python3 26_figure_cstn_assay_matrix.py# F26: the CSTN panel, mark by mark
 python3 21_build_workbook.py          # the atlas workbook
 python3 23_build_gap_map.py           # the interactive gap map
 ```

@@ -81,9 +81,10 @@ def main():
     viz_reg = viz_samples = 0
     try:
         tk = list(csv.DictReader(topen("T28_stjude_viz_tracks.tsv"), delimiter="\t"))
-        viz_reg = sum(1 for r in tk if r["assay_family"] == "regulatory"
+        live = [r for r in tk if not r.get("availability", "").startswith("withdrawn")]
+        viz_reg = sum(1 for r in live if r["assay_family"] == "regulatory"
                       and r["is_control"] != "Y")
-        viz_samples = len({r["sample_label"] for r in tk})
+        viz_samples = len({r["model_id"] for r in live})
     except Exception:
         pass
 
@@ -171,9 +172,10 @@ def main():
         f"dbGaP — but neither has an archive\n      accession, which makes them the "
         f"weakest case within it.\n"
         f"Also recovered this round: the CSTN ProteinPaint browsers resolve to "
-        f"{viz_reg} regulatory tracks on {viz_samples} models (T28). That material is "
-        f"already counted once inside the EGA bar, so it is not added again — what it "
-        f"adds is\n      assay-level resolution EGA does not publish.",
+        f"{viz_reg} regulatory tracks on {viz_samples} models (T28, F26), with the "
+        f"per-model diagnosis supplied by the St Jude data administrator. That material "
+        f"is already\n      counted once inside the EGA bar, so it is not added again — "
+        f"what it adds is assay-level resolution EGA does not publish.",
         fontsize=5.9, color=MUTED, ha="left", va="top", linespacing=1.55)
 
     os.makedirs(FIGURES, exist_ok=True)

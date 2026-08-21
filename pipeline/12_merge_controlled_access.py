@@ -122,19 +122,24 @@ def main():
         t28 = os.path.join(DATA, "T28_stjude_viz_tracks.tsv")
         if os.path.exists(t28):
             tk = list(csv.DictReader(open(t28, newline=""), delimiter="\t"))
-            nsamp = len({r["sample_label"] for r in tk})
-            nreg = sum(1 for r in tk if r["assay_family"] == "regulatory"
+            live = [r for r in tk if not r.get("availability", "").startswith("withdrawn")]
+            nsamp = len({r["model_id"] for r in live})
+            gone = len({r["model_id"] for r in tk}) - nsamp
+            nreg = sum(1 for r in live if r["assay_family"] == "regulatory"
                        and r["is_control"] != "Y")
             undeposited = [u for u in undeposited
                            if "browser" not in u["resource"].lower()]
             undeposited.append({
                 "resource": f"CSTN epigenetic browsers, enumerated ({nreg} regulatory "
-                            f"tracks on {nsamp} samples)",
+                            f"tracks on {nsamp} models)",
                 "n_samples": nsamp,
                 "access_route": "CSTN request / EGA data access agreement",
                 "has_accession": "the same material is deposited in EGA",
                 "note": "viz.stjude.cloud ProteinPaint embeds; see T28 for the "
-                        "sample x assay manifest. Not added to any total."})
+                        "sample x assay manifest, with entity calls supplied by the "
+                        "St Jude data administrator. Not added to any total."
+                        + (f" A further {gone} model still shown on the browser page has "
+                           f"been withdrawn from CSTN and is excluded here." if gone else "")})
 
         if undeposited:
             print(f"  St Jude: {len(undeposited)} resource(s) with a request route but no "
