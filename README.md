@@ -117,7 +117,8 @@ data/          the atlas tables, T1–T28, tab-separated (see data/README.md)
   samples/     the atomic sample table — one row per GSM, 85,698 rows, gzipped
   incidence/   the curated incidence evidence behind every rate in T13
 pipeline/      the harvest → classify → aggregate → publish stages, numbered in order
-figures/       F18–F26 as editable PDFs (Arial, TrueType-embedded)
+figures/       F18–F26 exploratory, WP1–WP4 for the white paper
+               all as editable PDFs (Arial, TrueType-embedded)
 workbooks/     the same tables as Excel, built for clean Google Sheets import
 docs/          the interactive gap map, and the working briefing note
 ```
@@ -147,6 +148,7 @@ python3 12_merge_controlled_access.py # EGA + St Jude mapping      -> T15
 python3 20_make_figures.py            # F18–F24
 python3 25_figure_where_data_lives.py # F25: open vs behind a request wall
 python3 26_figure_cstn_assay_matrix.py# F26: the CSTN panel, mark by mark
+python3 28_whitepaper_figures.py      # WP1-WP4: the white-paper section figures
 python3 21_build_workbook.py          # the atlas workbook
 python3 23_build_gap_map.py           # the interactive gap map
 ```

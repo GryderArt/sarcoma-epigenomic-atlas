@@ -209,6 +209,24 @@ Each was a real error caught against ground truth, and each is logged.
 | 10 | "Entities catalogued" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
 | 11 | St Jude CSTN entity calls were read off the browser label suffix — `SJHGS` became UPS/MFH, `(SCLEROS)` asserted a MYOD1 genotype | the data administrator supplied the definitive per-sample list | curated calls keyed on model ID, with `entity_call_basis` per row; three discrepancies reported rather than resolved; `15`, §3b |
 
+## 7b. Figures for the white-paper section
+
+`28_whitepaper_figures.py` builds the four figures used in the "Critical assessment of
+existing datasets" section (WP1–WP4). They are composed from T3/T4/T13/T15/T27/T28 at
+render time rather than assembled from the exploratory figures, so every number on every
+panel is recomputed from the tables on each run and cannot drift from them. Four panels
+maximum per figure; vector PDF, Arial, `pdf.fonttype 42` so the text stays editable.
+
+Two claims in that section needed checking against the tables rather than against the
+exploratory figures, and one of them was wrong on the first pass:
+
+- `distinct_models = 0` means **no model has ever contributed an epigenomic sample** for
+  that entity (14 of 45). It does *not* mean no model exists — 13 of those 14 do have
+  epigenomic data, from patient material. The first draft read it the second way.
+- Model-to-model H3K27ac similarity exceeds patient-to-patient similarity in **six of
+  seven** study-internal comparisons (`T11b`), not all seven. Clear cell sarcoma by
+  signal Spearman is the exception.
+
 ## 8. What this cannot tell you
 
 **Absence in this atlas means absence of a public, entity-labelled deposit.** It is not
