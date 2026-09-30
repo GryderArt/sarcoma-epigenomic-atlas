@@ -5,8 +5,8 @@ Composed from the atlas tables, not from the exploratory figures, so every numbe
 every panel is computed at render time from T3/T4/T13/T15/T27/T28. Four panels maximum
 per figure. Vector PDF, Arial, text left editable (pdf.fonttype 42).
 
-WP1  burden versus data           A burden  B data  C per-case  D per-entity scatter
-WP2  when each modality arrived   cumulative GEO deposition by assay family
+WP1  accumulation and modality mix   cumulative GEO deposition by assay family
+WP2  burden versus data              A burden  B data  C per-case  D per-entity scatter
 WP3  what the atlas is made of    A provenance  B zero-coverage by assay  C per-entity
 WP4  can the models be validated  cell line vs patient tissue, per entity
 """
@@ -90,7 +90,7 @@ def tidy(ax, grid="x"):
 
 
 # =====================================================================================
-def wp1(d):
+def fig_burden(d):
     """Burden versus data, by age class and by entity."""
     T13 = d["T13"]
     agg = collections.defaultdict(collections.Counter)
@@ -187,10 +187,11 @@ def wp1(d):
     place_labels(fig, axD, list(pick.values()),
                  [(x, yv) for x, yv, _ in scat]
                  + [(x, FLOOR) for zs in zeros.values() for x, _ in zs],
-                 avoid=[leg], fontsize=6, color=DARK, leader=MUTED, where="WP1-D")
+                 avoid=[leg], fontsize=6, color=DARK, leader=MUTED, where="WP2-D")
 
-    fig.suptitle("Sarcoma epigenomics has been generated in inverse proportion to who "
-                 "gets the disease", fontsize=10, weight="bold", x=0.0, y=1.005, ha="left")
+    fig.suptitle("Adult sarcomas are the largest unmet opportunity: five times the "
+                 "burden, one twenty-fourth the data per case",
+                 fontsize=9.8, weight="bold", x=0.0, y=1.005, ha="left")
     foot(fig, 0.0, -0.055,
          "Burden is US cases per year summed over the 45 named entities; topography-coded "
          "registry data excludes sarcomas coded to the organ they arise in, so the adult "
@@ -202,12 +203,12 @@ def wp1(d):
          "from panel D only; they are counted everywhere else.\n\n"
          "Panel D labels the four best-covered entities and the three highest-burden "
          "ones, each tied to its own point by a leader line.")
-    save(fig, "WP1_burden_versus_data")
+    save(fig, "WP2_burden_versus_data")
     return {"ratio": ratio, "agg": agg, "n_scatter_zero": nz}
 
 
 # =====================================================================================
-def wp2(d):
+def fig_composition(d):
     """What the atlas is made of, and which entities it misses."""
     T13, epi, reg = d["T13"], d["epi"], d["reg"]
 
@@ -303,9 +304,17 @@ def wp2(d):
     tidy(axC); panel_tag(axC, "C", dx=-0.42, dy=1.008)
 
     cl, pdx, pt = split(reg)
-    fig.suptitle(f"{len(none_)} of {len(T13)} entities have never had a patient's tumour "
-                 f"profiled for active chromatin, accessibility or 3D architecture",
-                 fontsize=10, weight="bold", x=0.0, y=0.995, ha="left")
+    # entities that have gained patient-derived regulatory data, by era
+    firstpd = {}
+    for r in sorted((x for x in d["reg"] if x["sample_type"] in PDERIVED),
+                    key=lambda x: (x.get("gse_date") or "9999")):
+        yv = (r.get("gse_date") or "")[:4]
+        if yv.isdigit() and r["disease"] in {t["atlas_disease"] for t in T13}:
+            firstpd.setdefault(r["disease"], int(yv))
+    grew = {yy: sum(1 for v in firstpd.values() if v <= yy) for yy in (2015, 2020, 2026)}
+    fig.suptitle(f"Patient-derived profiling has extended from {grew[2015]} entities to "
+                 f"{grew[2026]} in a decade; {len(none_)} of {len(T13)} remain",
+                 fontsize=9.8, weight="bold", x=0.0, y=0.995, ha="left")
     n_prov = cl + pdx + pt
     foot(fig, 0.0, -0.012,
          f"Panel A denominator is the {n_prov:,} de-duplicated sarcoma regulatory samples "
@@ -314,14 +323,19 @@ def wp2(d):
          f"normal/reference, mouse model or unspecified are excluded from that denominator "
          f"rather than assigned by guesswork; against the full de-duplicated set the "
          f"cell-line share is {100*cl/len(reg):.0f}%.\n\n"
-         f"Panel C separates patient-derived material from cell lines deliberately — a "
-         f"synovial sarcoma organoid grown from a patient is not a decades-old line, and "
-         f"collapsing the two would call several entities a hard zero that are not.\n\n"
-         f"Absence here means no public, entity-labelled deposit. It is not proof that no "
-         f"experiment was done: see Figure WP3.")
+         f"Panel C counts patient-derived material only, which is its purpose; the "
+         f"cell-line side of the same comparison, entity by entity, is Figure WP4. "
+         f"Patient-derived material is kept separate from cell lines because a synovial "
+         f"sarcoma organoid grown from a patient is not a decades-old line, and "
+         f"collapsing the two would report several entities as hard zeros that are "
+         f"not.\n\n"
+         f"Absence indicates no public, entity-labelled deposit rather than evidence that "
+         f"no experiment was performed.")
     save(fig, "WP3_what_the_atlas_is_made_of")
-    return {"n_zero_pd": len(none_), "pct_cell_line": 100*cl/(cl+pdx+pt),
-            "pct_tumour": 100*pt/(cl+pdx+pt), "zero_by_assay": vals}
+    return {"n_zero_pd": len(none_), "n_have_pd": len(T13) - len(none_),
+            "pct_cell_line": round(100*cl/(cl+pdx+pt)),
+            "pct_tumour": round(100*pt/(cl+pdx+pt)),
+            "pd_growth": grew, "zero_by_assay": vals}
 
 
 # =====================================================================================
@@ -338,7 +352,7 @@ MODALITY = [
 ]
 
 
-def wp3(d):
+def fig_growth(d):
     """When each modality arrived, and how thin the newer ones still are."""
     epi = d["epi"]
 
@@ -409,19 +423,40 @@ def wp3(d):
 
     chip = [e for e in ends if e[1].startswith("ChIP")][0][0]
     fam_tot = sum(e[0] for e in ends)
-    tot = len([r for r in epi if year(r)])          # every dated sample, not just the six
+    dated = [r for r in epi if year(r)]
+    tot = len(dated)                                # every dated sample, not just the six
     other = tot - fam_tot                           # Repli-seq, which is none of the six
-    fig.suptitle("Sarcoma epigenomics is still, overwhelmingly, a ChIP-seq literature",
+
+    # Growth statistics, computed here so the figure and the prose cannot diverge.
+    last10 = sum(1 for r in dated if year(r) > y1 - 10)
+    last5 = sum(1 for r in dated if year(r) > y1 - 5)
+    MODERN = {"CUT&RUN", "CUT&Tag", "ATAC-seq", "scATAC-seq", "Hi-C", "HiChIP",
+              "Micro-C", "Capture-HiC"}
+    era = {}
+    for a, b in ((2011, 2015), (2021, y1)):
+        ss = [r for r in dated if a <= year(r) <= b]
+        era[(a, b)] = 100 * sum(1 for r in ss if r["assay_class"] in MODERN) / len(ss)
+    firstyr = {}
+    for r in dated:
+        firstyr[r["disease"]] = min(firstyr.get(r["disease"], 9999), year(r))
+    ents = {dz: v for dz, v in firstyr.items()
+            if dz in {t["atlas_disease"] for t in d["T13"]}}
+    cover = {yy: sum(1 for v in ents.values() if v <= yy) for yy in (2010, 2015, 2020, y1)}
+    fig.suptitle("Sarcoma epigenomic data has accumulated rapidly, and the modality mix "
+                 "is broadening",
                  fontsize=10, weight="bold", x=0.0, y=1.135, ha="left")
     fig.text(0.0, 1.085,
-             f"ChIP-seq and ChIP-chip are {chip:,} of the {tot:,} dated samples — "
-             f"{100*chip/tot:.0f}% of everything ever deposited for sarcoma.\nThe assays "
-             f"that have reshaped the field elsewhere arrived late and remain thin.",
+             f"{100*last10/tot:.0f}% of all deposits fall in the last ten years and "
+             f"{100*last5/tot:.0f}% in the last five. Assays other than ChIP-seq and "
+             f"methylation arrays rose from\n{era[(2011, 2015)]:.0f}% of deposits in "
+             f"2011\u20132015 to {era[(2021, y1)]:.0f}% in 2021\u2013{y1}.",
              fontsize=7.3, color=DARK, ha="left", va="top", linespacing=1.5)
     foot(fig, 0.0, -0.115,
          "Cumulative count by the deposition year of the containing GEO series, "
          f"de-duplicated. {y1} is a partial year, so every curve is flat at its right "
          "edge by construction.\n\n"
+         + f"Entities with any epigenomic data: {cover[2010]} of 45 by 2010, "
+           f"{cover[2015]} by 2015, {cover[2020]} by 2020, {cover[y1]} today.\n\n"
          + "Year each modality first passed 50 deposited samples: "
          + "; ".join(f"{k} {v}" for k, v in sorted(arrival.items(), key=lambda kv: kv[1]))
          + ".\n\n"
@@ -429,14 +464,16 @@ def wp3(d):
          f"{other} are Repli-seq, which belongs to none of them.\n\n"
          "Controlled-access deposits are not in this figure: EGA and dbGaP do not publish "
          "a comparable deposition timeline.")
-    save(fig, "WP2_when_each_modality_arrived")
-    return {"pct_chip": 100*chip/tot, "total": tot, "fam_total": fam_tot,
-            "arrival": arrival,
-            "ends": {lab: v for v, lab, _, _ in ends}}
+    save(fig, "WP1_accumulation_and_modality_mix")
+    return {"pct_chip": round(100*chip/tot), "total": tot, "fam_total": fam_tot,
+            "pct_last10": round(100*last10/tot), "pct_last5": round(100*last5/tot),
+            "modern_early": round(era[(2011, 2015)], 1),
+            "modern_late": round(era[(2021, y1)], 1), "coverage": cover,
+            "arrival": arrival, "ends": {lab: v for v, lab, _, _ in ends}}
 
 
 # =====================================================================================
-def wp4(d):
+def fig_validation(d):
     """Can a finding in a cell line be checked in human tissue?"""
     T13, reg = d["T13"], d["reg"]
     PDER = {"primary_tumor", "metastasis", "recurrence", "PDX", "organoid"}
@@ -489,9 +526,10 @@ def wp4(d):
               ncol=2, handlelength=1.0, handleheight=0.75, columnspacing=1.4)
 
     nz = sum(1 for _, c, p in rows if c and not p)
+    ok = len(rows) - nz
     worst = max((t for t in rows if t[2]), key=lambda t: t[1] / t[2])
-    fig.suptitle(f"For {nz} of the {len(rows)} entities with regulatory epigenomics, there "
-                 f"is no human tissue to check it against",
+    fig.suptitle(f"{ok} of the {len(rows)} entities with regulatory epigenomics can be "
+                 f"validated against patient tissue; {nz} cannot yet",
                  fontsize=9.6, weight="bold", x=0.0, y=1.008, ha="left")
     foot(fig, 0.0, -0.105,
          f"Each row is one entity. The blue point is regulatory epigenomic samples from "
@@ -504,12 +542,12 @@ def wp4(d):
          f"Restricted to regulatory assays, which is where the asymmetry lives: DNA "
          f"methylation arrays are mostly run on patient tissue and would mask it.\n\n"
          f"Thirteen further entities have no regulatory data at all and cannot appear "
-         f"here (Figure WP1D)."
+         f"here (Figure WP2D)."
          + (f" A fourteenth, {' and '.join(ctrl_only)}, is also absent for a different "
             f"reason: its entire regulatory record is normal or reference tissue rather "
             f"than tumour or model, so it has neither point to plot." if ctrl_only else ""))
     save(fig, "WP4_can_the_models_be_validated")
-    return {"n_rows": len(rows), "n_no_patient": nz,
+    return {"n_rows": len(rows), "n_no_patient": nz, "n_validatable": ok,
             "worst": (worst[0], round(worst[1]/worst[2]))}
 
 
@@ -522,9 +560,12 @@ def save(fig, stem):
 
 if __name__ == "__main__":
     d = load()
-    s1, s2, s3, s4 = wp1(d), wp2(d), wp3(d), wp4(d)
-    print("\nWP1:", {k: v for k, v in s1.items() if k != "agg"})
-    print("WP2:", {k: v for k, v in s2.items() if k != "zero_by_assay"})
-    print("     zero by assay:", s2["zero_by_assay"])
-    print("WP3:", s3)
-    print("WP4:", s4)
+    out = {"WP1 growth": fig_growth(d), "WP2 burden": fig_burden(d),
+           "WP3 composition": fig_composition(d), "WP4 validation": fig_validation(d)}
+    print()
+    for k, v in out.items():
+        print(f"{k}:")
+        for kk, vv in v.items():
+            if kk == "agg":
+                continue
+            print(f"    {kk} = {vv}")

@@ -215,9 +215,11 @@ Each was a real error caught against ground truth, and each is logged.
 ## 7b. Figures for the white-paper section
 
 `28_whitepaper_figures.py` builds the four figures used in the "Critical assessment of
-existing datasets" section: WP1 burden versus data, WP2 when each modality arrived, WP3
-what the atlas is made of, WP4 whether the models can be validated. Figure numbers follow
-the order they are cited in the section. An earlier pair on access tiering (where the data
+existing datasets" section: WP1 accumulation and modality mix, WP2 burden versus data,
+WP3 what the atlas is made of, WP4 whether the models can be validated. Figure numbers
+follow the order they are cited in the section, and the section opens on growth rather
+than on deficit — the census documents a record that has expanded 87% in a decade, and a
+reading that reports only the gaps misrepresents it. An earlier pair on access tiering (where the data
 lives; the St Jude CSTN panel) was cut when the section moved to mentioning controlled
 access only in passing; the underlying tables T15, T27 and T28 are unchanged. They are composed from T3/T4/T13/T15/T27/T28 at
 render time rather than assembled from the exploratory figures, so every number on every
