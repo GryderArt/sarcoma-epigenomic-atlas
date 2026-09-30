@@ -207,13 +207,19 @@ Each was a real error caught against ground truth, and each is logged.
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
 | 10 | "Entities catalogued" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 14 | `distinct_models` was read as "models that exist"; it counts models name-matched to the curated catalogue, so three entities with unmatched cell-line data were miscounted | cross-checking the model bullet against `sample_type` | claim now computed from `sample_type` directly — 14 entities have never had a cell line, PDX or organoid profiled, a different set from `distinct_models = 0`; §7b |
+| 13 | Normal and reference tissue counted toward an entity's regulatory total | LGFMS / SEF appeared to have 20 regulatory epigenomes while dropping out of the cell-line-vs-tissue figure | 3% of regulatory samples atlas-wide; decisive only for LGFMS / SEF (100% control tissue) and endometrial stromal sarcoma (75%). Reported rather than silently re-binned |
 | 12 | Two scatter labels sat on top of each other in WP1-D and F19, so `FP-RMS` appeared to name the `Rhabdoid tumour / ATRT` point | a reader asked which dot each label meant, and whether the two were pooled | they were never pooled — separate rows in every table. Placement rewritten in `_labels.py`: measured boxes, an ownership test, leader lines; `28`, `20` |
 | 11 | St Jude CSTN entity calls were read off the browser label suffix — `SJHGS` became UPS/MFH, `(SCLEROS)` asserted a MYOD1 genotype | the data administrator supplied the definitive per-sample list | curated calls keyed on model ID, with `entity_call_basis` per row; three discrepancies reported rather than resolved; `15`, §3b |
 
 ## 7b. Figures for the white-paper section
 
 `28_whitepaper_figures.py` builds the four figures used in the "Critical assessment of
-existing datasets" section (WP1–WP4). They are composed from T3/T4/T13/T15/T27/T28 at
+existing datasets" section: WP1 burden versus data, WP2 when each modality arrived, WP3
+what the atlas is made of, WP4 whether the models can be validated. Figure numbers follow
+the order they are cited in the section. An earlier pair on access tiering (where the data
+lives; the St Jude CSTN panel) was cut when the section moved to mentioning controlled
+access only in passing; the underlying tables T15, T27 and T28 are unchanged. They are composed from T3/T4/T13/T15/T27/T28 at
 render time rather than assembled from the exploratory figures, so every number on every
 panel is recomputed from the tables on each run and cannot drift from them. Four panels
 maximum per figure; vector PDF, Arial, `pdf.fonttype 42` so the text stays editable.
@@ -256,4 +262,4 @@ distinct models, distinct PDX and distinct patients alongside them.
 
 **The classifier is rules over free text**, and free text is written by humans in a hurry.
 The correction table above is not a list of problems that have been solved — it is a
-demonstration of the error rate, and the thirteenth error has not been found yet.
+demonstration of the error rate, and the fifteenth error has not been found yet.

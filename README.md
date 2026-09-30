@@ -117,7 +117,7 @@ data/          the atlas tables, T1–T28, tab-separated (see data/README.md)
   samples/     the atomic sample table — one row per GSM, 85,698 rows, gzipped
   incidence/   the curated incidence evidence behind every rate in T13
 pipeline/      the harvest → classify → aggregate → publish stages, numbered in order
-figures/       F18–F26 exploratory, WP1–WP4 for the white paper
+figures/       F18–F26 exploratory, WP1–WP4 for the white-paper section
                all as editable PDFs (Arial, TrueType-embedded)
 workbooks/     the same tables as Excel, built for clean Google Sheets import
 docs/          the interactive gap map, and the working briefing note

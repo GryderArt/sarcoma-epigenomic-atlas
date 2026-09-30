@@ -6,9 +6,9 @@ every panel is computed at render time from T3/T4/T13/T15/T27/T28. Four panels m
 per figure. Vector PDF, Arial, text left editable (pdf.fonttype 42).
 
 WP1  burden versus data           A burden  B data  C per-case  D per-entity scatter
-WP2  what the atlas is made of    A provenance  B zero-coverage by assay  C per-entity
-WP3  what it takes to get it      A regulatory by source  B methylation by source  C entities
-WP4  the walled resource          the St Jude CSTN panel, model by model
+WP2  when each modality arrived   cumulative GEO deposition by assay family
+WP3  what the atlas is made of    A provenance  B zero-coverage by assay  C per-entity
+WP4  can the models be validated  cell line vs patient tissue, per entity
 """
 import csv, os, sys, collections
 import matplotlib
@@ -35,7 +35,8 @@ plt.rcParams.update({
 # ---- palette (validated: see docs/methods.md; scripts/validate_palette.js all-PASS) ----
 PED, BOTH, ADULT = "#2a78d6", "#1baf7a", "#eb6834"
 OPEN, WALL, NONE = "#2a78d6", "#eda100", "#d03b3b"
-LINE, PDER, TUMR = "#c3d5e8", "#2a78d6", "#0d366b"      # sequential: distance from patient
+LINE, PDER, TUMR = "#c3d5e8", "#2a78d6", "#0d366b"
+LINE_C, TISSUE = "#2a78d6", "#eb6834"    # WP4: cell line vs patient tissue      # sequential: distance from patient
 DARK, MUTED, GRID = "#2b3440", "#7c8894", "#e3e2dc"
 CLS = {"paediatric": PED, "both": BOTH, "adult": ADULT}
 LAB = {"paediatric": "Paediatric-predominant", "both": "Both ages", "adult": "Adult-predominant"}
@@ -318,230 +319,198 @@ def wp2(d):
          f"collapsing the two would call several entities a hard zero that are not.\n\n"
          f"Absence here means no public, entity-labelled deposit. It is not proof that no "
          f"experiment was done: see Figure WP3.")
-    save(fig, "WP2_what_the_atlas_is_made_of")
+    save(fig, "WP3_what_the_atlas_is_made_of")
     return {"n_zero_pd": len(none_), "pct_cell_line": 100*cl/(cl+pdx+pt),
             "pct_tumour": 100*pt/(cl+pdx+pt), "zero_by_assay": vals}
 
 
 # =====================================================================================
+MODALITY = [
+    ("ChIP-seq / ChIP-chip", {"ChIP-seq", "ChIP-chip", "ChIP-exo"},            "#2a78d6"),
+    ("DNA methylation",      {"Methyl-array", "WGBS", "RRBS", "MeDIP/hMeDIP",
+                              "Bisulfite-PCR"},                                "#eb6834"),
+    ("Accessibility (ATAC / DNase)", {"ATAC-seq", "DNase-seq", "FAIRE-seq",
+                                      "MNase-seq"},                            "#1baf7a"),
+    ("CUT&RUN / CUT&Tag",    {"CUT&RUN", "CUT&Tag"},                           "#eda100"),
+    ("3D genome",            {"Hi-C", "HiChIP", "Micro-C", "Capture-HiC",
+                              "ChIA-PET", "4C-seq"},                           "#1d6b45"),
+    ("Single-cell epigenome", {"scATAC-seq"},                                  "#e0679f"),
+]
+
+
 def wp3(d):
-    """Where the data lives, and what it takes to get it."""
-    T13, T15, reg, epi = d["T13"], d["T15"], d["reg"], d["epi"]
-    DNA = {"WGBS", "RRBS", "Methyl-array", "MeDIP/hMeDIP", "Bisulfite-PCR"}
-    geo_reg = len(reg)
-    geo_dna = sum(1 for r in epi if r["assay_class"] in DNA)
+    """When each modality arrived, and how thin the newer ones still are."""
+    epi = d["epi"]
 
-    def ctl(src, fam):
-        return sum(I(r, "n_samples") for r in T15
-                   if r["source"] == src and r["assay_family"] == fam)
-    ega_reg, ega_dna = ctl("EGA", "regulatory"), ctl("EGA", "DNA methylation")
-    ccdi_dna = ctl("CCDI", "DNA methylation")
-    sj = sum(I(r, "n_samples") for r in T15 if r.get("contributor") == "St Jude CSTN")
-    noacc = sum(I(r, "n_samples") for r in
-                csv.DictReader(topen("T27_access_routes.tsv"), delimiter="\t")
-                if r.get("has_accession", "").startswith("no"))
-    EBI_REG, EBI_DNA, EBI_HELD = 70, 713, 1974
+    def year(r):
+        v = (r.get("gse_date") or "")[:4]
+        return int(v) if v.isdigit() else None
 
-    S = [("NCBI GEO", "open", geo_reg, geo_dna),
-         ("EBI ArrayExpress / ENA\n(studies not in GEO)", "open", EBI_REG, EBI_DNA),
-         ("EBI EpiRR / IHEC\nreference epigenomes", "open", 0, 0),
-         ("EBI EGA", "wall", ega_reg, ega_dna),
-         ("NCI CCDI (dbGaP)", "wall", 0, ccdi_dna),
-         ("NCI GDC (TARGET / TCGA)", "wall", 0, 0),
-         ("St Jude CSTN\n(no accession)", "wall", 0, noacc)]
-    COL = {"open": OPEN, "wall": WALL}
+    yrs = [year(r) for r in epi if year(r)]
+    y0, y1 = min(yrs), max(yrs)
+    span = list(range(y0, y1 + 1))
 
-    fig = plt.figure(figsize=(7.4, 5.3))
-    gs = fig.add_gridspec(2, 2, height_ratios=[1.7, 0.85], hspace=0.72, wspace=0.06)
-    axA, axB = fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1])
-    axC = fig.add_subplot(gs[1, :])
+    fig, ax = plt.subplots(figsize=(7.4, 3.5))
+    fig.subplots_adjust(right=0.70)
+    ends = []
+    for label, classes, col in MODALITY:
+        per = collections.Counter(year(r) for r in epi
+                                  if r["assay_class"] in classes and year(r))
+        run, cum = [], 0
+        for yy in span:
+            cum += per.get(yy, 0)
+            run.append(cum)
+        ax.plot(span, run, color=col, linewidth=1.9, solid_capstyle="round", zorder=3)
+        ends.append((run[-1], label, col, per))
 
-    y = list(range(len(S)))[::-1]
-    for ax, idx, ttl, sub, tag in (
-            (axA, 2, "Regulatory epigenomics",
-             "ChIP-seq · CUT&RUN · CUT&Tag · ATAC · DNase · Hi-C · HiChIP", "A"),
-            (axB, 3, "DNA methylation", "arrays · WGBS · RRBS · MeDIP", "B")):
-        ax.barh(y, [t[idx] for t in S], color=[COL[t[1]] for t in S], height=0.6,
-                edgecolor="none")
-        for yy, t in zip(y, S):
-            if t[idx]:
-                ax.text(t[idx] * 1.10, yy, f"{t[idx]:,}", va="center", fontsize=6.8,
-                        color=DARK)
-            else:
-                ax.scatter(1.15, yy, marker="x", s=18, color=NONE, linewidth=1.1, zorder=3)
-                ax.text(1.55, yy, "none", va="center", fontsize=6.5, color=NONE,
-                        weight="bold")
-        ax.set_xscale("log"); ax.set_xlim(1, 40000)
-        ax.set_xticks([1, 10, 100, 1000, 10000]); ax.set_xticklabels(LOGX)
-        ax.set_xlabel("samples (log scale)", fontsize=7.5)
-        ax.set_title(ttl, fontsize=8.6, weight="bold", loc="left", pad=15)
-        ax.text(0, 1.015, sub, transform=ax.transAxes, fontsize=6.2, color=MUTED)
-        ax.spines["left"].set_visible(False)
-        tidy(ax)
-        panel_tag(ax, tag, dx=-0.44 if ax is axA else -0.06, dy=1.13)
-    axA.set_yticks(y); axA.set_yticklabels([t[0] for t in S], fontsize=6.8)
-    axA.tick_params(axis="y", length=0, pad=3)
-    axB.set_yticks(y); axB.set_yticklabels([])
+    top = max(e[0] for e in ends)
+    ax.set_xlim(y0 - 0.4, y1 + 0.4)
+    ax.set_ylim(0, top * 1.06)
+    ticks = [y for y in span if y % 5 == 0]
+    if y1 - ticks[-1] >= 2:
+        ticks.append(y1)
+    ax.set_xticks(ticks); ax.set_xticklabels([str(y) for y in ticks])
+    ax.set_xlabel("year of GEO deposition", fontsize=7.5)
+    ax.set_ylabel("cumulative epigenomic samples", fontsize=7.5)
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{int(v):,}"))
+    tidy(ax, grid="y")
 
-    # ---- C: the wall has layers
-    rungs = [("Open", geo_reg + EBI_REG + geo_dna + EBI_DNA, OPEN,
-              "download and reanalyse today"),
-             ("Formal request,\narchive accession", ega_reg + ega_dna + ccdi_dna, WALL,
-              "EGA or dbGaP: a data-access agreement per study, signed by a PI "
-              "and an institution"),
-             ("Formal request,\nno accession", noacc, WALL,
-              "a request route exists, but nothing to cite and no committee of record — "
-              "the weakest case within the wall")]
-    yy = list(range(len(rungs)))[::-1]
-    top = max(n for _, n, _, _ in rungs)
-    for i2, (lab, n, col, note) in zip(yy, rungs):
-        axC.barh(i2, n, color=col, height=0.55, edgecolor="white", linewidth=0.8,
-                 hatch="///" if "no accession" in lab else None)
-        axC.text(n + top * 0.02, i2, f"{n:,}", va="center", fontsize=7, weight="bold",
-                 color=DARK)
-        axC.text(top * 1.30, i2, note, va="center", fontsize=6.1, color=MUTED)
-    axC.set_yticks(yy); axC.set_yticklabels([r[0] for r in rungs], fontsize=6.8)
-    axC.set_xlim(0, (geo_reg + EBI_REG + geo_dna + EBI_DNA) * 3.15)
-    axC.set_xticks([0, 5000, 10000, 15000])
-    axC.set_xticklabels(["0", "5,000", "10,000", "15,000"])
-    axC.set_xlabel("epigenomic samples, regulatory and methylation combined", fontsize=7.5,
-                   loc="left")
-    axC.set_title("The wall is not one wall", fontsize=8.6, weight="bold", loc="left", pad=6)
-    axC.spines["left"].set_visible(False); axC.tick_params(axis="y", length=0)
-    tidy(axC); panel_tag(axC, "C", dx=-0.44, dy=1.08)
+    # Labels in the right margin at each line's end, spread vertically so none collide.
+    # A line chart reads better with the series named where it finishes than with a
+    # legend box; the only requirement is that the label sit at its own line's height.
+    MINGAP = top * 0.052
+    rank = sorted(range(len(ends)), key=lambda i: -ends[i][0])
+    ypos = {}
+    prev = None
+    for i in rank:
+        v = ends[i][0]
+        if prev is not None and prev - v < MINGAP:
+            v = prev - MINGAP
+        ypos[i] = v
+        prev = v
+    for i, (v, label, col, _) in enumerate(ends):
+        ax.annotate(label, xy=(y1, v), xytext=(y1 + 0.55, ypos[i]),
+                    textcoords="data", va="center", ha="left", fontsize=6.8,
+                    color=col, weight="bold", annotation_clip=False,
+                    arrowprops=dict(arrowstyle="-", color=col, linewidth=0.5,
+                                    shrinkA=1, shrinkB=1)
+                    if abs(ypos[i] - v) > top * 0.012 else None)
 
-    treg_o, treg_w = geo_reg + EBI_REG, ega_reg
-    tdna_o, tdna_w = geo_dna + EBI_DNA, ega_dna + ccdi_dna + noacc
-    fig.legend(handles=[Patch(facecolor=OPEN, label="Freely available"),
-                        Patch(facecolor=WALL, label="Behind a formal request"),
-                        Patch(facecolor=NONE, label="None exists")],
-               fontsize=6.5, frameon=False, loc="upper left", bbox_to_anchor=(0.09, 0.055),
-               ncol=3, handlelength=1.0, handleheight=0.75)
-    fig.suptitle(f"Regulatory epigenomics for sarcoma is {100*treg_o/(treg_o+treg_w):.0f}% "
-                 f"open. DNA methylation is {100*tdna_o/(tdna_o+tdna_w):.0f}%.",
-                 fontsize=10, weight="bold", x=0.0, y=1.05, ha="left")
-    foot(fig, 0.0, -0.10,
-         f"Unit is samples, except CCDI, which resolves to participants — the level at "
-         f"which its metadata resolves. Duplicates removed; ChIP input and IgG controls "
-         f"excluded from the regulatory counts.\n\n"
-         f"The EGA bar includes the St Jude CSTN deposit ({sj:,} samples), counted there "
-         f"rather than separately because EGA is where it lives. E-MTAB-9875 "
-         f"({EBI_HELD:,} assays) is held out of the EBI bar: it is the sarcoma methylation "
-         f"classifier, the same material as GSE140686 in GEO. Neither CCDI nor the GDC has "
-         f"ChIP-seq in its assay vocabulary at all, for any disease.\n\n"
-         f"Not one of the "
-         f"{sum(1 for r in T13 if I(r,'regulatory_epigenomic_samples')==0)} entities with "
-         f"no regulatory epigenomics has anything behind the wall either — controlled "
-         f"access explains part of the gap, but none of the hard zeros.")
-    save(fig, "WP3_where_the_data_lives")
-    return {"reg_open_pct": 100*treg_o/(treg_o+treg_w),
-            "dna_open_pct": 100*tdna_o/(tdna_o+tdna_w),
-            "noacc": noacc, "sj": sj, "reg_wall": treg_w, "dna_wall": tdna_w,
-            "reg_total": treg_o+treg_w, "dna_total": tdna_o+tdna_w}
+    # first year each modality reached 50 samples -- the point at which it stops being
+    # a demonstration and starts being a resource
+    arrival = {}
+    for v, lab, col, per in ends:
+        cum = 0
+        for yy in span:
+            cum += per.get(yy, 0)
+            if cum >= 50:
+                arrival[lab] = yy
+                break
+
+    chip = [e for e in ends if e[1].startswith("ChIP")][0][0]
+    fam_tot = sum(e[0] for e in ends)
+    tot = len([r for r in epi if year(r)])          # every dated sample, not just the six
+    other = tot - fam_tot                           # Repli-seq, which is none of the six
+    fig.suptitle("Sarcoma epigenomics is still, overwhelmingly, a ChIP-seq literature",
+                 fontsize=10, weight="bold", x=0.0, y=1.135, ha="left")
+    fig.text(0.0, 1.085,
+             f"ChIP-seq and ChIP-chip are {chip:,} of the {tot:,} dated samples — "
+             f"{100*chip/tot:.0f}% of everything ever deposited for sarcoma.\nThe assays "
+             f"that have reshaped the field elsewhere arrived late and remain thin.",
+             fontsize=7.3, color=DARK, ha="left", va="top", linespacing=1.5)
+    foot(fig, 0.0, -0.115,
+         "Cumulative count by the deposition year of the containing GEO series, "
+         f"de-duplicated. {y1} is a partial year, so every curve is flat at its right "
+         "edge by construction.\n\n"
+         + "Year each modality first passed 50 deposited samples: "
+         + "; ".join(f"{k} {v}" for k, v in sorted(arrival.items(), key=lambda kv: kv[1]))
+         + ".\n\n"
+         f"The six families cover {fam_tot:,} of the {tot:,} dated samples; the remaining "
+         f"{other} are Repli-seq, which belongs to none of them.\n\n"
+         "Controlled-access deposits are not in this figure: EGA and dbGaP do not publish "
+         "a comparable deposition timeline.")
+    save(fig, "WP2_when_each_modality_arrived")
+    return {"pct_chip": 100*chip/tot, "total": tot, "fam_total": fam_tot,
+            "arrival": arrival,
+            "ends": {lab: v for v, lab, _, _ in ends}}
 
 
 # =====================================================================================
-ACTIVE, REPRESS, METH, DERIV = "#eda100", "#b8791f", "#7a5cc4", "#c9c6bd"
-COLS = [("H3K27Ac", "H3K27ac", ACTIVE), ("H3K9-14Ac", "H3K9/14ac", ACTIVE),
-        ("H3K4me1", "H3K4me1", ACTIVE), ("H3K4me2", "H3K4me2", ACTIVE),
-        ("H3K4me3", "H3K4me3", ACTIVE), ("BRD4", "BRD4", ACTIVE),
-        ("RNAPolII", "RNA Pol II", ACTIVE), ("H3K36me3", "H3K36me3", ACTIVE),
-        ("H3K27me3", "H3K27me3", REPRESS), ("H3K9me3", "H3K9me3", REPRESS),
-        ("CTCF", "CTCF", REPRESS), ("WGBS", "WGBS", METH),
-        ("SE*", "super-enhancer\ncalls", DERIV),
-        ("ATAC-seq", "ATAC-seq", NONE), ("DNase-seq", "DNase-seq", NONE),
-        ("CUT&RUN", "CUT&RUN /\nCUT&Tag", NONE), ("Hi-C", "Hi-C / HiChIP", NONE)]
-DERIVED_SET = {"SE", "SE.noK4me3", "SuperEnhancer(SE)"}
-ORDER = ["FN-RMS", "FP-RMS", "RMS-MYOD1", "Osteosarcoma", "Ewing", "Liposarcoma-NOS",
-         "Sarcoma NOS", "normal/reference"]
-PRETTY = {"Sarcoma NOS": "Sarcoma NOS (high grade)", "normal/reference": "normal / reference"}
-
-
 def wp4(d):
-    """The richest walled resource, model by model and mark by mark."""
-    rows = list(csv.DictReader(topen("T28_stjude_viz_tracks.tsv"), delimiter="\t"))
-    have, meta = collections.defaultdict(set), {}
-    for r in rows:
-        have[r["model_id"]].add("SE*" if r["assay"] in DERIVED_SET else r["assay"])
-        meta.setdefault(r["model_id"], r)
-    models = sorted(meta, key=lambda m: (ORDER.index(meta[m]["atlas_entity"]), m))
-    groups = collections.OrderedDict()
-    for m in models:
-        groups.setdefault(meta[m]["atlas_entity"], []).append(m)
+    """Can a finding in a cell line be checked in human tissue?"""
+    T13, reg = d["T13"], d["reg"]
+    PDER = {"primary_tumor", "metastasis", "recurrence", "PDX", "organoid"}
+    name = {r["atlas_disease"]: r["display_name"] for r in T13}
+    cl = collections.Counter(r["disease"] for r in reg if r["sample_type"] == "cell_line")
+    pd_ = collections.Counter(r["disease"] for r in reg if r["sample_type"] in PDER)
+    rows = [(name[dz], cl.get(dz, 0), pd_.get(dz, 0)) for dz in name
+            if cl.get(dz, 0) or pd_.get(dz, 0)]
+    # Entities whose whole regulatory record is normal or reference tissue drop out
+    # here, because neither point exists for them. That is correct but worth naming.
+    allreg = collections.Counter(r["disease"] for r in reg)
+    ctrl_only = [name[dz] for dz in name
+                 if allreg.get(dz, 0) and not (cl.get(dz, 0) or pd_.get(dz, 0))]
+    rows.sort(key=lambda t: -t[1])
+    FL = 0.42                                   # where "none" is drawn on the log axis
 
-    nrow, ncol = len(models), len(COLS)
-    fig, ax = plt.subplots(figsize=(7.4, 0.185 * nrow + 1.9))
-    y, ylab, bands = 0, [], []
-    for ent, ms in groups.items():
-        bands.append((y, len(ms), ent))
-        for m in ms:
-            got, wd = have[m], meta[m]["availability"].startswith("withdrawn")
-            for x, (key, _, col) in enumerate(COLS):
-                if key in got:
-                    ax.add_patch(Rectangle((x + .12, y + .14), .76, .72, facecolor=col,
-                                           edgecolor="none", alpha=0.42 if wd else 1.0))
-                else:
-                    ax.add_patch(Rectangle((x + .12, y + .14), .76, .72, facecolor="none",
-                                           edgecolor=GRID, lw=.6))
-            f_ = meta[m]["fusion_or_driver"]
-            ylab.append((y + .5, m + (f"  {f_}" if f_.endswith("::FOXO1") else ""), wd,
-                         "NOT in the administrator" in meta[m]["entity_call_basis"]))
-            y += 1
-    ax.set_xlim(0, ncol); ax.set_ylim(0, nrow); ax.invert_yaxis()
-    ax.set_yticks([p for p, *_ in ylab])
-    ax.set_yticklabels([t for _, t, *_ in ylab], fontsize=6.1)
-    for lab, (_, _, wd, flag) in zip(ax.get_yticklabels(), ylab):
-        if wd: lab.set_color(NONE)
-        elif flag: lab.set_color(MUTED); lab.set_style("italic")
-    ax.set_xticks([i2 + .5 for i2 in range(ncol)])
-    ax.set_xticklabels([c[1] for c in COLS], fontsize=6.3, rotation=55, ha="left",
-                       rotation_mode="anchor")
-    ax.xaxis.set_ticks_position("top"); ax.tick_params(length=0, pad=2)
-    for sp in ax.spines.values():
-        sp.set_visible(False)
-    tf = mtrans.blended_transform_factory(ax.transAxes, ax.transData)
-    for y0, n, ent in bands:
-        ax.plot([1.012, 1.012], [y0 + .12, y0 + n - .12], color=DARK, lw=1.6, transform=tf,
-                clip_on=False, solid_capstyle="butt")
-        ax.text(1.026, y0 + n / 2, PRETTY.get(ent, ent), va="center", ha="left",
-                fontsize=6.6, color=DARK, weight="bold", transform=tf, clip_on=False)
-    ax.axvline(13, color=DARK, lw=.9)
+    fig, ax = plt.subplots(figsize=(7.0, 0.185 * len(rows) + 1.25))
+    fig.subplots_adjust(top=0.965, bottom=0.075)
+    y = list(range(len(rows)))[::-1]
+    for yy, (nm, c, p) in zip(y, rows):
+        ax.plot([p if p else FL * 2.6, c], [yy, yy], color="#dedcd5", linewidth=2.4,
+                solid_capstyle="round", zorder=1)
+        ax.scatter(c, yy, s=28, color=LINE_C, edgecolor="white", linewidth=0.6, zorder=3)
+        if p:
+            ax.scatter(p, yy, s=28, color=TISSUE, edgecolor="white", linewidth=0.6,
+                       zorder=3)
+            ax.text(c * 1.3, yy, f"{c/p:.0f}×" if c / p >= 2 else f"{c/p:.1f}×",
+                    va="center", fontsize=5.9, color=MUTED)
+        else:
+            # No marker for "none": an absent point is the encoding, and the italic red
+            # word names it. A third coloured mark here would sit too close to the
+            # patient-tissue orange to be told apart.
+            ax.text(FL * 0.92, yy, "none", va="center", ha="left", fontsize=6,
+                    color=NONE, style="italic", weight="bold")
+    ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=6.3)
+    for t, r in zip(ax.get_yticklabels(), rows):
+        if not r[2]:
+            t.set_color(NONE)
+    ax.tick_params(axis="y", length=0, pad=3)
+    ax.set_xscale("log"); ax.set_xlim(0.30, 9000)
+    ax.set_xticks([1, 10, 100, 1000]); ax.set_xticklabels(LOGX[:4])
+    ax.set_xlabel("regulatory epigenomic samples (log scale)", fontsize=7.5)
+    ax.spines["left"].set_visible(False)
+    tidy(ax)
+    ax.legend(handles=[Patch(facecolor=LINE_C, label="Established cell line"),
+                       Patch(facecolor=TISSUE, label="Patient-derived: tumour, "
+                                                     "metastasis, recurrence, PDX or "
+                                                     "organoid")],
+              fontsize=6.4, frameon=False, loc="upper left", bbox_to_anchor=(0.0, -0.062),
+              ncol=2, handlelength=1.0, handleheight=0.75, columnspacing=1.4)
 
-    universal = set.intersection(*have.values())
-    n_uni = len(universal - {"WGBS", "SE*", "INPUT"})
-    fig.suptitle("The densest sarcoma epigenome resource that exists is complete, "
-                 "uniform — and entirely behind a wall.",
-                 fontsize=10, weight="bold", x=0.0, y=1.085, ha="left")
-    fig.text(0.0, 1.038,
-             f"Every one of the {nrow} St Jude CSTN models carries the same {n_uni}-mark "
-             f"panel plus WGBS and super-enhancer calls (CTCF only in the 2018 study). "
-             f"Right of the rule: what it does not contain at all.",
-             fontsize=7.3, color=DARK, ha="left")
-    fig.legend(handles=[Patch(facecolor=ACTIVE, label="active / elongation mark, or factor"),
-                        Patch(facecolor=REPRESS, label="repressive mark or insulator"),
-                        Patch(facecolor=METH, label="DNA methylation"),
-                        Patch(facecolor=DERIV, label="derived calls (super-enhancers)"),
-                        Patch(facecolor="none", edgecolor=GRID, label="absent")],
-               fontsize=6.6, frameon=False, loc="upper left", bbox_to_anchor=(0.075, 0.055),
-               ncol=3, handlelength=1.1, handleheight=0.8, columnspacing=1.4)
-    foot(fig, 0.075, -0.02,
-         "Access: all of it requires a St Jude / EGA data access agreement. None of it is "
-         "added to any atlas total — the same material is already counted once inside the "
-         "EGA bar of Figure WP3. What the enumeration adds is this resolution, which EGA "
-         "does not publish.\n\n"
-         "Entity calls are the St Jude data administrator's; the fusion partner is from "
-         "the CSTN portal model table.\n\n"
-         "Red label: SJOS010930_X1, reported by the administrator as withdrawn from CSTN "
-         "and no longer available — its tracks are still drawn on the browser page and are "
-         "shown faded. Grey italic label: SJRHB010463_X16, which is on the browser page "
-         "and in the portal as PAX3::FOXO1 but is absent from the administrator's list; "
-         "the discrepancy is left standing.", width=138, size=5.8)
-    save(fig, "WP4_the_walled_resource")
-    absent = [c[1].replace("\n", " ") for c in COLS if not any(c[0] in have[m] for m in models)]
-    return {"n_models": nrow, "n_marks": n_uni, "absent": absent,
-            "n_tracks": len(rows),
-            "n_reg_tracks": sum(1 for r in rows if r["assay_family"] == "regulatory"
-                                and r["is_control"] != "Y")}
+    nz = sum(1 for _, c, p in rows if c and not p)
+    worst = max((t for t in rows if t[2]), key=lambda t: t[1] / t[2])
+    fig.suptitle(f"For {nz} of the {len(rows)} entities with regulatory epigenomics, there "
+                 f"is no human tissue to check it against",
+                 fontsize=9.6, weight="bold", x=0.0, y=1.008, ha="left")
+    foot(fig, 0.0, -0.105,
+         f"Each row is one entity. The blue point is regulatory epigenomic samples from "
+         f"established cell lines, the orange point the same assays on patient-derived "
+         f"material; the bar between them is the validation gap, annotated as a ratio. "
+         f"{worst[0]} is the widest at {worst[1]/worst[2]:.0f}x.\n\n"
+         f"A row marked none has cell-line data and no patient-derived material of any "
+         f"kind, so a finding made in the model cannot presently be checked against human "
+         f"disease. No entity has the opposite problem.\n\n"
+         f"Restricted to regulatory assays, which is where the asymmetry lives: DNA "
+         f"methylation arrays are mostly run on patient tissue and would mask it.\n\n"
+         f"Thirteen further entities have no regulatory data at all and cannot appear "
+         f"here (Figure WP1D)."
+         + (f" A fourteenth, {' and '.join(ctrl_only)}, is also absent for a different "
+            f"reason: its entire regulatory record is normal or reference tissue rather "
+            f"than tumour or model, so it has neither point to plot." if ctrl_only else ""))
+    save(fig, "WP4_can_the_models_be_validated")
+    return {"n_rows": len(rows), "n_no_patient": nz,
+            "worst": (worst[0], round(worst[1]/worst[2]))}
 
 
 def save(fig, stem):
