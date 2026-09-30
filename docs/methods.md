@@ -207,6 +207,7 @@ Each was a real error caught against ground truth, and each is logged.
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
 | 10 | "Entities catalogued" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 12 | Two scatter labels sat on top of each other in WP1-D and F19, so `FP-RMS` appeared to name the `Rhabdoid tumour / ATRT` point | a reader asked which dot each label meant, and whether the two were pooled | they were never pooled — separate rows in every table. Placement rewritten in `_labels.py`: measured boxes, an ownership test, leader lines; `28`, `20` |
 | 11 | St Jude CSTN entity calls were read off the browser label suffix — `SJHGS` became UPS/MFH, `(SCLEROS)` asserted a MYOD1 genotype | the data administrator supplied the definitive per-sample list | curated calls keyed on model ID, with `entity_call_basis` per row; three discrepancies reported rather than resolved; `15`, §3b |
 
 ## 7b. Figures for the white-paper section
@@ -216,6 +217,20 @@ existing datasets" section (WP1–WP4). They are composed from T3/T4/T13/T15/T27
 render time rather than assembled from the exploratory figures, so every number on every
 panel is recomputed from the tables on each run and cannot drift from them. Four panels
 maximum per figure; vector PDF, Arial, `pdf.fonttype 42` so the text stays editable.
+
+**Scatter labels carry leader lines, and placement is measured rather than guessed.**
+`_labels.py` holds the shared placer used by WP1-D and F19. The first version tested a
+guessed 52x11 pixel box; `Rhabdoid tumour / ATRT` (95 US cases per year, 1,052 regulatory
+samples) and `FP-RMS` (110, 640) both took the slot above themselves, their guessed boxes
+cleared each other by a pixel, and the pair read as one two-line label over the upper
+point. Four rules now prevent that: candidate boxes are drawn and measured with the real
+renderer (noting that `Annotation.get_window_extent` includes the leader, so the search
+uses a bare label); a candidate is rejected if it sits nearer to a foreign marker than to
+its own; candidates are tried in order of how well they point away from the nearest
+neighbour; and every label gets a leader line, so the reading never rests on proximity.
+Placement is done only after the scales, limits and legend are final, because it is
+measured in display pixels. A label that cannot be placed cleanly is reported on stdout
+rather than drawn silently.
 
 Two claims in that section needed checking against the tables rather than against the
 exploratory figures, and one of them was wrong on the first pass:
@@ -241,4 +256,4 @@ distinct models, distinct PDX and distinct patients alongside them.
 
 **The classifier is rules over free text**, and free text is written by humans in a hurry.
 The correction table above is not a list of problems that have been solved — it is a
-demonstration of the error rate, and the twelfth error has not been found yet.
+demonstration of the error rate, and the thirteenth error has not been found yet.

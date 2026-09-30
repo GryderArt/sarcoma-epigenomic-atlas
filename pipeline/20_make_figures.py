@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 from matplotlib.ticker import FuncFormatter
 from matplotlib.patches import Patch, FancyBboxPatch
+from _labels import place_labels
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
                     WORK, topen, twrite, dpath)
 FIG = FIGURES
@@ -129,28 +130,6 @@ def f19():
     ax.text(26000, 0.42, "ZERO", fontsize=7, color=RED, weight="bold",
             va="center", ha="right")
 
-    # de-collide labels for the notable points
-    show = [r for r in have if r["US_cases_per_year_all_ages"] > 900
-            or r["regulatory_epigenomic_samples"] > 900
-            or r["US_cases_per_year_all_ages"] < 45]
-    placed = []            # (log10 x, log10 y) of each label anchor already used
-    CAND = [(0, 7, "center"), (0, -11, "center"), (-7, -2.5, "right"), (7, -2.5, "left"),
-            (0, 15, "center"), (0, -19, "center")]
-    for r in sorted(show, key=lambda r: -r["regulatory_epigenomic_samples"]):
-        x, yv = r["US_cases_per_year_all_ages"], r["regulatory_epigenomic_samples"]
-        lx, ly = math.log10(x), math.log10(yv)
-        for dx, dy, ha in CAND:
-            ax_ = lx + dx*0.011 + (0.13 if ha == "left" else -0.13 if ha == "right" else 0)
-            ay_ = ly + dy*0.016
-            if all(abs(ax_-px) > 0.30 or abs(ay_-py) > 0.115 for px, py in placed):
-                placed.append((ax_, ay_)); break
-        else:
-            dx, dy, ha = CAND[0]; placed.append((lx, ly+0.11))
-        ax.annotate(r["display_name"].split(" (")[0], (x, yv), fontsize=6.2, color=DARK,
-                    xytext=(dx, dy), textcoords="offset points", ha=ha,
-                    va="center" if ha != "center" else ("bottom" if dy > 0 else "top"),
-                    zorder=5)
-
     ax.set_xscale("log"); ax.set_yscale("log")
     ax.set_xlim(9, 30000); ax.set_ylim(0.29, 200000)
     ax.set_xlabel("US cases per year (all ages)", fontsize=8.5)
@@ -162,21 +141,38 @@ def f19():
     ax.set_xticks([10,100,1000,10000]); ax.set_xticklabels(["10","100","1,000","10,000"])
     ax.grid(True, which="major", color="#eef1f4", linewidth=0.6, zorder=0)
     ax.set_axisbelow(True)
-    ax.legend(handles=[plt.Line2D([],[],marker="o",ls="",color=CLS[g],markeredgecolor="white",
-                                  label=CLSLAB[g], markersize=6)
-                       for g in ("paediatric","both","adult")],
-              fontsize=6.8, frameon=False, loc="lower right", handletextpad=0.2)
+    leg = ax.legend(handles=[plt.Line2D([],[],marker="o",ls="",color=CLS[g],
+                                        markeredgecolor="white", label=CLSLAB[g],
+                                        markersize=6)
+                             for g in ("paediatric","both","adult")],
+                    fontsize=6.8, frameon=False, loc="lower right", handletextpad=0.2)
 
     txt = ("No regulatory epigenomics whatsoever\n" +
            "\n".join(f"· {r['display_name'].split(' (')[0][:38]}  "
                      f"({r['US_cases_per_year_all_ages']:,}/yr)" for r in zero))
-    ax.text(0.012, 0.988, txt, transform=ax.transAxes, fontsize=6.1, color=RED,
+    callout = ax.text(0.012, 0.988, txt, transform=ax.transAxes, fontsize=6.1, color=RED,
             va="top", ha="left", linespacing=1.5,
             bbox=dict(boxstyle="round,pad=0.42", facecolor="#fdf3f0", edgecolor="#f0c8bd",
                       linewidth=0.6))
     ax.set_title("Regulatory epigenomics tracks research history, not disease burden",
                  fontsize=9.2, weight="bold", loc="left", pad=8)
     tidy(ax)
+
+    # Labels last, once the scales, the legend and the callout box are final -- placement
+    # is measured in display pixels, so it is only valid against the finished axes. The
+    # shared helper measures each candidate, refuses any position nearer to a foreign
+    # point than to its own, and draws a leader line, so no label can be read as
+    # belonging to a neighbouring entity (see _labels.py).
+    show = [r for r in have if r["US_cases_per_year_all_ages"] > 900
+            or r["regulatory_epigenomic_samples"] > 900
+            or r["US_cases_per_year_all_ages"] < 45]
+    place_labels(
+        fig, ax,
+        [(r["US_cases_per_year_all_ages"], r["regulatory_epigenomic_samples"],
+          r["display_name"].split(" (")[0]) for r in show],
+        [(r["US_cases_per_year_all_ages"], r["regulatory_epigenomic_samples"]) for r in have]
+        + [(r["US_cases_per_year_all_ages"], FLOOR) for r in zero],
+        avoid=[leg, callout], fontsize=6.2, color=DARK, where="F19")
     save(fig, "F19_burden_vs_regulatory_epigenomics")
 
 # ---------------------------------------------------------------- F20

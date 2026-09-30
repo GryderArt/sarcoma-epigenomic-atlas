@@ -20,6 +20,7 @@ from matplotlib.patches import Patch, Rectangle
 from matplotlib.ticker import FuncFormatter
 csv.field_size_limit(10**7)
 from _paths import DATA, FIGURES, topen
+from _labels import place_labels
 
 fm._load_fontmanager(try_read_cache=False)
 plt.rcParams.update({
@@ -39,6 +40,7 @@ DARK, MUTED, GRID = "#2b3440", "#7c8894", "#e3e2dc"
 CLS = {"paediatric": PED, "both": BOTH, "adult": ADULT}
 LAB = {"paediatric": "Paediatric-predominant", "both": "Both ages", "adult": "Adult-predominant"}
 LOGX = ["1", "10", "100", "1,000", "10,000"]
+FLOOR = 0.57                      # where entities with nothing are drawn in WP1-D
 
 REG = {"ChIP-seq", "CUT&RUN", "CUT&Tag", "ChIP-exo", "ChIP-chip", "ATAC-seq", "scATAC-seq",
        "DNase-seq", "FAIRE-seq", "MNase-seq", "Hi-C", "HiChIP", "Micro-C", "Capture-HiC",
@@ -133,6 +135,11 @@ def wp1(d):
         panel_tag(ax, t, dx=-0.34 if ax is axA else -0.12 if ax is axB else -0.40)
 
     # ---- D: per-entity
+    SHORT = {"Rhabdoid tumour / ATRT": "Rhabdoid / ATRT",
+             "Undifferentiated pleomorphic sarcoma": "UPS / MFH",
+             "Desmoid / aggressive fibromatosis": "Desmoid"}
+    short = lambda nm: SHORT.get(nm, nm.split(" (")[0])
+
     zeros = collections.defaultdict(list)
     for r in T13:
         x, yv = F(r, "US_cases_per_year_all_ages"), I(r, "regulatory_epigenomic_samples")
@@ -143,43 +150,43 @@ def wp1(d):
                         linewidth=0.6, zorder=3)
         else:
             zeros[r["age_class"]].append((x, r["display_name"]))
-    axD.axhspan(0.42, 0.72, color=NONE, alpha=0.09, zorder=0)
-    for a, pts in zeros.items():
-        for x, _ in pts:
-            axD.scatter(x, 0.56, marker="v", s=26, color=NONE, zorder=3)
-    # Label the four best-covered entities and the four highest-burden ones -- the two
-    # ends of the argument. Offsets are placed greedily so labels never sit on each other.
-    pts = [(F(r, "US_cases_per_year_all_ages"), I(r, "regulatory_epigenomic_samples"),
-            r["display_name"].split(" (")[0]) for r in T13
-           if F(r, "US_cases_per_year_all_ages") and I(r, "regulatory_epigenomic_samples")]
-    pick = {p[2]: p for p in sorted(pts, key=lambda t: -t[1])[:4]}
-    pick.update({p[2]: p for p in sorted(pts, key=lambda t: -t[0])[:4]})
-    placed = []
-    for x, yv, n in sorted(pick.values(), key=lambda t: -t[1]):
-        for dxo, dyo, ha in ((0, 9, "center"), (0, -13, "center"),
-                             (7, 3, "left"), (-7, 3, "right"),
-                             (7, -8, "left"), (-7, -8, "right")):
-            px, py = axD.transData.transform((x, yv))
-            box = (px + dxo - 26 * (ha != "left"), py + dyo, 52, 10)
-            if not any(abs(box[0] - b[0]) < 52 and abs(box[1] - b[1]) < 11 for b in placed):
-                placed.append(box)
-                axD.annotate(n, (x, yv), fontsize=6, color=DARK, textcoords="offset points",
-                             xytext=(dxo, dyo), ha=ha)
-                break
+    axD.axhspan(0.46, 0.68, color=NONE, alpha=0.09, zorder=0)
+    for a, zs in zeros.items():
+        for x, _ in zs:
+            axD.scatter(x, FLOOR, marker="v", s=26, color=NONE, zorder=3)
+
+    # Scales and limits must be final BEFORE any label is placed: placement is measured
+    # in display pixels, and transData changes when the scale does.
     axD.set_xscale("log"); axD.set_yscale("symlog", linthresh=1)
-    axD.set_xlim(8, 9000); axD.set_ylim(0.3, 20000)
+    axD.set_xlim(8, 9000); axD.set_ylim(0.19, 20000)
     axD.set_xticks([10, 100, 1000]); axD.set_xticklabels(["10", "100", "1,000"])
     axD.set_yticks([1, 10, 100, 1000]); axD.set_yticklabels(LOGX[:4])
     axD.set_xlabel("US cases per year (all ages)", fontsize=7.5)
     axD.set_ylabel("regulatory epigenomic samples\nin public archives", fontsize=7.5)
     nz = sum(len(v) for v in zeros.values())
-    axD.text(9.2, 0.86, f"{nz} entities with a published incidence rate and no regulatory "
+    axD.text(9.2, 0.40, f"{nz} entities with a published incidence rate and no regulatory "
                         f"epigenomics at all — plotted on the floor",
-             fontsize=6.4, color=NONE, va="bottom", weight="bold")
-    axD.legend(handles=[Patch(facecolor=CLS[g], label=LAB[g]) for g in order],
-               fontsize=6.5, frameon=False, loc="lower right", handlelength=1.0,
-               handleheight=0.75)
+             fontsize=6.4, color=NONE, va="top", weight="bold")
+    # The legend sits below the axes, not in the lower-right corner, because that corner
+    # is exactly where the high-burden, low-data points that carry the argument live.
+    leg = axD.legend(handles=[Patch(facecolor=CLS[g], label=LAB[g]) for g in order],
+                     fontsize=6.5, frameon=False, loc="upper left",
+                     bbox_to_anchor=(0.0, -0.13), ncol=3, handlelength=1.0,
+                     handleheight=0.75, columnspacing=1.6)
     tidy(axD, grid="both"); panel_tag(axD, "D", dx=-0.075, dy=1.02)
+
+    # Label the four best-covered entities and the three highest-burden ones -- the two
+    # ends of the argument. Placement is measured and leader-lined; see _labels.py.
+    scat = [(F(r, "US_cases_per_year_all_ages"), I(r, "regulatory_epigenomic_samples"),
+             short(r["display_name"])) for r in T13
+            if F(r, "US_cases_per_year_all_ages") and I(r, "regulatory_epigenomic_samples")]
+    N_DATA, N_BURDEN = 4, 3
+    pick = {p[2]: p for p in sorted(scat, key=lambda t: -t[1])[:N_DATA]}
+    pick.update({p[2]: p for p in sorted(scat, key=lambda t: -t[0])[:N_BURDEN]})
+    place_labels(fig, axD, list(pick.values()),
+                 [(x, yv) for x, yv, _ in scat]
+                 + [(x, FLOOR) for zs in zeros.values() for x, _ in zs],
+                 avoid=[leg], fontsize=6, color=DARK, leader=MUTED, where="WP1-D")
 
     fig.suptitle("Sarcoma epigenomics has been generated in inverse proportion to who "
                  "gets the disease", fontsize=10, weight="bold", x=0.0, y=1.005, ha="left")
@@ -191,7 +198,9 @@ def wp1(d):
          "FAIRE, MNase, Hi-C, HiChIP, Micro-C, Capture-HiC, ChIA-PET and 4C, with input "
          "and IgG controls excluded.\n\n"
          "Four further entities have no population rate published anywhere and are omitted "
-         "from panel D only; they are counted everywhere else.")
+         "from panel D only; they are counted everywhere else.\n\n"
+         "Panel D labels the four best-covered entities and the three highest-burden "
+         "ones, each tied to its own point by a leader line.")
     save(fig, "WP1_burden_versus_data")
     return {"ratio": ratio, "agg": agg, "n_scatter_zero": nz}
 
