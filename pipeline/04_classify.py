@@ -282,6 +282,110 @@ def sample_type(blob, organism):
         return "mouse_model"
     return "unspecified"
 
+def classify(r, ctx):
+    """Classify one GSM record into assay, target, sample type, model and disease.
+
+    Extracted from main() so the delta harvest in stage 31 classifies new samples
+    with exactly these rules, rather than with a copy of them that can drift.
+    """
+    gse = r.get("gse","")
+    gctx, pmid, pdat, taxon, fams = ctx.get(gse, ("","","","",""))
+    sblob = " ;; ".join([r.get("title",""), r.get("source_name",""),
+                         r.get("characteristics",""), r.get("suppl_files","")[:300]])
+    mblob = " ;; ".join([r.get("title","")[:200], r.get("source_name","")[:200],
+                         r.get("characteristics","")[:500]])
+    blob = sblob + " ;; " + gctx
+    ls = r.get("library_strategy","").strip()
+    hits = first(ASSAY_PATS, sblob) or first(ASSAY_PATS, blob)
+    assay = hits[0] if hits else ""
+    # The depositor's own library_strategy outranks any assay word found in the
+    # text. Multi-assay series ("ChIP-seq and RNA-seq of ...") otherwise stamp
+    # their epigenomic assay onto the RNA-seq samples sitting beside it, and the
+    # GEX half of a 10x multiome likewise inherits "ATAC" from its own series.
+    # This is the assay-level form of the series-title leak logged as correction 4.
+    if ls in RNA_STRATEGIES and assay in DNA_ASSAYS:
+        assay = ""
+    if ls in ("CUT&RUN","CUT&Tag"): assay = ls
+    elif ls == "ATAC-seq": assay = "ATAC-seq"
+    elif ls == "Hi-C" and assay not in ("HiChIP","Micro-C","ChIA-PET","Capture-HiC"): assay = "Hi-C"
+    elif not assay and ls in LIBSTRAT: assay = LIBSTRAT[ls]
+    if not assay:
+        st = r.get("sample_type",""); lsrc = r.get("library_source","")
+        assay = ("RNA-seq" if "TRANSCRIPTOMIC" in lsrc.upper() else
+                 "Expr-array" if st == "RNA" else
+                 "genomic-array" if st == "genomic" else "other/unknown")
+    if assay in ("RNA-seq","Expr-array") and re.search(
+            r"single[\-\s]cell|single[\-\s]nucle|\bscrna|\bsnrna|10x\s+genomics|smart[\-\s]?seq2?", blob, re.I):
+        assay = "scRNA-seq"
+    if assay == "ATAC-seq" and re.search(r"single[\-\s]cell|single[\-\s]nucle|\bscatac|\bsnatac|multiome", blob, re.I):
+        assay = "scATAC-seq"
+
+    marks = first(MARK_PATS, sblob); tfs = first(TF_PATS, sblob)
+    target = ""; ab = ""
+    if assay in ("ChIP-seq","CUT&RUN","CUT&Tag","ChIP-exo","ChIP-chip","HiChIP","ChIA-PET"):
+        m = ENRICH.search(r.get("characteristics",""))
+        if m and INPUTY.search(m.group(1)): target = "input/none"
+        elif INPUTY.search(r.get("title","")): target = "input/none"
+        else:
+            a = AB_RE.search(r.get("characteristics",""))
+            ab = (a.group(1).strip() if a else "")[:40]
+            combo = ab + " ;; " + sblob
+            mk = first(MARK_PATS, combo); tf = first(TF_PATS, combo)
+            target = mk[0] if mk else (tf[0] if tf else (ab or "unspecified"))
+            if target in ("input","IgG"): target = "input/none"
+    elif assay in ("WGBS","RRBS","Methyl-array","MeDIP/hMeDIP","Bisulfite-PCR"):
+        target = "5hmC" if "5hmC" in marks else "5mC"
+
+    hit = match_model(mblob)
+    model = hit[0] if hit else ""
+    mdis  = hit[1] if hit else ""
+    msub  = hit[2] if hit else ""
+    rrid  = hit[4] if hit else ""
+    mprob = hit[5] if hit else ""
+
+    dh_s = [k for k, p in DIS_PATS if p.search(sblob)]
+    dh_c = [k for k, p in DIS_PATS if p.search(gctx)]
+    sp_s = [d for d in dh_s if d != "Sarcoma NOS"]
+    sp_c = [d for d in dh_c if d != "Sarcoma NOS"]
+    disease = (sp_s or sp_c or dh_s or dh_c or [""])[0]
+    dsrc = ("sample" if sp_s else "series" if sp_c else
+            "sample" if dh_s else "series" if dh_c else "none")
+    if not disease and mdis: disease, dsrc = mdis, "model"
+    # H3.3 residue guard: keep glioma out of the bone-tumor bin
+    if disease == "GCTB/Chondroblastoma" and (K27M_GLIOMA.search(blob) or GLIOMA_CTX.search(blob)) \
+       and not re.search(r"g34w|g34l|k36m", blob, re.I):
+        disease = ""
+
+    stype = sample_type(sblob, r.get("organism",""))
+    if stype == "unspecified" and model:
+        mt = (MODELS.get(model, ("","","","","",""))[3] or "").lower()
+        stype = "PDX" if "pdx" in mt else "cell_line" if "cell" in mt else stype
+    if stype == "unspecified" and re.search(r"cell\s*line|\bcells\b", sblob, re.I): stype = "cell_line"
+    if stype == "unspecified" and not model and TISSUEY.search(sblob): stype = "primary_tumor"
+    if NORMALY.search(r.get("source_name","")) and not TUMORY.search(r.get("source_name","")):
+        stype = "normal/reference"
+
+    if model: relevance = "model_confirmed"
+    elif sp_s: relevance = "sample_explicit"
+    elif sp_c: relevance = "series_explicit"
+    elif dh_s or dh_c: relevance = "sarcoma_nos"
+    else: relevance = "off_target"
+    in_scope = "Y" if (relevance != "off_target" and
+                       (disease in IN_SCOPE_DIS or model)) else "N"
+    if NONSARC.search(sblob) and not model and not sp_s and disease in ("", "Sarcoma NOS"):
+        relevance, in_scope = "off_target", "N"
+
+    rec = {**r, "assay_class": assay, "epi_target_norm": target, "antibody_raw": ab,
+           "sample_type": stype, "model_matched": model, "model_rrid": rrid,
+           "model_subtype": msub, "model_problematic": mprob,
+           "disease": disease, "disease_source": dsrc,
+           "age_class": AGE_CLASS.get(disease, ""),
+           "relevance": relevance, "in_scope": in_scope,
+           "is_epigenomic": "Y" if assay in EPI else "N",
+           "gse_title": gctx.split(" || ")[0][:300], "gse_pubmed": pmid,
+           "gse_date": pdat, "gse_taxon": taxon, "gse_families": fams}
+    return rec
+
 def main():
     ctx = {}
     for r in csv.DictReader(open(f"{D}/gse_summary_v2.tsv"), delimiter="\t"):
@@ -300,102 +404,7 @@ def main():
             except (EOFError, OSError, csv.Error) as e:
                 sys.stderr.write(f"[tolerated: {e}]\n")
         for r in reader():
-            gse = r.get("gse","")
-            gctx, pmid, pdat, taxon, fams = ctx.get(gse, ("","","","",""))
-            sblob = " ;; ".join([r.get("title",""), r.get("source_name",""),
-                                 r.get("characteristics",""), r.get("suppl_files","")[:300]])
-            mblob = " ;; ".join([r.get("title","")[:200], r.get("source_name","")[:200],
-                                 r.get("characteristics","")[:500]])
-            blob = sblob + " ;; " + gctx
-            ls = r.get("library_strategy","").strip()
-            hits = first(ASSAY_PATS, sblob) or first(ASSAY_PATS, blob)
-            assay = hits[0] if hits else ""
-            # The depositor's own library_strategy outranks any assay word found in the
-            # text. Multi-assay series ("ChIP-seq and RNA-seq of ...") otherwise stamp
-            # their epigenomic assay onto the RNA-seq samples sitting beside it, and the
-            # GEX half of a 10x multiome likewise inherits "ATAC" from its own series.
-            # This is the assay-level form of the series-title leak logged as correction 4.
-            if ls in RNA_STRATEGIES and assay in DNA_ASSAYS:
-                assay = ""
-            if ls in ("CUT&RUN","CUT&Tag"): assay = ls
-            elif ls == "ATAC-seq": assay = "ATAC-seq"
-            elif ls == "Hi-C" and assay not in ("HiChIP","Micro-C","ChIA-PET","Capture-HiC"): assay = "Hi-C"
-            elif not assay and ls in LIBSTRAT: assay = LIBSTRAT[ls]
-            if not assay:
-                st = r.get("sample_type",""); lsrc = r.get("library_source","")
-                assay = ("RNA-seq" if "TRANSCRIPTOMIC" in lsrc.upper() else
-                         "Expr-array" if st == "RNA" else
-                         "genomic-array" if st == "genomic" else "other/unknown")
-            if assay in ("RNA-seq","Expr-array") and re.search(
-                    r"single[\-\s]cell|single[\-\s]nucle|\bscrna|\bsnrna|10x\s+genomics|smart[\-\s]?seq2?", blob, re.I):
-                assay = "scRNA-seq"
-            if assay == "ATAC-seq" and re.search(r"single[\-\s]cell|single[\-\s]nucle|\bscatac|\bsnatac|multiome", blob, re.I):
-                assay = "scATAC-seq"
-
-            marks = first(MARK_PATS, sblob); tfs = first(TF_PATS, sblob)
-            target = ""; ab = ""
-            if assay in ("ChIP-seq","CUT&RUN","CUT&Tag","ChIP-exo","ChIP-chip","HiChIP","ChIA-PET"):
-                m = ENRICH.search(r.get("characteristics",""))
-                if m and INPUTY.search(m.group(1)): target = "input/none"
-                elif INPUTY.search(r.get("title","")): target = "input/none"
-                else:
-                    a = AB_RE.search(r.get("characteristics",""))
-                    ab = (a.group(1).strip() if a else "")[:40]
-                    combo = ab + " ;; " + sblob
-                    mk = first(MARK_PATS, combo); tf = first(TF_PATS, combo)
-                    target = mk[0] if mk else (tf[0] if tf else (ab or "unspecified"))
-                    if target in ("input","IgG"): target = "input/none"
-            elif assay in ("WGBS","RRBS","Methyl-array","MeDIP/hMeDIP","Bisulfite-PCR"):
-                target = "5hmC" if "5hmC" in marks else "5mC"
-
-            hit = match_model(mblob)
-            model = hit[0] if hit else ""
-            mdis  = hit[1] if hit else ""
-            msub  = hit[2] if hit else ""
-            rrid  = hit[4] if hit else ""
-            mprob = hit[5] if hit else ""
-
-            dh_s = [k for k, p in DIS_PATS if p.search(sblob)]
-            dh_c = [k for k, p in DIS_PATS if p.search(gctx)]
-            sp_s = [d for d in dh_s if d != "Sarcoma NOS"]
-            sp_c = [d for d in dh_c if d != "Sarcoma NOS"]
-            disease = (sp_s or sp_c or dh_s or dh_c or [""])[0]
-            dsrc = ("sample" if sp_s else "series" if sp_c else
-                    "sample" if dh_s else "series" if dh_c else "none")
-            if not disease and mdis: disease, dsrc = mdis, "model"
-            # H3.3 residue guard: keep glioma out of the bone-tumor bin
-            if disease == "GCTB/Chondroblastoma" and (K27M_GLIOMA.search(blob) or GLIOMA_CTX.search(blob)) \
-               and not re.search(r"g34w|g34l|k36m", blob, re.I):
-                disease = ""
-
-            stype = sample_type(sblob, r.get("organism",""))
-            if stype == "unspecified" and model:
-                mt = (MODELS.get(model, ("","","","","",""))[3] or "").lower()
-                stype = "PDX" if "pdx" in mt else "cell_line" if "cell" in mt else stype
-            if stype == "unspecified" and re.search(r"cell\s*line|\bcells\b", sblob, re.I): stype = "cell_line"
-            if stype == "unspecified" and not model and TISSUEY.search(sblob): stype = "primary_tumor"
-            if NORMALY.search(r.get("source_name","")) and not TUMORY.search(r.get("source_name","")):
-                stype = "normal/reference"
-
-            if model: relevance = "model_confirmed"
-            elif sp_s: relevance = "sample_explicit"
-            elif sp_c: relevance = "series_explicit"
-            elif dh_s or dh_c: relevance = "sarcoma_nos"
-            else: relevance = "off_target"
-            in_scope = "Y" if (relevance != "off_target" and
-                               (disease in IN_SCOPE_DIS or model)) else "N"
-            if NONSARC.search(sblob) and not model and not sp_s and disease in ("", "Sarcoma NOS"):
-                relevance, in_scope = "off_target", "N"
-
-            rec = {**r, "assay_class": assay, "epi_target_norm": target, "antibody_raw": ab,
-                   "sample_type": stype, "model_matched": model, "model_rrid": rrid,
-                   "model_subtype": msub, "model_problematic": mprob,
-                   "disease": disease, "disease_source": dsrc,
-                   "age_class": AGE_CLASS.get(disease, ""),
-                   "relevance": relevance, "in_scope": in_scope,
-                   "is_epigenomic": "Y" if assay in EPI else "N",
-                   "gse_title": gctx.split(" || ")[0][:300], "gse_pubmed": pmid,
-                   "gse_date": pdat, "gse_taxon": taxon, "gse_families": fams}
+            rec = classify(r, ctx)
             if w is None:
                 w = csv.DictWriter(fo, fieldnames=list(rec.keys()), delimiter="\t", extrasaction="ignore")
                 w.writeheader()

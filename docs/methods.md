@@ -207,6 +207,7 @@ Each was a real error caught against ground truth, and each is logged.
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
 | 10 | "Entities cataloged" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 16 | A delta harvest adds samples that the cross-series duplicate pass never sees, so new rows carry no `is_duplicate` flag | re-harvesting to 2026-09-01 and asking what stage `32` could not reproduce | the rule that produced the existing 197 flags could not be reconstructed from the table it wrote, and a guessed replacement over-flagged by an order of magnitude when tested against those 197. Rather than substitute a different rule, new rows are left unflagged and the bound is stated: 197 of 85,698 pre-delta rows carry the flag (0.23%), so the de-duplicated denominators move by less than their rounding. `32` |
 | 15 | RNA-seq samples in multi-assay series inherited the series' epigenomic assay class | asking what LGFMS/SEF's 20 "regulatory" samples actually were — all 20 were a HUVEC fusion-expression experiment, 12 of them titled `RNA_seq_*` | `library_strategy` is now authoritative over any assay word in the text; 723 samples reassigned, 688 of which had no epigenomic assay word in their own record. Regulatory total falls 6.2%, 10,556 → 9,898. Every structural claim is unchanged: still 13 entities with none, 20 with patient-derived, 11 unvalidatable. Stage `30`, log in `T29`; `04` fixed for future runs |
 | 14 | `distinct_models` was read as "models that exist"; it counts models name-matched to the curated catalog, so three entities with unmatched cell-line data were miscounted | cross-checking the model bullet against `sample_type` | claim now computed from `sample_type` directly — 14 entities have never had a cell line, PDX or organoid profiled, a different set from `distinct_models = 0`; §7b |
 | 13 | Normal and reference tissue counted toward an entity's regulatory total | LGFMS / SEF appeared to have 20 regulatory epigenomes while dropping out of the cell-line-vs-tissue figure | 3% of regulatory samples atlas-wide; decisive only for LGFMS / SEF (100% control tissue) and endometrial stromal sarcoma (75%). Reported rather than silently re-binned |
@@ -281,16 +282,49 @@ labels, derived column values, figure captions, documentation — is US English,
 
 Two categories are deliberately left as deposited. The **verbatim contents of third-party
 records** keep their original spelling: a GEO `source_name` reading "Malignant peripheral
-nerve sheath tumour" and a DKFZ classifier label reading "Malignant rhabdoid tumour" are
+nerve sheath tumor" and a DKFZ classifier label reading "Malignant rhabdoid tumor" are
 quoted, not corrected, and the gap map displays them as the depositor wrote them. So do
-the **regular expressions that match those records** — European depositors write "tumour"
-and "haemangioendothelioma", and Americanising the patterns would stop them matching. The
+the **regular expressions that match those records** — European depositors write "tumor"
+and "hemangioendothelioma", and Americanising the patterns would stop them matching. The
 separation is enforced mechanically: TSV rewriting is scoped by column against a
 deny-list of verbatim fields, and Python rewriting masks every raw-string literal before
 substituting.
 
 The rename touched 53,824 table cells and every count was verified unchanged afterwards:
 re-running stages 08, 13 and 12 reproduced all 45 entity rows identically.
+
+## 7d. Re-harvest and the delta
+
+The full sweep (`01`–`04`) queries roughly 450,000 records and takes hours. Bringing the
+atlas forward does not need it: every GEO series carries a release date, so the same term
+sweep bounded to dates after the latest series already held reaches only what is new.
+`31_reharvest_delta.py` runs that bounded sweep and classifies the result by **importing**
+`classify` from `04`, not by reimplementing it, so a sample deposited last month is
+annotated by exactly the rules that annotated one deposited in 2012. `32_merge_delta.py`
+appends the delta, then `06`, `07` and `30` are re-run over the whole merged table.
+
+The 2026-09-01 re-harvest swept 658 queries, fetched 98,638 sample records from 4,357
+series the atlas did not hold, and kept 6,440 in scope. Stage `07` then moved 296 of those
+out of the bone-tumor bin — 276 non-human H3.3 model systems and 20 H3.3 glioma-residue
+rows — which is correction #5 operating on new material rather than a new error. Stage
+`30` found nothing to correct, because the `library_strategy` guard added to `04` after
+correction #15 now rejects the RNA-assay leak at classification time rather than
+afterwards. Net: +681 epigenomic samples, 15,671 → 16,352.
+
+Every structural claim in the white-paper section survived the re-harvest unchanged:
+entity coverage (8/21/44 of 45 by 2010/2015/2020), 13 entities with no
+regulatory epigenomics, 25 without patient-derived material, 11 of 31 not
+validatable, and a 23x per-case gap between pediatric and adult disease. What moved
+were magnitudes, which is what a re-harvest should move.
+
+## 7e. Numbers in the prose
+
+`33_whitepaper_facts.py` computes every quantity the white-paper section asserts and
+writes `docs/whitepaper_facts.json`; the document build reads that file and interpolates.
+Nothing numeric is typed into the document. `33` imports `28_whitepaper_figures.py` and
+reuses its loaders, its `REG` / `MODERN` / `MODALITY` definitions and its bootstrap, so a
+sentence and the panel it describes cannot print different numbers — they did, for six
+quantities, when `33` first carried its own copies of those definitions.
 
 ## 8. What this cannot tell you
 

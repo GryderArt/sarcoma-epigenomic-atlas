@@ -89,9 +89,6 @@ VERBATIM_FILES = {"T16_stjude_cstn_inventory.tsv", "T17_stjude_opdx_models.tsv",
                   "T28_stjude_viz_tracks.tsv"}
 
 # The (?<![A-Za-z0-9_]) guard matters: without it the trailing "r" of a word such as
-# "tumour" followed by a closing quote is read as the start of a raw string, and the
-# label before a pattern gets masked along with it.
-# The (?<![A-Za-z0-9_]) guard matters: without it the trailing "r" of a word such as
 # "tumour" followed by a closing quote reads as the start of a raw string, and the
 # label sitting before a pattern gets masked along with it.
 _DQ = '(?<![A-Za-z0-9_])r"(?:[^"\\\\]|\\\\.)*"'

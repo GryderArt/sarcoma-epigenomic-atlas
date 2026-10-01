@@ -1,0 +1,222 @@
+{
+ "accessibility": 1563,
+ "arrival": {
+  "acc": 2011,
+  "chip": 2007,
+  "cnr": 2021,
+  "meth": 2010,
+  "sc": 2024,
+  "td": 2014
+ },
+ "best": [
+  [
+   "MYOD1-mutant RMS",
+   1.0
+  ],
+  [
+   "GIST",
+   1.4
+  ]
+ ],
+ "burden_x": 5,
+ "burden_x_word": "five",
+ "cases_adult": 13293,
+ "cases_both": 10970,
+ "cases_ped": 2816,
+ "cases_topography": 18020,
+ "cases_total": 27079,
+ "cases_total_round": 27000,
+ "chip": 7936,
+ "controlled_datasets": 67,
+ "controlled_reg": 905,
+ "controlled_total": 3350,
+ "coverage": {
+  "2010": 8,
+  "2015": 21,
+  "2020": 44,
+  "2026": 44
+ },
+ "coverage_2010": 8,
+ "coverage_2015": 21,
+ "coverage_2020": 44,
+ "cutoff": "2026-09-01",
+ "cutoff_human": "1 September 2026",
+ "cutoff_month": "September 2026",
+ "cutrun": 1427,
+ "early_hi": 2015,
+ "early_lo": 2011,
+ "entities": 45,
+ "entities_word": "forty-five",
+ "epi_adult": 2166,
+ "epi_ped": 10384,
+ "epi_rated_total": 15646,
+ "ess_normal": 9,
+ "ess_reg": 12,
+ "fam": {
+  "acc": 1563,
+  "chip": 7936,
+  "cnr": 1427,
+  "meth": 3913,
+  "sc": 246,
+  "td": 880
+ },
+ "fam_total": 15965,
+ "fidelity_hi": 6,
+ "fidelity_hi_word": "six",
+ "fidelity_n": 7,
+ "fidelity_n_word": "seven",
+ "fprms": [
+  110,
+  673
+ ],
+ "gap": 23,
+ "gap_word": "twenty-third",
+ "gse140686_labels": 66,
+ "gse140686_n": 1505,
+ "gse140686_only": 10,
+ "gse140686_only_named": [
+  "Angiomatoid fibrous histiocytoma",
+  "Angiosarcoma",
+  "atypical fibroxanthoma / pleomorphic dermal sarcoma",
+  "BCOR-CCNB3 sarcoma",
+  "Clear cell sarcoma of the kidney",
+  "Dermatofibrosarcoma protuberans",
+  "Extraskeletal myxoid chondrosarcoma",
+  "Inflammatory myofibroblastic tumor",
+  "Intimal sarcoma",
+  "Ossifying fibromyxoid tumor"
+ ],
+ "gse140686_only_word": "ten",
+ "horizon_months": 6,
+ "horizon_word": "six",
+ "late_hi": 2026,
+ "late_lo": 2021,
+ "latest_year": 2026,
+ "lgfms_reg": 8,
+ "methylation": 3913,
+ "modern_early": "6",
+ "modern_late": "33",
+ "n_corrections": 16,
+ "n_corrections_word": "sixteen",
+ "n_have_pd": 20,
+ "n_have_pd_word": "twenty",
+ "n_models": 550,
+ "n_no_model": 14,
+ "n_no_model_word": "fourteen",
+ "n_no_patient": 11,
+ "n_no_patient_word": "eleven",
+ "n_no_rrid": 86,
+ "n_problematic": 95,
+ "n_validatable": 20,
+ "n_validatable_word": "twenty",
+ "n_validation_rows": 31,
+ "n_validation_rows_word": "thirty-one",
+ "n_zero_norate": 4,
+ "n_zero_norate_word": "four",
+ "n_zero_pd": 25,
+ "n_zero_pd_word": "twenty-five",
+ "n_zero_reg": 13,
+ "n_zero_reg_word": "thirteen",
+ "netsarc_rate": 70.7,
+ "netsarc_us_cases": 24000,
+ "no_epi_named": [
+  "myoepithelial carcinoma of soft tissue"
+ ],
+ "no_patient_named": [
+  "Chondrosarcoma",
+  "desmoid fibromatosis",
+  "Endometrial stromal sarcoma",
+  "Epithelioid hemangioendothelioma",
+  "Epithelioid sarcoma",
+  "Infantile fibrosarcoma",
+  "Kaposi sarcoma",
+  "Leiomyosarcoma",
+  "well-differentiated liposarcoma",
+  "malignant PEComa",
+  "Solitary fibrous tumor"
+ ],
+ "pct_cases_adult": 90,
+ "pct_cell_line": 91,
+ "pct_cell_line_all": 74,
+ "pct_chip": 49,
+ "pct_control": 3,
+ "pct_last10": 87,
+ "pct_last10_word": "87",
+ "pct_last5": 50,
+ "pct_last5_word": "50",
+ "pct_pdx": 2,
+ "pct_pdx_all": 2,
+ "pct_tumor": 6,
+ "pct_tumor_all": 24,
+ "pd_2015_word": "two",
+ "pd_2020_word": "twelve",
+ "pd_growth": {
+  "2015": 2,
+  "2020": 12,
+  "2026": 20
+ },
+ "proj6": [
+  619,
+  895,
+  1308
+ ],
+ "rate_adult": 0.10637177461822012,
+ "rate_ped": 2.4964488636363638,
+ "ratrt": [
+  95,
+  966
+ ],
+ "reg_adult": 1414,
+ "reg_ped": 7030,
+ "reg_rated_total": 10062,
+ "reg_samples": 10400,
+ "samples": 16352,
+ "singlecell": 246,
+ "studies": 885,
+ "threed": 880,
+ "us_population_m": 342,
+ "worst": [
+  [
+   "MPNST",
+   105
+  ],
+  [
+   "adult fibrosarcoma",
+   49
+  ],
+  [
+   "fusion-negative rhabdomyosarcoma",
+   47
+  ],
+  [
+   "giant cell tumor of bone",
+   41
+  ],
+  [
+   "liposarcoma NOS",
+   28
+  ]
+ ],
+ "zero_3d": 29,
+ "zero_3d_word": "twenty-nine",
+ "zero_acc": 21,
+ "zero_acc_word": "twenty-one",
+ "zero_k27ac": 21,
+ "zero_k27ac_word": "twenty-one",
+ "zero_reg_cases": 4100,
+ "zero_reg_named": [
+  "Dermatofibrosarcoma protuberans",
+  "Angiosarcoma",
+  "Myxofibrosarcoma",
+  "pleomorphic liposarcoma",
+  "Inflammatory myofibroblastic tumor",
+  "Extraskeletal myxoid chondrosarcoma",
+  "Intimal sarcoma",
+  "Clear cell sarcoma of the kidney",
+  "BCOR-CCNB3 sarcoma",
+  "myoepithelial carcinoma of soft tissue",
+  "Ossifying fibromyxoid tumor",
+  "Angiomatoid fibrous histiocytoma",
+  "atypical fibroxanthoma / pleomorphic dermal sarcoma"
+ ]
+}

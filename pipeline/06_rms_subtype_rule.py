@@ -18,7 +18,7 @@ Guard rails:
 import csv, re, collections
 import os
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
-                    WORK, topen, twrite, dpath)
+                    WORK, topen, twrite, dpath, resolve)
 csv.field_size_limit(10**7)
 O = DATA
 
@@ -67,6 +67,7 @@ def main():
             for nm in [m["model_name"]] + [a.strip() for a in (m.get("aliases") or "").split(";")]:
                 if nm: MSUB[nm.strip().lower()] = s
 
+    _t4 = resolve("T4_samples_atomic.tsv")
     rows = list(csv.DictReader(topen("T4_samples_atomic.tsv"), delimiter="\t"))
     hdr = list(rows[0].keys())
     if "rms_call_basis" not in hdr: hdr.append("rms_call_basis")
@@ -136,7 +137,7 @@ def main():
         w = csv.writer(f, delimiter="\t")
         w.writerow(["gsm","gse","from","to","basis","sample_type","title","source_name"])
         [w.writerow(x) for x in log]
-    with twrite("T4_samples_atomic.tsv", gz=True) as f:
+    with twrite(_t4, gz=True) as f:
         w = csv.DictWriter(f, fieldnames=hdr, delimiter="\t", extrasaction="ignore")
         w.writeheader(); [w.writerow(r) for r in rows]
 

@@ -9,7 +9,7 @@ those alleles in cells and in plants. Those records must not sit in a sarcoma bi
 import csv, re, collections
 import os
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
-                    WORK, topen, twrite, dpath)
+                    WORK, topen, twrite, dpath, resolve)
 csv.field_size_limit(10**7)
 O = DATA
 
@@ -21,6 +21,7 @@ NONHUMAN = re.compile(r"arabidopsis|thaliana|drosophila|yeast|cerevisiae|zebrafi
                       r"xenopus|c\.? ?elegans", re.I)
 
 def main():
+    _t4 = resolve("T4_samples_atomic.tsv")
     rows = list(csv.DictReader(topen("T4_samples_atomic.tsv"), delimiter="\t"))
     hdr = list(rows[0].keys())
     moved = collections.Counter(); log = []
@@ -43,7 +44,7 @@ def main():
     with twrite("T9c_purity_log.tsv") as f:
         w = csv.writer(f, delimiter="\t")
         w.writerow(["gsm","gse","from","to","reason","title","gse_title"]); [w.writerow(x) for x in log]
-    with twrite("T4_samples_atomic.tsv", gz=True) as f:
+    with twrite(_t4, gz=True) as f:
         w = csv.DictWriter(f, fieldnames=hdr, delimiter="\t", extrasaction="ignore")
         w.writeheader(); [w.writerow(r) for r in rows]
     g = [r for r in rows if r["disease"] == "GCTB/Chondroblastoma"]

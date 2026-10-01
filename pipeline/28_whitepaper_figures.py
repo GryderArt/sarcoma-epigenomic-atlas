@@ -16,8 +16,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import matplotlib.transforms as mtrans
-from matplotlib.patches import Patch, Rectangle
+from matplotlib.patches import Patch, Rectangle, FancyBboxPatch
 from matplotlib.ticker import FuncFormatter
+from matplotlib.transforms import Bbox
 csv.field_size_limit(10**7)
 from _paths import DATA, FIGURES, topen
 from _labels import place_labels
@@ -101,9 +102,9 @@ def fig_burden(d):
         a["reg"] += I(r, "regulatory_epigenomic_samples")
     order = ["pediatric", "both", "adult"]
 
-    fig = plt.figure(figsize=(7.4, 5.6))
-    gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.55], width_ratios=[1.15, 1.15, 0.80],
-                          hspace=0.40, wspace=0.62)
+    fig = plt.figure(figsize=(7.4, 6.15))
+    gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.88], width_ratios=[1.15, 1.15, 0.80],
+                          hspace=0.34, wspace=0.62)
     axA, axB, axC = fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1]), fig.add_subplot(gs[0, 2])
     axD = fig.add_subplot(gs[1, :])
 
@@ -159,15 +160,47 @@ def fig_burden(d):
     # Scales and limits must be final BEFORE any label is placed: placement is measured
     # in display pixels, and transData changes when the scale does.
     axD.set_xscale("log"); axD.set_yscale("symlog", linthresh=1)
-    axD.set_xlim(8, 9000); axD.set_ylim(0.19, 20000)
+    axD.set_xlim(8, 9000); axD.set_ylim(0.19, 90000)
     axD.set_xticks([10, 100, 1000]); axD.set_xticklabels(["10", "100", "1,000"])
     axD.set_yticks([1, 10, 100, 1000]); axD.set_yticklabels(LOGX[:4])
     axD.set_xlabel("US cases per year (all ages)", fontsize=7.5)
     axD.set_ylabel("regulatory epigenomic samples\nin public archives", fontsize=7.5)
     nz = sum(len(v) for v in zeros.values())
-    axD.text(9.2, 0.40, f"{nz} entities with a published incidence rate and no regulatory "
-                        f"epigenomics at all — plotted on the floor",
-             fontsize=6.4, color=NONE, va="top", weight="bold")
+    norate = sum(1 for r in T13 if I(r, "regulatory_epigenomic_samples") == 0
+                 and not F(r, "US_cases_per_year_all_ages"))
+    # Name the entities rather than only counting them: a reader cannot act on "nine
+    # entities have nothing", and can act on the list.
+    zlist = sorted(((F(r, "US_cases_per_year_all_ages"), short(r["display_name"]))
+                    for r in T13 if I(r, "regulatory_epigenomic_samples") == 0
+                    and F(r, "US_cases_per_year_all_ages")), reverse=True)
+    # Two columns, not one. A single column of ten lines is tall enough to occupy the
+    # whole upper-left quadrant, which is where Rhabdoid / ATRT (95 cases/yr, ~1,000
+    # samples) sits; the label placer then has no clean slot for it. The column break
+    # halves the height and gives that label its slot back. Column 2's x is measured
+    # from column 1's rendered width rather than guessed, and the rounded frame is a
+    # patch sized to the union of the three text objects.
+    lines = [f"\u00b7 {n[:40]}  ({int(c):,}/yr)" for c, n in zlist]
+    lines.append(f"\u00b7 and {norate} more with no published rate")
+    cut = -(-len(lines) // 2)
+    CO = dict(transform=axD.transAxes, fontsize=5.5, color=NONE, va="top",
+              ha="left", linespacing=1.52, zorder=7)
+    x0, y0, LS = 0.020, 0.975, 0.0455
+    hdr = axD.text(x0, y0, "No regulatory epigenomics whatsoever", **CO)
+    colL = axD.text(x0, y0 - LS, "\n".join(lines[:cut]), **CO)
+    fig.canvas.draw()
+    rend = fig.canvas.get_renderer()
+    inv = axD.transAxes.inverted()
+    wL = inv.transform(colL.get_window_extent(rend).p1)[0] - x0
+    colR = axD.text(x0 + wL + 0.022, y0 - LS, "\n".join(lines[cut:]), **CO)
+    fig.canvas.draw()
+    ext = Bbox.union([t.get_window_extent(rend) for t in (hdr, colL, colR)])
+    (bx0, by0), (bx1, by1) = inv.transform(ext.p0), inv.transform(ext.p1)
+    callout = FancyBboxPatch((bx0, by0), bx1 - bx0, by1 - by0,
+                             boxstyle="round,pad=0.012,rounding_size=0.012",
+                             transform=axD.transAxes, facecolor="#fdf3f0",
+                             edgecolor="#f0c8bd", linewidth=0.6, zorder=6)
+    axD.add_patch(callout)
+
     # The legend sits below the axes, not in the lower-right corner, because that corner
     # is exactly where the high-burden, low-data points that carry the argument live.
     leg = axD.legend(handles=[Patch(facecolor=CLS[g], label=LAB[g]) for g in order],
@@ -187,7 +220,8 @@ def fig_burden(d):
     place_labels(fig, axD, list(pick.values()),
                  [(x, yv) for x, yv, _ in scat]
                  + [(x, FLOOR) for zs in zeros.values() for x, _ in zs],
-                 avoid=[leg], fontsize=6, color=DARK, leader=MUTED, where="WP2-D")
+                 avoid=[leg, callout], fontsize=6, color=DARK, leader=MUTED,
+                 where="WP2-D")
 
     ORD = {4: "fourth", 5: "fifth", 20: "twentieth", 21: "twenty-first",
            22: "twenty-second", 23: "twenty-third", 24: "twenty-fourth",
@@ -358,6 +392,12 @@ MODALITY = [
 ]
 
 
+# "Modality mix is broadening" is measured against this set: the assays that are neither
+# ChIP-seq nor a methylation array. Module-level because stage 33 quotes the same share
+# in prose and must not keep a second copy of the definition.
+MODERN = {"CUT&RUN", "CUT&Tag", "ATAC-seq", "scATAC-seq", "Hi-C", "HiChIP",
+          "Micro-C", "Capture-HiC"}
+
 HORIZON = 6          # months projected beyond the harvest cutoff
 WINDOW = 24          # months of history the projection resamples
 
@@ -504,8 +544,6 @@ def fig_growth(d):
     # Growth statistics, computed here so the figure and the prose cannot diverge.
     last10 = sum(1 for r in dated if year(r) > y1 - 10)
     last5 = sum(1 for r in dated if year(r) > y1 - 5)
-    MODERN = {"CUT&RUN", "CUT&Tag", "ATAC-seq", "scATAC-seq", "Hi-C", "HiChIP",
-              "Micro-C", "Capture-HiC"}
     era = {}
     for a, b in ((2011, 2015), (2021, y1)):
         ss = [r for r in dated if a <= year(r) <= b]
