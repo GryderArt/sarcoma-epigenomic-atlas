@@ -1,0 +1,25 @@
+# Line endings are pinned here because nothing pinned them before, and it cost a commit.
+#
+# Git for Windows clones with core.autocrlf=true: the object store holds LF, the working
+# tree gets CRLF. Any tool that then commits from a Linux side with autocrlf unset sees
+# all 70 text files as modified and writes CRLF into the object store. That happened once
+# already, turning a one-file fix into a 25,937-line diff.
+#
+# `text=auto` normalizes every text file to LF in the repository regardless of who commits
+# it. The per-extension rules then decide what each platform gets on checkout.
+
+* text=auto
+
+# Scripts, where the ending is not cosmetic: a .sh with CRLF fails on Linux with
+# "bad interpreter: /usr/bin/env bash^M", and PowerShell is happiest with CRLF.
+*.ps1  text eol=crlf
+*.sh   text eol=lf
+*.py   text eol=lf
+
+# Never touch these.
+*.gz   binary
+*.xlsx binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.bundle binary
