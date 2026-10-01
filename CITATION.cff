@@ -1,4 +1,4 @@
-﻿cff-version: 1.2.0
+cff-version: 1.2.0
 title: Sarcoma Epigenomic Data Atlas
 message: >-
   If you use this atlas, please cite it. Please also cite the SASS Epigenetics
@@ -8,7 +8,7 @@ authors:
   - family-names: Gryder
     given-names: Berkley
     affiliation: Case Western Reserve University
-repository-code: "https://github.com/gryderart/sarcoma-epigenomic-atlas"
+repository-code: "https://github.com/GryderArt/sarcoma-epigenomic-atlas"
 abstract: >-
   A sample-level census of every publicly recorded epigenomic experiment on
   sarcoma, all ages, spanning 16,352 de-duplicated samples across 885 studies

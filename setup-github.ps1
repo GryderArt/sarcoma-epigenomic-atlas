@@ -109,12 +109,25 @@ if (-not (Invoke-Native { git config --get user.email })) {
 
 # ---------------------------------------------------------------- 3. Placeholders
 Step 3 "Filling documentation placeholders"
+# Encoding is explicit on both sides, and it has to be.
+#
+# Windows PowerShell 5.1's `Get-Content -Raw` with no -Encoding reads the file in the
+# system ANSI codepage (Windows-1252 here), not UTF-8. These files are UTF-8 without a
+# BOM, so every multi-byte character came back as its individual bytes: an em dash
+# (E2 80 94) read as "a-circumflex, euro, double-quote" and then got written back out as
+# three UTF-8 characters. The first run of this script mangled 31 lines of README.md and
+# 32 of the template that generates it, and added a BOM to all four files.
+#
+# `Set-Content -Encoding UTF8` is no better: in 5.1 it always writes a BOM. WriteAllText
+# with UTF8Encoding($false) is the only way to get UTF-8 without one. Both calls below
+# are deliberate; neither default is safe.
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 foreach ($f in @("README.md", "pipeline\README.tmpl.md", "CITATION.cff", "LICENSE-DATA")) {
   if (Test-Path $f) {
-    $t = Get-Content $f -Raw
+    $t = Get-Content $f -Raw -Encoding UTF8
     $t = $t -replace '<user>', $User -replace '<you>', $User
     $t = $t -replace 'gryderart\.github\.io/sarcoma-epigenomic-atlas', "$($User.ToLower()).github.io/$Repo"
-    Set-Content $f $t -NoNewline -Encoding UTF8
+    [System.IO.File]::WriteAllText((Resolve-Path $f).Path, $t, $utf8NoBom)
   }
 }
 Invoke-Native { git add -A } | Out-Null
