@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Full EGA dataset catalogue -> filter to sarcoma. EGA holds controlled-access human data;
+"""Full EGA dataset catalog -> filter to sarcoma. EGA holds controlled-access human data;
 its metadata is open, so we can enumerate what EXISTS even where we cannot download it.
 That is exactly what a gap map needs: 'this experiment was done, and it is not reusable'."""
 import urllib.request, json, time, csv, sys, os, re, collections

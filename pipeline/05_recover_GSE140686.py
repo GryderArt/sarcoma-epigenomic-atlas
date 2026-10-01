@@ -43,7 +43,7 @@ MAP = [
  (r"ewing", "Ewing", "sarcoma"),
  (r"primitive neuroectodermal", "Ewing", "sarcoma"),
  (r"extraskeletal myxoid chondrosarcoma", "EMC", "sarcoma"),
- (r"fibrocartilaginous mesenchymoma", "Other rare bone tumour", "sarcoma"),
+ (r"fibrocartilaginous mesenchymoma", "Other rare bone tumor", "sarcoma"),
  (r"fibrous dysplasia", "Fibrous dysplasia", "benign"),
  (r"gastroin\w*stinal stromal", "GIST", "sarcoma"),
  (r"^glioblastoma", "Glioblastoma", "nonsarcoma"),
@@ -64,23 +64,23 @@ MAP = [
  (r"malignant peripheral nerve sheath", "MPNST", "sarcoma"),
  (r"rhabdoid tumour", "Rhabdoid tumor/ATRT", "sarcoma"),
  (r"^melanoma", "Melanoma", "nonsarcoma"),
- (r"^myoepithelioma", "Myoepithelial tumour", "sarcoma"),
+ (r"^myoepithelioma", "Myoepithelial tumor", "sarcoma"),
  (r"^myopericytoma|^angioleiomyoma", "Angioleiomyoma/myopericytoma", "benign"),
  (r"^myositis", "Myositis ossificans/proliferans", "benign"),
  (r"^myxofibrosarcoma", "Myxofibrosarcoma", "sarcoma"),
  (r"^neurofibroma", "Neurofibroma", "benign"),
  (r"nodular fasciitis", "Nodular fasciitis", "benign"),
- (r"ossifying fibromyxoid", "Ossifying fibromyxoid tumour", "sarcoma"),
+ (r"ossifying fibromyxoid", "Ossifying fibromyxoid tumor", "sarcoma"),
  (r"^osteoblastoma", "Osteoblastoma", "benign"),
  (r"^osteosarcoma", "Osteosarcoma", "sarcoma"),
  (r"^pecoma", "PEComa", "sarcoma"),
  (r"rhabdomyosarcoma", "__RMS__", "sarcoma"),
  (r"small (blue )?round cell tumour with bcor", "BCOR-sarcoma", "sarcoma"),
  (r"small blue round cell tumour with cic", "CIC-DUX4", "sarcoma"),
- (r"solitary fibrous", "Solitary fibrous tumour", "sarcoma"),
+ (r"solitary fibrous", "Solitary fibrous tumor", "sarcoma"),
  (r"^schwannoma", "Schwannoma", "benign"),
  (r"spindle cell carcinoma", "Spindle cell carcinoma", "nonsarcoma"),
- (r"spindle cell hemangioma", "Spindle cell haemangioma", "benign"),
+ (r"spindle cell hemangioma", "Spindle cell hemangioma", "benign"),
  (r"squamous cell carcinoma", "Squamous cell carcinoma", "nonsarcoma"),
  (r"^synovial sarcoma", "Synovial sarcoma", "sarcoma"),
  (r"undifferentiated pleomorphic", "UPS/MFH", "sarcoma"),
@@ -130,7 +130,7 @@ def main():
         w.writeheader(); [w.writerow(r) for r in out]
 
     unm = [r for r in out if r["subtype_evidence"] == "unmapped"]
-    print(f"{len(out)} samples relabelled; {len(unm)} unmapped")
+    print(f"{len(out)} samples relabeled; {len(unm)} unmapped")
     for r in unm[:10]: print("   UNMAPPED:", r["institutional_diagnosis"], "|", r["methylation_class"])
     k = collections.Counter(r["entity_kind"] for r in out)
     print("kind:", dict(k))

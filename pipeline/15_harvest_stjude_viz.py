@@ -92,7 +92,7 @@ ADMIN_TO_ATLAS = {
     "High grade sarcoma":                 ("Sarcoma NOS",    "institutional_diagnosis"),
 }
 
-# Normal and reference material. The administrator's list covers tumour models only;
+# Normal and reference material. The administrator's list covers tumor models only;
 # these four are read off the browser, where they are unambiguous.
 NORMAL = re.compile(r"^SJNORM", re.I)
 
@@ -146,7 +146,7 @@ def portal_record(mid, portal):
     """The portal row for this model, or the same patient at another passage.
 
     SJRHB013757_X1 is on the browser page; the portal carries only SJRHB013757_X2. A
-    fusion is a property of the patient's tumour, not of the passage, so the sibling row
+    fusion is a property of the patient's tumor, not of the passage, so the sibling row
     is allowed to supply it -- flagged, so no reader mistakes it for an exact match.
     """
     if mid in portal:

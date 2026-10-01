@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Classifier v2 — paediatric + adult sarcoma ontology.
+"""Classifier v2 — pediatric + adult sarcoma ontology.
 
-Carries every correction established during the paediatric build:
+Carries every correction established during the pediatric build:
   - subtype comes from SAMPLE-level text, never the series title
   - fusion-negative RMS = absence of PAX3/PAX7 fusion and mutant MYOD1
   - PAX3/PAX7 fused to ANY partner is fusion-positive
-  - antibody/vendor catalogue text stripped before model matching
+  - antibody/vendor catalog text stripped before model matching
   - explicit `enrichment target:` beats blob inference for ChIP inputs
-  - H3.3 residue distinguishes bone tumour (G34W/L, K36M) from glioma (K27M, G34R/V)
+  - H3.3 residue distinguishes bone tumor (G34W/L, K36M) from glioma (K27M, G34R/V)
 """
 import csv, gzip, re, json, sys, collections, os
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
@@ -17,7 +17,7 @@ csv.field_size_limit(10**7)
 
 # ---------------------------------------------------------------- disease ontology
 DIS = [
- # ---- paediatric core
+ # ---- pediatric core
  ("RMS-MYOD1", r"myod1[^;|]{0,20}(l122r|p\.leu122arg|\bmutant\b|\bmut\b)|(mutant|mut)\s*myod1|"
                r"sclerosing\s+rhabdomyo|spindle\s+cell\s+rhabdomyo"),
  ("FP-RMS",  r"alveolar\s+rhabdomyosarcoma|\barms\b(?!.*adult)|fusion[\-\s]positive\s+rms|"
@@ -35,7 +35,7 @@ DIS = [
  ("DSRCT",   r"desmoplastic\s+small\s+round\s+cell|ewsr1[\-\s/:]*wt1"),
  ("Infantile fibrosarcoma", r"infantile\s+fibrosarcoma|congenital\s+fibrosarcoma|etv6[\-\s/:]*ntrk3"),
  ("GCTB/Chondroblastoma", r"giant\s+cell\s+tumou?r\s+of\s+bone|\bgctb\b|chondroblastoma|g34w|k36m"),
- # ---- shared paediatric/adult
+ # ---- shared pediatric/adult
  ("Synovial sarcoma", r"synovial\s+sarcoma|ss18[\-\s/:]*ssx|syt[\-\s/:]*ssx"),
  ("MPNST",   r"malignant\s+peripheral\s+nerve\s+sheath|\bmpnst\b|neurofibrosarcoma"),
  ("ASPS",    r"alveolar\s+soft\s+part|aspscr1[\-\s/:]*tfe3"),
@@ -61,7 +61,7 @@ DIS = [
  # ---- other adult soft tissue
  ("UPS/MFH", r"undifferentiated\s+pleomorphic\s+sarcoma|malignant\s+fibrous\s+histiocytoma|\bups\b|\bmfh\b"),
  ("Myxofibrosarcoma", r"myxofibrosarcoma"),
- ("Solitary fibrous tumour", r"solitary\s+fibrous|nab2[\-\s/:]*stat6|h[ae]mangiopericytoma"),
+ ("Solitary fibrous tumor", r"solitary\s+fibrous|nab2[\-\s/:]*stat6|h[ae]mangiopericytoma"),
  ("Leiomyosarcoma", r"leiomyosarcoma|\blms\b"),
  ("GIST",    r"gastrointestinal\s+stromal|\bgist\b"),
  ("Endometrial stromal sarcoma", r"endometrial\s+stromal\s+sarcoma|jazf1[\-\s/:]*suz12|ywhae[\-\s/:]*nutm2"),
@@ -76,18 +76,18 @@ DIS = [
 ]
 DIS_PATS = [(k, re.compile(v, re.I)) for k, v in DIS]
 
-PAED_CORE = {"FP-RMS","FN-RMS","RMS-MYOD1","RMS-NOS","Ewing","CIC-DUX4","BCOR-sarcoma",
+PED_CORE = {"FP-RMS","FN-RMS","RMS-MYOD1","RMS-NOS","Ewing","CIC-DUX4","BCOR-sarcoma",
              "EWSR1-NFATC2/PATZ1","Osteosarcoma","Rhabdoid tumor/ATRT","DSRCT",
              "Infantile fibrosarcoma","GCTB/Chondroblastoma"}
 SHARED = {"Synovial sarcoma","MPNST","ASPS","Clear cell sarcoma","Epithelioid sarcoma","IMT",
           "Chordoma","EMC","DFSP","Desmoid","Liposarcoma-myxoid","Chondrosarcoma","GIST",
           "EHE","Angiosarcoma"}
 ADULT_CORE = {"Liposarcoma-dediff","Liposarcoma-WD","Liposarcoma-pleomorphic","Liposarcoma-NOS",
-              "UPS/MFH","Myxofibrosarcoma","Solitary fibrous tumour","Leiomyosarcoma",
+              "UPS/MFH","Myxofibrosarcoma","Solitary fibrous tumor","Leiomyosarcoma",
               "Endometrial stromal sarcoma","PEComa","LGFMS/SEF","Myoepithelial carcinoma",
               "Intimal sarcoma","Fibrosarcoma NOS","Kaposi sarcoma"}
-IN_SCOPE_DIS = PAED_CORE | SHARED | ADULT_CORE | {"Sarcoma NOS"}
-AGE_CLASS = {**{d: "paediatric" for d in PAED_CORE},
+IN_SCOPE_DIS = PED_CORE | SHARED | ADULT_CORE | {"Sarcoma NOS"}
+AGE_CLASS = {**{d: "pediatric" for d in PED_CORE},
              **{d: "both" for d in SHARED},
              **{d: "adult" for d in ADULT_CORE}, "Sarcoma NOS": "both"}
 
@@ -350,7 +350,7 @@ def main():
             dsrc = ("sample" if sp_s else "series" if sp_c else
                     "sample" if dh_s else "series" if dh_c else "none")
             if not disease and mdis: disease, dsrc = mdis, "model"
-            # H3.3 residue guard: keep glioma out of the bone-tumour bin
+            # H3.3 residue guard: keep glioma out of the bone-tumor bin
             if disease == "GCTB/Chondroblastoma" and (K27M_GLIOMA.search(blob) or GLIOMA_CTX.search(blob)) \
                and not re.search(r"g34w|g34l|k36m", blob, re.I):
                 disease = ""

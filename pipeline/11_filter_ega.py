@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Filter the full EGA dataset catalogue (21,279 datasets) to sarcoma, and resolve each
+"""Filter the full EGA dataset catalog (21,279 datasets) to sarcoma, and resolve each
 hit's governing DAC and policy. EGA metadata is open even where the data is not, so this
 tells us which experiments EXIST but cannot be reused -- the distinction the white paper
 needs to draw between 'never done' and 'done but locked'."""
@@ -44,11 +44,11 @@ def main():
         ds = json.load(topen("ega_datasets_raw.json"))
     except FileNotFoundError:
         raise SystemExit(
-            "ega_datasets_raw.json not found. It is the full EGA catalogue; the repository "
+            "ega_datasets_raw.json not found. It is the full EGA catalog; the repository "
             "ships it gzipped under data/. If it is missing, regenerate it with\n"
             "    python3 10_harvest_ega.py\n"
             "(about 110 paged API calls, a few minutes).")
-    print(f"{len(ds):,} EGA datasets in the catalogue")
+    print(f"{len(ds):,} EGA datasets in the catalog")
 
     hits = []
     for d in ds:

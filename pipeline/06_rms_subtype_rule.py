@@ -140,7 +140,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=hdr, delimiter="\t", extrasaction="ignore")
         w.writeheader(); [w.writerow(r) for r in rows]
 
-    print("\ncheck 1 -- Gryder/Yohe primary tumours (GSE83728), user's ground truth:")
+    print("\ncheck 1 -- Gryder/Yohe primary tumors (GSE83728), user's ground truth:")
     for r in rows:
         if r["gse"] == "GSE83728" and r["sample_type"] == "primary_tumor" \
            and r["epi_target_norm"] == "H3K27ac":

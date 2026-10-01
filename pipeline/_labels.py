@@ -1,7 +1,7 @@
-"""Collision-aware point labelling for scatter panels, with leader lines.
+"""Collision-aware point labeling for scatter panels, with leader lines.
 
 Why this exists. Panel D of WP1 originally placed labels by testing a guessed 52x11 pixel
-box against previously placed labels. "Rhabdoid tumour / ATRT" (95 US cases per year,
+box against previously placed labels. "Rhabdoid tumor / ATRT" (95 US cases per year,
 1,052 regulatory samples) and "FP-RMS" (110, 640) sit about 50 display pixels apart; both
 took the slot directly above themselves, their guessed boxes cleared each other by a
 pixel, and the result read as a single two-line label hovering over the upper point. The

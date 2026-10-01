@@ -18,32 +18,32 @@ Epigenetics Working Group white paper.
 | **4,416** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
 | **943** | studies across GEO, ArrayExpress, ENA, EGA, St Jude CSTN and NCI CCDI |
 | **45** | named diagnostic entities (plus 4 unresolved bins and 1 control tissue) |
-| **550** | catalogued cell lines and PDX models, 95 flagged for identity problems |
+| **550** | cataloged cell lines and PDX models, 95 flagged for identity problems |
 
 ## Five findings the atlas was built to support
 
 **1. Adult sarcoma carries ~8× the burden and a third of the data.** 89.4% of the 18,020
-US sarcoma cases per year occur at age 20+, but paediatric-predominant entities hold 70%
+US sarcoma cases per year occur at age 20+, but pediatric-predominant entities hold 70%
 of all regulatory epigenomic data ever generated — **~24× more per new case diagnosed**.
 
 **2. Thirteen of 45 named entities have no regulatory epigenomics at all.** No ChIP-seq,
 no CUT&RUN, no ATAC, no Hi-C, in any sample type, open or controlled. Nine have a
 published incidence rate, so the gap can be costed per patient: dermatofibrosarcoma
 protuberans (1,400 US cases/yr), angiosarcoma (1,312), myxofibrosarcoma (820), pleomorphic
-liposarcoma, inflammatory myofibroblastic tumour, extraskeletal myxoid chondrosarcoma,
+liposarcoma, inflammatory myofibroblastic tumor, extraskeletal myxoid chondrosarcoma,
 intimal sarcoma, clear cell sarcoma of the kidney, BCOR-CCNB3 sarcoma. Every one of these
 zeros was independently verified against GEO, SRA, ENCODE, ChIP-Atlas, ArrayExpress, GDC,
 dbGaP and Europe PMC full text; surviving caveats are recorded per entity in
 [`data/T13_incidence_vs_data.tsv`](data/T13_incidence_vs_data.tsv).
 
-**3. Twenty-five of 45 entities have never had a patient's tumour profiled** for active
-chromatin, accessibility or 3D architecture — counting tumour tissue, PDX and
+**3. Twenty-five of 45 entities have never had a patient's tumor profiled** for active
+chromatin, accessibility or 3D architecture — counting tumor tissue, PDX and
 patient-derived organoids together. Synovial sarcoma is the sharpest case: 563 regulatory
 epigenomes exist and all but one organoid series are cell lines and mouse models.
 
 **4. The largest sarcoma epigenomic resource in existence is unfindable by disease.**
 [GSE140686](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE140686) — the DKFZ
-sarcoma methylation classifier, 1,505 arrays — is deposited with every sample labelled
+sarcoma methylation classifier, 1,505 arrays — is deposited with every sample labeled
 `sarcoma classifier reference case N` and characteristics reading `tissue: sarcoma`. No
 diagnosis appears anywhere in the GEO record. **This repository recovers the mapping**
 (see [`data/GSE140686_recovered_diagnoses.tsv`](data/GSE140686_recovered_diagnoses.tsv)):
@@ -59,7 +59,7 @@ file**. The GDC is the same: no ChIP-seq in the vocabulary, and its 410 ATAC-seq
 belong to 23 TCGA cohorts, none of them SARC or any TARGET sarcoma project.
 
 What CCDI does hold is worth having: **1,592 sarcoma participants with raw methylation
-IDATs, 1,382 of them primary tumours** — larger than GSE140686, and with clinical
+IDATs, 1,382 of them primary tumors** — larger than GSE140686, and with clinical
 annotation attached. `data/T24_ccdi_entity_counts.tsv`.
 
 The CCDI tables ship trimmed to what an epigenomics atlas needs: the sarcoma cohort, and
@@ -76,7 +76,7 @@ of the controlled holdings cover the thirteen entities with nothing** — those 
 survive.
 
 And the model resources are the opportunity: PIVOT, PPTC, TARGET Model Systems and the
-Texas PDX bank hold roughly 500 paediatric sarcoma models with WGS, WXS and RNA-seq and
+Texas PDX bank hold roughly 500 pediatric sarcoma models with WGS, WXS and RNA-seq and
 **no epigenomics whatsoever**. Those models are already derived, consented and federally
 funded — adding H3K27ac and ATAC to an existing panel is incremental cost on
 infrastructure that exists.
@@ -162,7 +162,7 @@ Paths resolve relative to the checkout. Override with `SASS_ROOT`, `SASS_DATA`,
 
 ## Known limits
 
-- **Absence means absence of a public, entity-labelled deposit** — not proof no experiment
+- **Absence means absence of a public, entity-labeled deposit** — not proof no experiment
   was done. GSE140686 is the standing proof that this failure mode is real and large.
 - **A sample count is not an information count.** 4,511 osteosarcoma epigenomes are not
   4,511 independent observations; `data/T3_entity_counts.tsv` carries distinct models,
@@ -179,9 +179,9 @@ Paths resolve relative to the checkout. Override with `SASS_ROOT`, `SASS_DATA`,
 Please cite the white paper when it appears. Until then, cite this repository — see
 [`CITATION.cff`](CITATION.cff).
 
-## Licence
+## License
 
-Code (`pipeline/`) under the [MIT licence](LICENSE). Data, figures and documentation
+Code (`pipeline/`) under the [MIT license](LICENSE). Data, figures and documentation
 (`data/`, `figures/`, `workbooks/`, `docs/`) under
 [CC BY 4.0](LICENSE-DATA) — reuse freely, with attribution.
 

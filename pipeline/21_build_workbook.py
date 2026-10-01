@@ -52,12 +52,12 @@ README = [
  ("", ""),
  ("Built for the SASS Epigenetics Working Group white paper, section: "
   "Critical assessment of existing datasets.", ""),
- ("Scope: paediatric AND adult sarcoma. Sources: NCBI GEO (sample-level), "
+ ("Scope: pediatric AND adult sarcoma. Sources: NCBI GEO (sample-level), "
   "EBI ArrayExpress / BioStudies, ENA, EGA, EpiRR (IHEC).", ""),
  ("", ""),
  ("WHAT CHANGED IN v3", "head"),
  ("1. GSE140686 recovered. The DKFZ sarcoma methylation classifier (Koelsche et al., "
-  "Nat Commun 2021, PMID 33479225) deposited 1,505 arrays in GEO labelled only "
+  "Nat Commun 2021, PMID 33479225) deposited 1,505 arrays in GEO labeled only "
   "'sarcoma classifier reference case N'; every sample reads 'tissue: sarcoma'. The "
   "per-case diagnosis exists only in the paper's Supplementary Data, joined through an "
   "id GEO hides in !Sample_description. Recovered here: 1,315 sarcoma, 154 benign or "
@@ -66,8 +66,8 @@ README = [
   "fusion nor a mutant MYOD1 (a RAS mutation is NOT the criterion). Curated cell line "
   "identity now outranks series context, so PAX-fusion lines (RH4/RH30/RH41/CW9019) "
   "can no longer be swept into FN-RMS by their TP53 or other annotations.", ""),
- ("3. Bone-tumour bin purified. H3F3A/H3F3B capture pulled in H3.3 K27M and G34R/V "
-  "records (paediatric glioma residues, plus plant and mouse model systems); 288 rows "
+ ("3. Bone-tumor bin purified. H3F3A/H3F3B capture pulled in H3.3 K27M and G34R/V "
+  "records (pediatric glioma residues, plus plant and mouse model systems); 288 rows "
   "removed. GCTB uses G34W/L, chondroblastoma uses K36M.", ""),
  ("4. ChIP/CUT&RUN input and IgG controls are excluded from 'regulatory epigenomic "
   "samples' — they are controls, not profiles.", ""),
@@ -78,7 +78,7 @@ README = [
   "ChIA-PET, 4C-seq — excluding input/IgG controls.", ""),
  ("DNA methylation = WGBS, RRBS, methylation array, MeDIP/hMeDIP, bisulfite PCR.", ""),
  ("epigenomic = regulatory + DNA methylation + input controls.", ""),
- ("age_class = which age group the entity predominantly affects (paediatric / both / "
+ ("age_class = which age group the entity predominantly affects (pediatric / both / "
   "adult); it is a property of the DISEASE, not of the individual sample.", ""),
  ("", ""),
  ("HOW TO READ T13", "head"),
@@ -97,14 +97,14 @@ README = [
   "319,084 sarcoma-cohort files there is not one regulatory epigenomic file. CCDI's "
   "entire epigenomic contribution to sarcoma is DNA methylation array.", ""),
  ("What it does add: 1,592 sarcoma participants with raw methylation IDATs, 1,382 of "
-  "them primary tumours - larger than GSE140686, the current largest entity-labelled "
+  "them primary tumors - larger than GSE140686, the current largest entity-labeled "
   "sarcoma methylation resource. Controlled access via dbGaP.", ""),
  ("A counting caution baked into the harvester: 76% of CCDI SAMPLE rows carry no "
   "diagnosis of their own - it lives on the participant. Flagging sarcoma from the "
   "sample row alone undercounts 17-fold (1,350 against a true 23,143).", ""),
  ("", ""),
  ("NEW IN THIS BUILD: CONTROLLED-ACCESS AND ST JUDE", "head"),
- ("T14 is the full EGA sarcoma catalogue: 560 datasets, 22,832 samples, 100% controlled "
+ ("T14 is the full EGA sarcoma catalog: 560 datasets, 22,832 samples, 100% controlled "
   "access. T15 maps the epigenomic subset onto atlas entities. T16/T17 are the St Jude "
   "Childhood Solid Tumor Network inventory and its 389 O-PDX / cell models.", ""),
  ("The distinction these tabs add: a GEO-only survey cannot tell 'never measured' from "
@@ -117,7 +117,7 @@ README = [
  ("CAVEATS THAT MATTER", "head"),
  ("· A sample count is not an information count. 4,511 osteosarcoma epigenomes are not "
   "4,511 independent observations; see G3 for distinct models and distinct patients.", ""),
- ("· Absence in this atlas means absence of a public, entity-labelled deposit — not "
+ ("· Absence in this atlas means absence of a public, entity-labeled deposit — not "
   "proof that no experiment was ever done. Data in EGA under controlled access, or "
   "deposited without an entity label, is invisible to any search of this kind. "
   "GSE140686 is the proof that this failure mode is real and large.", ""),

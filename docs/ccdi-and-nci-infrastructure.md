@@ -32,14 +32,14 @@ leukaemia**:
 | ATAC-seq | 91 | T-ALL 42, precursor B-ALL 24, TEL-AML1 8, AML 4 … | phs003432, phs002371, phs002529 |
 | Bisulfite-Seq | 108 | JMML 104, precursor B-ALL 4 | phs002504, phs003215 |
 
-**Zero sarcoma. Zero solid tumour of any kind.**
+**Zero sarcoma. Zero solid tumor of any kind.**
 
 The same holds one level up. The GDC's vocabulary has no ChIP-seq either, and its 410
 ATAC-seq files belong to 23 TCGA cohorts — BRCA, COAD, KIRP, PRAD and so on. **TCGA-SARC
 is not among them**, and neither is any TARGET sarcoma project.
 
 So the paper can now say something considerably stronger than "the literature under-served
-adult sarcoma." It can say: **across the entire United States federal paediatric and adult
+adult sarcoma." It can say: **across the entire United States federal pediatric and adult
 cancer data infrastructure — CCDI, GDC, TARGET, TCGA — there is not one regulatory
 epigenomic dataset for any sarcoma.** Paired with EpiRR's 2,888 reference epigenomes and
 zero sarcoma, that is a structural finding about how the field is funded, not an accident
@@ -49,29 +49,29 @@ of which labs happened to publish.
 
 ## 2. What CCDI genuinely adds
 
-CCDI holds a large paediatric sarcoma cohort: **29 studies, 16,867 participants, 23,143
+CCDI holds a large pediatric sarcoma cohort: **29 studies, 16,867 participants, 23,143
 samples, 319,084 files.** For epigenomics that resolves to one modality — DNA methylation
 arrays — but at a scale worth having:
 
-**1,592 sarcoma participants with raw Illumina IDATs, 1,382 of them primary tumours.**
+**1,592 sarcoma participants with raw Illumina IDATs, 1,382 of them primary tumors.**
 
 Almost all from the Molecular Characterization Initiative (`phs002790`, 1,560) with a small
 contribution from CBTN (`phs002517`, 32).
 
 For context: that is **larger than GSE140686**, the DKFZ classifier cohort that is
-currently the single largest entity-labelled sarcoma methylation resource in existence
+currently the single largest entity-labeled sarcoma methylation resource in existence
 (1,315 sarcoma samples). Obtaining it would roughly double the world's supply — and unlike
 GSE140686, these arrive as raw IDATs with clinical annotation and outcome data attached,
-so they can be normalised uniformly rather than accepted as someone else's processed calls.
+so they can be normalized uniformly rather than accepted as someone else's processed calls.
 
 Entities where CCDI would move our gap map most:
 
 | Entity | Public atlas today | CCDI adds | Why it matters |
 |---|---|---|---|
-| Inflammatory myofibroblastic tumour | 9 methylation, 0 regulatory | **19** | one of our nine zero-regulatory entities; triples its entire public epigenome |
+| Inflammatory myofibroblastic tumor | 9 methylation, 0 regulatory | **19** | one of our nine zero-regulatory entities; triples its entire public epigenome |
 | Infantile fibrosarcoma | 36 | **13** | |
 | Desmoid / aggressive fibromatosis | 38, only 4 regulatory | **12** | |
-| Synovial sarcoma | 0 from tumour tissue | **20 primary tumours** | the entity with 563 regulatory epigenomes and none from a patient |
+| Synovial sarcoma | 0 from tumor tissue | **20 primary tumors** | the entity with 563 regulatory epigenomes and none from a patient |
 | DSRCT | 176 | **23** | |
 | Spindle cell RMS | — | **20** | the MYOD1-mutant candidate pool |
 | FN-RMS / FP-RMS / RMS-NOS | | **194 / 92 / 211** | |
@@ -108,7 +108,7 @@ walks the mechanics; the ranking is mine.
 7. **`phs003215` Texas Pediatric PDX** — 51.
 
 These four carry WGS, WXS and RNA-seq — and **no epigenomics whatsoever**. That is the
-argument, not the acquisition: the models are already derived, consented, characterised
+argument, not the acquisition: the models are already derived, consented, characterized
 and federally funded. Adding H3K27ac and ATAC to an existing PIVOT or PPTC panel is
 incremental cost on infrastructure that exists, and it would close the model side of our
 gap for several entities at once. **This is the concrete, costed recommendation the white
@@ -138,7 +138,7 @@ EpiRR, St Jude CSTN.
   `data_category`, `file_type` and `tumor_classification`. I can re-run it on any schedule
   to catch new studies; MCI is actively accruing. A quarterly re-harvest would keep the
   atlas current for free.
-- **dbGaP directly.** CCDI surfaces 42 studies, but dbGaP holds many more paediatric
+- **dbGaP directly.** CCDI surfaces 42 studies, but dbGaP holds many more pediatric
   sarcoma studies that never entered CCDI. A systematic dbGaP sweep is the obvious
   remaining hole in our coverage.
 - **The Genomic Data Commons `legacy` and `awg` endpoints**, plus the NCI Cancer Data
@@ -161,7 +161,7 @@ downloading through the Gen3 client against signed URLs that expire quickly.
 
 So CCDI sits in the same tier as EGA in our three-state model: **the data exists, the
 metadata is public, and reuse requires per-study approval.** The difference is that CCDI's
-metadata is genuinely excellent — faceted, queryable, entity-labelled — which is precisely
+metadata is genuinely excellent — faceted, queryable, entity-labeled — which is precisely
 what GSE140686 is not. It is worth naming CCDI as the counter-example when we criticise
 metadata-dark deposits: this is what good looks like.
 

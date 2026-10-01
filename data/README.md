@@ -7,37 +7,37 @@ Large tables are gzipped; the pipeline reads either form transparently (`pipelin
 |---|---|---|---|
 | `GSE140686_recovered_diagnoses.tsv` | 282 KB | 1,505 rows | The same 1,505 samples mapped onto atlas entities, with entity_kind (sarcoma / benign / non-sarcoma), the evidence level for each subtype call, and sample type from the manifestation field. |
 | `GSE140686_sample_keys.tsv` | 196 KB | 1,505 rows | The recovered join key: GSM to the REFERENCE_SAMPLE / VALIDATION_SAMPLE id that GEO hides in !Sample_description, with the diagnosis and methylation class from the paper's supplement. |
-| `T11_h3k27ac_fidelity.tsv` | 4 KB | 46 rows | H3K27ac fidelity analysis: how well models recapitulate patient tumours, quantified on a common reference peak set with genome builds harmonised and comparisons restricted within study to control for batch. |
+| `T11_h3k27ac_fidelity.tsv` | 4 KB | 46 rows | H3K27ac fidelity analysis: how well models recapitulate patient tumors, quantified on a common reference peak set with genome builds harmonised and comparisons restricted within study to control for batch. |
 | `samples/T4_samples_atomic.tsv.gz` | 2.0 MB | 85,698 rows | THE ATLAS. One row per GEO sample (GSM), 85,698 rows. Disease, age class, matched model, donor key, RRID, sample type, assay class, epigenetic target, antibody, duplicate flags, organism, platform, free-text title/source/characteristics, series title, PubMed, date, contact institute, and the evidence fields subtype_evidence / entity_kind / rms_call_basis. |
 | `T11b_fidelity_by_study.tsv` | 0 KB | 7 rows | The batch-effect check behind T11 — same-study versus cross-study correlation. |
 | `T12_ebi_all.tsv` | 2.3 MB | 9,589 rows | Full EBI sweep: ArrayExpress/BioStudies, ENA, EGA and EpiRR. Includes GEO mirrors, flagged as such. |
 | `T12b_ebi_sarcoma_epigenomic.tsv` | 58 KB | 290 rows | The subset whose title is both sarcoma and epigenomic. |
 | `T12c_ebi_unique.tsv` | 4 KB | 23 rows | The 23 studies a GEO-only search can never return (E-MTAB, PRJEB, PRJDB). |
-| `T13_incidence_vs_data.tsv` | 10 KB | 45 rows | THE BURDEN JOIN. Curated US incidence per entity with its basis and low/high bracket, against epigenomic coverage: regulatory, methylation, H3K27ac, accessibility, 3D, primary-tumour and patient-derived counts, study concentration, and the adversarial verification caveat for every zero. |
+| `T13_incidence_vs_data.tsv` | 10 KB | 45 rows | THE BURDEN JOIN. Curated US incidence per entity with its basis and low/high bracket, against epigenomic coverage: regulatory, methylation, H3K27ac, accessibility, 3D, primary-tumor and patient-derived counts, study concentration, and the adversarial verification caveat for every zero. |
 | `T14_ega_sarcoma_datasets.tsv` | 328 KB | 560 rows | All 560 sarcoma datasets in EGA with sample counts, technologies, governing policy and data-access committee. All controlled access. |
 | `T15_controlled_access.tsv` | 17 KB | 79 rows | The epigenomic subset of EGA plus St Jude, mapped onto atlas entities and split regulatory versus methylation. |
 | `T16_stjude_cstn_inventory.tsv` | 11 KB | 50 rows | St Jude Childhood Solid Tumor Network resource inventory: accessions, repository, access model, assay, sample counts, diseases, PMIDs. |
 | `T17_stjude_opdx_models.tsv` | 95 KB | 389 rows | 389 St Jude O-PDX and cell models with diagnosis, sample type, assays available and source publication. |
-| `T1_taxonomy.tsv` | 63 KB | 142 rows | Sarcoma taxonomy. One row per subtype: WHO 2020 category, defining lesion, key epigenetic mechanism, markers, paediatric relevance, reference PMID. |
+| `T1_taxonomy.tsv` | 63 KB | 142 rows | Sarcoma taxonomy. One row per subtype: WHO 2020 category, defining lesion, key epigenetic mechanism, markers, pediatric relevance, reference PMID. |
 | `T20_ccdi_studies.tsv` | 4 KB | 42 rows | Every study in the NCI Childhood Cancer Data Initiative, with participant, sample and file counts. |
 | `T21_ccdi_samples.tsv.gz` | 0.2 MB | 23,143 rows | The sarcoma-cohort samples. All 70,820 CCDI samples are fetched and the participant join runs over all of them — that is how the cohort is defined — but only sarcoma rows are kept. `sarcoma_call_basis` records which route made each call. All-disease totals survive in `T26`. |
 | `T22_ccdi_files.tsv.gz` | 0.5 MB | 9,187 rows | The EPIGENOMIC files belonging to a sarcoma-cohort participant. All 319,084 are fetched and examined; the 97% that are WGS, WXS, RNA-seq, panels and their indexes are dropped — they say nothing about chromatin and cost 23 MB. |
 | `T22b_ccdi_file_census.tsv` | 6 KB | 158 rows | `library_strategy` × `file_type` × `data_category` across ALL 319,084 files. This is what keeps "not one regulatory epigenomic file among 319,084" checkable without shipping the rows. |
 | `T23_ccdi_participants.tsv.gz` | 0.2 MB | 16,729 rows | The sarcoma-cohort participants, with diagnosis, ICD-O category, anatomic site and survival status. The authoritative diagnosis source — sample rows are blank 76% of the time. |
-| `T26_ccdi_disease_census.tsv` | 6 KB | 86 rows | Samples by ICD-O category and tumour status across ALL of CCDI, so the all-disease denominators — and the finding that CCDI's 91 ATAC-seq and 108 bisulfite-seq participants are entirely leukaemia — stay checkable after the sarcoma trim. |
-| `T24_ccdi_entity_counts.tsv` | 2 KB | 36 rows | CCDI mapped onto atlas entities: participants, samples, tumour/normal split, and the methylation-array subset. All CONTROLLED access. |
+| `T26_ccdi_disease_census.tsv` | 6 KB | 86 rows | Samples by ICD-O category and tumor status across ALL of CCDI, so the all-disease denominators — and the finding that CCDI's 91 ATAC-seq and 108 bisulfite-seq participants are entirely leukaemia — stay checkable after the sarcoma trim. |
+| `T24_ccdi_entity_counts.tsv` | 2 KB | 36 rows | CCDI mapped onto atlas entities: participants, samples, tumor/normal split, and the methylation-array subset. All CONTROLLED access. |
 | `T25_ccdi_unmapped.tsv` | 22 KB | 324 rows | CCDI diagnoses the mapping could not place, with the reason — mostly correctly-excluded non-sarcomas (neuroblastoma, Wilms) plus MCI's `see diagnosis_comment` placeholder. The residual is visible, not silently dropped. |
 | `T27_access_routes.tsv` | 1 KB | 3 rows | Resources with a formal request route but no archive accession — St Jude's COMET methylation project and the St Jude Cloud CSTN dataset. They sit behind the same wall as EGA and dbGaP, and are counted with it; the missing accession is what makes them the weakest case within it. |
 | `T28_stjude_viz_tracks.tsv` | 90 KB | 398 rows | The CSTN epigenetic browsers enumerated at sample × assay resolution, recovered from the ProteinPaint manifests the pages ship inline. 28 models, 317 regulatory tracks, the same 10-mark panel plus WGBS on every one. **Diagnoses are the St Jude data administrator's**, supplied by email and transcribed verbatim in stage 15; the fusion partner comes from the CSTN portal model table. `entity_call_basis`, `subtype_evidence`, `fusion_source` and `availability` carry the provenance per row — including the one model withdrawn from CSTN and the one model the administrator's list omits. NOT added to any total: the same material is already counted once under EGA. See `docs/methods.md` §3b and figure F26. |
-| `T2_models.tsv` | 160 KB | 550 rows | Cell line and PDX catalogue. 550 models with aliases, type, disease, subtype or fusion, key alterations, RRID/Cellosaurus, source repository, origin PMID and a problematic_flag for the 95 with identity problems. |
+| `T2_models.tsv` | 160 KB | 550 rows | Cell line and PDX catalog. 550 models with aliases, type, disease, subtype or fusion, key alterations, RRID/Cellosaurus, source repository, origin PMID and a problematic_flag for the 95 with identity problems. |
 | `T3_entity_counts.tsv` | 5 KB | 72 rows | Per-entity roll-up: epigenomic samples by assay family, distinct models, distinct PDX, patient epigenomes, and H3K27ac / accessibility / 3D / methylation counts split by model versus patient. |
 | `T9b_rms_subtype_log.tsv` | 203 KB | 1,705 rows | Every RMS subtype reassignment with the rule that fired: mutant MYOD1 named, PAX fusion named, curated model identity, explicit fusion-negative wording, driver genotype annotated, or systematically-genotyped series. |
-| `T9c_purity_log.tsv` | 54 KB | 288 rows | Samples removed from the bone-tumour bin. H3F3A/H3F3B capture pulls in the paediatric glioma residues K27M and G34R/V plus plant and mouse H3.3 model systems; GCTB uses G34W/L and chondroblastoma K36M. |
+| `T9c_purity_log.tsv` | 54 KB | 288 rows | Samples removed from the bone-tumor bin. H3F3A/H3F3B capture pulls in the pediatric glioma residues K27M and G34R/V plus plant and mouse H3.3 model systems; GCTB uses G34W/L and chondroblastoma K36M. |
 | `ega_datasets_raw.json` | 13.1 MB |  |  |
 
 ## `incidence/`
 
-The curated evidence behind every rate in T13 — extracted rates with their source, population denominators, and the adult and paediatric literature sweeps. Kept separate so a reviewer can check an anchor without reading the pipeline.
+The curated evidence behind every rate in T13 — extracted rates with their source, population denominators, and the adult and pediatric literature sweeps. Kept separate so a reviewer can check an anchor without reading the pipeline.
 
 | File | What it holds |
 |---|---|
@@ -55,11 +55,11 @@ The curated evidence behind every rate in T13 — extracted rates with their sou
 |---|---|
 | `disease` | the entity bin this sample is assigned to |
 | `entity_kind` | `sarcoma`, `benign` or `nonsarcoma` — controls and mimics are kept, not silently dropped |
-| `age_class` | whether the ENTITY is paediatric-predominant, adult-predominant or both. A property of the disease, not the sample. |
+| `age_class` | whether the ENTITY is pediatric-predominant, adult-predominant or both. A property of the disease, not the sample. |
 | `model_matched` / `donor_key` / `model_rrid` | the model this sample came from, its de-duplication key, and its Cellosaurus RRID |
 | `sample_type` | `primary_tumor`, `metastasis`, `recurrence`, `PDX`, `organoid`, `cell_line`, `xenograft(CDX)`, `mouse_model`, `normal/reference`, `unspecified` |
-| `assay_class` | normalised assay, e.g. `ChIP-seq`, `CUT&RUN`, `ATAC-seq`, `Hi-C`, `Methyl-array` |
-| `epi_target_norm` | normalised target: a histone mark, a factor, `5mC`, or `input/none` for controls |
+| `assay_class` | normalized assay, e.g. `ChIP-seq`, `CUT&RUN`, `ATAC-seq`, `Hi-C`, `Methyl-array` |
+| `epi_target_norm` | normalized target: a histone mark, a factor, `5mC`, or `input/none` for controls |
 | `is_duplicate` / `duplicate_of_gsm` / `series_redundant` | re-deposits of the same data, flagged rather than deleted |
 | `subtype_evidence` | for GSE140686: whether the subtype came from a stated fusion, the methylation class, or histology alone |
 | `rms_call_basis` | for RMS: which rule assigned the subtype |
@@ -84,6 +84,6 @@ participant-to-file instead.
 
 **DNA methylation** = WGBS, RRBS, methylation array, MeDIP/hMeDIP, bisulfite PCR.
 
-**Patient-derived** = tumour tissue, metastasis, recurrence, PDX or patient-derived organoid. Reported separately from tumour tissue alone, because an organoid grown from a patient's tumour is not a decades-old cell line.
+**Patient-derived** = tumor tissue, metastasis, recurrence, PDX or patient-derived organoid. Reported separately from tumor tissue alone, because an organoid grown from a patient's tumor is not a decades-old cell line.
 
 **Epigenomic totals** include input controls and duplicates are removed first (`is_duplicate != Y`).

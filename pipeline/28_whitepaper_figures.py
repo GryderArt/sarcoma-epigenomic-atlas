@@ -38,8 +38,8 @@ OPEN, WALL, NONE = "#2a78d6", "#eda100", "#d03b3b"
 LINE, PDER, TUMR = "#c3d5e8", "#2a78d6", "#0d366b"
 LINE_C, TISSUE = "#2a78d6", "#eb6834"    # WP4: cell line vs patient tissue      # sequential: distance from patient
 DARK, MUTED, GRID = "#2b3440", "#7c8894", "#e3e2dc"
-CLS = {"paediatric": PED, "both": BOTH, "adult": ADULT}
-LAB = {"paediatric": "Paediatric-predominant", "both": "Both ages", "adult": "Adult-predominant"}
+CLS = {"pediatric": PED, "both": BOTH, "adult": ADULT}
+LAB = {"pediatric": "Pediatric-predominant", "both": "Both ages", "adult": "Adult-predominant"}
 LOGX = ["1", "10", "100", "1,000", "10,000"]
 FLOOR = 0.57                      # where entities with nothing are drawn in WP1-D
 
@@ -99,7 +99,7 @@ def fig_burden(d):
         a["cases"] += F(r, "US_cases_per_year_all_ages")
         a["epi"] += I(r, "epigenomic_samples")
         a["reg"] += I(r, "regulatory_epigenomic_samples")
-    order = ["paediatric", "both", "adult"]
+    order = ["pediatric", "both", "adult"]
 
     fig = plt.figure(figsize=(7.4, 5.6))
     gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.55], width_ratios=[1.15, 1.15, 0.80],
@@ -116,7 +116,7 @@ def fig_burden(d):
             ax.text(agg[g][key] * 1.04, yy, f"{agg[g][key]:,.0f}", va="center",
                     fontsize=7, color=DARK)
         ax.set_yticks(y)
-        ax.set_yticklabels(["Paediatric", "Both ages", "Adult"] if ax is axA else [],
+        ax.set_yticklabels(["Pediatric", "Both ages", "Adult"] if ax is axA else [],
                            fontsize=6.8)
         ax.set_xlim(0, max(v) * 1.42); ax.set_xlabel(xlab, fontsize=7)
         ax.set_title(ttl, fontsize=8.6, weight="bold", loc="left", pad=6)
@@ -136,7 +136,7 @@ def fig_burden(d):
         panel_tag(ax, t, dx=-0.34 if ax is axA else -0.12 if ax is axB else -0.40)
 
     # ---- D: per-entity
-    SHORT = {"Rhabdoid tumour / ATRT": "Rhabdoid / ATRT",
+    SHORT = {"Rhabdoid tumor / ATRT": "Rhabdoid / ATRT",
              "Undifferentiated pleomorphic sarcoma": "UPS / MFH",
              "Desmoid / aggressive fibromatosis": "Desmoid"}
     short = lambda nm: SHORT.get(nm, nm.split(" (")[0])
@@ -248,7 +248,7 @@ def fig_composition(d):
     axA.spines["left"].set_visible(False); axA.tick_params(axis="y", length=0)
     axA.legend(handles=[Patch(facecolor=LINE, label="Established cell line"),
                         Patch(facecolor=PDER, label="PDX / organoid"),
-                        Patch(facecolor=TUMR, label="Patient tumour, metastasis, recurrence")],
+                        Patch(facecolor=TUMR, label="Patient tumor, metastasis, recurrence")],
                fontsize=6.1, frameon=False, loc="upper left", bbox_to_anchor=(-0.30, -0.30),
                ncol=3, handlelength=1.0, handleheight=0.75, columnspacing=1.1)
     tidy(axA); panel_tag(axA, "A", dx=-0.30, dy=1.13)
@@ -299,7 +299,7 @@ def fig_composition(d):
     axC.set_xscale("log"); axC.set_xlim(1, 3000)
     axC.set_xticks([1, 10, 100, 1000]); axC.set_xticklabels(LOGX[:4])
     axC.set_xlabel("regulatory epigenomic profiles of patient-derived material "
-                   "(tumour, metastasis, recurrence, PDX or organoid)", fontsize=7.5)
+                   "(tumor, metastasis, recurrence, PDX or organoid)", fontsize=7.5)
     axC.spines["left"].set_visible(False)
     tidy(axC); panel_tag(axC, "C", dx=-0.42, dy=1.008)
 
@@ -319,7 +319,7 @@ def fig_composition(d):
     foot(fig, 0.0, -0.012,
          f"Panel A denominator is the {n_prov:,} de-duplicated sarcoma regulatory samples "
          f"whose material of origin is stated: {100*cl/n_prov:.0f}% are established cell "
-         f"lines and {100*pt/n_prov:.0f}% are patient tumour. Samples recorded only as "
+         f"lines and {100*pt/n_prov:.0f}% are patient tumor. Samples recorded only as "
          f"normal/reference, mouse model or unspecified are excluded from that denominator "
          f"rather than assigned by guesswork; against the full de-duplicated set the "
          f"cell-line share is {100*cl/len(reg):.0f}%.\n\n"
@@ -329,12 +329,12 @@ def fig_composition(d):
          f"sarcoma organoid grown from a patient is not a decades-old line, and "
          f"collapsing the two would report several entities as hard zeros that are "
          f"not.\n\n"
-         f"Absence indicates no public, entity-labelled deposit rather than evidence that "
+         f"Absence indicates no public, entity-labeled deposit rather than evidence that "
          f"no experiment was performed.")
     save(fig, "WP3_what_the_atlas_is_made_of")
     return {"n_zero_pd": len(none_), "n_have_pd": len(T13) - len(none_),
             "pct_cell_line": round(100*cl/(cl+pdx+pt)),
-            "pct_tumour": round(100*pt/(cl+pdx+pt)),
+            "pct_tumor": round(100*pt/(cl+pdx+pt)),
             "pd_growth": grew, "zero_by_assay": vals}
 
 
@@ -504,7 +504,7 @@ def fig_validation(d):
                     va="center", fontsize=5.9, color=MUTED)
         else:
             # No marker for "none": an absent point is the encoding, and the italic red
-            # word names it. A third coloured mark here would sit too close to the
+            # word names it. A third colored mark here would sit too close to the
             # patient-tissue orange to be told apart.
             ax.text(FL * 0.92, yy, "none", va="center", ha="left", fontsize=6,
                     color=NONE, style="italic", weight="bold")
@@ -519,7 +519,7 @@ def fig_validation(d):
     ax.spines["left"].set_visible(False)
     tidy(ax)
     ax.legend(handles=[Patch(facecolor=LINE_C, label="Established cell line"),
-                       Patch(facecolor=TISSUE, label="Patient-derived: tumour, "
+                       Patch(facecolor=TISSUE, label="Patient-derived: tumor, "
                                                      "metastasis, recurrence, PDX or "
                                                      "organoid")],
               fontsize=6.4, frameon=False, loc="upper left", bbox_to_anchor=(0.0, -0.062),
@@ -545,7 +545,7 @@ def fig_validation(d):
          f"here (Figure WP2D)."
          + (f" A fourteenth, {' and '.join(ctrl_only)}, is also absent for a different "
             f"reason: its entire regulatory record is normal or reference tissue rather "
-            f"than tumour or model, so it has neither point to plot." if ctrl_only else ""))
+            f"than tumor or model, so it has neither point to plot." if ctrl_only else ""))
     save(fig, "WP4_can_the_models_be_validated")
     return {"n_rows": len(rows), "n_no_patient": nz, "n_validatable": ok,
             "worst": (worst[0], round(worst[1]/worst[2]))}

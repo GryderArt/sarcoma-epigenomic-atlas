@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Second sweep keyed on MODEL NAMES (paediatric 427 + adult 156), because many
+"""Second sweep keyed on MODEL NAMES (pediatric 427 + adult 156), because many
 landmark datasets name only the cell line in their title."""
 import json, time, urllib.parse, urllib.request, sys, csv, os, re
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,

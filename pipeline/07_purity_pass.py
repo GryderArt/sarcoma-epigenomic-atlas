@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Purity pass on the v3 atlas.
 
-The bone-tumour bin is populated partly by the H3.3 driver mutations (H3F3A G34W/L in
-giant cell tumour of bone, H3F3B K36M in chondroblastoma). The SAME gene carries the
-paediatric glioma residues K27M and G34R/V, and a large H3.3 chromatin literature uses
+The bone-tumor bin is populated partly by the H3.3 driver mutations (H3F3A G34W/L in
+giant cell tumor of bone, H3F3B K36M in chondroblastoma). The SAME gene carries the
+pediatric glioma residues K27M and G34R/V, and a large H3.3 chromatin literature uses
 those alleles in cells and in plants. Those records must not sit in a sarcoma bin.
 """
 import csv, re, collections
@@ -30,7 +30,7 @@ def main():
         if BONE_OK.search(b): continue
         why = None
         if NONHUMAN.search(b) or r["organism"] not in ("Homo sapiens", ""):
-            why = "non-human H3.3 model system, not a bone tumour"
+            why = "non-human H3.3 model system, not a bone tumor"
         elif GLIOMA.search(b):
             why = "H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele"
         if why:
@@ -39,7 +39,7 @@ def main():
             r["disease"] = "EXCLUDED - not a sarcoma"; r["entity_kind"] = "nonsarcoma"
             r["disease_source"] = why
             moved[why.split(",")[0]] += 1
-    print("moved out of the bone-tumour bin:", dict(moved), f"({sum(moved.values())} rows)")
+    print("moved out of the bone-tumor bin:", dict(moved), f"({sum(moved.values())} rows)")
     with twrite("T9c_purity_log.tsv") as f:
         w = csv.writer(f, delimiter="\t")
         w.writerow(["gsm","gse","from","to","reason","title","gse_title"]); [w.writerow(x) for x in log]

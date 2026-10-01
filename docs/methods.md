@@ -9,7 +9,7 @@ reader can audit the calls rather than trust them.
 (`01_sweep_disease_terms.py`) misses series whose record never names the disease — a study
 titled *"Chromatin landscape of RH4 cells"* is invisible to a query for
 "rhabdomyosarcoma". So a second sweep queries by **model name** instead
-(`02_sweep_model_names.py`, 1,069 queries built from the model catalogue), which recovered
+(`02_sweep_model_names.py`, 1,069 queries built from the model catalog), which recovered
 1,644 series the disease sweep had not seen.
 
 **A third blind spot: the bare word.** GSE140686 — the largest sarcoma epigenomic deposit
@@ -20,8 +20,8 @@ the pipeline had missed. Any survey of this kind should assume it has a blind sp
 not found yet.
 
 **Beyond GEO.** `09_harvest_ebi.py` covers ArrayExpress/BioStudies, ENA, EGA metadata and
-EpiRR; `10_harvest_ega.py` enumerates the whole EGA dataset catalogue, because EGA's
-apparent `query=` parameter is silently ignored and the catalogue must be pulled whole and
+EpiRR; `10_harvest_ega.py` enumerates the whole EGA dataset catalog, because EGA's
+apparent `query=` parameter is silently ignored and the catalog must be pulled whole and
 filtered locally. The St Jude CSTN inventory came from the portal's undocumented JSON
 gateway plus the source publications, and `15_harvest_stjude_viz.py` resolves its two
 epigenetic browsers to sample x assay grain (§3b).
@@ -35,8 +35,8 @@ samples; only `!Sample_characteristics`, `!Sample_title`, `!Sample_source_name` 
 Rule-based over free text, with the evidence recorded per call. Five things are assigned:
 assay class, epigenetic target, sample type, model identity, disease entity.
 
-**Model matching** uses a normalised n-gram token index rather than a regex alternation
-over ~1,000 names (17 ms → 0.07 ms per sample). Antibody catalogue numbers are stripped
+**Model matching** uses a normalized n-gram token index rather than a regex alternation
+over ~1,000 names (17 ms → 0.07 ms per sample). Antibody catalog numbers are stripped
 before matching, because Novus `NB100-…` otherwise matches the CHP-100 alias `NB-100`.
 
 **RMS subtype** follows the rule that fusion-negative means *neither a PAX3/PAX7 fusion
@@ -62,7 +62,7 @@ otherwise sweep them into FN-RMS.
 
 **Subtype calls use sample-level text only.** Adding the series title once made
 GSE140686's headline ("PAX3-FOXO1 establishes myogenic super enhancers") mark all eight of
-its tumours fusion-positive, including the fusion-negative ones.
+its tumors fusion-positive, including the fusion-negative ones.
 
 ## 3. Recovering GSE140686
 
@@ -81,7 +81,7 @@ non-neoplastic control, 36 non-sarcoma.
 Subtype evidence is graded, because the sources differ in strength: a stated fusion beats
 a methylation class, which beats histology alone. The grade is carried in
 `subtype_evidence` for every recovered sample. Benign mimics and non-sarcoma controls are
-retained and labelled rather than deleted — they are part of what the deposit contains.
+retained and labeled rather than deleted — they are part of what the deposit contains.
 
 ## 3b. The St Jude CSTN browsers, and who says what a sample is
 
@@ -126,7 +126,7 @@ wrong:
    resource count in `T27`. The withdrawal is independently corroborated: the live CSTN
    portal API does not return this model either.
 3. `SJRHB013757_X1` is on the browser page; the portal carries only `SJRHB013757_X2`. A
-   fusion is a property of the patient's tumour rather than of the passage, so the sibling
+   fusion is a property of the patient's tumor rather than of the passage, so the sibling
    row supplies PAX7::FOXO1 — recorded as `fusion_source = sibling passage`, not as an
    exact match.
 
@@ -146,9 +146,9 @@ ATAC-seq, scATAC-seq, DNase-seq, FAIRE-seq, MNase-seq, Hi-C, HiChIP, Micro-C, Ca
 ChIA-PET and 4C-seq, **excluding input and IgG controls** — a control is not a profile of
 anything, and counting them inflates sparse entities most.
 
-**Patient-derived** means tumour tissue, metastasis, recurrence, PDX or patient-derived
-organoid, reported separately from tumour tissue alone. A synovial sarcoma organoid grown
-from a patient's tumour is not a decades-old cell line, and collapsing the two would have
+**Patient-derived** means tumor tissue, metastasis, recurrence, PDX or patient-derived
+organoid, reported separately from tumor tissue alone. A synovial sarcoma organoid grown
+from a patient's tumor is not a decades-old cell line, and collapsing the two would have
 called synovial sarcoma a hard zero when it is not.
 
 **Duplicates** are flagged, not deleted (`is_duplicate`, `duplicate_of_gsm`,
@@ -183,13 +183,13 @@ rosters, and PubMed plus Europe PMC full text including preprints. Caveats that 
 are recorded per entity in the `verification_caveat` column of T13. Three shape the
 wording:
 
-- **Angiosarcoma is a human zero, not an absolute one.** Canine haemangiosarcoma — the
+- **Angiosarcoma is a human zero, not an absolute one.** Canine hemangiosarcoma — the
   accepted spontaneous model — has CUT&Tag (GSE304509) and ChRO-seq (GSE150705).
 - **Myxofibrosarcoma is the weakest call.** PMID 39789291 reports ATAC-seq on an MFS PDX
   but states no accession, and no matching series exists in GEO or SRA. It is a dataset
   that exists and is unfindable — reported as "no retrievable data".
 - **"DNA methylation profiling", not "methylation arrays".** DFSP has one nanopore
-  methylation tumour; CCSK has cfDNA RRBS.
+  methylation tumor; CCSK has cfDNA RRBS.
 
 ## 7. Corrections applied
 
@@ -198,18 +198,18 @@ Each was a real error caught against ground truth, and each is logged.
 | # | What was wrong | How it was found | Fix |
 |---|---|---|---|
 | 1 | GSE140686's 1,505 samples had no entity label | a coauthor's dataset list | recovered the `!Sample_description` join; `05` |
-| 2 | The RMS subtype rule was lost in a pipeline rebuild — the Gryder/Yohe tumours had drifted back to RMS-NOS | checking a known result | re-applied; the five fusion-negative tumours now read FN-RMS; `T9b` |
+| 2 | The RMS subtype rule was lost in a pipeline rebuild — the Gryder/Yohe tumors had drifted back to RMS-NOS | checking a known result | re-applied; the five fusion-negative tumors now read FN-RMS; `T9b` |
 | 3 | Driver-genotype inference swept PAX-fusion cell lines into FN-RMS | auditing which models the rule touched | curated model identity now outranks series context; `06` |
-| 4 | Series titles leaked their headline subtype onto every sample | all eight tumours in one series called fusion-positive | subtype calls restricted to sample-level text |
-| 5 | H3F3A/H3F3B capture pulled paediatric glioma into the bone-tumour bin | 865 K27M/G34R samples in GCTB | residue disambiguation — GCTB is G34W/L, chondroblastoma K36M; `T9c` |
-| 6 | Antibody catalogue numbers matched model aliases | Novus `NB100-…` → CHP-100 | antibody fields stripped before model matching |
+| 4 | Series titles leaked their headline subtype onto every sample | all eight tumors in one series called fusion-positive | subtype calls restricted to sample-level text |
+| 5 | H3F3A/H3F3B capture pulled pediatric glioma into the bone-tumor bin | 865 K27M/G34R samples in GCTB | residue disambiguation — GCTB is G34W/L, chondroblastoma K36M; `T9c` |
+| 6 | Antibody catalog numbers matched model aliases | Novus `NB100-…` → CHP-100 | antibody fields stripped before model matching |
 | 7 | Short model aliases matched patient labels | `OS9` → `OS9-1` | length and context guards |
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
-| 10 | "Entities catalogued" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
-| 14 | `distinct_models` was read as "models that exist"; it counts models name-matched to the curated catalogue, so three entities with unmatched cell-line data were miscounted | cross-checking the model bullet against `sample_type` | claim now computed from `sample_type` directly — 14 entities have never had a cell line, PDX or organoid profiled, a different set from `distinct_models = 0`; §7b |
+| 10 | "Entities cataloged" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 14 | `distinct_models` was read as "models that exist"; it counts models name-matched to the curated catalog, so three entities with unmatched cell-line data were miscounted | cross-checking the model bullet against `sample_type` | claim now computed from `sample_type` directly — 14 entities have never had a cell line, PDX or organoid profiled, a different set from `distinct_models = 0`; §7b |
 | 13 | Normal and reference tissue counted toward an entity's regulatory total | LGFMS / SEF appeared to have 20 regulatory epigenomes while dropping out of the cell-line-vs-tissue figure | 3% of regulatory samples atlas-wide; decisive only for LGFMS / SEF (100% control tissue) and endometrial stromal sarcoma (75%). Reported rather than silently re-binned |
-| 12 | Two scatter labels sat on top of each other in WP1-D and F19, so `FP-RMS` appeared to name the `Rhabdoid tumour / ATRT` point | a reader asked which dot each label meant, and whether the two were pooled | they were never pooled — separate rows in every table. Placement rewritten in `_labels.py`: measured boxes, an ownership test, leader lines; `28`, `20` |
+| 12 | Two scatter labels sat on top of each other in WP1-D and F19, so `FP-RMS` appeared to name the `Rhabdoid tumor / ATRT` point | a reader asked which dot each label meant, and whether the two were pooled | they were never pooled — separate rows in every table. Placement rewritten in `_labels.py`: measured boxes, an ownership test, leader lines; `28`, `20` |
 | 11 | St Jude CSTN entity calls were read off the browser label suffix — `SJHGS` became UPS/MFH, `(SCLEROS)` asserted a MYOD1 genotype | the data administrator supplied the definitive per-sample list | curated calls keyed on model ID, with `entity_call_basis` per row; three discrepancies reported rather than resolved; `15`, §3b |
 
 ## 7b. Figures for the white-paper section
@@ -228,7 +228,7 @@ maximum per figure; vector PDF, Arial, `pdf.fonttype 42` so the text stays edita
 
 **Scatter labels carry leader lines, and placement is measured rather than guessed.**
 `_labels.py` holds the shared placer used by WP1-D and F19. The first version tested a
-guessed 52x11 pixel box; `Rhabdoid tumour / ATRT` (95 US cases per year, 1,052 regulatory
+guessed 52x11 pixel box; `Rhabdoid tumor / ATRT` (95 US cases per year, 1,052 regulatory
 samples) and `FP-RMS` (110, 640) both took the slot above themselves, their guessed boxes
 cleared each other by a pixel, and the pair read as one two-line label over the upper
 point. Four rules now prevent that: candidate boxes are drawn and measured with the real
@@ -250,9 +250,28 @@ exploratory figures, and one of them was wrong on the first pass:
   seven** study-internal comparisons (`T11b`), not all seven. Clear cell sarcoma by
   signal Spearman is the exception.
 
+## 7c. Spelling
+
+The atlas reports US incidence for a US-authored working group, so its own text — entity
+labels, derived column values, figure captions, documentation — is US English, applied by
+`29_normalize_spelling.py` using the rules in `_enus.py`.
+
+Two categories are deliberately left as deposited. The **verbatim contents of third-party
+records** keep their original spelling: a GEO `source_name` reading "Malignant peripheral
+nerve sheath tumour" and a DKFZ classifier label reading "Malignant rhabdoid tumour" are
+quoted, not corrected, and the gap map displays them as the depositor wrote them. So do
+the **regular expressions that match those records** — European depositors write "tumour"
+and "haemangioendothelioma", and Americanising the patterns would stop them matching. The
+separation is enforced mechanically: TSV rewriting is scoped by column against a
+deny-list of verbatim fields, and Python rewriting masks every raw-string literal before
+substituting.
+
+The rename touched 53,824 table cells and every count was verified unchanged afterwards:
+re-running stages 08, 13 and 12 reproduced all 45 entity rows identically.
+
 ## 8. What this cannot tell you
 
-**Absence in this atlas means absence of a public, entity-labelled deposit.** It is not
+**Absence in this atlas means absence of a public, entity-labeled deposit.** It is not
 proof that no experiment was done. Data under controlled access, or deposited without an
 entity label, is invisible to any search of this kind — and GSE140686 is the standing proof
 that the second failure mode is real and large. `T14`/`T15` quantify the first: 1,207

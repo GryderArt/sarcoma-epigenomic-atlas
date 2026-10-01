@@ -178,7 +178,7 @@
   <span><span class="sw" style="background:#ec835a"></span>Methylation only — open, but cannot answer a regulatory question</span>
   <span><span class="sw" style="background:var(--absent)"></span>Absent — no record anywhere</span>
   <span class="muted">·</span>
-  <span><span class="sw" style="background:var(--ped)"></span>Paediatric-predominant</span>
+  <span><span class="sw" style="background:var(--ped)"></span>Pediatric-predominant</span>
   <span><span class="sw" style="background:var(--both)"></span>Both ages</span>
   <span><span class="sw" style="background:var(--adult)"></span>Adult-predominant</span>
 </div>
@@ -187,11 +187,11 @@
   <label for="q">Search</label>
   <input type="search" id="q" placeholder="entity, model, GEO/EGA accession, target…">
   <label for="fage">Age class</label>
-  <select id="fage"><option value="">all</option><option>paediatric</option>
+  <select id="fage"><option value="">all</option><option>pediatric</option>
     <option>both</option><option>adult</option></select>
   <label for="fsrc">Material</label>
   <select id="fsrc"><option value="">all</option><option value="patient">patient-derived only</option>
-    <option value="tissue">tumour tissue only</option><option value="model">models only</option></select>
+    <option value="tissue">tumor tissue only</option><option value="model">models only</option></select>
   <label for="flane">Assay</label>
   <select id="flane"><option value="">all</option></select>
   <label for="fkind">Show</label>
@@ -233,7 +233,7 @@ const P = /*__PAYLOAD__*/null;
 const D = P.dict, R = P.recs, E = P.ents, LANES = P.lanes, REG = new Set(P.reglanes);
 const PATIENT = new Set(["primary_tumor","metastasis","recurrence"]);
 const PDER = new Set([...PATIENT,"PDX","organoid"]);
-const AGEC = {paediatric:"var(--ped)", both:"var(--both)", adult:"var(--adult)"};
+const AGEC = {pediatric:"var(--ped)", both:"var(--both)", adult:"var(--adult)"};
 const $ = s => document.querySelector(s);
 const fmt = n => (n||0).toLocaleString("en-US");
 
@@ -444,7 +444,7 @@ function drawDetail(e){
       <span>Epigenomic samples <b>${fmt(e.n)}</b></span>
       <span>Regulatory <b class="${e.reg?'':'z'}">${fmt(e.reg)}</b></span>
       <span>From patient-derived material <b class="${e.pd_reg?'':'z'}">${fmt(e.pd_reg)}</b></span>
-      <span>From tumour tissue <b class="${e.pt_reg?'':'z'}">${fmt(e.pt_reg)}</b></span>
+      <span>From tumor tissue <b class="${e.pt_reg?'':'z'}">${fmt(e.pt_reg)}</b></span>
       <span>Controlled-access <b>${fmt(e.creg+e.cdna)}</b></span>
       <span>Distinct models in the atlas, any assay <b>${fmt(e.models)}</b></span>
       <span>Studies <b>${fmt(e.series)}</b></span>
@@ -493,11 +493,11 @@ function render(){
      payload built from ${P.built}.
      Regulatory = ChIP-seq, CUT&amp;RUN, CUT&amp;Tag, ChIP-exo/chip, ATAC, scATAC, DNase, FAIRE,
      MNase, Hi-C, HiChIP, Micro-C, Capture-HiC, ChIA-PET, 4C — input and IgG controls excluded.
-     Patient-derived = tumour tissue, metastasis, recurrence, PDX or patient-derived organoid.<br>
+     Patient-derived = tumor tissue, metastasis, recurrence, PDX or patient-derived organoid.<br>
      Controlled-access counts come from the EGA metadata API and the St&nbsp;Jude CSTN inventory;
      ${fmt(P.unres.filter(u=>u.fam==="regulatory").reduce((s,u)=>s+u.n,0))} further regulatory samples sit in EGA in cohorts whose
      subtype EGA does not state and are therefore not attributed to any entity here.<br>
-     Absence means no public, entity-labelled deposit — not proof no experiment was done.`;
+     Absence means no public, entity-labeled deposit — not proof no experiment was done.`;
 }
 
 /* ---------- events ---------- */
@@ -560,7 +560,7 @@ $("#tableview").addEventListener("click", ()=>{
   $("#tableview").setAttribute("aria-pressed", String(!on));
   $("#scatterPanel").classList.toggle("hide", !on ? true : false);
   $("#matrixPanel").querySelector(".ptitle span").textContent = !on
-    ? "Plain numeric table — no colour encoding."
+    ? "Plain numeric table — no color encoding."
     : "Cell shading is the sample count on a light→dark blue ramp within each column; a red 0 means nothing exists. Sort by clicking a header.";
   document.querySelectorAll("#matrix .cell").forEach(c=>{
     if(!on){ c.dataset.bg = c.className; c.className = "cell" + (c.classList.contains("z")?" z":""); }

@@ -17,13 +17,13 @@ OUT = DATA
 
 TERMS = ["sarcoma","rhabdomyosarcoma","Ewing sarcoma","osteosarcoma","synovial sarcoma",
          "liposarcoma","leiomyosarcoma","angiosarcoma","chondrosarcoma","chordoma",
-         "MPNST","malignant peripheral nerve sheath tumour","desmoplastic small round cell",
-         "rhabdoid tumour","rhabdoid tumor","gastrointestinal stromal tumour",
+         "MPNST","malignant peripheral nerve sheath tumor","desmoplastic small round cell",
+         "rhabdoid tumor","rhabdoid tumor","gastrointestinal stromal tumor",
          "gastrointestinal stromal tumor","epithelioid sarcoma","alveolar soft part sarcoma",
-         "clear cell sarcoma","epithelioid haemangioendothelioma","epithelioid hemangioendothelioma",
-         "undifferentiated pleomorphic sarcoma","myxofibrosarcoma","solitary fibrous tumour",
+         "clear cell sarcoma","epithelioid hemangioendothelioma","epithelioid hemangioendothelioma",
+         "undifferentiated pleomorphic sarcoma","myxofibrosarcoma","solitary fibrous tumor",
          "dermatofibrosarcoma","desmoid","fibrosarcoma","Kaposi sarcoma","PEComa",
-         "endometrial stromal sarcoma","giant cell tumour of bone","chondroblastoma"]
+         "endometrial stromal sarcoma","giant cell tumor of bone","chondroblastoma"]
 EPI_HINT = re.compile(r"chip[-\s]?seq|atac|cut&run|cut&tag|cut ?and ?run|hi-?c|hichip|methylat|"
                       r"bisulfite|h3k\d|histone|chromatin|epigenom|enhancer|dnase|wgbs|rrbs|"
                       r"nucleosome|accessib", re.I)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Full re-harvest: paediatric + adult sarcoma entities + the bare 'sarcoma' term.
+"""Full re-harvest: pediatric + adult sarcoma entities + the bare 'sarcoma' term.
 
 Fixes three failure modes found in the first build:
   1. Pan-sarcoma studies described only as "sarcoma" (e.g. GSE140686, the 1,505-sample
@@ -16,7 +16,7 @@ from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 OUT = WORK   # raw sweep output: large, regenerable, not tracked in git
 
-PAEDIATRIC = {
+PEDIATRIC = {
  "RMS": ['"rhabdomyosarcoma"','"alveolar rhabdomyosarcoma"','"embryonal rhabdomyosarcoma"',
          '"spindle cell rhabdomyosarcoma"','"sclerosing rhabdomyosarcoma"','"PAX3-FOXO1"',
          '"PAX7-FOXO1"','"PAX3-FKHR"','"PAX7-FKHR"'],
@@ -86,7 +86,7 @@ ADULT = {
  "PANSARC": ['"sarcoma"','"sarcomas"','"soft tissue sarcoma"','"bone sarcoma"',
              '"sarcoma"AND"methylation"','"mesenchymal tumor"','"mesenchymal neoplasm"'],
 }
-TERMS = {**PAEDIATRIC, **ADULT}
+TERMS = {**PEDIATRIC, **ADULT}
 
 def eget(url, tries=5):
     for i in range(tries):

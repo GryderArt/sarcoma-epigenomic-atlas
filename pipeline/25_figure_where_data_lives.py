@@ -138,7 +138,7 @@ def main():
     tot_dna_wall = ega_dna + ccdi_dna + noacc
 
     fig.legend(handles=[
-        Patch(facecolor=OPEN, label="Freely available — download and reanalyse today"),
+        Patch(facecolor=OPEN, label="Freely available — download and reanalyze today"),
         Patch(facecolor=WALL, label="Behind a formal request wall — a data-access "
                                     "agreement per study, signed by the PI and an institution"),
         Patch(facecolor=NONE, label="None exists")],

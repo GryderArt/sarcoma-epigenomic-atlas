@@ -8,9 +8,9 @@ Atlas version 3 (all ages). Every number below is reproducible from
 
 ## 1. Kevin Jones's point, with numbers behind it
 
-**The headline.** Adult sarcoma carries roughly eight times the case burden of paediatric
+**The headline.** Adult sarcoma carries roughly eight times the case burden of pediatric
 sarcoma (89.4% of US cases) and 30% of the regulatory epigenomic data. Per new case diagnosed,
-paediatric-predominant entities carry **~24× more** ChIP-seq / CUT&RUN / ATAC / Hi-C data
+pediatric-predominant entities carry **~24× more** ChIP-seq / CUT&RUN / ATAC / Hi-C data
 than adult-predominant entities.
 
 **National figures (verified against primary sources).**
@@ -25,9 +25,9 @@ than adult-predominant entities.
 
 Two corrections to figures that circulate widely and that we should not repeat:
 
-- Paediatric sarcoma is **~1,700–1,900/yr**, not ~1,500. The commonly quoted "18,000 total,
-  1,500 paediatric" pair is internally inconsistent — it implies 92% adult, not 89%.
-- Sarcoma is **~11.5%** of paediatric malignancy, not the often-quoted 15–20%. I could find
+- Pediatric sarcoma is **~1,700–1,900/yr**, not ~1,500. The commonly quoted "18,000 total,
+  1,500 pediatric" pair is internally inconsistent — it implies 92% adult, not 89%.
+- Sarcoma is **~11.5%** of pediatric malignancy, not the often-quoted 15–20%. I could find
   no source stratifying ICCC VIII/IX for ages 15–19 alone, which may be where the higher
   number came from; we should not cite it without one.
 
@@ -49,14 +49,14 @@ published incidence rate, so we can say what the gap costs per patient:
 | Angiosarcoma | 1,312 | 46 | **0** |
 | Myxofibrosarcoma | 820 | 17 | **0** |
 | Pleomorphic liposarcoma | 185 | 28 | **0** |
-| Inflammatory myofibroblastic tumour | 175 | 9 | **0** |
+| Inflammatory myofibroblastic tumor | 175 | 9 | **0** |
 | Extraskeletal myxoid chondrosarcoma | 75 | 11 | **0** |
 | Intimal sarcoma | 60 | 1 | **0** |
 | Clear cell sarcoma of the kidney | 20 | 12 | **0** |
 | BCOR-CCNB3 sarcoma | 15 | 9 | **0** |
 
 The other four have no published population rate anywhere *and* no regulatory
-epigenomics: myoepithelial carcinoma of soft tissue, ossifying fibromyxoid tumour,
+epigenomics: myoepithelial carcinoma of soft tissue, ossifying fibromyxoid tumor,
 angiomatoid fibrous histiocytoma, and atypical fibroxanthoma / pleomorphic dermal sarcoma.
 For these we cannot even state what the gap costs — the denominator does not exist either.
 
@@ -71,14 +71,14 @@ gap map. They still contribute to sample and record totals, because the samples 
 just cannot say what they are. The residual bins are themselves a metadata-quality
 measure: 535 epigenomic samples sit in them.
 
-**And the primary-tumour gap you flagged is broader than EHE.** **25 of 45** entities have
-never had a single piece of patient-derived material — tumour tissue, PDX or
+**And the primary-tumor gap you flagged is broader than EHE.** **25 of 45** entities have
+never had a single piece of patient-derived material — tumor tissue, PDX or
 patient-derived organoid — profiled for active chromatin, accessibility or 3D architecture — including leiomyosarcoma (3,310 US cases/yr),
 desmoid (1,740), DFSP (1,400), angiosarcoma (1,312), chondrosarcoma (1,280), Kaposi
-sarcoma (1,268) and solitary fibrous tumour (1,200). Synovial sarcoma is the single entity
-rescued by widening the definition from tumour tissue to patient-derived material: its 563
+sarcoma (1,268) and solitary fibrous tumor (1,200). Synovial sarcoma is the single entity
+rescued by widening the definition from tumor tissue to patient-derived material: its 563
 regulatory epigenomes are cell lines and mouse models except for one organoid series
-(GSE148722), and it still has nothing from tumour tissue.
+(GSE148722), and it still has nothing from tumor tissue.
 
 **Each zero was independently verified.** A separate adversarial sweep of GEO (series and
 sample level), SRA across all library strategies, ENCODE, ChIP-Atlas (845,824 experiments),
@@ -86,14 +86,14 @@ ArrayExpress/BioStudies, GDC/TARGET, dbGaP and Cellosaurus cell-line rosters, pl
 and Europe PMC full text, tried to falsify each call. Caveats that survived are recorded
 per entity in the `verification_caveat` column of T13. Three matter for wording:
 
-1. **Scope angiosarcoma to human.** Canine haemangiosarcoma — the accepted spontaneous
+1. **Scope angiosarcoma to human.** Canine hemangiosarcoma — the accepted spontaneous
    model — does have CUT&Tag (GSE304509, H3K27ac/H3K4me3/Kla/RNAPII-Ser5, PMID 41767677)
    and ChRO-seq (GSE150705).
 2. **Soften myxofibrosarcoma to "no retrievable data."** PMID 39789291 reports ATAC-seq on
    an MFS PDX, but states no accession and no matching series exists in GEO or SRA. Worth
    emailing the authors — this is a dataset that exists and is unfindable.
 3. **Say "DNA methylation profiling (predominantly array-based)"** rather than "methylation
-   arrays". DFSP has one nanopore-methylation tumour (GSE320108); CCSK has cfDNA RRBS
+   arrays". DFSP has one nanopore-methylation tumor (GSE320108); CCSK has cfDNA RRBS
    (E-MTAB-8770).
 
 A quotable confirmation from the field itself, for BCOR-CCNB3: *"For BCOR-rearranged fusion
@@ -129,7 +129,7 @@ relevant to entities we score as sparse:
 - `E-MTAB-9875` — methylation (450K + EPIC) for sarcoma classification
 - `E-MTAB-6961` — methylation array profiling of **undifferentiated sarcomas of adults**
 - `E-MTAB-8864` — MPNST methylation · `E-MTAB-11031` — chondrosarcoma methylation
-- `E-MTAB-6708` — malignant rhabdoid tumour methylation
+- `E-MTAB-6708` — malignant rhabdoid tumor methylation
 - `PRJEB104098` — histiocytic sarcoma vs UPS · `PRJEB112272` — iPSC model of MPNST progression
 
 Practically: `E-GEOD-*` and `PRJNA*` are mirrors and can be dropped; `E-MTAB-*`, `PRJEB*`,
@@ -141,9 +141,9 @@ Practically: `E-GEOD-*` and `PRJNA*` are mirrors and can be dropped; `E-MTAB-*`,
 
 ## 2b. EGA and St Jude: what exists but cannot be reused
 
-I enumerated the **entire EGA dataset catalogue — 21,279 datasets** — via the metadata API
+I enumerated the **entire EGA dataset catalog — 21,279 datasets** — via the metadata API
 (`https://metadata.ega-archive.org/datasets?limit=200&offset=N`; the apparent `query=`
-parameter is silently ignored, so the catalogue has to be pulled whole and filtered
+parameter is silently ignored, so the catalog has to be pulled whole and filtered
 locally). Results in tabs `T14_EGA_sarcoma` and `T15_Controlled_epigenomics`.
 
 **560 sarcoma datasets, 22,832 samples, and every single one is controlled access.** Of
@@ -172,7 +172,7 @@ BCOR-CCNB3 appear nowhere in EGA either. Those zeros survive.
 Datasets in the controlled tier that fill entity gaps our open-data map shows as thin:
 `EGAD00001004135` (SS18-SSX BAF hijacking, synovial sarcoma, 85), `EGAD00001006253`
 (MPNST, 98), `EGAD50000002533` (MPNST iPSC progression model with ATAC-seq, 56),
-`EGAD00001015649` (bulk ATAC-seq of 42 malignant rhabdoid tumours), `EGAD00001011820`
+`EGAD00001015649` (bulk ATAC-seq of 42 malignant rhabdoid tumors), `EGAD00001011820`
 (ATAC / Hi-C / 4C, malignant rhabdoid), `EGAD00001005109` (GCTB genomic-epigenomic, 29),
 `EGAD00010002571` (epithelioid sarcoma 850K, 32), `EGAD00010002338` (chordoma
 methylation, 68) and `EGAD00003133` (Ewing RRBS via ICGC, 86).
@@ -183,7 +183,7 @@ returns 403 to non-browser clients, but it is backed by an undocumented JSON API
 (`cstn-gateway-prod.azurewebsites.net/p/samplesearch/search`) which enumerates **375 live
 models across 20 diagnoses**: osteosarcoma 71, rhabdomyosarcoma 66, Wilms 63,
 retinoblastoma 56, neuroblastoma 34, Ewing 27, then a long tail including synovial sarcoma,
-DSRCT, rhabdoid tumour, clear cell sarcoma, epithelioid sarcoma, MPNST, GIST and
+DSRCT, rhabdoid tumor, clear cell sarcoma, epithelioid sarcoma, MPNST, GIST and
 liposarcoma as singletons. 389 models once the 14 Nature-2017-only models are added back.
 
 Three findings there belong in the paper:
@@ -194,9 +194,9 @@ Three findings there belong in the paper:
    zero CSTN WGBS are in GEO** — and they are not in St Jude Cloud either: the CSTN dataset
    there (`SJC-DS-1008`) is 143 samples of WGS/WES/RNA-seq only.
 2. **The portal displays epigenetic browsers for six cohorts — Ewing, neuroblastoma,
-   osteosarcoma, retinoblastoma, RMS and rare tumours — but only RMS, plus four
+   osteosarcoma, retinoblastoma, RMS and rare tumors — but only RMS, plus four
    RMS/OS/NB models from the Nature 2017 paper, are deposited anywhere.** Ewing,
-   retinoblastoma and rare-tumour ChIP-seq are viewable in the browser with no deposit in
+   retinoblastoma and rare-tumor ChIP-seq are viewable in the browser with no deposit in
    EGA, GEO or dbGaP that an exhaustive search can find. That is undeposited data, not
    merely controlled data.
 3. **COMET**, the ">4,700 sample" methylation project the Data Types page advertises, has
@@ -206,7 +206,7 @@ Three findings there belong in the paper:
 Access, for the record: models are free to academics under an MTA (max 5 samples per
 request, no onward sharing, mandated by the MAST consent, NCT01050296). Sequencing data is
 a separate agreement — WGS/WES/RNA-seq via the St Jude Cloud DAA; ChIP-seq and WGBS via a
-per-`EGAD` data-access agreement signed by the PI *and* an authorised organisational
+per-`EGAD` data-access agreement signed by the PI *and* an authorised organizational
 representative, roughly 15–20 business days. Browsing the chromHMM tracks is open;
 downloading the data is not.
 
@@ -242,14 +242,14 @@ cannot be found by disease, it cannot be reused, and it does not count as shared
 
 | # | What was wrong | Effect |
 |---|---|---|
-| 1 | GSE140686 unlabelled | 1,505 samples recovered into 46 entities |
-| 2 | RMS subtype rule lost in the v1→v2 rebuild | Re-applied. The Gryder/Yohe primary tumours now read 5 FN-RMS / 3 FP-RMS, matching your figure |
+| 1 | GSE140686 unlabeled | 1,505 samples recovered into 46 entities |
+| 2 | RMS subtype rule lost in the v1→v2 rebuild | Re-applied. The Gryder/Yohe primary tumors now read 5 FN-RMS / 3 FP-RMS, matching your figure |
 | 3 | Driver-genotype inference over-firing on cell lines | Curated cell line identity now outranks series context; RH4/RH30/RH41/CW9019 no longer swept into FN-RMS, RD/SMS-CTR/RH36 no longer sitting in FP-RMS |
 | 4 | H3F3A/H3F3B capture pulling glioma into the bone bin | 288 rows removed (K27M, G34R/V, plant and mouse H3.3 systems). GCTB uses G34W/L; chondroblastoma uses K36M |
 | 5 | ChIP inputs counted as profiles | Input and IgG controls excluded from every "regulatory" count |
 
 Atlas totals after correction: **85,698 in-scope samples · 16,787 unique epigenomic ·
-4,157 series · 550 catalogued models (95 with identity problems)**.
+4,157 series · 550 cataloged models (95 with identity problems)**.
 
 ---
 
@@ -282,7 +282,7 @@ Illustrator.
 - [Ma J et al. Incidence of undifferentiated pleomorphic sarcoma in the United States. *Sarcoma* 2024 (PMID 39502684)](https://pubmed.ncbi.nlm.nih.gov/39502684/)
 - [O'Donnell JS et al. *npj Precis Oncol* 2025 (PMID 39789291)](https://pubmed.ncbi.nlm.nih.gov/39789291/) — the unretrievable myxofibrosarcoma ATAC-seq
 - [BCOR::CCNB3 tumoroids, *Nat Commun* 2025 (PMID 40841360)](https://pubmed.ncbi.nlm.nih.gov/40841360/)
-- [Stewart E et al. Orthotopic patient-derived xenografts of paediatric solid tumours. *Nature* 2017 (PMID 28854174)](https://pubmed.ncbi.nlm.nih.gov/28854174/)
+- [Stewart E et al. Orthotopic patient-derived xenografts of pediatric solid tumors. *Nature* 2017 (PMID 28854174)](https://pubmed.ncbi.nlm.nih.gov/28854174/)
 - [Stewart E et al. Integrated genomic, epigenomic and proteomic analyses of rhabdomyosarcoma. *Cancer Cell* 2018 (PMID 30146332)](https://pubmed.ncbi.nlm.nih.gov/30146332/)
-- [St Jude Childhood Solid Tumor Network portal](https://cstn.stjude.cloud/) · [EGA dataset catalogue](https://ega-archive.org/datasets/)
+- [St Jude Childhood Solid Tumor Network portal](https://cstn.stjude.cloud/) · [EGA dataset catalog](https://ega-archive.org/datasets/)
 - [EpiRR / IHEC reference epigenome registry](https://www.ebi.ac.uk/vg/epirr/) · [ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress) · [ENA portal API](https://www.ebi.ac.uk/ena/portal/api/) · [EGA](https://ega-archive.org/)

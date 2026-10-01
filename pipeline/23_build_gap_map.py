@@ -51,7 +51,7 @@ LANES = ["H3K27ac","Other active marks","Promoter / body marks","Repressive mark
 #               ("Sarcoma NOS", "RMS-NOS") or one-off cases with nowhere else to sit.
 #               Counting these as entities would inflate every denominator.
 #   control  -- non-neoplastic reference tissue that is not a disease at all.
-RESIDUAL = {"Sarcoma NOS", "RMS-NOS", "Other rare bone tumour", "Myoepithelial tumour",
+RESIDUAL = {"Sarcoma NOS", "RMS-NOS", "Other rare bone tumor", "Myoepithelial tumor",
             "Sarcoma, unspecified / mixed cohort", "RMS (any subtype)",
             "Liposarcoma (any subtype)"}
 def kindof(name, anchored):
@@ -83,7 +83,7 @@ def main():
         elif r["model_matched"]:
             name = r["model_matched"]
         elif r["sample_type"] in PATIENT:
-            name = (r["source_name"][:44] or r["title"][:44] or "patient tumour")
+            name = (r["source_name"][:44] or r["title"][:44] or "patient tumor")
         else:
             name = (r["source_name"][:44] or r["title"][:44] or "unnamed")
         key = (r["disease"], r["sample_type"], name, r["assay_class"],

@@ -2,84 +2,84 @@ level	region	cancer_group	age_range	ASR_per_million	source	year	PMID_or_URL	note
 world	World	All cancer (ICCC I-XII)	0-14	140.6	IICC3-LO17	2017	PMID 28410997	WSR; 284649 cases 2001-10
 world	World	All cancer (ICCC I-XII)	0-19	155.8	IICC3-LO17	2017	PMID 28410997	WSR; 311227 cases
 world	World	All cancer (ICCC I-XII)	15-19	185.3	IICC3-LO17	2017	PMID 28410997	age-specific; 100860 cases
-world	World	VIII Bone tumours	0-14	5.7	IICC3-LO17	2017	PMID 28410997	WSR; 13320 cases
-world	World	VIII Bone tumours	15-19	14.4	IICC3-LO17	2017	PMID 28410997	7851 cases
+world	World	VIII Bone tumors	0-14	5.7	IICC3-LO17	2017	PMID 28410997	WSR; 13320 cases
+world	World	VIII Bone tumors	15-19	14.4	IICC3-LO17	2017	PMID 28410997	7851 cases
 world	World	IX Soft tissue sarcomas	0-14	8.9	IICC3-LO17	2017	PMID 28410997	WSR; 18323 cases
 world	World	IX Soft tissue sarcomas	15-19	12.9	IICC3-LO17	2017	PMID 28410997	7011 cases
-region	North Africa	VIII Bone tumours	0-14	5.3	IICC3-LO17	2017	PMID 28410997	
-region	North Africa	VIII Bone tumours	15-19	14.3	IICC3-LO17	2017	PMID 28410997	
+region	North Africa	VIII Bone tumors	0-14	5.3	IICC3-LO17	2017	PMID 28410997	
+region	North Africa	VIII Bone tumors	15-19	14.3	IICC3-LO17	2017	PMID 28410997	
 region	North Africa	IX Soft tissue sarcomas	0-14	7.2	IICC3-LO17	2017	PMID 28410997	
 region	North Africa	IX Soft tissue sarcomas	15-19	12.2	IICC3-LO17	2017	PMID 28410997	
-region	Sub-Saharan Africa	VIII Bone tumours	0-14	2.1	IICC3-LO17	2017	PMID 28410997	
-region	Sub-Saharan Africa	VIII Bone tumours	15-19	14.9	IICC3-LO17	2017	PMID 28410997	
+region	Sub-Saharan Africa	VIII Bone tumors	0-14	2.1	IICC3-LO17	2017	PMID 28410997	
+region	Sub-Saharan Africa	VIII Bone tumors	15-19	14.9	IICC3-LO17	2017	PMID 28410997	
 region	Sub-Saharan Africa	IX Soft tissue sarcomas	0-14	7.6	IICC3-LO17	2017	PMID 28410997	46% of 0-14 STS = Kaposi
 region	Sub-Saharan Africa	IX Soft tissue sarcomas	15-19	30.7	IICC3-LO17	2017	PMID 28410997	57% of 0-19 STS = Kaposi
-region	Central America & Caribbean	VIII Bone tumours	0-14	5.2	IICC3-LO17	2017	PMID 28410997	
-region	Central America & Caribbean	VIII Bone tumours	15-19	13.0	IICC3-LO17	2017	PMID 28410997	
+region	Central America & Caribbean	VIII Bone tumors	0-14	5.2	IICC3-LO17	2017	PMID 28410997	
+region	Central America & Caribbean	VIII Bone tumors	15-19	13.0	IICC3-LO17	2017	PMID 28410997	
 region	Central America & Caribbean	IX Soft tissue sarcomas	0-14	6.9	IICC3-LO17	2017	PMID 28410997	
 region	Central America & Caribbean	IX Soft tissue sarcomas	15-19	8.0	IICC3-LO17	2017	PMID 28410997	
-region	South America	VIII Bone tumours	0-14	5.8	IICC3-LO17	2017	PMID 28410997	
-region	South America	VIII Bone tumours	15-19	16.5	IICC3-LO17	2017	PMID 28410997	
+region	South America	VIII Bone tumors	0-14	5.8	IICC3-LO17	2017	PMID 28410997	
+region	South America	VIII Bone tumors	15-19	16.5	IICC3-LO17	2017	PMID 28410997	
 region	South America	IX Soft tissue sarcomas	0-14	7.7	IICC3-LO17	2017	PMID 28410997	
 region	South America	IX Soft tissue sarcomas	15-19	10.7	IICC3-LO17	2017	PMID 28410997	
-region	Canada	VIII Bone tumours	0-14	6.0	IICC3-LO17	2017	PMID 28410997	
-region	Canada	VIII Bone tumours	15-19	14.8	IICC3-LO17	2017	PMID 28410997	
+region	Canada	VIII Bone tumors	0-14	6.0	IICC3-LO17	2017	PMID 28410997	
+region	Canada	VIII Bone tumors	15-19	14.8	IICC3-LO17	2017	PMID 28410997	
 region	Canada	IX Soft tissue sarcomas	0-14	10.1	IICC3-LO17	2017	PMID 28410997	
 region	Canada	IX Soft tissue sarcomas	15-19	14.2	IICC3-LO17	2017	PMID 28410997	
-region	USA Native American	VIII Bone tumours	0-14	3.7	IICC3-LO17	2017	PMID 28410997	
-region	USA Native American	VIII Bone tumours	15-19	7.9	IICC3-LO17	2017	PMID 28410997	
+region	USA Native American	VIII Bone tumors	0-14	3.7	IICC3-LO17	2017	PMID 28410997	
+region	USA Native American	VIII Bone tumors	15-19	7.9	IICC3-LO17	2017	PMID 28410997	
 region	USA Native American	IX Soft tissue sarcomas	0-14	4.6	IICC3-LO17	2017	PMID 28410997	
 region	USA Native American	IX Soft tissue sarcomas	15-19	8.2	IICC3-LO17	2017	PMID 28410997	
-region	USA Asian/Pacific Isl	VIII Bone tumours	0-14	4.1	IICC3-LO17	2017	PMID 28410997	
-region	USA Asian/Pacific Isl	VIII Bone tumours	15-19	10.3	IICC3-LO17	2017	PMID 28410997	
+region	USA Asian/Pacific Isl	VIII Bone tumors	0-14	4.1	IICC3-LO17	2017	PMID 28410997	
+region	USA Asian/Pacific Isl	VIII Bone tumors	15-19	10.3	IICC3-LO17	2017	PMID 28410997	
 region	USA Asian/Pacific Isl	IX Soft tissue sarcomas	0-14	5.8	IICC3-LO17	2017	PMID 28410997	
 region	USA Asian/Pacific Isl	IX Soft tissue sarcomas	15-19	10.6	IICC3-LO17	2017	PMID 28410997	
-region	USA Black	VIII Bone tumours	0-14	4.8	IICC3-LO17	2017	PMID 28410997	
-region	USA Black	VIII Bone tumours	15-19	11.9	IICC3-LO17	2017	PMID 28410997	
+region	USA Black	VIII Bone tumors	0-14	4.8	IICC3-LO17	2017	PMID 28410997	
+region	USA Black	VIII Bone tumors	15-19	11.9	IICC3-LO17	2017	PMID 28410997	
 region	USA Black	IX Soft tissue sarcomas	0-14	10.8	IICC3-LO17	2017	PMID 28410997	
 region	USA Black	IX Soft tissue sarcomas	15-19	16.8	IICC3-LO17	2017	PMID 28410997	
-region	USA White Hispanic	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
-region	USA White Hispanic	VIII Bone tumours	15-19	13.9	IICC3-LO17	2017	PMID 28410997	
+region	USA White Hispanic	VIII Bone tumors	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	USA White Hispanic	VIII Bone tumors	15-19	13.9	IICC3-LO17	2017	PMID 28410997	
 region	USA White Hispanic	IX Soft tissue sarcomas	0-14	10.2	IICC3-LO17	2017	PMID 28410997	
 region	USA White Hispanic	IX Soft tissue sarcomas	15-19	14.0	IICC3-LO17	2017	PMID 28410997	
-region	USA White non-Hispanic	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
-region	USA White non-Hispanic	VIII Bone tumours	15-19	15.5	IICC3-LO17	2017	PMID 28410997	
+region	USA White non-Hispanic	VIII Bone tumors	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	USA White non-Hispanic	VIII Bone tumors	15-19	15.5	IICC3-LO17	2017	PMID 28410997	
 region	USA White non-Hispanic	IX Soft tissue sarcomas	0-14	10.9	IICC3-LO17	2017	PMID 28410997	
 region	USA White non-Hispanic	IX Soft tissue sarcomas	15-19	16.0	IICC3-LO17	2017	PMID 28410997	
-region	East Asia	VIII Bone tumours	0-14	6.2	IICC3-LO17	2017	PMID 28410997	
-region	East Asia	VIII Bone tumours	15-19	12.3	IICC3-LO17	2017	PMID 28410997	
+region	East Asia	VIII Bone tumors	0-14	6.2	IICC3-LO17	2017	PMID 28410997	
+region	East Asia	VIII Bone tumors	15-19	12.3	IICC3-LO17	2017	PMID 28410997	
 region	East Asia	IX Soft tissue sarcomas	0-14	7.2	IICC3-LO17	2017	PMID 28410997	
 region	East Asia	IX Soft tissue sarcomas	15-19	9.6	IICC3-LO17	2017	PMID 28410997	
-region	South Asia	VIII Bone tumours	0-14	4.3	IICC3-LO17	2017	PMID 28410997	
-region	South Asia	VIII Bone tumours	15-19	11.5	IICC3-LO17	2017	PMID 28410997	
+region	South Asia	VIII Bone tumors	0-14	4.3	IICC3-LO17	2017	PMID 28410997	
+region	South Asia	VIII Bone tumors	15-19	11.5	IICC3-LO17	2017	PMID 28410997	
 region	South Asia	IX Soft tissue sarcomas	0-14	4.5	IICC3-LO17	2017	PMID 28410997	IICC-3 grouping incl India/Pakistan/Thailand
 region	South Asia	IX Soft tissue sarcomas	15-19	6.6	IICC3-LO17	2017	PMID 28410997	IICC-3 grouping incl India/Pakistan/Thailand
-region	Southeast Asia	VIII Bone tumours	0-14	5.6	IICC3-LO17	2017	PMID 28410997	
-region	Southeast Asia	VIII Bone tumours	15-19	14.5	IICC3-LO17	2017	PMID 28410997	
+region	Southeast Asia	VIII Bone tumors	0-14	5.6	IICC3-LO17	2017	PMID 28410997	
+region	Southeast Asia	VIII Bone tumors	15-19	14.5	IICC3-LO17	2017	PMID 28410997	
 region	Southeast Asia	IX Soft tissue sarcomas	0-14	5.2	IICC3-LO17	2017	PMID 28410997	
 region	Southeast Asia	IX Soft tissue sarcomas	15-19	6.2	IICC3-LO17	2017	PMID 28410997	
-region	West Asia	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
-region	West Asia	VIII Bone tumours	15-19	19.2	IICC3-LO17	2017	PMID 28410997	
+region	West Asia	VIII Bone tumors	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	West Asia	VIII Bone tumors	15-19	19.2	IICC3-LO17	2017	PMID 28410997	
 region	West Asia	IX Soft tissue sarcomas	0-14	8.2	IICC3-LO17	2017	PMID 28410997	
 region	West Asia	IX Soft tissue sarcomas	15-19	12.7	IICC3-LO17	2017	PMID 28410997	
-region	Eastern Europe	VIII Bone tumours	0-14	6.0	IICC3-LO17	2017	PMID 28410997	
-region	Eastern Europe	VIII Bone tumours	15-19	13.2	IICC3-LO17	2017	PMID 28410997	
+region	Eastern Europe	VIII Bone tumors	0-14	6.0	IICC3-LO17	2017	PMID 28410997	
+region	Eastern Europe	VIII Bone tumors	15-19	13.2	IICC3-LO17	2017	PMID 28410997	
 region	Eastern Europe	IX Soft tissue sarcomas	0-14	8.6	IICC3-LO17	2017	PMID 28410997	
 region	Eastern Europe	IX Soft tissue sarcomas	15-19	9.9	IICC3-LO17	2017	PMID 28410997	
-region	Northern Europe	VIII Bone tumours	0-14	5.5	IICC3-LO17	2017	PMID 28410997	
-region	Northern Europe	VIII Bone tumours	15-19	15.1	IICC3-LO17	2017	PMID 28410997	
+region	Northern Europe	VIII Bone tumors	0-14	5.5	IICC3-LO17	2017	PMID 28410997	
+region	Northern Europe	VIII Bone tumors	15-19	15.1	IICC3-LO17	2017	PMID 28410997	
 region	Northern Europe	IX Soft tissue sarcomas	0-14	9.7	IICC3-LO17	2017	PMID 28410997	
 region	Northern Europe	IX Soft tissue sarcomas	15-19	12.2	IICC3-LO17	2017	PMID 28410997	
-region	Southern Europe	VIII Bone tumours	0-14	7.9	IICC3-LO17	2017	PMID 28410997	
-region	Southern Europe	VIII Bone tumours	15-19	15.5	IICC3-LO17	2017	PMID 28410997	
+region	Southern Europe	VIII Bone tumors	0-14	7.9	IICC3-LO17	2017	PMID 28410997	
+region	Southern Europe	VIII Bone tumors	15-19	15.5	IICC3-LO17	2017	PMID 28410997	
 region	Southern Europe	IX Soft tissue sarcomas	0-14	10.1	IICC3-LO17	2017	PMID 28410997	
 region	Southern Europe	IX Soft tissue sarcomas	15-19	16.1	IICC3-LO17	2017	PMID 28410997	
-region	Western Europe	VIII Bone tumours	0-14	6.5	IICC3-LO17	2017	PMID 28410997	
-region	Western Europe	VIII Bone tumours	15-19	17.0	IICC3-LO17	2017	PMID 28410997	
+region	Western Europe	VIII Bone tumors	0-14	6.5	IICC3-LO17	2017	PMID 28410997	
+region	Western Europe	VIII Bone tumors	15-19	17.0	IICC3-LO17	2017	PMID 28410997	
 region	Western Europe	IX Soft tissue sarcomas	0-14	9.7	IICC3-LO17	2017	PMID 28410997	
 region	Western Europe	IX Soft tissue sarcomas	15-19	13.5	IICC3-LO17	2017	PMID 28410997	
-region	Oceania	VIII Bone tumours	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
-region	Oceania	VIII Bone tumours	15-19	17.2	IICC3-LO17	2017	PMID 28410997	
+region	Oceania	VIII Bone tumors	0-14	6.4	IICC3-LO17	2017	PMID 28410997	
+region	Oceania	VIII Bone tumors	15-19	17.2	IICC3-LO17	2017	PMID 28410997	
 region	Oceania	IX Soft tissue sarcomas	0-14	9.0	IICC3-LO17	2017	PMID 28410997	
 region	Oceania	IX Soft tissue sarcomas	15-19	14.8	IICC3-LO17	2017	PMID 28410997	
 country/registry	USA all races 1998-2012	VIIIa Osteosarcoma	0-14	3.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
@@ -128,7 +128,7 @@ country/registry	Uganda Kyadondo	VIIIc Ewing & related bone sarcomas	0-14	0.2	II
 country/registry	Uganda Kyadondo	VIIIc Ewing & related bone sarcomas	0-19	0.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Uganda Kyadondo	IXa Rhabdomyosarcoma	0-14	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Uganda Kyadondo	IXa Rhabdomyosarcoma	0-19	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
-country/registry	Uganda Kyadondo	IXc Kaposi sarcoma	0-14	28.4	IICC3-V3	2025	https://publications.iarc.who.int/658	highest paediatric KS rate in IICC-3
+country/registry	Uganda Kyadondo	IXc Kaposi sarcoma	0-14	28.4	IICC3-V3	2025	https://publications.iarc.who.int/658	highest pediatric KS rate in IICC-3
 country/registry	Uganda Kyadondo	IXc Kaposi sarcoma	0-19	29.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Zimbabwe Harare African	VIIIa Osteosarcoma	0-14	3.4	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Zimbabwe Harare African	VIIIa Osteosarcoma	0-19	4.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
@@ -189,8 +189,8 @@ country/registry	UK	VIIIa Osteosarcoma	0-14	2.9	IICC3-V3	2025	https://publicatio
 country/registry	UK	VIIIa Osteosarcoma	0-19	3.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	UK	VIIIc Ewing & related bone sarcomas	0-14	2.3	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	UK	VIIIc Ewing & related bone sarcomas	0-19	2.8	IICC3-V3	2025	https://publications.iarc.who.int/658	
-country/registry	Germany paediatric	VIIIa Osteosarcoma	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
-country/registry	Germany paediatric	VIIIc Ewing & related bone sarcomas	0-14	2.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Germany pediatric	VIIIa Osteosarcoma	0-14	2.9	IICC3-V3	2025	https://publications.iarc.who.int/658	
+country/registry	Germany pediatric	VIIIc Ewing & related bone sarcomas	0-14	2.7	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Spain 11 registries	VIIIa Osteosarcoma	0-14	4.2	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Spain 11 registries	VIIIa Osteosarcoma	0-19	5.0	IICC3-V3	2025	https://publications.iarc.who.int/658	
 country/registry	Spain 11 registries	VIIIc Ewing & related bone sarcomas	0-14	4.3	IICC3-V3	2025	https://publications.iarc.who.int/658	highest national Ewing rate in IICC-3

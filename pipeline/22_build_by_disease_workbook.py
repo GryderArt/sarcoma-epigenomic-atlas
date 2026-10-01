@@ -36,7 +36,7 @@ PATIENT = {"primary_tumor","metastasis","recurrence"}
 MODELISH = {"cell_line","organoid","xenograft(CDX)","mouse_model","PDX"}
 
 MODEL_TYPE = {"cell_line":"cell line","organoid":"organoid","xenograft(CDX)":"CDX",
-              "mouse_model":"GEM / mouse model","PDX":"PDX","primary_tumor":"primary tumour",
+              "mouse_model":"GEM / mouse model","PDX":"PDX","primary_tumor":"primary tumor",
               "metastasis":"metastasis","recurrence":"recurrence",
               "normal/reference":"normal / reference","unspecified":"unspecified"}
 
@@ -72,12 +72,12 @@ def main():
     ws["A1"] = "Sarcoma epigenomics by disease — atlas v3 (all ages)"; ws["A1"].font = TITLE
     ws["A2"] = ("One tab per entity. Each row is one unique combination of model, assay and "
                 "epigenetic target within one GEO series — the 'H3K27ac ChIP-seq for RH4' "
-                "resolution. Duplicated samples and ChIP input controls are labelled, not "
+                "resolution. Duplicated samples and ChIP input controls are labeled, not "
                 "silently dropped.")
     ws["A2"].font = SUB; ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
     ws.row_dimensions[2].height = 42
     hdr = ["tab","entity","epigenomic samples","regulatory","DNA methylation",
-           "H3K27ac","accessibility","3D genome","primary-tumour regulatory",
+           "H3K27ac","accessibility","3D genome","primary-tumor regulatory",
            "distinct models","distinct series"]
     for j, h in enumerate(hdr, 1):
         c = ws.cell(row=4, column=j, value=h); c.font = HDR_FNT; c.fill = HDR_FIL
@@ -114,8 +114,8 @@ def main():
             elif r["model_matched"]:
                 name = r["model_matched"]
             elif r["sample_type"] in PATIENT:
-                name = "patient tumour: " + (r["source_name"][:40] or r["title"][:40]
-                                             or "unlabelled")
+                name = "patient tumor: " + (r["source_name"][:40] or r["title"][:40]
+                                             or "unlabeled")
             else:
                 name = r["source_name"][:44] or r["title"][:44] or "unnamed"
             key = (r["sample_type"], name, r["assay_class"], r["epi_target_norm"], r["gse"])

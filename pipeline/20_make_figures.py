@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Adult-vs-paediatric burden and gap figures for the SASS white paper.
+"""Adult-vs-pediatric burden and gap figures for the SASS white paper.
 Arial throughout, TrueType-embedded (pdf.fonttype=42) so all text stays editable."""
 import csv, collections, math, os
 import matplotlib
@@ -26,8 +26,8 @@ O = DATA
 csv.field_size_limit(10**7)
 
 PED, BOTH, ADULT = "#2a78d6", "#1baf7a", "#eb6834"
-CLS = {"paediatric": PED, "both": BOTH, "adult": ADULT}
-CLSLAB = {"paediatric": "Paediatric-predominant", "both": "Both ages",
+CLS = {"pediatric": PED, "both": BOTH, "adult": ADULT}
+CLSLAB = {"pediatric": "Pediatric-predominant", "both": "Both ages",
           "adult": "Adult-predominant"}
 GREY, DARK, RED = "#b9c2cc", "#2b3440", "#c0392b"
 METH, REG = "#9dc3ee", "#0d366b"
@@ -37,8 +37,8 @@ T13 = [r for r in csv.DictReader(topen("T13_incidence_vs_data.tsv"), delimiter="
 for r in T13:
     for k in ("US_cases_per_year_all_ages","US_low","US_high","epigenomic_samples",
               "regulatory_epigenomic_samples","DNA_methylation_samples","H3K27ac_samples",
-              "accessibility_samples","samples_3D","primary_tumour_epigenomic",
-              "primary_tumour_regulatory","patient_derived_regulatory","n_studies",
+              "accessibility_samples","samples_3D","primary_tumor_epigenomic",
+              "primary_tumor_regulatory","patient_derived_regulatory","n_studies",
               "distinct_models","distinct_pdx",
               "models_with_H3K27ac","patients_with_H3K27ac"):
         r[k] = int(r[k] or 0)
@@ -58,7 +58,7 @@ def tidy(ax):
 def f18():
     fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.75),
                              gridspec_kw={"width_ratios":[1,1,0.8], "wspace":0.5})
-    groups = ["paediatric","both","adult"]
+    groups = ["pediatric","both","adult"]
     cases = {g: sum(r["US_cases_per_year_all_ages"] for r in RATED if r["age_class"]==g)
              for g in groups}
     reg   = {g: sum(r["regulatory_epigenomic_samples"] for r in RATED if r["age_class"]==g)
@@ -103,7 +103,7 @@ def f18():
     ax.bar(range(3), rr, color=[CLS[g] for g in groups], width=0.6, edgecolor="none")
     for i, v in enumerate(rr):
         ax.text(i, v*1.05, f"{v:.2f}", ha="center", va="bottom", fontsize=7.5, color=DARK)
-    ax.set_xticks(range(3)); ax.set_xticklabels(["Paediatric","Both","Adult"], fontsize=7.5)
+    ax.set_xticks(range(3)); ax.set_xticklabels(["Pediatric","Both","Adult"], fontsize=7.5)
     ax.set_ylabel("Regulatory epigenomes per\nnew case per year", fontsize=8)
     ax.set_ylim(0, max(rr)*1.28)
     ax.set_title(f"{rr[0]/rr[2]:.0f}× gap", fontsize=8.5, weight="bold", pad=14, loc="left")
@@ -111,7 +111,7 @@ def f18():
 
     fig.suptitle("Adult sarcomas carry ~5× the disease burden and a small fraction of "
                  "the epigenomic data", fontsize=9.2, weight="bold", y=1.10, x=0.0, ha="left")
-    save(fig, "F18_adult_vs_paediatric_burden")
+    save(fig, "F18_adult_vs_pediatric_burden")
 
 # ---------------------------------------------------------------- F19
 def f19():
@@ -144,7 +144,7 @@ def f19():
     leg = ax.legend(handles=[plt.Line2D([],[],marker="o",ls="",color=CLS[g],
                                         markeredgecolor="white", label=CLSLAB[g],
                                         markersize=6)
-                             for g in ("paediatric","both","adult")],
+                             for g in ("pediatric","both","adult")],
                     fontsize=6.8, frameon=False, loc="lower right", handletextpad=0.2)
 
     txt = ("No regulatory epigenomics whatsoever\n" +
@@ -222,7 +222,7 @@ def f20():
     tidy(ax)
 
     axes[0].legend(handles=[Patch(facecolor=CLS[g], label=CLSLAB[g])
-                            for g in ("paediatric","both","adult")],
+                            for g in ("pediatric","both","adult")],
                    fontsize=6.6, frameon=False, loc="lower left", handlelength=1.0,
                    handleheight=0.75)
     fig.suptitle("Nine sarcoma entities with a published incidence rate — two of them above "
@@ -260,17 +260,17 @@ def f21():
     ax.invert_yaxis()
     ax.set_xscale("log"); ax.set_xlim(0.9, 4000)
     ax.set_xticks([1,10,100,1000]); ax.set_xticklabels(["1","10","100","1,000"])
-    ax.set_xlabel("Regulatory epigenomic profiles of PATIENT-DERIVED MATERIAL — tumour "
+    ax.set_xlabel("Regulatory epigenomic profiles of PATIENT-DERIVED MATERIAL — tumor "
                   "tissue, PDX or patient-derived organoid\n(ChIP-seq / CUT&RUN / ATAC / Hi-C; "
                   "input and IgG controls excluded)", fontsize=8)
     ax.axhline(len(zero) + GAP/2 - 0.5, color="#cfd6dd", linewidth=0.8, linestyle=(0,(3,3)))
     ax.spines["left"].set_visible(False)
     ax.set_title(f"{len(zero)} of {len(T13)} sarcoma entities have never had a single "
-                 f"patient's tumour profiled for\nactive chromatin, chromatin accessibility "
+                 f"patient's tumor profiled for\nactive chromatin, chromatin accessibility "
                  f"or 3D genome architecture",
                  fontsize=9.2, weight="bold", loc="left", pad=8)
     tidy(ax)
-    save(fig, "F21_zero_primary_tumour_regulatory")
+    save(fig, "F21_zero_primary_tumor_regulatory")
 
 # ---------------------------------------------------------------- F22
 def f22():
@@ -325,19 +325,19 @@ def f23():
     ax.set_xticks([0,1]); ax.set_xticklabels(grp, fontsize=7.5)
     ax.set_ylim(0, 14); ax.set_ylabel("Sarcoma as a share of all\ncancers in that age group",
                                       fontsize=8)
-    ax.set_title("Why sarcoma reads as a paediatric disease", fontsize=8.5, weight="bold",
+    ax.set_title("Why sarcoma reads as a pediatric disease", fontsize=8.5, weight="bold",
                  loc="left", pad=6)
     tidy(ax)
 
     ax = axes[1]
-    cases = {"paediatric": 1908, "adult": 16112}      # US, site-coded, ACS 2026
+    cases = {"pediatric": 1908, "adult": 16112}      # US, site-coded, ACS 2026
     reg   = {g: sum(r["regulatory_epigenomic_samples"] for r in RATED if r["age_class"]==g)
-             for g in ("paediatric","both","adult")}
+             for g in ("pediatric","both","adult")}
     reg["adult"] += reg.pop("both")                   # shared entities counted with adults
     tot_c = sum(cases.values()); tot_r = sum(reg.values())
-    bars = [("US sarcoma cases\nper year", [100*cases["paediatric"]/tot_c,
+    bars = [("US sarcoma cases\nper year", [100*cases["pediatric"]/tot_c,
                                             100*cases["adult"]/tot_c]),
-            ("Regulatory epigenomic\nsamples ever generated", [100*reg["paediatric"]/tot_r,
+            ("Regulatory epigenomic\nsamples ever generated", [100*reg["pediatric"]/tot_r,
                                                                100*reg["adult"]/tot_r])]
     for i, (lab, vals) in enumerate(bars):
         ax.barh(i, vals[0], color=PED, height=0.34, edgecolor="none")
@@ -354,7 +354,7 @@ def f23():
     ax.set_title("Where the cases are, and where the data is", fontsize=8.5, weight="bold",
                  loc="left", pad=6)
     ax.legend(handles=[Patch(facecolor=PED, label="Children and adolescents / "
-                                                  "paediatric-predominant entities"),
+                                                  "pediatric-predominant entities"),
                        Patch(facecolor=ADULT, label="Adults / adult- and both-age entities")],
               fontsize=6.5, frameon=False, loc="upper left", bbox_to_anchor=(0.0, -0.24))
     ax.spines["left"].set_visible(False)
@@ -363,13 +363,13 @@ def f23():
     fig.text(0.0, -0.30,
              "Sources: sarcoma share of all cancers and US case counts, Siegel et al., Cancer "
              "Statistics 2026 (PMID 41528114; 4,110 bone + 13,910 soft tissue = 18,020) and "
-             "SEER 21 age distribution;\npaediatric share of childhood malignancy, Siegel DA "
+             "SEER 21 age distribution;\npediatric share of childhood malignancy, Siegel DA "
              "et al., JNCI 2023 (PMID 37433078; ICCC groups VIII + IX = 11.5%). Sample counts "
              "from this atlas (T13).", fontsize=5.8, color="#6b7580", ha="left", va="top")
     fig.suptitle("Sarcoma is 1% of adult cancer and 11% of childhood cancer — and the "
                  "epigenomic literature followed the 11%",
                  fontsize=9.2, weight="bold", y=1.06, x=0.0, ha="left")
-    save(fig, "F23_attention_follows_paediatric")
+    save(fig, "F23_attention_follows_pediatric")
 
 f23()
 

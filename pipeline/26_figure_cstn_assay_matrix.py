@@ -9,7 +9,7 @@ The St Jude CSTN browsers carry a uniform assay panel across 28 models. Enumerat
      sarcoma.
   2. the panel stops where the field has moved. There is no chromatin accessibility, no
      3D genome, and no CUT&RUN or CUT&Tag anywhere in it, and CTCF exists on only the
-     nine models in the 2018 osteosarcoma/rare-tumour study.
+     nine models in the 2018 osteosarcoma/rare-tumor study.
 
 Entity labels are the St Jude data administrator's, supplied by email; the fusion partner
 comes from the CSTN portal's own model table. Both are recorded per row in T28.

@@ -4,7 +4,7 @@
 The CCDI Hub Explore Dashboard is a JavaScript front end over
 https://ccdi.cancer.gov/v1/graphql/, which is open, unauthenticated and pages 10,000
 records at a time. Row-level participant, sample and file metadata is OPEN even where the
-underlying data is dbGaP-controlled -- so the catalogue can be enumerated in full without
+underlying data is dbGaP-controlled -- so the catalog can be enumerated in full without
 credentials, exactly as for EGA.
 
 What this produces:
@@ -37,7 +37,7 @@ URL = "https://ccdi.cancer.gov/v1/graphql/"
 OUT = os.environ.get("SASS_DATA", os.path.dirname(os.path.abspath(__file__)))
 PAGE = 10000
 
-# ICD-O-3 diagnosis categories that constitute the sarcoma family, plus the paediatric
+# ICD-O-3 diagnosis categories that constitute the sarcoma family, plus the pediatric
 # small-round-blue-cell and embryonal neighbours the atlas already tracks.
 SARCOMA_CATEGORIES = [
     "Soft tissue tumors and sarcomas, NOS", "Miscellaneous bone tumors",
@@ -245,7 +245,7 @@ def main():
 
     import collections
     print("\n--- what was harvested ---")
-    print("  sample tumour status:",
+    print("  sample tumor status:",
           dict(collections.Counter(r["sample_tumor_status"] for r in samples
                                    if r["is_sarcoma_cohort"]).most_common(5)))
     print("  file library_strategy (all fetched):",

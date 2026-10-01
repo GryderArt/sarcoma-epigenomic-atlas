@@ -6,7 +6,7 @@ never in the open counts -- mixing them would destroy the open / controlled / ab
 distinction the gap map is built on. Every row carries access_tier=CONTROLLED (dbGaP).
 
 Produces:
-  T24_ccdi_entity_counts.tsv   per atlas entity: participants, samples, tumour samples,
+  T24_ccdi_entity_counts.tsv   per atlas entity: participants, samples, tumor samples,
                                and the epigenomic (methylation-array) subset
   T25_ccdi_unmapped.tsv        CCDI diagnoses this mapping could not place, so the
                                residual is visible rather than silently dropped
@@ -48,7 +48,7 @@ MAP = [
  (r"kaposi", "Kaposi sarcoma"),
  (r"dermatofibrosarcoma", "DFSP"),
  (r"myxofibrosarcoma", "Myxofibrosarcoma"),
- (r"solitary fibrous|hemangiopericytoma|haemangiopericytoma", "Solitary fibrous tumour"),
+ (r"solitary fibrous|hemangiopericytoma|haemangiopericytoma", "Solitary fibrous tumor"),
  (r"inflammatory myofibroblastic|myofibroblastic tumor|myofibroblastic tumour", "IMT"),
  (r"extraskeletal myxoid chondrosarcoma", "EMC"),
  (r"aggressive fibromatosis|desmoid", "Desmoid"),
@@ -67,7 +67,7 @@ MAP = [
  (r"myoepithelial carcinoma", "Myoepithelial carcinoma"),
  (r"bcor", "BCOR-sarcoma"),
  (r"cic[- ]", "CIC-DUX4"),
- (r"ossifying fibromyxoid", "Ossifying fibromyxoid tumour"),
+ (r"ossifying fibromyxoid", "Ossifying fibromyxoid tumor"),
  (r"angiomatoid fibrous histiocytoma", "Angiomatoid fibrous histiocytoma"),
  (r"atypical fibroxanthoma|pleomorphic dermal sarcoma", "AFX/PDS"),
  (r"^sarcoma, nos$|^sarcoma$|^soft tissue sarcoma", "Sarcoma NOS"),
@@ -92,7 +92,7 @@ EPI_STRATEGIES = {"ATAC-seq", "Bisulfite-Seq", "ChIP-Seq", "ChIP-seq"}
 
 def nid(v):
     """CCDI returns file-level ids wrapped in brackets ('[1794211]') while sample-level
-    ids are bare ('003-1'). Normalise before joining, or the join silently yields zero."""
+    ids are bare ('003-1'). Normalize before joining, or the join silently yields zero."""
     return str(v or "").strip().strip("[]").strip().strip("'\"")
 
 
@@ -153,7 +153,7 @@ def main():
             continue
         a = agg[e]
         a["samples"] += 1
-        if r["sample_tumor_status"] == "Tumor": a["tumour_samples"] += 1
+        if r["sample_tumor_status"] == "Tumor": a["tumor_samples"] += 1
         if r["sample_tumor_status"] == "Normal": a["normal_samples"] += 1
         if r["tumor_classification"] == "Primary":
             a["primary_samples"] += 1
@@ -170,7 +170,7 @@ def main():
              if entity(dx_of(r))[0] == e and nid(r["participant_id"]) in epi_parts})
 
     rows = [{"atlas_entity": e, "ccdi_participants": a["participants"],
-             "ccdi_samples": a["samples"], "ccdi_tumour_samples": a["tumour_samples"],
+             "ccdi_samples": a["samples"], "ccdi_tumor_samples": a["tumor_samples"],
              "ccdi_normal_samples": a["normal_samples"],
              "ccdi_primary_samples": a["primary_samples"],
              "ccdi_participants_with_methylation": a["participants_with_methylation"],
@@ -199,10 +199,10 @@ def main():
     print(f"\nparticipants with methylation arrays, mapped to an entity: {tm:,}")
     print("  (joined participant-to-file; the sample-level join is NOT used because T21 "
           "and\n   T22 use different sample_id spaces in several studies)")
-    print(f"\n{'entity':32s} {'part':>6s} {'samples':>8s} {'tumour':>7s} {'meth':>6s}")
+    print(f"\n{'entity':32s} {'part':>6s} {'samples':>8s} {'tumor':>7s} {'meth':>6s}")
     for r in rows[:24]:
         print(f"{r['atlas_entity'][:31]:32s} {r['ccdi_participants']:6,d} "
-              f"{r['ccdi_samples']:8,d} {r['ccdi_tumour_samples']:7,d} "
+              f"{r['ccdi_samples']:8,d} {r['ccdi_tumor_samples']:7,d} "
               f"{r['ccdi_participants_with_methylation']:6,d}")
     print("\ntop unmapped reasons:")
     for r in urows[:10]:

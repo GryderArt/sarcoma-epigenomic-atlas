@@ -4,7 +4,7 @@ separate three states that a GEO-only survey conflates:
 
   PUBLIC      -- open deposit, anyone can download and reuse
   CONTROLLED  -- the experiment was done and the metadata is public, but the data sits
-                 behind a DAC/DUA and cannot be reanalysed without per-dataset approval
+                 behind a DAC/DUA and cannot be reanalyzed without per-dataset approval
   ABSENT      -- no record of the experiment anywhere
 
 For a white paper about what the field can actually build on, CONTROLLED is not the same
@@ -28,7 +28,7 @@ ENT = [
  (r"chondrosarc|\bCSA\b|mesenchymal_CSA", "Chondrosarcoma"),
  (r"giant cell tumou?r of bone|\bgctb\b", "GCTB/Chondroblastoma"),
  (r"epithelioid sarcom|\bEpS\b", "Epithelioid sarcoma"),
- (r"solitary fibrous|hemangiopericytoma", "Solitary fibrous tumour"),
+ (r"solitary fibrous|hemangiopericytoma", "Solitary fibrous tumor"),
  (r"desmoplastic small round|\bdsrct\b", "DSRCT"),
  (r"clear cell sarcom", "Clear cell sarcoma"),
  (r"liposarc", "Liposarcoma (any subtype)"),
