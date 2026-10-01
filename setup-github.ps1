@@ -91,37 +91,57 @@ if ($who -ne $User) {
 }
 Invoke-Native { gh auth setup-git } | Out-Null
 
+# git refuses to commit without an author, and a fresh Windows install has none. Derive
+# one from the account just signed in, scoped to this repository so nothing global is
+# touched. The noreply address is the one GitHub issues for exactly this purpose: commits
+# attribute correctly on the web without publishing a real mailbox.
+if (-not (Invoke-Native { git config --get user.email })) {
+  $id = (Invoke-Native { gh api user --jq .id } | Select-Object -Last 1)
+  git config user.email "$("$id".Trim())+$who@users.noreply.github.com"
+  git config user.name  "$who"
+  Warn "no git author was set - using $(git config --get user.email) for this repository"
+}
+
 # ---------------------------------------------------------------- 3. Placeholders
 Step 3 "Filling documentation placeholders"
 foreach ($f in @("README.md", "pipeline\README.tmpl.md", "CITATION.cff", "LICENSE-DATA")) {
   if (Test-Path $f) {
     $t = Get-Content $f -Raw
     $t = $t -replace '<user>', $User -replace '<you>', $User
-    $t = $t -replace 'gryderart\.github\.io/sarcoma-epigenomic-atlas', "$User.github.io/$Repo"
+    $t = $t -replace 'gryderart\.github\.io/sarcoma-epigenomic-atlas', "$($User.ToLower()).github.io/$Repo"
     Set-Content $f $t -NoNewline -Encoding UTF8
   }
 }
 Invoke-Native { git add -A } | Out-Null
 if ((Test-Native { git diff --cached --quiet }) -ne 0) {
-  Invoke-Native { git commit -q -m "Point documentation at $User/$Repo" } | Out-Null
+  # Piping a native call to Out-Null discards its output but not its outcome. The first
+  # version of this did not read $NativeExit, so a commit that died on a missing git
+  # author still printed "committed" and the run carried on with nothing committed.
+  Invoke-Native { git commit -q -m "Point documentation at $User/$Repo" }
+  if ($NativeExit -ne 0) { throw "Could not commit the placeholder changes - see above." }
   Ok "committed"
 } else { Ok "nothing to change" }
 
 # ---------------------------------------------------------------- 4. Create + push
 Step 4 "Creating $User/$Repo ($Visibility) and pushing"
-$exists = (Test-Native { gh repo view "$User/$Repo" }) -eq 0
-
-if ($exists) {
+if ((Test-Native { gh repo view "$User/$Repo" }) -eq 0) {
   Warn "$User/$Repo already exists - pushing to it"
-  Test-Native { git remote remove origin } | Out-Null
-  Invoke-Native { git remote add origin "https://github.com/$User/$Repo.git" } | Out-Null
-  Invoke-Native { git push -u origin main }
 } else {
   Invoke-Native {
-    gh repo create "$User/$Repo" "--$Visibility" --source=. --remote=origin --push `
+    gh repo create "$User/$Repo" "--$Visibility" `
       --description "A sample-level census of every public epigenomic experiment on sarcoma, all ages, built to find the holes."
   }
+  if ($NativeExit -ne 0) { throw "Could not create $User/$Repo - see above." }
 }
+
+# Create and push are deliberately separate. `gh repo create --source=. --remote=origin`
+# fails with "Unable to add remote origin" whenever an origin already exists -- and this
+# repository is normally reached by cloning a bundle, which leaves origin pointing at the
+# bundle file. Setting the remote ourselves works whether or not one is already there,
+# and takes the same path whether the repository is new or not.
+Test-Native { git remote remove origin } | Out-Null
+Invoke-Native { git remote add origin "https://github.com/$User/$Repo.git" } | Out-Null
+Invoke-Native { git push -u origin main }
 if ($NativeExit -ne 0) { throw "Push failed. See the message above." }
 Ok "pushed"
 
@@ -137,6 +157,6 @@ else { Warn "Could not enable Pages automatically. Settings -> Pages -> main, /d
 
 Write-Host "`nDone." -ForegroundColor Green
 Write-Host "  Repository  https://github.com/$User/$Repo"
-Write-Host "  Gap map     https://$User.github.io/$Repo/   (a minute or two to build)"
+Write-Host "  Gap map     https://$($User.ToLower()).github.io/$Repo/   (a minute or two to build)"
 Write-Host "`nWorth doing next: connect https://zenodo.org/account/settings/github/ and cut a"
 Write-Host "v1.0.0 release, which mints a DOI you can cite in the white paper."
