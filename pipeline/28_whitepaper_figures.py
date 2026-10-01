@@ -358,6 +358,32 @@ MODALITY = [
 ]
 
 
+HORIZON = 6          # months projected beyond the harvest cutoff
+WINDOW = 24          # months of history the projection resamples
+
+
+def project(per_month, cutoff, n_boot=20000, seed=0):
+    """Bootstrap the next HORIZON months from the last WINDOW complete months.
+
+    Deposits arrive as whole series rather than as a smooth stream -- the median sarcoma
+    epigenomic series is 9 samples and the largest 1% of series hold 16% of everything --
+    so a mean monthly rate understates the spread badly. Resampling whole observed months
+    with replacement keeps that lumpiness in the interval, which is why the bands below
+    are wide.
+    """
+    import random
+    rng = random.Random(seed)
+    win, y, m = [], cutoff.year, cutoff.month
+    for _ in range(WINDOW):                      # walk back WINDOW complete months
+        m -= 1
+        if m == 0:
+            m = 12; y -= 1
+        win.append(per_month.get((y, m), 0))
+    sims = sorted(sum(rng.choice(win) for _ in range(HORIZON)) for _ in range(n_boot))
+    return (sims[int(.10 * n_boot)], sims[int(.50 * n_boot)], sims[int(.90 * n_boot)],
+            sum(win))
+
+
 def fig_growth(d):
     """When each modality arrived, and how thin the newer ones still are."""
     epi = d["epi"]
@@ -371,26 +397,66 @@ def fig_growth(d):
     span = list(range(y0, y1 + 1))
 
     fig, ax = plt.subplots(figsize=(7.4, 3.5))
-    fig.subplots_adjust(right=0.70)
+    fig.subplots_adjust(right=0.675)
     ends = []
+    import datetime
+
+    def ym(r):
+        v = (r.get("gse_date") or "").replace("-", "/")
+        try:
+            return (int(v[0:4]), int(v[5:7]))
+        except Exception:
+            return None
+
+    # Last complete month before the harvest cutoff -- the partial final month would
+    # otherwise drag every projection down.
+    last = max(datetime.date(int((r.get("gse_date") or "")[:4] or 1900),
+                             int((r.get("gse_date") or "9999/01/01")[5:7]),
+                             int((r.get("gse_date") or "9999/01/01")[8:10]))
+               for r in epi if (r.get("gse_date") or "")[:4].isdigit())
+    cutoff = datetime.date(last.year, last.month, 1)      # exclusive bound
+
     for label, classes, col in MODALITY:
-        per = collections.Counter(year(r) for r in epi
-                                  if r["assay_class"] in classes and year(r))
+        sel = [r for r in epi if r["assay_class"] in classes]
+        per = collections.Counter(year(r) for r in sel if year(r))
+        permo = collections.Counter(ym(r) for r in sel
+                                    if ym(r) and datetime.date(*ym(r), 1) < cutoff)
         run, cum = [], 0
         for yy in span:
             cum += per.get(yy, 0)
             run.append(cum)
         ax.plot(span, run, color=col, linewidth=1.9, solid_capstyle="round", zorder=3)
-        ends.append((run[-1], label, col, per))
+        ends.append((run[-1], label, col, per, project(permo, cutoff)))
 
-    top = max(e[0] for e in ends)
-    ax.set_xlim(y0 - 0.4, y1 + 0.4)
-    ax.set_ylim(0, top * 1.06)
+    allmo = collections.Counter()
+    for r in epi:
+        k = ym(r)
+        if k and datetime.date(*k, 1) < cutoff:
+            allmo[k] += 1
+    p_lo, p_md, p_hi, _ = project(allmo, cutoff)
+
+    # dashed projection beyond the harvest cutoff, one segment per modality
+    PROJ_X = HORIZON / 12.0
+    for v, label, col, _, (lo, md, hi, _w) in ends:
+        ax.plot([y1, y1 + PROJ_X], [v, v + md], color=col, linewidth=1.5,
+                linestyle=(0, (3, 2)), solid_capstyle="butt", zorder=3)
+        ax.fill_between([y1, y1 + PROJ_X], [v, v + lo], [v, v + hi],
+                        color=col, alpha=0.13, linewidth=0, zorder=2)
+    ax.axvline(y1, color=MUTED, lw=0.7, linestyle=(0, (1, 2)), zorder=1)
+    ax.axvspan(y1, y1 + PROJ_X, color="#f0efe9", zorder=0)
+
+    top = max(e[0] + e[4][2] for e in ends)
+    ax.set_xlim(y0 - 0.4, y1 + PROJ_X + 0.06)
+    ax.set_ylim(0, top * 1.04)
     ticks = [y for y in span if y % 5 == 0]
     if y1 - ticks[-1] >= 2:
         ticks.append(y1)
     ax.set_xticks(ticks); ax.set_xticklabels([str(y) for y in ticks])
     ax.set_xlabel("year of GEO deposition", fontsize=7.5)
+    # in the gap between the ChIP-seq and methylation curves, where the band is empty
+    ax.text(y1 + PROJ_X / 2, top * 0.62,
+            f"projected {HORIZON} months  ·  +{p_md:,}", rotation=90, ha="center",
+            va="center", fontsize=5.8, color=MUTED, style="italic", zorder=4)
     ax.set_ylabel("cumulative epigenomic samples", fontsize=7.5)
     ax.yaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{int(v):,}"))
     tidy(ax, grid="y")
@@ -399,17 +465,19 @@ def fig_growth(d):
     # A line chart reads better with the series named where it finishes than with a
     # legend box; the only requirement is that the label sit at its own line's height.
     MINGAP = top * 0.052
-    rank = sorted(range(len(ends)), key=lambda i: -ends[i][0])
+    term = [e[0] + e[4][1] for e in ends]                 # projected end of each curve
+    rank = sorted(range(len(ends)), key=lambda i: -term[i])
     ypos = {}
     prev = None
     for i in rank:
-        v = ends[i][0]
+        v = term[i]
         if prev is not None and prev - v < MINGAP:
             v = prev - MINGAP
         ypos[i] = v
         prev = v
-    for i, (v, label, col, _) in enumerate(ends):
-        ax.annotate(label, xy=(y1, v), xytext=(y1 + 0.55, ypos[i]),
+    for i, (v0, label, col, _, (lo, md, hi, _w)) in enumerate(ends):
+        v = v0 + md
+        ax.annotate(label, xy=(y1 + PROJ_X, v), xytext=(y1 + PROJ_X + 0.18, ypos[i]),
                     textcoords="data", va="center", ha="left", fontsize=6.8,
                     color=col, weight="bold", annotation_clip=False,
                     arrowprops=dict(arrowstyle="-", color=col, linewidth=0.5,
@@ -419,7 +487,7 @@ def fig_growth(d):
     # first year each modality reached 50 samples -- the point at which it stops being
     # a demonstration and starts being a resource
     arrival = {}
-    for v, lab, col, per in ends:
+    for v, lab, col, per, _p in ends:
         cum = 0
         for yy in span:
             cum += per.get(yy, 0)
@@ -448,6 +516,7 @@ def fig_growth(d):
     ents = {dz: v for dz, v in firstyr.items()
             if dz in {t["atlas_disease"] for t in d["T13"]}}
     cover = {yy: sum(1 for v in ents.values() if v <= yy) for yy in (2010, 2015, 2020, y1)}
+
     fig.suptitle("Sarcoma epigenomic data has accumulated rapidly, and the modality mix "
                  "is broadening",
                  fontsize=10, weight="bold", x=0.0, y=1.135, ha="left")
@@ -469,13 +538,24 @@ def fig_growth(d):
          f"The six families cover {fam_tot:,} of the {tot:,} dated samples; the remaining "
          f"{other} are Repli-seq, which belongs to none of them.\n\n"
          "Controlled-access deposits are not in this figure: EGA and dbGaP do not publish "
-         "a comparable deposition timeline.")
+         "a comparable deposition timeline.\n\n"
+         f"Dashed segments project the {HORIZON} months after the harvest cutoff "
+         f"({cutoff.strftime('%d %B %Y')}, dotted rule), resampling whole months from "
+         f"the preceding {WINDOW}; the shaded wedge is the 10th to 90th percentile of "
+         f"20,000 such draws. Across all six families the projection is "
+         f"{p_md:,} further samples, 80% interval {p_lo:,} to {p_hi:,}. The interval "
+         f"is wide because deposits arrive as whole series: the median sarcoma series is "
+         f"9 samples and the largest 1% hold 16% of everything, so a single large "
+         f"resource landing inside the window moves the total by several hundred.")
     save(fig, "WP1_accumulation_and_modality_mix")
     return {"pct_chip": round(100*chip/tot), "total": tot, "fam_total": fam_tot,
             "pct_last10": round(100*last10/tot), "pct_last5": round(100*last5/tot),
             "modern_early": round(era[(2011, 2015)], 1),
             "modern_late": round(era[(2021, y1)], 1), "coverage": cover,
-            "arrival": arrival, "ends": {lab: v for v, lab, _, _ in ends}}
+            "arrival": arrival,
+            "ends": {lab: v for v, lab, _, _, _ in ends},
+            "cutoff": str(cutoff), "proj6_total": (p_lo, p_md, p_hi),
+            "proj6_by_modality": {lab: p[1] for _v, lab, _c, _per, p in ends}}
 
 
 # =====================================================================================
