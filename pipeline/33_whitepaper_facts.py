@@ -36,6 +36,20 @@ for _k, (_lab, _cls, _c) in zip(KEY, MODALITY):
         FAM[_a] = _k
 MODERN = WP.MODERN
 I, F = WP.I, WP.F
+# Entity names that begin with an eponym keep their capital inside a sentence; the rest
+# are lowercased when they appear mid-list. Doing this here, once, is why the document
+# build needs no case logic of its own -- and why "Kaposi sarcoma" survived a pass that
+# had been lowercasing it.
+EPONYM = ("Kaposi", "Ewing", "Askin", "Wilms", "Merkel", "Hodgkin", "Langerhans")
+
+
+def sentence_case(name):
+    if name.startswith(EPONYM) or (len(name) > 1 and name[1].isupper()) \
+            or name[0].isdigit() or not name[0].isalpha():
+        return name
+    return name[0].lower() + name[1:]
+
+
 # Display names are written for a table column; a few read badly inside a sentence.
 PROSE = {"Liposarcoma, pleomorphic": "pleomorphic liposarcoma",
          "Liposarcoma, well-differentiated": "well-differentiated liposarcoma",
@@ -56,7 +70,8 @@ WORD = {0: "zero", 16: "sixteen", 1: "one", 2: "two", 3: "three", 4: "four", 5: 
         22: "twenty-two", 23: "twenty-three", 24: "twenty-four", 25: "twenty-five",
         26: "twenty-six", 27: "twenty-seven", 28: "twenty-eight", 29: "twenty-nine",
         30: "thirty", 31: "thirty-one", 40: "forty", 44: "forty-four", 45: "forty-five"}
-ORD = {1: "first", 2: "second", 3: "third", 4: "fourth", 5: "fifth", 20: "twentieth",
+ORD = {1: "first", 2: "second", 3: "third", 4: "fourth", 5: "fifth",
+       13: "thirteenth", 14: "fourteenth", 15: "fifteenth", 20: "twentieth",
        21: "twenty-first", 22: "twenty-second", 23: "twenty-third",
        24: "twenty-fourth", 25: "twenty-fifth", 26: "twenty-sixth"}
 
@@ -185,6 +200,10 @@ def main():
     f["zero_reg_named"] = [r["display_name"] for r in
                            sorted(zero, key=lambda r: -F(r, "US_cases_per_year_all_ages"))]
     f["n_zero_norate"] = sum(1 for r in zero if not F(r, "US_cases_per_year_all_ages"))
+    f["n_zero_rated"] = f["n_zero_reg"] - f["n_zero_norate"]
+    f["n_zero_rated_word"] = WORD.get(f["n_zero_rated"], str(f["n_zero_rated"]))
+    f["n_zero_reg_plus1_word"] = ORD.get(f["n_zero_reg"] + 1,
+                                         str(f["n_zero_reg"] + 1) + "th")
 
     # the two labelled points the legend disambiguates
     for key, dis in (("ratrt", "Rhabdoid tumor/ATRT"), ("fprms", "FP-RMS")):
@@ -224,6 +243,11 @@ def main():
         pd_growth[str(y)] = sum(1 for r in T13 if r["atlas_disease"] in s)
     f["pd_growth"] = pd_growth
     f["pd_2015_word"] = WORD.get(pd_growth["2015"], str(pd_growth["2015"]))
+    # The entities a burden-led allocation would start with: no patient-derived
+    # regulatory data, ordered by the cases each represents.
+    f["zero_pd_by_burden"] = [r["display_name"] for r in
+                              sorted((r for r in T13 if I(r, "patient_derived_regulatory") == 0),
+                                     key=lambda r: -F(r, "US_cases_per_year_all_ages"))]
     f["pd_2020_word"] = WORD.get(pd_growth["2020"], str(pd_growth["2020"]))
 
     # zero-coverage counts by assay class
@@ -259,7 +283,10 @@ def main():
     ratio = sorted(((ln / pd, n) for n, ln, pd in rows if pd and ln), reverse=True)
     f["worst"] = [[n, round(v)] for v, n in ratio[:5]]
     f["best"] = [[n, round(v, 1)] for v, n in sorted(((v, n) for v, n in ratio))[:2]]
-    f["no_patient_named"] = sorted(n for n, ln, pd in rows if not pd)
+    burden = {r["display_name"]: F(r, "US_cases_per_year_all_ages") for r in T13}
+    f["no_patient_named"] = [n for n, ln, pd in
+                             sorted(((n, ln, pd) for n, ln, pd in rows if not pd),
+                                    key=lambda t: -burden.get(t[0], 0))]
 
     # ---------- H3K27ac fidelity, restricted to within-study comparisons (methods #9)
     T11b = list(csv.DictReader(topen("T11b_fidelity_by_study.tsv"), delimiter="\t"))
@@ -274,9 +301,12 @@ def main():
         r = next((x for x in T13 if x["atlas_disease"] == dis), None)
         return I(r, col) if r else 0
     f["lgfms_reg"] = ent("LGFMS/SEF", "regulatory_epigenomic_samples")
+    f["lgfms_reg_word"] = WORD.get(f["lgfms_reg"], str(f["lgfms_reg"]))
     f["ess_reg"] = ent("Endometrial stromal sarcoma", "regulatory_epigenomic_samples")
     f["ess_normal"] = sum(1 for r in reg if r["disease"] == "Endometrial stromal sarcoma"
                           and r["sample_type"] == "normal/reference")
+    f["ess_reg_word"] = WORD.get(f["ess_reg"], str(f["ess_reg"]))
+    f["ess_normal_word"] = WORD.get(f["ess_normal"], str(f["ess_normal"]))
     f["n_corrections"] = sum(
         1 for ln in open(os.path.join(DOCS, "methods.md"), encoding="utf-8")
         if ln.startswith("| ") and ln[2:ln.find("|", 2)].strip().isdigit())
@@ -298,14 +328,15 @@ def main():
 
     # Entities with no epigenomic data of any kind -- the "only named entity" claim
     seen_any = {r["disease"] for r in epi}
-    f["no_epi_named"] = sorted(PROSE.get(r["display_name"], r["display_name"])
+    f["no_epi_named"] = sorted(sentence_case(PROSE.get(r["display_name"], r["display_name"]))
                                for r in T13 if r["atlas_disease"] not in seen_any)
     f["entities_word"] = WORD.get(f["entities"], str(f["entities"]))
     for k in ("pct_last10", "pct_last5", "n_zero_norate"):
         f[k + "_word"] = WORD.get(f[k], str(f[k]))
     # Prose spellings of every named list, so the document never re-words a label.
-    for k in ("zero_reg_named", "no_patient_named", "gse140686_only_named"):
-        f[k] = [PROSE.get(x, x) for x in f[k]]
+    for k in ("zero_reg_named", "no_patient_named", "gse140686_only_named",
+              "zero_pd_by_burden"):
+        f[k] = [sentence_case(PROSE.get(x, x)) for x in f[k]]
     f["worst"] = [[PROSE.get(nm, nm), v] for nm, v in f["worst"]]
     out = os.path.join(DOCS, "whitepaper_facts.json")
     with open(out, "w") as fh:

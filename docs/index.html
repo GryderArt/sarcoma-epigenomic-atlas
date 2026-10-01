@@ -394,16 +394,115 @@ function drawScatter(list){
       : `<circle cx="${x}" cy="${y}" r="5.5" fill="${col}" stroke="var(--surface-1)"
            stroke-width="2" class="pt" data-e="${encodeURIComponent(e.d)}"/>`;
   });
+  // Abbreviations rather than a 30-character truncation: "Undifferentiated pleomorphic
+  // s" and "Dermatofibrosarcoma protuberan" read as a rendering fault, not a label.
+  const ABBR = {"Undifferentiated pleomorphic sarcoma":"UPS / MFH",
+                "Dermatofibrosarcoma protuberans":"DFSP",
+                "Desmoid / aggressive fibromatosis":"Desmoid",
+                "Liposarcoma, well-differentiated":"Liposarcoma, WD",
+                "Liposarcoma, dedifferentiated":"Liposarcoma, DD",
+                "Rhabdoid tumor / ATRT":"Rhabdoid / ATRT",
+                "Inflammatory myofibroblastic tumor":"IMT",
+                "Extraskeletal myxoid chondrosarcoma":"EMC",
+                "Malignant peripheral nerve sheath tumor":"MPNST",
+                "GCTB / chondroblastoma":"GCTB"};
+  const slab = n => { const k = n.split(" (")[0];
+    return ABBR[k] || (k.length>26 ? k.slice(0,25).replace(/[\s,/]+$/,"")+"\u2026" : k); };
   const big = pts.filter(e => e.cases>900 || e.reg>900).slice(0,14);
-  big.forEach(e=>{
-    g += `<text x="${xs(e.cases)}" y="${ys(e.reg)-10}" font-size="10.5" fill="var(--ink-2)"
-           text-anchor="middle">${e.name.split(" (")[0].slice(0,30)}</text>`;
+  big.forEach((e,i)=>{
+    g += `<text class="slab" data-i="${i}" x="${xs(e.cases)}" y="${ys(e.reg)-10}"
+           font-size="10.5" fill="var(--ink-2)" text-anchor="middle"
+           >${slab(e.name)}</text>`;
   });
   g += `<text x="${(L+W-Rr)/2}" y="${H-6}" font-size="11.5" fill="var(--ink-2)"
          text-anchor="middle">US cases per year (all ages, log scale)</text>
         <text transform="translate(15,${(T+H-B)/2}) rotate(-90)" font-size="11.5"
          fill="var(--ink-2)" text-anchor="middle">Open regulatory epigenomic samples</text>`;
   svg.innerHTML = g;
+  placeLabels(svg, big.map(e=>[xs(e.cases), ys(e.reg)]),
+              pts.map(e=>[xs(e.cases), ys(e.reg)]), {L, R:W-Rr, T, B:H-B, floor:FLOOR});
+}
+
+/* Collision-aware label placement for the scatter above.
+
+   Every label used to be drawn at (x, y-10) regardless of what was already there, so
+   "Dermatofibrosarcoma protuberans" and "Angiosarcoma" printed on top of each other on
+   the zero line and three of the mid-burden labels stacked into an unreadable block.
+   The same four rules the figure pipeline uses (pipeline/_labels.py) apply here:
+
+     1. Measure, never guess -- each candidate is positioned and measured with getBBox().
+     2. Ownership -- reject a box that sits nearer somebody else's marker than its own.
+     3. Direction -- try candidates that point away from the nearest neighbour first.
+     4. A leader line on every label, so the reading never depends on proximity alone. */
+const LAB_CAND = [[0,-11,"middle"],[0,14,"middle"],[9,3.5,"start"],[-9,3.5,"end"],
+                  [8,-8,"start"],[-8,-8,"end"],[8,11,"start"],[-8,11,"end"],
+                  [0,-22,"middle"],[0,25,"middle"],[20,-9,"start"],[-20,-9,"end"],
+                  [20,12,"start"],[-20,12,"end"],[0,-33,"middle"],[0,36,"middle"]];
+
+function placeLabels(svg, anchors, marks, frame){
+  const NS = "http://www.w3.org/2000/svg";
+  const labs = [...svg.querySelectorAll("text.slab")];
+  const near = (b,x,y) => Math.hypot(Math.max(b.x-x,0,x-(b.x+b.width)),
+                                     Math.max(b.y-y,0,y-(b.y+b.height)));
+  const placed = [], leaders = [];
+  // Crowded points get their slot first, and open outward from their nearest neighbour.
+  const order = labs.map((el,i)=>{
+    let d = Infinity;
+    marks.forEach(([mx,my])=>{
+      const [ax,ay] = anchors[i];
+      const t = Math.hypot(mx-ax, my-ay);
+      if (t > 0.5) d = Math.min(d, t);
+    });
+    return {el, i, d};
+  }).sort((a,b)=>a.d-b.d);
+
+  order.forEach(({el,i})=>{
+    const [ax,ay] = anchors[i];
+    let nx = ax, ny = ay;                      // direction of the nearest neighbour
+    let best = Infinity;
+    marks.forEach(([mx,my])=>{
+      const t = Math.hypot(mx-ax, my-ay);
+      if (t > 0.5 && t < best){ best = t; nx = mx; ny = my; }
+    });
+    const away = c => -((c[0])*(nx-ax) + (c[1])*(ny-ay));
+    const cands = LAB_CAND.slice().sort((a,b)=>away(b)-away(a));
+    let won = null, fallback = null, fbCost = Infinity;
+    for (const [dx,dy,anc] of cands){
+      el.setAttribute("x", ax+dx); el.setAttribute("y", ay+dy);
+      el.setAttribute("text-anchor", anc);
+      const b = el.getBBox();
+      let cost = 0;
+      if (b.x < frame.L || b.x+b.width > frame.R || b.y < frame.T ||
+          b.y+b.height > frame.B) cost += 100;
+      // The dashed zero line would otherwise strike through a label sitting on it.
+      if (b.y < frame.floor + 2 && b.y+b.height > frame.floor - 2) cost += 80;
+      placed.forEach(q=>{ if (b.x < q.x+q.width+2 && q.x < b.x+b.width+2 &&
+                              b.y < q.y+q.height+2 && q.y < b.y+b.height+2) cost += 100; });
+      const mine = near(b, ax, ay);
+      marks.forEach(([mx,my])=>{
+        if (Math.abs(mx-ax) < 0.5 && Math.abs(my-ay) < 0.5) return;   // our own marker
+        if (mx > b.x-3 && mx < b.x+b.width+3 && my > b.y-3 && my < b.y+b.height+3) cost += 60;
+        else if (near(b,mx,my) < mine*1.35 + 2) cost += 25;
+      });
+      if (!cost){ won = {b, dx, dy, anc}; break; }
+      if (cost < fbCost){ fbCost = cost; fallback = {b:null, dx, dy, anc}; }
+    }
+    const w = won || fallback;
+    el.setAttribute("x", ax+w.dx); el.setAttribute("y", ay+w.dy);
+    el.setAttribute("text-anchor", w.anc);
+    const b = el.getBBox(); placed.push(b);
+    const lx = w.anc === "start" ? b.x : w.anc === "end" ? b.x+b.width : b.x+b.width/2;
+    const ly = w.dy < 0 ? b.y+b.height : (w.dy > 6 ? b.y : b.y+b.height/2);
+    if (Math.hypot(lx-ax, ly-ay) > 7) leaders.push([lx, ly, ax, ay]);
+  });
+
+  leaders.forEach(([x1,y1,x2,y2])=>{
+    const ln = document.createElementNS(NS, "line");
+    ln.setAttribute("x1",x1); ln.setAttribute("y1",y1);
+    ln.setAttribute("x2",x2); ln.setAttribute("y2",y2);
+    ln.setAttribute("stroke","var(--axis)"); ln.setAttribute("stroke-width","0.8");
+    svg.insertBefore(ln, svg.firstChild);
+  });
 }
 
 /* ---------- detail ---------- */

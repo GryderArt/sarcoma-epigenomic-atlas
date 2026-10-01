@@ -10,7 +10,7 @@ URL="https://github.com/$USER/$REPO"
 echo "Targeting $URL"
 
 # fill the placeholders left in the docs
-for f in README.md CITATION.cff LICENSE-DATA; do
+for f in README.md pipeline/README.tmpl.md CITATION.cff LICENSE-DATA; do
   [ -f "$f" ] && sed -i.bak -e "s#<user>#$USER#g" -e "s#<you>#$USER#g" \
                             -e "s#gryderart.github.io/sarcoma-epigenomic-atlas#$USER.github.io/$REPO#g" \
                             "$f" && rm -f "$f.bak"

@@ -55,7 +55,7 @@ if ($who -ne $User) {
 
 # ---------------------------------------------------------------- 3. Placeholders
 Step 3 "Filling documentation placeholders"
-foreach ($f in @("README.md", "CITATION.cff", "LICENSE-DATA")) {
+foreach ($f in @("README.md", "pipeline\README.tmpl.md", "CITATION.cff", "LICENSE-DATA")) {
   if (Test-Path $f) {
     $t = Get-Content $f -Raw
     $t = $t -replace '<user>', $User -replace '<you>', $User
