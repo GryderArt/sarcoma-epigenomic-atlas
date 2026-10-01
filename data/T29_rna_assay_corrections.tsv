@@ -1,0 +1,724 @@
+gsm	gse	disease	was_assay	was_target	library_strategy	now_assay	assay_word_in_own_record	basis	gse_title
+GSM6280757	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280758	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280760	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280763	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280765	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280766	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280767	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280768	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280769	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280770	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280771	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM6280772	GSE207167	FN-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	TWIST2-Mediated Chromatin Remodeling Promotes Fusion-Negative Rhabdomyosarcoma [RNA-seq FN-RMS Cells]
+GSM9751717	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751719	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751721	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751723	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751725	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751727	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751729	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751731	GSE332630	RMS-NOS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751733	GSE332630	Osteosarcoma	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751735	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM9751737	GSE332630	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Multimodal single-cell analyses reveal distinct fusion-regulated transcriptional programs in Ewing sarcoma
+GSM8454023	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454024	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454025	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454026	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454027	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454028	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454029	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454030	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454031	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454032	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454033	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454034	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454035	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454036	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454037	GSE274636	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8453997	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8453998	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8453999	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454000	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454001	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454002	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454003	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454004	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454005	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454006	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454007	GSE274634	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454008	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454009	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454010	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454011	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454012	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454013	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454014	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454015	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454016	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454017	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454018	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454019	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454020	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454021	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8454022	GSE274635	FN-RMS	scATAC-seq		RNA-Seq	RNA-seq		series context only	MYOD1L122R induces cancer stem cell pathways to impart chemotherapy and radiation-resistance in aggressive rhabdomyosarc
+GSM8339569	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339570	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339571	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339572	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339573	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339574	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339575	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8339576	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899948	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899949	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899950	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899951	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899952	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899953	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899954	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899955	GSE270325	FP-RMS	ChIP-seq	PAX3-FOXO1	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899956	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899957	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM8899958	GSE270325	FP-RMS	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Rhabdomyosarcoma fusion oncoprotein initially pioneers a neural signature in vivo [RNA-seq]
+GSM6777692	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777693	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777694	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777695	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777696	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777697	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777698	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777699	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777700	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777701	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777702	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777703	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777704	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777705	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777706	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777707	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777708	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777709	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777710	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777711	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777712	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777713	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777714	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777715	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777716	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777717	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777718	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777735	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM6777736	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036906	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036907	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036908	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036909	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036910	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036911	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036912	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036913	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036914	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM8036915	GSE219199	FP-RMS	ATAC-seq		RNA-Seq	RNA-seq		series context only	KDM3B inhibitors disrupt PAX3-FOXO1 oncogenic activity in fusion positive rhabdomyosarcoma.
+GSM9179216	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179217	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179218	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179219	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179220	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179221	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179222	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179223	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179224	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179225	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM9179226	GSE305545	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription
+GSM2436686	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436687	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436688	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436689	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436690	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436691	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436692	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436693	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436694	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436695	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436696	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436697	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436698	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436699	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436700	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436701	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436702	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436703	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436704	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436705	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436706	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436707	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436708	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436709	GSE92739	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436710	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436711	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436712	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436713	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436714	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436715	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436716	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM2436717	GSE92739	Ewing	ChIP-seq	EWS-FLI1	RNA-Seq	RNA-seq		series context only	EWS-FLI1 represses Rho-actin signaling via MRTFB/YAP-1/TEAD perturbation in Ewing Sarcoma [RNA-Seq]
+GSM9463343	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463344	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463345	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463346	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463347	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463348	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463349	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463350	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM9463351	GSE316978	Ewing	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	Mithramycin Alters EWS::FLI1 DNA Binding and RNA Polymerase II Processivity to Inhibit Nascent Transcription [RNA-seq]
+GSM8596712	GSE280398	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Origin of Ewing sarcoma by embryonic reprogramming of neural crest to mesoderm
+GSM8596714	GSE280398	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Origin of Ewing sarcoma by embryonic reprogramming of neural crest to mesoderm
+GSM8596717	GSE280398	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Origin of Ewing sarcoma by embryonic reprogramming of neural crest to mesoderm
+GSM8596719	GSE280398	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Origin of Ewing sarcoma by embryonic reprogramming of neural crest to mesoderm
+GSM9204846	GSE280398	Ewing	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Origin of Ewing sarcoma by embryonic reprogramming of neural crest to mesoderm
+GSM3109632	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109633	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109634	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109635	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109636	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109637	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109638	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109639	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109640	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109641	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109642	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109643	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109644	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109645	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109646	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109647	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109648	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109649	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109650	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109651	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109652	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM3109653	GSE113604	Ewing	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	BET bromodomain dependency in EWS/ETS driven Ewing Sarcoma
+GSM7807443	GSE244116	Osteosarcoma	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Single-Nuclei Multiome (ATAC + Gene Expression) Sequencing of a Primary Canine Osteosarcoma Elucidates Intra-Tumoral Het
+GSM3016098	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016099	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016100	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016101	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016102	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016103	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016104	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016105	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM3016106	GSE110762	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RRAD, IL4I1, CDKN1A, and SERPINE1 genes are potentially co-regulated by NF-κB and p53 transcription factors in cells exp
+GSM5018577	GSE164777	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MYC overexpression leads to increased chromatin interactions at superenhancers and MYC binding sites
+GSM5018578	GSE164777	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MYC overexpression leads to increased chromatin interactions at superenhancers and MYC binding sites
+GSM5018579	GSE164777	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MYC overexpression leads to increased chromatin interactions at superenhancers and MYC binding sites
+GSM5018580	GSE164777	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MYC overexpression leads to increased chromatin interactions at superenhancers and MYC binding sites
+GSM7845586	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845587	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845588	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845589	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845590	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845591	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845592	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845593	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845594	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845595	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845596	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845597	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845598	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845599	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845600	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845601	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845602	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845603	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845604	GSE245605	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845605	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845606	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845607	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845608	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845609	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845610	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845611	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845612	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845613	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845614	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845615	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845616	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845617	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845618	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845619	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845620	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845621	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM7845622	GSE245605	Osteosarcoma	ChIP-seq	TP53	RNA-Seq	RNA-seq		series context only	WWOX promotes osteosarcoma development via upregulation of Myc [RNA-Seq]
+GSM6831390	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831391	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831392	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831394	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831395	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831396	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831397	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6831398	GSE220948	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma
+GSM6210134	GSE205312	Osteosarcoma	MeDIP/hMeDIP	5mC	RIP-Seq	RNA-seq		series context only	DNMT1-repressed NSun2 Expression Wires DNA Cytosine Methylation and mRNA Cytosine Methylation to Modulate Osteosarcoma A
+GSM6210135	GSE205312	Osteosarcoma	MeDIP/hMeDIP	5mC	RIP-Seq	RNA-seq		series context only	DNMT1-repressed NSun2 Expression Wires DNA Cytosine Methylation and mRNA Cytosine Methylation to Modulate Osteosarcoma A
+GSM6210136	GSE205312	Osteosarcoma	MeDIP/hMeDIP	5mC	RIP-Seq	RNA-seq		series context only	DNMT1-repressed NSun2 Expression Wires DNA Cytosine Methylation and mRNA Cytosine Methylation to Modulate Osteosarcoma A
+GSM6210137	GSE205312	Osteosarcoma	MeDIP/hMeDIP	5mC	RIP-Seq	RNA-seq		series context only	DNMT1-repressed NSun2 Expression Wires DNA Cytosine Methylation and mRNA Cytosine Methylation to Modulate Osteosarcoma A
+GSM6210138	GSE205312	Osteosarcoma	MeDIP/hMeDIP	5mC	RIP-Seq	RNA-seq		series context only	DNMT1-repressed NSun2 Expression Wires DNA Cytosine Methylation and mRNA Cytosine Methylation to Modulate Osteosarcoma A
+GSM6210139	GSE205312	Osteosarcoma	MeDIP/hMeDIP	5mC	RIP-Seq	RNA-seq		series context only	DNMT1-repressed NSun2 Expression Wires DNA Cytosine Methylation and mRNA Cytosine Methylation to Modulate Osteosarcoma A
+GSM5504685	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504686	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504687	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504688	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504689	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504690	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504691	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504692	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504693	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5504694	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5511476	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM5511477	GSE181533	Osteosarcoma	ChIP-seq	n/a	RNA-Seq	RNA-seq		series context only	MRG proteins are shared by multiple protein complexes with distinct functions.
+GSM6436194	GSE210740	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arachidonic acid signaling in 
+GSM6436195	GSE210740	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arachidonic acid signaling in 
+GSM6436196	GSE210740	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arachidonic acid signaling in 
+GSM6436197	GSE210740	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arachidonic acid signaling in 
+GSM6436198	GSE210740	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arachidonic acid signaling in 
+GSM6436199	GSE210740	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arachidonic acid signaling in 
+GSM4628078	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628079	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628080	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628081	GSE152855	Osteosarcoma	Hi-C		RIP-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628082	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628083	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628084	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628085	GSE152855	Osteosarcoma	Hi-C		RIP-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628086	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628087	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628088	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628089	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628090	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM4628091	GSE152855	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	MS2-TRIBE evaluates both protein-RNA interactions and nuclear organization of transcription by RNA editing
+GSM8891971	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891972	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891973	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891974	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891975	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891976	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891977	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891978	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891979	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891980	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891981	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891982	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891983	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891984	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891985	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891986	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891987	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891988	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891989	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891990	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891991	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891992	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891993	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891994	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891995	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891996	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891997	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891998	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8891999	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8892000	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8892001	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM8892002	GSE293856	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Alphavirus M1 disrupts super-enhancer-driven oncogenic transcription in osteosarcoma [RNA-seq]
+GSM3414756	GSE120755	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	An atlas of genetic influences on osteoporosis in humans and mice
+GSM3414757	GSE120755	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	An atlas of genetic influences on osteoporosis in humans and mice
+GSM3414758	GSE120755	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	An atlas of genetic influences on osteoporosis in humans and mice
+GSM3414759	GSE120755	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	An atlas of genetic influences on osteoporosis in humans and mice
+GSM8185835	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185836	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185837	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185838	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185839	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185840	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185841	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185842	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185843	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185844	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185845	GSE263107	MPNST	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185846	GSE263107	MPNST	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185847	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185848	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185849	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185850	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185851	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185852	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185853	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185854	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185855	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185856	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185857	GSE263107	MPNST	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185858	GSE263107	MPNST	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185859	GSE263107	MPNST	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185860	GSE263107	MPNST	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185861	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185862	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185863	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185864	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185865	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8185866	GSE263107	MPNST	ChIP-seq	EZH2/PRC2	RNA-Seq	RNA-seq		series context only	Multiomic Analyses Reveal New Targets of Polycomb Repressor Complex 2 in Schwann Lineage Cells and Malignant Peripheral 
+GSM8279113	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279114	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279115	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279116	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279117	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279118	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279119	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM8279120	GSE267807	DSRCT	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Single-cell multiomics profiling reveals heterogeneous transcriptional programs and microenvironment in Desmoplastic Sma
+GSM7921345	GSE248856	DSRCT	ATAC-seq		RNA-Seq	scRNA-seq		series context only	Transcriptomic Analysis Identifies B-Lymphocyte Kinase as a Therapeutic Target for Desmoplastic Small Round Cell Tumor C
+GSM9613150	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613151	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613152	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613153	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613154	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613155	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613156	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM9613157	GSE325772	ASPS	scATAC-seq		RNA-Seq	scRNA-seq		series context only	CAR T therapy against the MiTF-driven protein GPNMB [Multiome-Seq]
+GSM5646384	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646385	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646386	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646387	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646388	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646389	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646390	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646391	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646392	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646393	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646394	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM5646395	GSE162486	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, ASPS1_KD]
+GSM4952810	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952811	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952812	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952813	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952814	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952815	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952816	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4952817	GSE162490	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, FUUR_CB5083]
+GSM4954778	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954779	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954780	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954781	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954782	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954783	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954784	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954785	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954786	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954787	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954788	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954789	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954790	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954791	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954792	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954793	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954794	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954795	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954796	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954797	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM4954798	GSE162575	ASPS	HiChIP	unspecified	RNA-Seq	RNA-seq		series context only	ASPSCR1-TFE3 reprograms transcription by organizing enhancers around hexameric VCP [RNA-Seq, 17637_HEK_cdelta]
+GSM6579154	GSE213338	Sarcoma NOS	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Benchmarking bulk and single-cell variant calling approaches on Chromium scRNA-seq and scATAC-seq libraries
+GSM6579155	GSE213338	Sarcoma NOS	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Benchmarking bulk and single-cell variant calling approaches on Chromium scRNA-seq and scATAC-seq libraries
+GSM6579156	GSE213338	Sarcoma NOS	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Benchmarking bulk and single-cell variant calling approaches on Chromium scRNA-seq and scATAC-seq libraries
+GSM6579157	GSE213338	Sarcoma NOS	scATAC-seq		RNA-Seq	scRNA-seq	Y	own record mentions an assay; library_strategy overrules	Benchmarking bulk and single-cell variant calling approaches on Chromium scRNA-seq and scATAC-seq libraries
+GSM5893316	GSE196583	Epithelioid sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Inhibition of the epigenetic regulator Ezh2 redistributes bivalent domains within transcriptional regulators associated 
+GSM5893317	GSE196583	Epithelioid sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Inhibition of the epigenetic regulator Ezh2 redistributes bivalent domains within transcriptional regulators associated 
+GSM5893318	GSE196583	Epithelioid sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Inhibition of the epigenetic regulator Ezh2 redistributes bivalent domains within transcriptional regulators associated 
+GSM5893319	GSE196583	Epithelioid sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Inhibition of the epigenetic regulator Ezh2 redistributes bivalent domains within transcriptional regulators associated 
+GSM5893320	GSE196583	Epithelioid sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Inhibition of the epigenetic regulator Ezh2 redistributes bivalent domains within transcriptional regulators associated 
+GSM5893321	GSE196583	Epithelioid sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Inhibition of the epigenetic regulator Ezh2 redistributes bivalent domains within transcriptional regulators associated 
+GSM5556061	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556062	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556063	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556064	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556065	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556066	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556067	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556068	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556069	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556070	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556071	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556072	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556073	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556074	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556075	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556076	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556077	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556078	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556079	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556080	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556081	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556082	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556083	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM5556084	GSE183352	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 maintains lineage fidelity in renal cancer - RNA-seq
+GSM8448071	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448072	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448073	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448074	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448075	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448076	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448077	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448078	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448079	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448080	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448081	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8448082	GSE274373	Rhabdoid tumor/ATRT	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	SIRT2 is a regulator of the differentiation block driven by SMARCB1 loss in ATRT [bulk RNA-seq]
+GSM8672835	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672836	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672837	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672838	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672839	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672840	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672841	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672842	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672843	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672844	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672845	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672846	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672847	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672848	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672849	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672850	GSE283833	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM6744031	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM6744033	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM6744035	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM6744037	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM6744039	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM6744041	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM6744043	GSE218385	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	RNA-seq		series context only	SMARCB1 loss creates patient-specific MYC topologies that drive malignant rhabdoid tumor growth
+GSM8706166	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706167	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706168	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706169	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706170	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706171	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706172	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706173	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706174	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706175	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706176	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8706177	GSE285637	Rhabdoid tumor/ATRT	ATAC-seq		RNA-Seq	RNA-seq		series context only	The CoREST complex inhibitor, corin, leads to decreased tumor growth, increased cellular differentiation and extended li
+GSM8672951	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672952	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672953	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672954	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672955	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672956	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672957	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672958	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672959	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672960	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672961	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672962	GSE283839	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672945	GSE283843	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672946	GSE283843	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM8672947	GSE283843	Rhabdoid tumor/ATRT	scATAC-seq		RNA-Seq	scRNA-seq		series context only	A cycling, progenitor-like cell population at the root of atypical teratoid rhabdoid tumor subtype differentiation traje
+GSM9082497	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082498	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082499	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082500	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082501	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082502	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082503	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082504	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082505	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082506	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082507	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082508	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082509	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082510	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082511	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082512	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082513	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082514	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082515	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082516	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082517	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082518	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082519	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082520	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082521	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082522	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082523	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082524	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082525	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082526	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082527	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082528	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082529	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082530	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082531	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082532	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082533	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082534	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082535	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082536	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082537	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082538	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082539	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082540	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082541	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082542	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082543	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM9082544	GSE301405	Rhabdoid tumor/ATRT	WGBS	5mC	RNA-Seq	RNA-seq		series context only	Disordered DNA methylation leads to targetable transcriptional plasticity in ATRT [RNA-seq]
+GSM4567694	GSE151170	Chordoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	The role of transcriptional factor brachyury on cell cycle regulation in non-small cell lung cancer [RNA-Seq]
+GSM4567695	GSE151170	Chordoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	The role of transcriptional factor brachyury on cell cycle regulation in non-small cell lung cancer [RNA-Seq]
+GSM4567696	GSE151170	Chordoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	The role of transcriptional factor brachyury on cell cycle regulation in non-small cell lung cancer [RNA-Seq]
+GSM4567697	GSE151170	Chordoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	The role of transcriptional factor brachyury on cell cycle regulation in non-small cell lung cancer [RNA-Seq]
+GSM4567698	GSE151170	Chordoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	The role of transcriptional factor brachyury on cell cycle regulation in non-small cell lung cancer [RNA-Seq]
+GSM4567699	GSE151170	Chordoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	The role of transcriptional factor brachyury on cell cycle regulation in non-small cell lung cancer [RNA-Seq]
+GSM5133945	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133946	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133947	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133948	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133949	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133950	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133951	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133952	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133953	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133954	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133955	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM5133956	GSE168205	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	The TAZ-CAMTA1 and YAP-TFE3 fusion proteins modulate the basal TAZ/YAP transcriptional program by recruiting the Ada2a-c
+GSM7384445	GSE232843	Kaposi sarcoma	CUT&RUN	input/none	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384446	GSE232843	Kaposi sarcoma	CUT&RUN	input/none	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384447	GSE232843	Kaposi sarcoma	CUT&RUN	input/none	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384448	GSE232843	Kaposi sarcoma	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384449	GSE232843	Kaposi sarcoma	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384450	GSE232843	Kaposi sarcoma	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384451	GSE232843	Kaposi sarcoma	CUT&RUN	input/none	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384452	GSE232843	Kaposi sarcoma	CUT&RUN	input/none	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384453	GSE232843	Kaposi sarcoma	CUT&RUN	input/none	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384454	GSE232843	Kaposi sarcoma	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384455	GSE232843	Kaposi sarcoma	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM7384456	GSE232843	Kaposi sarcoma	CUT&RUN	unspecified	RNA-Seq	RNA-seq		series context only	Prolonged Kaposi's Sarcoma-associated Herpesvirus vIL-6 Exposure Enhances Inflammatory Responses by Epigenetic Reprogram
+GSM5768808	GSE192912	Fibrosarcoma NOS	DNase-seq		RNA-Seq	RNA-seq		series context only	Cancer-associated Fibroblast-derived SPP1 is a Potential Target for Overcoming Sorafenib and Lenvatinib Resistance in He
+GSM5768817	GSE192912	Fibrosarcoma NOS	DNase-seq		RNA-Seq	RNA-seq		series context only	Cancer-associated Fibroblast-derived SPP1 is a Potential Target for Overcoming Sorafenib and Lenvatinib Resistance in He
+GSM6235758	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235759	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235760	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235761	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235762	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235763	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235764	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235765	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235766	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235767	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235768	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM6235769	GSE205927	LGFMS/SEF	CUT&Tag	unspecified	RNA-Seq	RNA-seq		series context only	The oncogenic mechanisms of FUS-CREB3L2
+GSM9244152	GSE308366	Chondrosarcoma	RRBS	5mC	RNA-Seq	scRNA-seq		series context only	RRBS-seq of single-cell clones of four cell Lines reveals highly-conserved methylated sites in DNA [RNA-Seq]
+GSM9244153	GSE308366	Chondrosarcoma	RRBS	5mC	RNA-Seq	scRNA-seq		series context only	RRBS-seq of single-cell clones of four cell Lines reveals highly-conserved methylated sites in DNA [RNA-Seq]
+GSM9244154	GSE308366	Chondrosarcoma	RRBS	5mC	RNA-Seq	scRNA-seq		series context only	RRBS-seq of single-cell clones of four cell Lines reveals highly-conserved methylated sites in DNA [RNA-Seq]
+GSM4123898	GSE138937	Kaposi sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123899	GSE138937	Kaposi sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123900	GSE138937	Kaposi sarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123901	GSE138937	Kaposi sarcoma	ChIP-seq	CTCF	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123902	GSE138937	Kaposi sarcoma	ChIP-seq	CTCF	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123903	GSE138937	Kaposi sarcoma	ChIP-seq	CTCF	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123904	GSE138937	Kaposi sarcoma	ChIP-seq	Cohesin	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123905	GSE138937	Kaposi sarcoma	ChIP-seq	Cohesin	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM4123906	GSE138937	Kaposi sarcoma	ChIP-seq	Cohesin	RNA-Seq	RNA-seq		series context only	Effect of CTCF and Rad21 knockdown on SLK cells and KSHV gene expression
+GSM9149216	GSE304355	Clear cell sarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	A human-specific enhancer modulates chromosomal interactions to promote neurogenesis [mouse RNA-seq]
+GSM9149217	GSE304355	Clear cell sarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	A human-specific enhancer modulates chromosomal interactions to promote neurogenesis [mouse RNA-seq]
+GSM9149218	GSE304355	Clear cell sarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	A human-specific enhancer modulates chromosomal interactions to promote neurogenesis [mouse RNA-seq]
+GSM7744148	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744151	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744154	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744157	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744160	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744163	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744166	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM7744169	GSE241819	Liposarcoma-NOS	ATAC-seq		RNA-Seq	RNA-seq		series context only	IRF1 cooperates with ISGF3 or GAF to form de novo enhancers in murine macrophages (RNA-Seq)
+GSM1118159	GSE45684	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA-seq alignment to individualized genomes
+GSM1119497	GSE45684	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA-seq alignment to individualized genomes
+GSM1119920	GSE45684	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA-seq alignment to individualized genomes
+GSM1120646	GSE45684	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA-seq alignment to individualized genomes
+GSM1121002	GSE45684	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA-seq alignment to individualized genomes
+GSM7899353	GSE247721	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Retrotransposons in Werner syndrome-derived macrophages trigger type I interferon-dependent inflammation in an atheroscl
+GSM7899356	GSE247721	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Retrotransposons in Werner syndrome-derived macrophages trigger type I interferon-dependent inflammation in an atheroscl
+GSM7899360	GSE247721	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Retrotransposons in Werner syndrome-derived macrophages trigger type I interferon-dependent inflammation in an atheroscl
+GSM7899250	GSE247718	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Retrotransposons in Werner syndrome-derived macrophages trigger type I interferon-dependent inflammation in an atheroscl
+GSM7899253	GSE247718	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Retrotransposons in Werner syndrome-derived macrophages trigger type I interferon-dependent inflammation in an atheroscl
+GSM5899267	GSE196722	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Genome wide analsis of the chromatin accessibility and gene expression in control and NUDT5 depleted U2OS cells [RNA-seq
+GSM5899268	GSE196722	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Genome wide analsis of the chromatin accessibility and gene expression in control and NUDT5 depleted U2OS cells [RNA-seq
+GSM5899269	GSE196722	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Genome wide analsis of the chromatin accessibility and gene expression in control and NUDT5 depleted U2OS cells [RNA-seq
+GSM5899270	GSE196722	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Genome wide analsis of the chromatin accessibility and gene expression in control and NUDT5 depleted U2OS cells [RNA-seq
+GSM5899271	GSE196722	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Genome wide analsis of the chromatin accessibility and gene expression in control and NUDT5 depleted U2OS cells [RNA-seq
+GSM5899272	GSE196722	Osteosarcoma	ATAC-seq		RNA-Seq	RNA-seq		series context only	Genome wide analsis of the chromatin accessibility and gene expression in control and NUDT5 depleted U2OS cells [RNA-seq
+GSM3942646	GSE134342	Osteosarcoma	WGBS	5mC	RNA-Seq	RNA-seq		series context only	hCINAP regulates the DNA damage response and mediates the resistance of acute myelocytic leukemia cells to therapy
+GSM3942647	GSE134342	Osteosarcoma	WGBS	5mC	RNA-Seq	RNA-seq		series context only	hCINAP regulates the DNA damage response and mediates the resistance of acute myelocytic leukemia cells to therapy
+GSM2464323	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464324	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464325	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464326	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464327	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464328	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464329	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464330	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464331	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464332	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464333	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464334	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464335	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464336	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464337	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464338	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464339	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464340	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464341	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464342	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464343	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464344	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464345	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464346	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464347	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464348	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464349	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464350	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464351	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464352	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464353	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464354	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464355	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464356	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq		series context only	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464357	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2464358	GSE93871	Osteosarcoma	Hi-C		RNA-Seq	RNA-seq	Y	own record mentions an assay; library_strategy overrules	Chromatin remodelers CHD9 and BRM are required for dex-regulated expression of block genes in U2OS-GR⍺ cells
+GSM2543177	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543178	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543179	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543180	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543181	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543182	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543183	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543184	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543185	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM2543186	GSE96777	Osteosarcoma	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	ZBTB48 is both a vertebrate telomere-binding protein and a transcriptional activator [RNA-seq]
+GSM8139448	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139449	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139450	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139451	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139452	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139453	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139454	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM8139455	GSE261283	Non-malignant human fetal osteoblast (control)	scATAC-seq		RNA-Seq	scRNA-seq		series context only	Bioinformatics and single-cell CRISPRi-based screen reveals effector genes and implicates multi-tissue etiology for BMD 
+GSM4066068	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066069	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066070	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066071	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	TEAD	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066072	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	TEAD	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066073	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	TEAD	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066074	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066075	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066076	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066077	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	TEAD	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066078	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	TEAD	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM4066079	GSE137035	Non-malignant human fetal osteoblast (control)	ChIP-seq	TEAD	RNA-Seq	RNA-seq		series context only	Transcriptional changes after YAP/TAZ siRNA-mediated knockdown, and BMP-2 stimulation and SMAD1 ChIP-Seq in BMP2-treated
+GSM6094183	GSE202080	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA sequencing of Osteoblasts
+GSM6094184	GSE202080	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA sequencing of Osteoblasts
+GSM6094185	GSE202080	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA sequencing of Osteoblasts
+GSM6094186	GSE202080	Non-malignant human fetal osteoblast (control)	ChIP-seq	unspecified	RNA-Seq	RNA-seq		series context only	RNA sequencing of Osteoblasts

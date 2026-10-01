@@ -87,6 +87,12 @@ ADULT_CORE = {"Liposarcoma-dediff","Liposarcoma-WD","Liposarcoma-pleomorphic","L
               "Endometrial stromal sarcoma","PEComa","LGFMS/SEF","Myoepithelial carcinoma",
               "Intimal sarcoma","Fibrosarcoma NOS","Kaposi sarcoma"}
 IN_SCOPE_DIS = PED_CORE | SHARED | ADULT_CORE | {"Sarcoma NOS"}
+RNA_STRATEGIES = {"RNA-Seq", "miRNA-Seq", "ncRNA-Seq", "RIP-Seq", "ssRNA-seq"}
+DNA_ASSAYS = {"ChIP-seq", "ChIP-chip", "ChIP-exo", "CUT&RUN", "CUT&Tag", "ATAC-seq",
+              "scATAC-seq", "DNase-seq", "FAIRE-seq", "MNase-seq", "Hi-C", "HiChIP",
+              "Micro-C", "Capture-HiC", "ChIA-PET", "4C-seq", "Repli-seq",
+              "WGBS", "RRBS", "MeDIP/hMeDIP", "Bisulfite-PCR"}
+
 AGE_CLASS = {**{d: "pediatric" for d in PED_CORE},
              **{d: "both" for d in SHARED},
              **{d: "adult" for d in ADULT_CORE}, "Sarcoma NOS": "both"}
@@ -304,6 +310,13 @@ def main():
             ls = r.get("library_strategy","").strip()
             hits = first(ASSAY_PATS, sblob) or first(ASSAY_PATS, blob)
             assay = hits[0] if hits else ""
+            # The depositor's own library_strategy outranks any assay word found in the
+            # text. Multi-assay series ("ChIP-seq and RNA-seq of ...") otherwise stamp
+            # their epigenomic assay onto the RNA-seq samples sitting beside it, and the
+            # GEX half of a 10x multiome likewise inherits "ATAC" from its own series.
+            # This is the assay-level form of the series-title leak logged as correction 4.
+            if ls in RNA_STRATEGIES and assay in DNA_ASSAYS:
+                assay = ""
             if ls in ("CUT&RUN","CUT&Tag"): assay = ls
             elif ls == "ATAC-seq": assay = "ATAC-seq"
             elif ls == "Hi-C" and assay not in ("HiChIP","Micro-C","ChIA-PET","Capture-HiC"): assay = "Hi-C"

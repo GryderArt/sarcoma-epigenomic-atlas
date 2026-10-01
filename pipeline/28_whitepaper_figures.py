@@ -189,8 +189,14 @@ def fig_burden(d):
                  + [(x, FLOOR) for zs in zeros.values() for x, _ in zs],
                  avoid=[leg], fontsize=6, color=DARK, leader=MUTED, where="WP2-D")
 
-    fig.suptitle("Adult sarcomas are the largest unmet opportunity: five times the "
-                 "burden, one twenty-fourth the data per case",
+    ORD = {4: "fourth", 5: "fifth", 20: "twentieth", 21: "twenty-first",
+           22: "twenty-second", 23: "twenty-third", 24: "twenty-fourth",
+           25: "twenty-fifth", 26: "twenty-sixth"}
+    burden_x = agg["adult"]["cases"] / agg["pediatric"]["cases"]
+    gap = round(ratio[0] / ratio[2])
+    fig.suptitle(f"Adult sarcomas are the largest unmet opportunity: "
+                 f"{'five' if round(burden_x) == 5 else round(burden_x)} times the "
+                 f"burden, one {ORD.get(gap, str(gap) + 'th')} the data per case",
                  fontsize=9.8, weight="bold", x=0.0, y=1.005, ha="left")
     foot(fig, 0.0, -0.055,
          "Burden is US cases per year summed over the 45 named entities; topography-coded "

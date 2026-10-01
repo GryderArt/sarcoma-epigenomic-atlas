@@ -207,6 +207,7 @@ Each was a real error caught against ground truth, and each is logged.
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
 | 10 | "Entities cataloged" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 15 | RNA-seq samples in multi-assay series inherited the series' epigenomic assay class | asking what LGFMS/SEF's 20 "regulatory" samples actually were — all 20 were a HUVEC fusion-expression experiment, 12 of them titled `RNA_seq_*` | `library_strategy` is now authoritative over any assay word in the text; 723 samples reassigned, 688 of which had no epigenomic assay word in their own record. Regulatory total falls 6.2%, 10,556 → 9,898. Every structural claim is unchanged: still 13 entities with none, 20 with patient-derived, 11 unvalidatable. Stage `30`, log in `T29`; `04` fixed for future runs |
 | 14 | `distinct_models` was read as "models that exist"; it counts models name-matched to the curated catalog, so three entities with unmatched cell-line data were miscounted | cross-checking the model bullet against `sample_type` | claim now computed from `sample_type` directly — 14 entities have never had a cell line, PDX or organoid profiled, a different set from `distinct_models = 0`; §7b |
 | 13 | Normal and reference tissue counted toward an entity's regulatory total | LGFMS / SEF appeared to have 20 regulatory epigenomes while dropping out of the cell-line-vs-tissue figure | 3% of regulatory samples atlas-wide; decisive only for LGFMS / SEF (100% control tissue) and endometrial stromal sarcoma (75%). Reported rather than silently re-binned |
 | 12 | Two scatter labels sat on top of each other in WP1-D and F19, so `FP-RMS` appeared to name the `Rhabdoid tumor / ATRT` point | a reader asked which dot each label meant, and whether the two were pooled | they were never pooled — separate rows in every table. Placement rewritten in `_labels.py`: measured boxes, an ownership test, leader lines; `28`, `20` |
@@ -250,6 +251,28 @@ exploratory figures, and one of them was wrong on the first pass:
   seven** study-internal comparisons (`T11b`), not all seven. Clear cell sarcoma by
   signal Spearman is the exception.
 
+## 7bis. Assay class and the series-context leak
+
+The assay detector searched each sample's own text first and fell back to series-level
+context. For a multi-assay series — "ChIP-seq and RNA-seq of X", or a 10x multiome whose
+ATAC and GEX halves sit side by side — that fallback stamps the series' epigenomic assay
+onto its RNA samples. It is the assay-level form of the series-title leak already logged
+as correction 4, and it was found by asking what a single entity's twenty "regulatory"
+samples actually were.
+
+`library_strategy` is a structured field set by the depositor and is now authoritative: a
+sample GEO calls RNA-Seq is not ChIP-seq, whatever its series is titled. 723 samples were
+reassigned, 688 of them with no epigenomic assay word anywhere in their own record; the
+remaining 35 are almost all the GEX half of a multiome. `30_fix_rna_assay_leak.py` repairs
+the shipped table, which cannot be regenerated without re-running the multi-hour GEO
+sweep, and logs every reassignment to `T29_rna_assay_corrections.tsv`. Stage `04` carries
+the same rule for any future full run.
+
+The correction is one of magnitude, not of structure. The regulatory total falls 6.2%
+(10,556 → 9,898) and three entities move materially — ASPS −29%, FN-RMS −20%, LGFMS/SEF
+20 → 8. No entity crosses zero: still 13 with no regulatory data, 20 with patient-derived,
+31 in the validation figure, 11 of them unvalidatable.
+
 ## 7c. Spelling
 
 The atlas reports US incidence for a US-authored working group, so its own text — entity
@@ -283,4 +306,4 @@ distinct models, distinct PDX and distinct patients alongside them.
 
 **The classifier is rules over free text**, and free text is written by humans in a hurry.
 The correction table above is not a list of problems that have been solved — it is a
-demonstration of the error rate, and the fifteenth error has not been found yet.
+demonstration of the error rate, and the sixteenth error has not been found yet.
