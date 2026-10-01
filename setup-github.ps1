@@ -85,8 +85,13 @@ $who = (Invoke-Native { gh api user --jq .login } | Select-Object -Last 1)
 if (-not $who) { throw "Signed in, but could not read your account." }
 $who = "$who".Trim()
 Ok "signed in as $who"
-if ($who -ne $User) {
-  Warn "You passed -User $User but you are signed in as $who. Using $who."
+# -cne, not -ne. PowerShell's -ne is case-INSENSITIVE, so "GryderArt" -ne "gryderart"
+# is false and this correction silently never fired. git survived the resulting case
+# mismatch because GitHub redirects GETs and pushes; the Pages POST did not, because
+# GitHub does not redirect POSTs, and step 5 failed with a bare 404.
+if ($who -cne $User) {
+  Warn "You passed -User $User but your account is $who. Using $who - GitHub does not"
+  Warn "redirect POST requests, so the wrong case breaks the Pages call."
   $User = $who
 }
 Invoke-Native { gh auth setup-git } | Out-Null
