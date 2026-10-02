@@ -129,6 +129,16 @@
   .chip{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:11px;
         background:var(--plane);border:1px solid var(--ring);margin:0 5px 5px 0;color:var(--ink-2)}
   .muted{color:var(--muted)}
+  .qctl{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:4px 10px 8px;
+        font-size:12px;color:var(--ink-2)}
+  .qctl label{display:flex;align-items:center;gap:6px}
+  .qctl select{font:inherit;color:inherit;background:var(--surface-1);
+        border:1px solid var(--axis);border-radius:6px;padding:3px 6px}
+  .qctl input[type=range]{width:110px;accent-color:var(--s450)}
+  .qleg{display:flex;align-items:center;gap:3px;margin-left:auto}
+  .qleg i{width:15px;height:11px;display:inline-block;border-radius:2px}
+  .qcell{cursor:pointer}
+  .qcell:hover rect{stroke:var(--ink);stroke-width:1.5}
   .tip{position:fixed;pointer-events:none;background:var(--surface-1);border:1px solid var(--axis);
        border-radius:7px;padding:7px 10px;font-size:11.5px;box-shadow:0 4px 14px rgba(0,0,0,.14);
        z-index:60;max-width:330px;opacity:0;transition:opacity .08s}
@@ -220,6 +230,28 @@
   <div style="padding:6px 10px 14px"><svg id="scatter" width="100%" height="380"
        viewBox="0 0 1000 380" preserveAspectRatio="xMidYMid meet" role="img"
        aria-label="Scatter of US cases per year against regulatory epigenomic samples"></svg></div>
+</div>
+
+<div class="panel" id="quiltPanel">
+  <div class="ptitle">The quilt of unmet need
+    <span>Patch area is how common the disease is; colour is how much of its chromatin
+      anyone has read. A large pale patch is a common sarcoma nobody has profiled.
+      Hover for the numbers, click to open the entity.</span></div>
+  <div class="qctl">
+    <label>Colour by
+      <select id="qcolor">
+        <option value="per">samples per new case per year</option>
+        <option value="n">epigenomic samples, absolute</option>
+      </select></label>
+    <label>Patch area
+      <input type="range" id="qpow" min="25" max="100" step="5" value="55">
+      <span id="qpowlab" class="muted"></span></label>
+    <span class="qleg" id="qleg"></span>
+  </div>
+  <div style="padding:2px 10px 14px"><svg id="quilt"
+       style="width:100%;height:auto;display:block" viewBox="0 0 1000 520"
+       preserveAspectRatio="xMidYMid meet" role="img"
+       aria-label="Treemap of sarcoma entities, area by US incidence, colour by epigenomic coverage"></svg></div>
 </div>
 
 <div class="panel hide" id="detailPanel"><div class="detail" id="detail"></div></div>
@@ -505,6 +537,177 @@ function placeLabels(svg, anchors, marks, frame){
   });
 }
 
+/* ---------- the quilt ----------
+
+   A squarified treemap: area is US incidence, colour is epigenomic coverage. The static
+   figure WP5 is the same construction; this one adds the two things paper cannot do --
+   switching what colour means, and warping the area exponent so the rare entities stay
+   legible without pretending they are commoner than they are.
+
+   Bruls, Huizing & van Wijk: lay each row against the rectangle's SHORTER side, so cells
+   stay near square and their areas are comparable by eye. Against the longer side it
+   degenerates to slice-and-dice slivers.                                               */
+const QRAMP = ["#cde2fb","#b7d3f6","#9ec5f4","#86b6ef","#6da7ec","#5598e7",
+               "#3987e5","#2a78d6","#256abf","#1c5cab","#184f95","#104281","#0d366b"];
+const QAGE = [["pediatric","Pediatric-predominant"],["both","Both ages"],
+              ["adult","Adult-predominant"]];
+const QSHORT = {"Undifferentiated pleomorphic sarcoma":"UPS / MFH",
+  "Dermatofibrosarcoma protuberans":"DFSP","Desmoid / aggressive fibromatosis":"Desmoid",
+  "Liposarcoma, well-differentiated":"LPS, WD","Liposarcoma, dedifferentiated":"LPS, DD",
+  "Liposarcoma, myxoid / round cell":"LPS, myxoid","Liposarcoma, pleomorphic":"LPS, pleo",
+  "Liposarcoma, NOS / mixed":"LPS, NOS","GCTB / chondroblastoma":"GCTB",
+  "Rhabdoid tumor / ATRT":"Rhabdoid / ATRT","Inflammatory myofibroblastic tumor":"IMT",
+  "Extraskeletal myxoid chondrosarcoma":"EMC","Endometrial stromal sarcoma":"ESS",
+  "Epithelioid hemangioendothelioma":"EHE","Clear cell sarcoma of the kidney":"CCSK",
+  "Myoepithelial carcinoma of soft tissue":"Myoepith. carcinoma",
+  "Atypical fibroxanthoma / pleomorphic dermal sarcoma":"AFX / PDS",
+  "Angiomatoid fibrous histiocytoma":"AFH","Ossifying fibromyxoid tumor":"OFMT",
+  "FP-RMS (PAX3/7-FOXO1)":"FP-RMS","FN-RMS (fusion-negative)":"FN-RMS",
+  "Fibrosarcoma (adult)":"Fibrosarcoma","Solitary fibrous tumor":"SFT",
+  "PEComa (malignant)":"PEComa"};
+const qshort = n => QSHORT[n] || n.split(" (")[0];
+
+function qworst(row, side){
+  const s = row.reduce((a,b)=>a+b,0);
+  if(!s || !side) return Infinity;
+  const mx = Math.max(...row), mn = Math.min(...row);
+  return Math.max(side*side*mx/(s*s), s*s/(side*side*mn));
+}
+function qrow(row, x, y, w, h){
+  const s = row.reduce((a,b)=>a+b,0), out=[];
+  if(w >= h){                                   // column down the left edge
+    const d = h ? s/h : 0; let cy = y;
+    for(const v of row){ const ch = d ? v/d : 0; out.push([x,cy,d,ch]); cy += ch; }
+    return [out, [x+d, y, w-d, h]];
+  }
+  const d = w ? s/w : 0; let cx = x;             // strip across the top
+  for(const v of row){ const cw = d ? v/d : 0; out.push([cx,y,cw,d]); cx += cw; }
+  return [out, [x, y+d, w, h-d]];
+}
+function qsquarify(values, x, y, w, h){
+  const total = values.reduce((a,b)=>a+b,0);
+  if(total <= 0) return values.map(()=>[x,y,0,0]);
+  const k = (w*h)/total;
+  const idx = values.map((v,i)=>i).sort((a,b)=>values[b]-values[a]);
+  const norm = idx.map(i=>values[i]*k);
+  const out = [];
+  let row = [], i = 0;
+  while(i < norm.length){
+    const side = Math.min(w,h);
+    if(row.length && qworst(row, side) < qworst(row.concat([norm[i]]), side)){
+      const [placed, rest] = qrow(row, x, y, w, h);
+      out.push(...placed); [x,y,w,h] = rest; row = []; continue;
+    }
+    row.push(norm[i]); i++;
+  }
+  if(row.length) out.push(...qrow(row, x, y, w, h)[0]);
+  const res = new Array(values.length);
+  idx.forEach((orig, k2)=> res[orig] = out[k2]);
+  return res;
+}
+function qshade(v, lo, hi){
+  if(v <= 0) return "var(--absent)";
+  const t = (Math.log10(v)-Math.log10(lo))/(Math.log10(hi)-Math.log10(lo));
+  return QRAMP[Math.max(0, Math.min(QRAMP.length-1, Math.round(t*(QRAMP.length-1))))];
+}
+const qink = hex => {
+  if(hex.startsWith("var")) return "#fff";
+  const n = parseInt(hex.slice(1),16);
+  const L = 0.2126*((n>>16)&255) + 0.7152*((n>>8)&255) + 0.0722*(n&255);
+  return L < 140 ? "#fff" : "#0b0b0b";
+};
+
+function drawQuilt(){
+  const svg = $("#quilt"), W = 1000, H = 520;
+  const key = $("#qcolor").value;
+  const pow = (+$("#qpow").value)/100;
+  // named, anchored entities with a published rate -- the only ones that have an area
+  const all = E.filter(e => e.kind === "named" && e.cases > 0);
+  const val = e => key === "n" ? e.n : (e.cases ? e.n/e.cases : 0);
+  const pos = all.map(val).filter(v=>v>0);
+  const lo = Math.min(...pos), hi = Math.max(...pos);
+  const ratio = Math.max(...all.map(e=>e.cases)) / Math.min(...all.map(e=>e.cases));
+  $("#qpowlab").textContent = pow >= 0.999
+    ? "true area · " + Math.round(ratio) + ":1"
+    : "^" + pow.toFixed(2) + " · " + Math.round(Math.pow(ratio,pow)) + ":1 shown of "
+      + Math.round(ratio) + ":1 true";
+
+  const groups = QAGE.map(([a,lab]) => [lab, all.filter(e=>e.age===a)]);
+  const outer = qsquarify(groups.map(([,g]) => g.reduce((t,e)=>t+Math.pow(e.cases,pow),0)),
+                          0, 0, W, H);
+  let g = "";
+  groups.forEach(([lab, list], gi) => {
+    const [gx,gy,gw,gh] = outer[gi];
+    const tot = list.reduce((t,e)=>t+e.cases,0);
+    // The region label and its case count have to share the region's width; a narrow
+    // column gets the short form rather than letting the text run outside its own box.
+    const cnt = fmt(tot)+" cases/yr";
+    const full = lab.toUpperCase(), brief = full.split("-")[0];
+    const head = (full.length*6.8 + cnt.length*5.2 + 24 < gw) ? full
+               : (brief.length*6.8 + cnt.length*5.2 + 24 < gw) ? brief : "";
+    g += `<rect x="${gx+1}" y="${gy+1}" width="${Math.max(gw-2,0)}" height="${Math.max(gh-2,0)}"
+           fill="none" stroke="var(--axis)" stroke-width="1"/>
+          <text x="${gx+8}" y="${gy+15}" font-size="10.5" font-weight="700"
+           fill="var(--muted)" letter-spacing="1.1">${head}</text>
+          <text x="${gx+gw-8}" y="${gy+15}" font-size="10" fill="var(--muted)"
+           text-anchor="end">${cnt}</text>`;
+    const pad = 4, hy = gy + 22;
+    const inner = qsquarify(list.map(e=>Math.pow(e.cases,pow)),
+                            gx+pad, hy, Math.max(gw-2*pad,1), Math.max(gh-(hy-gy)-pad,1));
+    list.forEach((e, i) => {
+      const [px,py,pw,ph] = inner[i];
+      const v = val(e), col = qshade(v, lo, hi), ic = qink(col);
+      const txt = key === "n" ? fmt(e.n) : (v ? v.toFixed(2) : "0");
+      g += `<g class="qcell" data-e="${encodeURIComponent(e.d)}">
+              <rect x="${px+0.8}" y="${py+0.8}" width="${Math.max(pw-1.6,0)}"
+                    height="${Math.max(ph-1.6,0)}" fill="${col}"/>`;
+      if(pw > 52 && ph > 30){
+        const nm = qshort(e.name);
+        const fs = Math.max(8, Math.min(13, Math.sqrt(pw*ph)/7));
+        if(nm.length * fs * 0.56 < pw - 8){
+          g += `<text x="${px+pw/2}" y="${py+ph/2-fs*0.25}" font-size="${fs}" fill="${ic}"
+                 text-anchor="middle">${nm}</text>
+                <text x="${px+pw/2}" y="${py+ph/2+fs*0.95}" font-size="${fs*0.85}"
+                 font-weight="700" fill="${ic}" text-anchor="middle">${txt}</text>`;
+        }
+      }
+      g += `</g>`;
+    });
+  });
+  svg.innerHTML = g;
+
+  const f = key === "n" ? (v=>fmt(Math.round(v))) : (v=>(+v.toFixed(2)).toString());
+  $("#qleg").innerHTML =
+    `<span class="muted" style="margin-right:4px">${f(lo)}</span>` +
+    QRAMP.filter((_,i)=>i%2===0).map(c=>`<i style="background:${c}"></i>`).join("") +
+    `<span class="muted" style="margin:0 10px 0 4px">${f(hi)}</span>` +
+    `<i style="background:var(--absent)"></i><span class="muted" style="margin-left:4px">none</span>`;
+}
+
+$("#quilt").addEventListener("mousemove", ev => {
+  const c = ev.target.closest(".qcell");
+  if(!c){ tip.style.opacity = 0; return; }
+  const e = E.find(x => x.d === decodeURIComponent(c.dataset.e));
+  const per = e.cases ? (e.n/e.cases) : 0;
+  tip.innerHTML = `<b>${e.name}</b>${fmt(e.cases)} US cases/yr<br>
+    ${e.n ? fmt(e.n)+" epigenomic samples" : "<span style='color:var(--absent)'>no epigenomic data</span>"}
+    ${e.n ? `<br>${per.toFixed(2)} per new case per year` : ""}
+    ${e.reg ? `<br>${fmt(e.reg)} of them regulatory` : ""}
+    <br><span style="color:var(--muted)">click to open the full record</span>`;
+  tip.style.opacity = 1;
+  tip.style.left = Math.min(ev.clientX+14, innerWidth-350)+"px";
+  tip.style.top  = (ev.clientY+14)+"px";
+});
+$("#quilt").addEventListener("mouseleave", ()=> tip.style.opacity = 0);
+$("#quilt").addEventListener("click", ev => {
+  const c = ev.target.closest(".qcell"); if(!c) return;
+  state.sel = decodeURIComponent(c.dataset.e); render();
+  drawDetail(E.find(x => x.d === state.sel));
+  $("#detailPanel").scrollIntoView({behavior:"smooth", block:"start"});
+});
+$("#qcolor").addEventListener("change", drawQuilt);
+$("#qpow").addEventListener("input", drawQuilt);
+
 /* ---------- detail ---------- */
 function drawDetail(e){
   const ids = entRecs(e);
@@ -581,7 +784,7 @@ function sortList(list){
 }
 function render(){
   const list = sortList(E.filter(matches));
-  stats(list); drawMatrix(list); drawScatter(list);
+  stats(list); drawMatrix(list); drawScatter(list); drawQuilt();
   const plain = $("#tableview").getAttribute("aria-pressed")==="true";
   $("#scatterPanel").classList.toggle("hide", list.filter(e=>e.cases>0).length < 3 || plain);
   if(plain) document.querySelectorAll("#matrix .cell").forEach(c=>{
