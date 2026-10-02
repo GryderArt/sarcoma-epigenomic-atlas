@@ -1,0 +1,20 @@
+accession	bin	assay_family	n_samples	basis	entities	models	title
+EGAD00010002451	RMS (any subtype)	DNA methylation	345	parent	FP-RMS;FN-RMS;RMS-MYOD1		Methylation profiling of sarcoma and TFCP2-rearranged rhadomyosarcoma samples
+EGAD00001006398	RMS (any subtype)	regulatory	242	verified	FP-RMS;FN-RMS;RMS-MYOD1	FP-RMS:3;FN-RMS:11;RMS-MYOD1:1	ChIP-Seq files for RMS.
+EGAD00001004312	RMS (any subtype)	regulatory	158	verified	FP-RMS;FN-RMS;RMS-MYOD1	FP-RMS:3;FN-RMS:11;RMS-MYOD1:1	ChIP-Seq files for RMS.
+EGAD00010000897	RMS (any subtype)	DNA methylation	53	parent	FP-RMS;FN-RMS;RMS-MYOD1		RMS_Infinium450K
+EGAD00001004315	RMS (any subtype)	DNA methylation	37	parent	FP-RMS;FN-RMS;RMS-MYOD1		Whole Genome Bi-Sulfite Sequencing files for RMS.
+EGAD00010001596	RMS (any subtype)	DNA methylation	32	parent	FP-RMS;FN-RMS;RMS-MYOD1		DNA methylation of Rhabdomyosarcoma tumors
+EGAD00001015707	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Whole-genome sequencing of rhabdomyosarcoma tumouroids (2025-09-30)
+EGAD00001015708	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell RNA-sequencing of rhabdomyosarcoma tumouroids (2025-09-30)
+EGAD00001015709	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Whole Genome-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015710	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell RNA-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015711	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell ATAC-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015712	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Whole Genome-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015713	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell RNA-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015714	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Bulk RNA-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015715	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell ATAC-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015716	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Whole Genome-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015717	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell RNA-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015718	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Bulk RNA-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)
+EGAD00001015719	RMS (any subtype)	regulatory	1	parent	FP-RMS;FN-RMS;RMS-MYOD1		Single-cell ATAC-sequencing of rhabdomyosarcoma tumour tissue (2025-09-30)

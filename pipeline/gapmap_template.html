@@ -721,6 +721,19 @@ function drawDetail(e){
       <td>${c.url?`<a href="${c.url}" target="_blank" rel="noopener">${c.acc}</a>`:c.acc}</td>
       <td>${c.fam}</td><td class="num">${fmt(c.n)}</td>
       <td>${c.title}</td><td class="muted">${c.dac||c.src}</td></tr>`).join("");
+  // Cohorts deposited above the subtype. They reach this entity but are counted under
+  // none, because the same samples would otherwise be tallied once per subtype.
+  const mix = (e.mix||[]).sort((a,b)=>
+      (b.basis==="verified")-(a.basis==="verified") || b.n-a.n).map(c=>`<tr>
+      <td><span class="state ${c.basis==="verified"?"st-ctrl":"st-res"}"
+          >${c.basis==="verified"?"VERIFIED":"COHORT"}</span></td>
+      <td>${c.url?`<a href="${c.url}" target="_blank" rel="noopener">${c.acc}</a>`:c.acc}</td>
+      <td>${c.fam}</td><td class="num">${fmt(c.n)}</td>
+      <td>${c.title}${c.models?` <b>— ${c.models} model${c.models>1?"s":""} of this entity
+          named by the St Jude data administrator</b>`:""}</td>
+      <td class="muted">deposited as “${c.bin}”</td></tr>`).join("");
+  const mixReg = (e.mix||[]).filter(c=>c.fam==="regulatory").reduce((t,c)=>t+c.n,0);
+
   const body = rows.map(i=>`<tr>
       <td>${PATIENT.has(recSt(i))?'<span class="state st-open">PATIENT</span>':
             (recSt(i)==="PDX"||recSt(i)==="organoid")?'<span class="state st-ctrl">PATIENT-DERIVED</span>':
@@ -758,6 +771,14 @@ function drawDetail(e){
       <div class="scroll" style="max-height:230px"><table><thead><tr><th>Access</th><th>Accession</th>
       <th>Assay</th><th class="num">Samples</th><th>Title</th><th>Governed by</th></tr></thead>
       <tbody>${ctrl}</tbody></table></div>`:""}
+    ${mix?`<div class="ptitle" style="padding-left:0;border:0">Cohorts that contain this entity
+      <span>Deposited above the subtype, so not added to the counts above — the same
+        samples would be tallied once under each subtype. ${fmt(mixReg)} regulatory
+        samples here. <b>VERIFIED</b> means the St Jude data administrator named the
+        models; <b>COHORT</b> means the deposit states only the parent diagnosis.</span></div>
+      <div class="scroll" style="max-height:230px"><table><thead><tr><th>Basis</th><th>Accession</th>
+      <th>Assay</th><th class="num">Samples</th><th>Title</th><th>Deposited as</th></tr></thead>
+      <tbody>${mix}</tbody></table></div>`:""}
     <div class="ptitle" style="padding-left:0;border:0">Open records
       <span>${fmt(rows.length)} assay × model × study combinations${state.lane||state.src?" (filtered)":""}</span></div>
     ${rows.length?`<div class="scroll" style="max-height:420px"><table><thead><tr>

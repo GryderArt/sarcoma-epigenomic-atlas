@@ -136,7 +136,7 @@ repository, pushes, and enables Pages so the gap map is live.
 ## Reproducing it
 
 ```bash
-git clone https://github.com/GryderArt/sarcoma-epigenomic-atlas
+git clone https://github.com/<you>/sarcoma-epigenomic-atlas
 cd sarcoma-epigenomic-atlas
 pip install openpyxl matplotlib
 
@@ -178,7 +178,7 @@ Paths resolve relative to the checkout. Override with `SASS_ROOT`, `SASS_DATA`,
 - **Incidence anchors are curated, not computed.** Each carries its basis in T13, and
   `US_low`/`US_high` bracket the disagreement between US registry coding and European
   central-pathology-review series, which for several entities differ two-fold.
-- **Classification is rule-based over free text.** Sixteen substantive errors were caught
+- **Classification is rule-based over free text.** Seventeen substantive errors were caught
   against ground truth during construction. Each was fixed, and each is logged with what
   caught it in [`docs/methods.md` §7](docs/methods.md) — published as a measure of how
   error-prone this is, not as a list of outstanding problems. The reassignment logs `T9b`

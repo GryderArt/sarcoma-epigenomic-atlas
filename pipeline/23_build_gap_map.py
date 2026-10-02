@@ -117,13 +117,36 @@ def main():
     CMAP = {"UPS / undifferentiated sarcoma": "UPS/MFH"}
     UNRES = {"RMS (any subtype)", "Liposarcoma (any subtype)",
              "Sarcoma, unspecified / mixed cohort"}
+    mixed = collections.defaultdict(list)
+    # Stage 12 rewrites T15 from scratch and stage 36 adds these columns afterwards, so
+    # running them out of order silently drops every cohort attribution. Say so loudly.
+    if CTRL and "contains_entities" not in CTRL[0]:
+        print("  !! T15 has no cohort attribution -- run 36_attribute_mixed_cohorts.py "
+              "after 12 and before this stage, or 430 controlled regulatory samples "
+              "will reach no entity page")
     for c in CTRL:
         n = int(c["n_samples"] or 0)
         e = CMAP.get(c["entity"], c["entity"])
         cds[e].append({"acc": c["accession"], "n": n, "fam": c["assay_family"],
                        "title": c["title"][:130], "dac": c["governing_body"][:70],
                        "src": c["source"], "url": c["url"]})
-        if e in UNRES: continue
+        if e in UNRES:
+            # A cohort deposited above the subtype still bears on the subtypes inside it.
+            # Stage 36 records which, and on what evidence; it reaches every entity it
+            # names but is added to none of their totals, because the same samples cannot
+            # be counted once under each. Without this the St Jude RMS ChIP-seq -- 400
+            # samples -- appeared on no entity page at all.
+            models = dict(kv.split(":") for kv in (c.get("contains_models") or "").split(";")
+                          if ":" in kv)
+            for t in (c.get("contains_entities") or "").split(";"):
+                if not t:
+                    continue
+                mixed[t].append({"acc": c["accession"], "n": n, "fam": c["assay_family"],
+                                 "title": c["title"][:130], "dac": c["governing_body"][:70],
+                                 "src": c["source"], "url": c["url"], "bin": e,
+                                 "basis": c.get("contains_basis", ""),
+                                 "models": int(models.get(t, 0))})
+            continue
         (creg if c["assay_family"] == "regulatory" else cdna)[e] += n
 
     ents = []
@@ -148,7 +171,7 @@ def main():
             "reg": reg, "pd_reg": pd_reg, "pt_reg": pt_reg,
             "lanes": dict(lanes),
             "creg": creg.get(dis, 0), "cdna": cdna.get(dis, 0),
-            "cds": cds.get(dis, []),
+            "cds": cds.get(dis, []), "mix": mixed.get(dis, []),
             "anch": 1 if dis in T13 else 0,
             "kind": kindof(t.get("display_name") or dis, dis in T13),
             "models": int(g.get("model_units") or 0), "pdx": int(g.get("pdx_units") or 0),
@@ -168,6 +191,7 @@ def main():
                      "kind": kindof(t13.get("display_name") or dis, True),
                      "n": 0, "reg": 0, "pd_reg": 0, "pt_reg": 0, "lanes": {},
                      "creg": creg.get(dis,0), "cdna": cdna.get(dis,0), "cds": cds.get(dis,[]),
+                     "mix": mixed.get(dis,[]),
                      "models": 0, "pdx": 0, "series": 0, "nrec": 0})
 
     # entities that exist only as controlled-access holdings
@@ -177,7 +201,7 @@ def main():
                      "cases": 0, "lo": 0, "hi": 0,
                      "basis": "", "caveat": "", "n": 0, "reg": 0, "pd_reg": 0, "pt_reg": 0,
                      "lanes": {}, "creg": creg.get(e, 0), "cdna": cdna.get(e, 0),
-                     "cds": ds, "models": 0, "pdx": 0, "series": 0, "nrec": 0})
+                     "cds": ds, "mix": mixed.get(e,[]), "models": 0, "pdx": 0, "series": 0, "nrec": 0})
     unres = [{"entity": c["entity"], "acc": c["accession"], "n": int(c["n_samples"] or 0),
               "fam": c["assay_family"], "title": c["title"][:130],
               "dac": c["governing_body"][:70]}
