@@ -1,8 +1,8 @@
 disease	entity_kind	age_class	model_units	pdx_units	patient_epigenomes	model_H3K27ac	patient_H3K27ac	pdx_H3K27ac	model_accessibility	patient_accessibility	model_3D	patient_3D	model_DNAme	patient_DNAme	epigenomic_samples_raw	epigenomic_samples_dedup	epi_ChIPseq	epi_accessibility	epi_3D	epi_DNAme	total_samples_any_assay
-Osteosarcoma	sarcoma	pediatric	32	1	548	92	34	21	460	29	317	1	81	382	4392	4379	2515	581	318	493	23331
+Osteosarcoma	sarcoma	pediatric	32	1	548	92	34	21	460	29	317	1	81	382	4392	4379	2515	581	318	493	23334
 Ewing	sarcoma	pediatric	50	0	596	131	14	0	119	12	68	85	84	413	2127	2127	1226	148	157	557	13525
 Rhabdoid tumor/ATRT	sarcoma	pediatric	17	1	383	83	11	0	199	22	10	0	119	320	1617	1577	823	221	10	520	5312
-FP-RMS	sarcoma	pediatric	12	1	155	57	15	0	123	7	36	2	9	110	918	918	611	144	44	119	3682
+FP-RMS	sarcoma	pediatric	13	2	155	57	15	0	123	7	36	2	9	110	913	913	611	139	44	119	3722
 Synovial sarcoma	sarcoma	both	9	1	79	38	0	0	36	0	69	0	11	79	751	751	541	36	72	102	2244
 GCTB/Chondroblastoma	sarcoma	pediatric	8	0	67	28	0	0	0	0	0	2	8	54	688	688	619	0	2	67	1100
 MPNST	sarcoma	both	14	0	61	63	0	0	32	3	0	0	83	58	655	655	339	35	0	281	2959
@@ -11,13 +11,13 @@ Liposarcoma-NOS	sarcoma	adult	17	0	24	75	0	0	89	0	8	12	0	12	418	418	278	93	32	15
 EXCLUDED - not a sarcoma	nonsarcoma	pediatric	1	0	96	15	0	0	12	0	10	1	38	12	412	410	335	12	11	50	584
 Sarcoma NOS	sarcoma	both	30	0	201	6	0	0	24	0	0	0	17	201	387	387	108	24	0	255	7660
 GIST	sarcoma	both	11	0	211	55	29	0	11	0	0	13	4	96	360	360	234	11	13	102	2288
-FN-RMS	sarcoma	pediatric	14	0	56	27	5	0	71	0	4	0	11	46	354	354	222	71	4	57	1703
+FN-RMS	sarcoma	pediatric	15	1	56	27	5	0	71	0	4	0	11	46	358	358	222	75	4	57	1889
 Fibrosarcoma NOS	sarcoma	adult	5	0	13	5	0	0	24	0	48	0	13	1	354	354	258	24	48	14	2503
 Chondrosarcoma	sarcoma	both	12	0	212	4	0	0	6	0	0	0	31	212	330	330	30	6	0	294	1393
 Clear cell sarcoma	sarcoma	both	4	0	100	24	5	0	12	0	4	0	0	78	310	310	185	28	4	93	653
 Leiomyosarcoma	sarcoma	adult	8	0	90	11	0	0	38	0	0	0	1	90	249	244	115	38	0	91	2254
 Chordoma	sarcoma	both	6	0	96	16	16	0	8	0	0	0	13	80	215	215	68	8	0	139	897
-RMS-NOS	sarcoma	pediatric	12	0	39	14	0	0	17	0	17	0	0	38	188	188	108	19	17	44	3167
+RMS-NOS	sarcoma	pediatric	12	0	39	14	0	0	17	0	17	0	0	38	188	188	108	19	17	44	3091
 ASPS	sarcoma	both	2	0	53	37	6	1	10	8	84	8	0	23	187	187	54	18	92	23	566
 DSRCT	sarcoma	pediatric	4	0	57	30	3	0	5	1	4	0	0	38	167	167	119	6	4	38	596
 Epithelioid sarcoma	sarcoma	both	6	0	28	8	0	0	24	0	4	0	5	28	125	125	64	24	4	33	230
@@ -30,12 +30,12 @@ CIC-DUX4	sarcoma	pediatric	4	0	27	9	3	0	0	0	0	0	0	15	69	69	54	0	0	15	245
 Solitary fibrous tumor	sarcoma	adult	0	0	33	0	0	0	0	0	0	0	0	33	69	69	36	0	0	33	171
 EHE	sarcoma	both	0	0	11	0	0	0	0	0	0	0	0	11	56	56	45	0	0	11	234
 PEComa	sarcoma	adult	2	0	47	0	0	0	2	0	0	0	0	47	49	49	0	2	0	47	185
-RMS-MYOD1	sarcoma	pediatric	2	1	16	0	0	0	6	4	0	0	0	12	48	48	12	24	0	12	258
 Angiosarcoma	sarcoma	both	6	0	46	0	0	0	0	0	0	0	0	46	46	46	0	0	0	46	674
 DFSP	sarcoma	both	0	0	40	0	0	0	0	0	0	0	0	40	40	40	0	0	0	40	120
 Liposarcoma-WD	sarcoma	adult	3	0	13	0	0	0	3	0	0	0	0	13	39	39	12	14	0	13	355
 Desmoid	sarcoma	both	0	0	34	0	0	0	0	0	0	0	0	34	38	38	4	0	0	34	589
 Infantile fibrosarcoma	sarcoma	pediatric	1	0	14	4	0	0	0	0	0	0	0	14	36	36	22	0	0	14	279
+RMS-MYOD1	sarcoma	pediatric	2	1	16	0	0	0	6	4	0	0	0	12	34	34	12	10	0	12	105
 Schwannoma	benign	both	0	0	29	0	0	0	0	0	0	0	0	29	29	29	0	0	0	29	29
 Liposarcoma-pleomorphic	sarcoma	adult	0	0	28	0	0	0	0	0	0	0	0	28	28	28	0	0	0	28	67
 Non-neoplastic control	benign	both	0	0	28	0	0	0	0	0	0	0	0	28	28	28	0	0	0	28	28

@@ -8,10 +8,10 @@ authors:
   - family-names: Gryder
     given-names: Berkley
     affiliation: Case Western Reserve University
-repository-code: "https://github.com/GryderArt/sarcoma-epigenomic-atlas"
+repository-code: "https://github.com/<user>/sarcoma-epigenomic-atlas"
 abstract: >-
   A sample-level census of every publicly recorded epigenomic experiment on
-  sarcoma, all ages, spanning 16,352 de-duplicated samples across 885 studies
+  sarcoma, all ages, spanning 16,337 de-duplicated samples across 885 studies
   and 45 named diagnostic entities. Harvested from GEO, ArrayExpress, ENA, EGA
   and the St Jude Childhood Solid Tumor Network, classified to the resolution of
   one assay on one model in one study, and joined to curated disease incidence

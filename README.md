@@ -14,8 +14,8 @@ Working Group white paper. Census closes **1 September 2026**.
 
 | | |
 |---|---|
-| **16,352** | sarcoma epigenomic samples, de-duplicated, each with a deposition date |
-| **4,573** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
+| **16,337** | sarcoma epigenomic samples, de-duplicated, each with a deposition date |
+| **4,574** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
 | **885** | GEO series, plus 67 controlled-access datasets |
 | **45** | named diagnostic entities (plus 6 unresolved bins and 1 control tissue) |
 | **550** | cataloged cell lines and PDX models, 95 flagged for identity problems |
@@ -178,7 +178,7 @@ Paths resolve relative to the checkout. Override with `SASS_ROOT`, `SASS_DATA`,
 - **Incidence anchors are curated, not computed.** Each carries its basis in T13, and
   `US_low`/`US_high` bracket the disagreement between US registry coding and European
   central-pathology-review series, which for several entities differ two-fold.
-- **Classification is rule-based over free text.** Seventeen substantive errors were caught
+- **Classification is rule-based over free text.** Eighteen substantive errors were caught
   against ground truth during construction. Each was fixed, and each is logged with what
   caught it in [`docs/methods.md` §7](docs/methods.md) — published as a measure of how
   error-prone this is, not as a list of outstanding problems. The reassignment logs `T9b`

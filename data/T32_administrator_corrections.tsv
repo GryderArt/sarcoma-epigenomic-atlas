@@ -1,0 +1,266 @@
+gsm	gse	from	to	model_base	basis	title
+GSM2571998	GSE97553	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_Y
+GSM2571999	GSE97553	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X
+GSM2572000	GSE97553	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X
+GSM2572001	GSE97553	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y
+GSM2572002	GSE97553	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z
+GSM5390457	GSE174376	FP-RMS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_R2
+GSM5390458	GSE174376	FP-RMS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_R3
+GSM5390459	GSE174376	FP-RMS	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_D1
+GSM5390460	GSE174376	FP-RMS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_R1
+GSM5390461	GSE174376	FP-RMS	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_D
+GSM5390462	GSE174376	FP-RMS	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_R
+GSM5390463	GSE174376	FP-RMS	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_S
+GSM5390464	GSE174376	FP-RMS	FN-RMS	SJRHB012405	St Jude data administrator per-model list (correction #11)	SJRHB012405_D1
+GSM5390465	GSE174376	FP-RMS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_D1
+GSM5390466	GSE174376	FP-RMS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_D2
+GSM5390475	GSE174376	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1
+GSM5390476	GSE174376	FP-RMS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2
+GSM5390477	GSE174376	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1
+GSM5390478	GSE174376	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1
+GSM5390479	GSE174376	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X
+GSM5390480	GSE174376	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y
+GSM5390481	GSE174376	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z
+GSM5390482	GSE174376	RMS-MYOD1	FN-RMS	SJRHB012405	St Jude data administrator per-model list (correction #11)	SJRHB012405_X1
+GSM5390483	GSE174376	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1
+GSM5390484	GSE174376	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2
+GSM5390487	GSE174376	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1
+GSM5390493	GSE174376	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_barcode
+GSM5390493	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB000026_X1_barcode
+GSM5390494	GSE174376	FP-RMS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_barcode
+GSM5390494	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB000026_X2_barcode
+GSM5390495	GSE174376	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_barcode
+GSM5390495	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB010927_X1_barcode
+GSM5390496	GSE174376	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_barcode
+GSM5390496	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB010928_X1_barcode
+GSM5390497	GSE174376	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_barcode
+GSM5390497	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB011_X_barcode
+GSM5390498	GSE174376	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_barcode
+GSM5390498	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB012_Y_barcode
+GSM5390499	GSE174376	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_barcode
+GSM5390499	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB012_Z_barcode
+GSM5390500	GSE174376	RMS-MYOD1	FN-RMS	SJRHB012405	St Jude data administrator per-model list (correction #11)	SJRHB012405_X1_barcode
+GSM5390500	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB012405_X1_barcode
+GSM5390501	GSE174376	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_barcode
+GSM5390501	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB013758_X1_barcode
+GSM5390502	GSE174376	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_barcode
+GSM5390502	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB013758_X2_barcode
+GSM5390503	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB049189_X1_barcode
+GSM5390504	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB013757_X1_barcode
+GSM5390505	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB013759_X14_barcode
+GSM5390506	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB013759_X15_barcode
+GSM5390507	GSE174376	scATAC-seq	not epigenomic		barcode dial-out PCR, not a chromatin assay	SJRHB046156_X1_barcode
+GSM5390508	GSE174376	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1_scATAC
+GSM5390509	GSE174376	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_scATAC
+GSM5390510	GSE174376	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_scATAC
+GSM5390511	GSE174376	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_scATAC
+GSM5390512	GSE174376	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_scATAC
+GSM8781526	GSE289017	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB011_X-frozen
+GSM8781535	GSE289017	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB012_Z-frozen
+GSM8781537	GSE289017	RMS-NOS	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB012_S-frozen
+GSM8781538	GSE289017	RMS-NOS	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB010468_D2-FFPE
+GSM8781539	GSE289017	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB010468_X1-frozen
+GSM8781540	GSE289017	RMS-NOS	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB012_D-frozen
+GSM8781541	GSE289017	RMS-NOS	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB011_D-frozen
+GSM8781542	GSE289017	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB000026_R7-FFPE
+GSM8781543	GSE289017	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB000026_X1-frozen
+GSM8781544	GSE289017	RMS-NOS	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB010927_D1-frozen
+GSM8781545	GSE289017	RMS-NOS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB010928_R1-frozen
+GSM8781548	GSE289017	RMS-NOS	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB013757_D3-frozen
+GSM8781549	GSE289017	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB013759_A4-FFPE
+GSM8781564	GSE289017	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB013759_A3-FFPE
+GSM8781565	GSE289017	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB000026_X2-frozen
+GSM8781581	GSE289017	RMS-NOS	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB011_E-frozen
+GSM8781584	GSE289017	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB012_X-FFPE
+GSM8781586	GSE289017	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB010927_X1-frozen
+GSM8781587	GSE289017	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB010928_X1-frozen
+GSM8781588	GSE289017	RMS-MYOD1	FN-RMS	SJRHB012405	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB012405_X1-frozen
+GSM8781589	GSE289017	RMS-MYOD1	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB013759_X1-frozen
+GSM8781590	GSE289017	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB011_Y-frozen
+GSM8781591	GSE289017	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB013758_X1-frozen
+GSM8781592	GSE289017	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB013758_X2-frozen
+GSM8781593	GSE289017	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB013759_X14-frozen
+GSM8781594	GSE289017	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB013759_X15-frozen
+GSM8781599	GSE289017	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB013757_X2-frozen
+GSM8781600	GSE289017	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB012_Y-frozen
+GSM8781603	GSE289017	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB000026_R1-FFPE
+GSM8781605	GSE289017	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB015720_R3-FFPE
+GSM8781607	GSE289017	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB013758_D3-FFPE
+GSM8781608	GSE289017	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB013759_D1-frozen
+GSM8781610	GSE289017	RMS-NOS	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB012_R-frozen
+GSM8781612	GSE289017	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	RMS_Patient tumor-SJRHB013758_D4-FFPE
+GSM8781614	GSE289017	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	RMS_Xenograft-SJRHB015720_X1-frozen
+GSM9504305	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE 6176_3D
+GSM9504306	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE 6177_2D
+GSM9504309	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE 6180_3D
+GSM9504311	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE 6182_2D
+GSM9504313	GSE318841	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DYE 6184_3D
+GSM9504314	GSE318841	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DYE 6185_2D
+GSM9504315	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DYE 6186_3D
+GSM9504316	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DYE 6187_2D
+GSM9504317	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE 6188_3D
+GSM9504318	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE 6189_2D
+GSM9504321	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE 6192_3D
+GSM9504322	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE 6193_2D
+GSM9504323	GSE318841	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DYE 6211_2D
+GSM9504330	GSE318841	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1_DY8368_3D
+GSM9504331	GSE318841	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1_DY8369_2D
+GSM9504332	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DY8370_3D
+GSM9504333	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DY8371_2D
+GSM9504334	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X1_DY8372_3D
+GSM9504335	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X1_DY8373_2D
+GSM9504336	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X1_DY8374_VT
+GSM9504337	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DY8375_3D
+GSM9504338	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DY8377_VT
+GSM9504339	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DY8378_3D
+GSM9504340	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DY8379_2D
+GSM9504388	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X_DY8430_3D
+GSM9504389	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X_DY8431_2D
+GSM9504392	GSE318841	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DY8434_3D
+GSM9504393	GSE318841	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DY8435_2D
+GSM9504394	GSE318841	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DY8436_VT
+GSM9504395	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_DY8437_3D
+GSM9504396	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_DY8438_2D
+GSM9504397	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_DY8439_VT
+GSM9504398	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DY8440_3D
+GSM9504399	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DY8441_2D
+GSM9504400	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DY8442_VT
+GSM9504401	GSE318841	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DY8443_VT
+GSM9504402	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE8548_VT
+GSM9504403	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DYE8549_VT
+GSM9504404	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE8550_VT
+GSM9504405	GSE318841	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DYE8551_VT
+GSM9504406	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE8552_VT
+GSM9504407	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE8553_VT
+GSM9504408	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE8555_VT
+GSM9504414	GSE318841	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X_DYE8561_VT
+GSM9504416	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE8732_T0
+GSM9504417	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE8733_T0
+GSM9504419	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE8735_T0
+GSM9504420	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE8736_3D
+GSM9504421	GSE318841	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE8737_2D
+GSM9504422	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE8739_T0
+GSM9504423	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DYE8740_T0
+GSM9504473	GSE318841	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1_DYE0716_T0
+GSM9504474	GSE318841	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1_DYE0717_3D
+GSM9504475	GSE318841	RMS-MYOD1	FP-RMS	SJRHB010468	St Jude data administrator per-model list (correction #11)	SJRHB010468_X1_DYE0718_2D
+GSM9504487	GSE318841	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_Y_DYE0730_VT
+GSM9504509	GSE318841	RMS-NOS	Osteosarcoma	SJOS016015	St Jude data administrator per-model list (correction #11)	SJOS016015_X1_DYE1791_T0
+GSM9504510	GSE318841	RMS-NOS	Osteosarcoma	SJOS016015	St Jude data administrator per-model list (correction #11)	SJOS016015_X1_DYE1792_3D
+GSM9504511	GSE318841	RMS-NOS	Osteosarcoma	SJOS016015	St Jude data administrator per-model list (correction #11)	SJOS016015_X1_DYE1793_2D
+GSM9504513	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DYE1849_T0
+GSM9504514	GSE318841	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DYE1850_T0
+GSM9504516	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1852_T0
+GSM9504539	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1678_CCLF
+GSM9504540	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1698_CCLF
+GSM9504541	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1803_CCLF-VT
+GSM9504542	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1804_CCLF-VT
+GSM9504543	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE1986_CCLF
+GSM9504548	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE2066_CCLF-VT
+GSM9504549	GSE318841	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE2067_CCLF-VT
+GSM9504550	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE2142_CCLF
+GSM9504551	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE2420_CCLF
+GSM9504553	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE2423_CCLF
+GSM9504556	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2426_RA-CCLF-VT
+GSM9504563	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DY2693_CCLF-VT
+GSM9504567	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DY2697_RA-CCLF
+GSM9504571	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2798_RA-CCLF-VT
+GSM9504575	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE2802_RA-CCLF-VT
+GSM9504578	GSE318841	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2568_RA-CCLF
+GSM9504581	GSE318841	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE3616_CCLF-VT
+GSM9504584	GSE318841	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE3650_RA-CCLF-VT
+GSM9511111	GSE319124	RMS-NOS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_C1_DYE0282
+GSM9511113	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_C4_DYE1672
+GSM9511114	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_C2 Rep 1_DYE1676
+GSM9511115	GSE319124	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_C5_DYE1680
+GSM9511116	GSE319124	RMS-NOS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_C3_DYE1682
+GSM9511118	GSE319124	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_C10_DYE2108
+GSM9511122	GSE319124	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2379
+GSM9511123	GSE319124	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE2511
+GSM9511129	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_C6_DYE2549
+GSM9511134	GSE319124	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_C6_DYE2555
+GSM9511137	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_C7_DYE2558
+GSM9511139	GSE319124	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DYE2580
+GSM9511140	GSE319124	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE2618
+GSM9511141	GSE319124	RMS-NOS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_R1_DYE2661
+GSM9511142	GSE319124	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_A1_DYE2835
+GSM9511143	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_D2_DYE2837
+GSM9511144	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_D1_DYE2839
+GSM9511145	GSE319124	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_R2_DYE2840
+GSM9511155	GSE319124	RMS-NOS	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_C2 Rep 2_DYE6551
+GSM9745790	GSE319124	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_C3_DYE4083
+GSM9745795	GSE319124	RMS-NOS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_C2_DYE4088
+GSM9745798	GSE319124	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_C1_DYE4091
+GSM9745799	GSE319124	RMS-NOS	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_C1_DYE4092
+GSM9734528	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2349
+GSM9734536	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE2343
+GSM9734537	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DY1666
+GSM9734539	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE2353
+GSM9734541	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DYE7916
+GSM9734542	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DYE1284
+GSM9734555	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DY7586
+GSM9734565	GSE330883	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE7926
+GSM9734566	GSE330883	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE1293
+GSM9734567	GSE330883	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE1726
+GSM9734574	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2743
+GSM9734575	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE2746
+GSM9734586	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1885
+GSM9734587	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1886
+GSM9734588	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DY1665
+GSM9734589	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DY7581
+GSM9734590	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE1290
+GSM9734591	GSE330883	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DY7554
+GSM9734592	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE1263
+GSM9734593	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DYE1724
+GSM9734594	GSE330883	RMS-MYOD1	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X1_DYE7941
+GSM9734595	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DY7584
+GSM9734596	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE1308
+GSM9734597	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DY7558
+GSM9734598	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE1265
+GSM9734599	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE1725
+GSM9734603	GSE330883	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DYE1306
+GSM9734604	GSE330883	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DY7580
+GSM9734605	GSE330883	RMS-NOS	RMS-MYOD1	SJRHB015720	St Jude data administrator per-model list (correction #11)	SJRHB015720_X1_DYE1262
+GSM9734606	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE2741
+GSM9734607	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X2_DYE2748
+GSM9734608	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DY7562
+GSM9734609	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X14_DYE1722
+GSM9734610	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE2112
+GSM9734611	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DY7560
+GSM9734612	GSE330883	RMS-NOS	FP-RMS	SJRHB013759	St Jude data administrator per-model list (correction #11)	SJRHB013759_X15_DYE1266
+GSM9734630	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE7929
+GSM9734631	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1309
+GSM9734632	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE7940
+GSM9734633	GSE330883	RMS-MYOD1	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X1_DYE1304
+GSM9734676	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1718
+GSM9734688	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DY7583
+GSM9734689	GSE330883	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DY7556
+GSM9734690	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DYE1264
+GSM9734691	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE7925
+GSM9734692	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE7936
+GSM9734693	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1300
+GSM9734694	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1723
+GSM9734695	GSE330883	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DY7582
+GSM9734696	GSE330883	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DYE1311
+GSM9734697	GSE330883	RMS-MYOD1	FN-RMS	SJRHB013758	St Jude data administrator per-model list (correction #11)	SJRHB013758_X1_DY7555
+GSM9734698	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010927	St Jude data administrator per-model list (correction #11)	SJRHB010927_X1_DY7557
+GSM9734699	GSE330883	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DY7565
+GSM9734700	GSE330883	RMS-NOS	FN-RMS	SJRHB000026	St Jude data administrator per-model list (correction #11)	SJRHB000026_X2_DYE1269
+GSM9734701	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1884
+GSM9734702	GSE330883	RMS-MYOD1	FN-RMS	SJRHB010928	St Jude data administrator per-model list (correction #11)	SJRHB010928_X1_DYE1887
+GSM9734703	GSE330883	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE7937
+GSM9734704	GSE330883	RMS-MYOD1	FP-RMS	SJRHB013757	St Jude data administrator per-model list (correction #11)	SJRHB013757_X2_DYE1301
+GSM9734706	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X_DY7593
+GSM9734707	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X_DY7570
+GSM9734708	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_X_DYE1273
+GSM9734713	GSE330883	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DY7596
+GSM9734714	GSE330883	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DYE1315
+GSM9734715	GSE330883	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DY7573
+GSM9734716	GSE330883	RMS-MYOD1	FN-RMS	SJRHB011	St Jude data administrator per-model list (correction #11)	SJRHB011_X_DYE1276
+GSM9734717	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_DY7600
+GSM9734718	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_DY7577
+GSM9734719	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Y_DYE1280
+GSM9734720	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DYE7927
+GSM9734721	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DYE1283
+GSM9734722	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DYE7938
+GSM9734723	GSE330883	RMS-MYOD1	FN-RMS	SJRHB012	St Jude data administrator per-model list (correction #11)	SJRHB012_Z_DYE1302

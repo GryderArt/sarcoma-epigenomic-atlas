@@ -10,12 +10,12 @@
  },
  "best": [
   [
-   "MYOD1-mutant RMS",
-   1.0
-  ],
-  [
    "GIST",
    1.4
+  ],
+  [
+   "Chordoma",
+   2.9
   ]
  ],
  "burden_x": 5,
@@ -48,8 +48,8 @@
  "entities": 45,
  "entities_word": "forty-five",
  "epi_adult": 2166,
- "epi_ped": 10384,
- "epi_rated_total": 15646,
+ "epi_ped": 10369,
+ "epi_rated_total": 15631,
  "ess_normal": 9,
  "ess_normal_word": "nine",
  "ess_reg": 12,
@@ -59,17 +59,17 @@
   "chip": 7936,
   "cnr": 1427,
   "meth": 3913,
-  "sc": 246,
+  "sc": 231,
   "td": 880
  },
- "fam_total": 15965,
+ "fam_total": 15950,
  "fidelity_hi": 6,
  "fidelity_hi_word": "six",
  "fidelity_n": 7,
  "fidelity_n_word": "seven",
  "fprms": [
   110,
-  673
+  668
  ],
  "gap": 23,
  "gap_word": "twenty-third",
@@ -99,8 +99,8 @@
  "methylation": 3913,
  "modern_early": "6",
  "modern_late": "33",
- "n_corrections": 17,
- "n_corrections_word": "seventeen",
+ "n_corrections": 18,
+ "n_corrections_word": "eighteen",
  "n_have_pd": 20,
  "n_have_pd_word": "twenty",
  "n_models": 550,
@@ -167,17 +167,17 @@
   1308
  ],
  "rate_adult": 0.10637177461822012,
- "rate_ped": 2.4964488636363638,
+ "rate_ped": 2.491122159090909,
  "ratrt": [
   95,
   966
  ],
  "reg_adult": 1414,
- "reg_ped": 7030,
- "reg_rated_total": 10062,
- "reg_samples": 10400,
- "samples": 16352,
- "singlecell": 246,
+ "reg_ped": 7015,
+ "reg_rated_total": 10047,
+ "reg_samples": 10385,
+ "samples": 16337,
+ "singlecell": 231,
  "studies": 885,
  "threed": 880,
  "us_population_m": 342,
@@ -191,16 +191,16 @@
    49
   ],
   [
-   "fusion-negative rhabdomyosarcoma",
-   47
-  ],
-  [
    "giant cell tumor of bone",
    41
   ],
   [
    "liposarcoma NOS",
    28
+  ],
+  [
+   "fusion-negative rhabdomyosarcoma",
+   26
   ]
  ],
  "zero_3d": 29,
