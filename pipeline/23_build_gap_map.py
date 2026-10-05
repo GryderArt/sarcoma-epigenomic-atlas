@@ -4,7 +4,7 @@
 Payload is dictionary-encoded columnar arrays so the whole atlas -- every
 model x assay x target x series combination -- travels inside one file with no
 network dependency."""
-import csv, json, collections, os, re
+import csv, json, importlib.util, collections, os, re
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
                     WORK, topen, twrite, dpath)
 csv.field_size_limit(10**7)
@@ -221,8 +221,16 @@ def main():
                                           if c["assay_family"] == "DNA methylation")}}
     js = json.dumps(payload, separators=(",", ":"))
     print(f"payload {len(js)/1e6:.2f} MB · {len(recs):,} records · {len(ents)} entities")
-    tmpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "gapmap_template.html")).read()
-    open(OUT, "w").write(tmpl.replace("/*__PAYLOAD__*/null", js))
+    here = os.path.dirname(os.path.abspath(__file__))
+    tmpl = open(os.path.join(here, "gapmap_template.html")).read()
+    # The short names the quilt prints belong to stage 35, which draws the same figure
+    # for the paper. Injecting them means the page and the PDF cannot label a patch
+    # differently -- they had already drifted once.
+    _s = importlib.util.spec_from_file_location("quilt", os.path.join(here, "35_burden_quilt.py"))
+    _q = importlib.util.module_from_spec(_s); _s.loader.exec_module(_q)
+    out = (tmpl.replace("/*__PAYLOAD__*/null", js)
+               .replace("/*__QSHORT__*/null", json.dumps(_q.SHORT, separators=(",", ":"))))
+    open(OUT, "w").write(out)
     print(f"wrote {OUT} ({os.path.getsize(OUT)/1e6:.2f} MB)")
 
 if __name__ == "__main__":

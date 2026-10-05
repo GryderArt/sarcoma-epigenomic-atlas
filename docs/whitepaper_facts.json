@@ -80,7 +80,7 @@
   "angiomatoid fibrous histiocytoma",
   "angiosarcoma",
   "atypical fibroxanthoma / pleomorphic dermal sarcoma",
-  "BCOR-CCNB3 sarcoma",
+  "BCOR::CCNB3 sarcoma",
   "clear cell sarcoma of the kidney",
   "dermatofibrosarcoma protuberans",
   "extraskeletal myxoid chondrosarcoma",
@@ -232,7 +232,7 @@
   "angiomatoid fibrous histiocytoma",
   "malignant PEComa",
   "clear cell sarcoma of the kidney",
-  "BCOR-CCNB3 sarcoma",
+  "BCOR::CCNB3 sarcoma",
   "infantile fibrosarcoma",
   "ossifying fibromyxoid tumor"
  ],
@@ -249,7 +249,7 @@
   "myoepithelial carcinoma of soft tissue",
   "angiomatoid fibrous histiocytoma",
   "clear cell sarcoma of the kidney",
-  "BCOR-CCNB3 sarcoma",
+  "BCOR::CCNB3 sarcoma",
   "ossifying fibromyxoid tumor"
  ]
 }

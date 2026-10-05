@@ -39,7 +39,7 @@ dermal sarcoma (1,710/yr), dermatofibrosarcoma protuberans (1,400/yr), angiosarc
 (1,312/yr), myxofibrosarcoma (820/yr), then pleomorphic liposarcoma, inflammatory
 myofibroblastic tumor, extraskeletal myxoid chondrosarcoma, intimal sarcoma, myoepithelial
 carcinoma of soft tissue, angiomatoid fibrous histiocytoma, clear cell sarcoma of the
-kidney, BCOR-CCNB3 sarcoma. Together they account for roughly 5,900 new US cases a year.
+kidney, BCOR::CCNB3 sarcoma. Together they account for roughly 5,900 new US cases a year.
 Every one of these zeros was independently verified against GEO, SRA, ENCODE, ChIP-Atlas,
 ArrayExpress, GDC, dbGaP and Europe PMC full text; surviving caveats are recorded per entity
 in [`data/T13_incidence_vs_data.tsv`](data/T13_incidence_vs_data.tsv).

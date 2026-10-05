@@ -568,20 +568,7 @@ const QRAMP = ["#8c1d1d","#a82a22","#c0392b","#d4685a","#e08b7a","#eab5a8","#ddd
                "#b9cfe9","#7fb0e4","#4e93dc","#2a78d6","#1a56a0","#0d366b"];
 const QAGE = [["pediatric","Pediatric-predominant"],["both","Both ages"],
               ["adult","Adult-predominant"]];
-const QSHORT = {"Undifferentiated pleomorphic sarcoma":"UPS / MFH",
-  "Dermatofibrosarcoma protuberans":"DFSP","Desmoid / aggressive fibromatosis":"Desmoid",
-  "Liposarcoma, well-differentiated":"LPS, WD","Liposarcoma, dedifferentiated":"LPS, DD",
-  "Liposarcoma, myxoid / round cell":"LPS, myxoid","Liposarcoma, pleomorphic":"LPS, pleo",
-  "Liposarcoma, NOS / mixed":"LPS, NOS","GCTB / chondroblastoma":"GCTB",
-  "Rhabdoid tumor / ATRT":"Rhabdoid / ATRT","Inflammatory myofibroblastic tumor":"IMT",
-  "Extraskeletal myxoid chondrosarcoma":"EMC","Endometrial stromal sarcoma":"ESS",
-  "Epithelioid hemangioendothelioma":"EHE","Clear cell sarcoma of the kidney":"CCSK",
-  "Myoepithelial carcinoma of soft tissue":"Myoepith. carcinoma",
-  "Atypical fibroxanthoma / pleomorphic dermal sarcoma":"AFX / PDS",
-  "Angiomatoid fibrous histiocytoma":"AFH","Ossifying fibromyxoid tumor":"OFMT",
-  "FP-RMS (PAX3/7-FOXO1)":"FP-RMS","FN-RMS (fusion-negative)":"FN-RMS",
-  "Fibrosarcoma (adult)":"Fibrosarcoma","Solitary fibrous tumor":"SFT",
-  "PEComa (malignant)":"PEComa"};
+const QSHORT = /*__QSHORT__*/null;
 const qshort = n => QSHORT[n] || n.split(" (")[0];
 
 function qworst(row, side){
@@ -634,6 +621,116 @@ const qink = hex => {
   return L < 140 ? "#fff" : "#0b0b0b";
 };
 
+/* ---------- labels on the patches -------------------------------------------
+   The first version sized a label by multiplying its character count by 0.56 and
+   dropped it when the product did not fit. Both halves were wrong. Proportional type
+   does not work that way -- "Synovial sarcoma" and "MMMMMMMMMMMMMMMM" are both sixteen
+   characters and nothing like the same width -- and giving up is the wrong answer on a
+   tall patch, where the name fits a point smaller, or on two lines, or turned on its
+   side. Measure with the renderer that will draw it, then try every way of fitting
+   before dropping anything. A patch should fall back to the tooltip only when there is
+   genuinely no room, not when the first guess missed.                             */
+const QWC = new Map();                 // "text|weight" -> width at font-size 100
+let QPROBE = null;
+function qwidth(str, fs, bold){
+  const key = str + "|" + (bold ? 7 : 4);
+  if(!QWC.has(key)){
+    if(!QPROBE || !QPROBE.isConnected){
+      QPROBE = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      QPROBE.setAttribute("font-size", "100");
+      QPROBE.setAttribute("visibility", "hidden");
+      $("#quilt").appendChild(QPROBE);
+    }
+    QPROBE.setAttribute("font-weight", bold ? "700" : "400");
+    QPROBE.textContent = str;
+    let w = 0;
+    try { w = QPROBE.getComputedTextLength(); } catch(e){ w = 0; }
+    // getComputedTextLength returns 0 when the SVG has no layout -- a hidden tab, a
+    // print preview, a headless screenshot before paint. Estimate rather than drop
+    // every label on the figure.
+    QWC.set(key, w > 0 ? w : str.length * (bold ? 60 : 56));
+  }
+  return QWC.get(key) * fs / 100;
+}
+function qwrap(s){                     // one break, as near the middle as the string allows
+  // Spaces first. Failing that, a fusion name is one long token with an obvious seam:
+  // BCOR::CCNB3 breaks after the double colon, not in the middle of a gene symbol.
+  const pick = at => { const m = s.length / 2; let b = at[0];
+                       for(const i of at) if(Math.abs(i - m) < Math.abs(b - m)) b = i;
+                       return b; };
+  const sp = [];
+  for(let i = 0; i < s.length; i++) if(s[i] === " ") sp.push(i);
+  if(sp.length){ const b = pick(sp); return [s.slice(0, b).trim(), s.slice(b + 1).trim()]; }
+  const seam = [];
+  for(let i = 0; i < s.length - 1; i++)
+    if(s.slice(i, i + 2) === "::"){ seam.push(i + 2); i++; }
+  if(!seam.length) for(let i = 1; i < s.length - 1; i++)
+    if(s[i] === "/" || s[i] === "-") seam.push(i + 1);
+  if(!seam.length) return null;
+  const b = pick(seam);
+  return [s.slice(0, b), s.slice(b)];
+}
+const QMIN = 6.2, QFLOOR = 5.4, QMAX = 13;
+function qfit(nm, val, pw, ph){
+  const w = pw - 7, h = ph - 5;
+  if(w <= 6 || h <= 7) return null;
+  const cap = Math.max(QMIN, Math.min(QMAX, Math.sqrt(pw * ph) / 6.2));
+  const two = qwrap(nm);
+  const step = 0.25;
+  // name and number, one line each
+  for(let fs = cap; fs >= QMIN; fs -= step)
+    if(qwidth(nm, fs) <= w && qwidth(val, fs * 0.88, true) <= w && fs * 2.30 <= h)
+      return {lines: [nm], fs, val, vfs: fs * 0.88};
+  // name over two lines, number beneath
+  if(two) for(let fs = cap; fs >= QMIN; fs -= step)
+    if(Math.max(qwidth(two[0], fs), qwidth(two[1], fs)) <= w
+       && qwidth(val, fs * 0.88, true) <= w && fs * 3.45 <= h)
+      return {lines: two, fs, val, vfs: fs * 0.88};
+  // name alone -- the number is a hover away, the name is what orients the reader,
+  // so these passes are allowed a little below the paired floor
+  for(let fs = cap; fs >= QFLOOR; fs -= step)
+    if(qwidth(nm, fs) <= w && fs * 1.20 <= h) return {lines: [nm], fs};
+  if(two) for(let fs = cap; fs >= QFLOOR; fs -= step)
+    if(Math.max(qwidth(two[0], fs), qwidth(two[1], fs)) <= w && fs * 2.40 <= h)
+      return {lines: two, fs};
+  // tall and narrow: turn it on its side rather than lose it
+  for(let fs = cap; fs >= QFLOOR; fs -= step)
+    if(qwidth(nm, fs) <= h && fs * 1.20 <= w) return {lines: [nm], fs, rot: true};
+  if(two) for(let fs = cap; fs >= QFLOOR; fs -= step)
+    if(Math.max(qwidth(two[0], fs), qwidth(two[1], fs)) <= h && fs * 2.40 <= w)
+      return {lines: two, fs, rot: true};
+  // last resort, the number on its own
+  for(let fs = cap; fs >= QMIN; fs -= step)
+    if(qwidth(val, fs, true) <= w && fs * 1.20 <= h)
+      return {lines: [], fs, val, vfs: fs};
+  return null;
+}
+const qesc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+                           .replace(/>/g, "&gt;");
+function qlabel(nm, val, px, py, pw, ph, ink){
+  const p = qfit(nm, val, pw, ph);
+  if(!p) return "";
+  const cx = px + pw / 2, cy = py + ph / 2;
+  if(p.rot)
+    return `<text x="${cx}" y="${cy}" font-size="${p.fs.toFixed(2)}" fill="${ink}"
+             text-anchor="middle" dominant-baseline="central"
+             transform="rotate(-90 ${cx.toFixed(1)} ${cy.toFixed(1)})"
+            >${qesc(p.lines[0])}</text>`;
+  const lh = p.fs * 1.14;
+  const block = p.lines.length * lh + (p.val ? p.vfs * 1.20 : 0);
+  let y = cy - block / 2 + p.fs * 0.82, out = "";
+  for(const ln of p.lines){
+    out += `<text x="${cx}" y="${y.toFixed(1)}" font-size="${p.fs.toFixed(2)}"
+             fill="${ink}" text-anchor="middle">${qesc(ln)}</text>`;
+    y += lh;
+  }
+  if(p.val)
+    out += `<text x="${cx}" y="${(y + p.vfs * 0.06).toFixed(1)}"
+             font-size="${p.vfs.toFixed(2)}" font-weight="700" fill="${ink}"
+             text-anchor="middle">${qesc(p.val)}</text>`;
+  return out;
+}
+
 const qstate = {age: ""};
 
 function drawQuilt(){
@@ -674,8 +771,9 @@ function drawQuilt(){
     // column gets the short form rather than letting the text run outside its own box.
     const cnt = fmt(tot)+" cases/yr";
     const full = lab.toUpperCase(), brief = full.split("-")[0];
-    const head = (full.length*6.8 + cnt.length*5.2 + 24 < gw) ? full
-               : (brief.length*6.8 + cnt.length*5.2 + 24 < gw) ? brief : "";
+    const room = gw - 24 - qwidth(cnt, 10);
+    const head = qwidth(full, 10.5) + full.length * 1.1 <= room ? full
+               : qwidth(brief, 10.5) + brief.length * 1.1 <= room ? brief : "";
     g += `<rect x="${gx+1}" y="${gy+1}" width="${Math.max(gw-2,0)}" height="${Math.max(gh-2,0)}"
            fill="none" stroke="var(--axis)" stroke-width="1"/>
           <text x="${gx+8}" y="${gy+15}" font-size="10.5" font-weight="700"
@@ -692,16 +790,7 @@ function drawQuilt(){
       g += `<g class="qcell" data-e="${encodeURIComponent(e.d)}">
               <rect x="${px+0.8}" y="${py+0.8}" width="${Math.max(pw-1.6,0)}"
                     height="${Math.max(ph-1.6,0)}" fill="${col}"/>`;
-      if(pw > 52 && ph > 30){
-        const nm = qshort(e.name);
-        const fs = Math.max(8, Math.min(13, Math.sqrt(pw*ph)/7));
-        if(nm.length * fs * 0.56 < pw - 8){
-          g += `<text x="${px+pw/2}" y="${py+ph/2-fs*0.25}" font-size="${fs}" fill="${ic}"
-                 text-anchor="middle">${nm}</text>
-                <text x="${px+pw/2}" y="${py+ph/2+fs*0.95}" font-size="${fs*0.85}"
-                 font-weight="700" fill="${ic}" text-anchor="middle">${txt}</text>`;
-        }
-      }
+      g += qlabel(qshort(e.name), txt, px, py, pw, ph, ic);
       g += `</g>`;
     });
   });

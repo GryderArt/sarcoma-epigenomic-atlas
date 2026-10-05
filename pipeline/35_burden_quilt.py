@@ -103,11 +103,14 @@ SHORT = {"Undifferentiated pleomorphic sarcoma": "UPS / MFH",
          "Atypical fibroxanthoma / pleomorphic dermal sarcoma": "AFX / PDS",
          "Angiomatoid fibrous histiocytoma": "AFH",
          "Ossifying fibromyxoid tumor": "OFMT",
-         "FP-RMS (PAX3/7-FOXO1)": "FP-RMS",
+         "FP-RMS (PAX3/7::FOXO1)": "FP-RMS",
          "FN-RMS (fusion-negative)": "FN-RMS",
          "Fibrosarcoma (adult)": "Fibrosarcoma",
          "Solitary fibrous tumor": "SFT",
-         "PEComa (malignant)": "PEComa"}
+         "PEComa (malignant)": "PEComa",
+         "MYOD1-mutant RMS": "MYOD1-RMS",
+         "BCOR::CCNB3 sarcoma": "BCOR::CCNB3",
+         "CIC::DUX4 sarcoma": "CIC::DUX4"}
 short = lambda n: SHORT.get(n, n.split(" (")[0])
 
 
@@ -297,52 +300,138 @@ def panel(ax, ents, norate, key, lo, hi, title, sub, fmt, col_of=None):
         ax.transAxes, ax.transData), fontsize=6.6, color=MUTED, va="bottom", ha="left")
 
 
+def wrap_name(s):
+    """One break, as near the middle as the string allows.
+
+    Spaces first. Failing that, a fusion name is a single long token with an obvious
+    seam: BCOR::CCNB3 breaks after the double colon, never inside a gene symbol.
+    """
+    def pick(at):
+        mid = len(s) / 2
+        return min(at, key=lambda i: abs(i - mid))
+    sp = [i for i, c in enumerate(s) if c == " "]
+    if sp:
+        i = pick(sp)
+        return s[:i].strip(), s[i + 1:].strip()
+    seam = [i + 2 for i in range(len(s) - 1) if s[i:i + 2] == "::"]
+    if not seam:
+        seam = [i + 1 for i in range(1, len(s) - 1) if s[i] in "/-"]
+    if not seam:
+        return None
+    i = pick(seam)
+    return s[:i], s[i:]
+
+
 def place_labels(ax, pending):
     """Name and value inside each patch, measured rather than estimated.
 
-    A character-count estimate put "Leiomyosarcoma" on a patch that could hold it and
-    reduced it to "L" -- and to a second "L" elsewhere on the page. So each candidate is
-    drawn and measured with the real renderer, exactly as the scatter labeller does, and
-    the first that fits inside the patch wins. A patch that fits nothing stays blank; its
-    entity is still recoverable from the table and from the interactive map.
+    Two earlier versions of this failed the same way. A character-count estimate put
+    "Leiomyosarcoma" on a patch that could hold it and reduced it to "L" -- and to a
+    second "L" elsewhere on the page. The fix measured the text but kept an initialism
+    fallback, which printed "MC", "IS", "MMR" and "BS" on the small patches: invented
+    abbreviations that appear in no legend, no table and no other figure, so a reader
+    who sees one has no way back to the entity.
+
+    So: measure every candidate with the renderer that will draw it, and when the name
+    does not fit, make the name fit -- a point smaller, on two lines, or turned on its
+    side. Never abbreviate. Only a patch with no room for the name at the floor size
+    falls back to the value alone, and its entity is still a hover away on the
+    interactive map and a row away in Supplementary Table 1.
     """
     fig = ax.figure
     fig.canvas.draw()
     rend = fig.canvas.get_renderer()
     probe = ax.text(0, 0, "", ha="center", va="center", zorder=7)
+    tally = place_labels.tally
+    SIZES = (9.5, 9.0, 8.5, 8.0, 7.5, 7.0, 6.6, 6.2, 5.8, 5.4, 5.0, 4.6, 4.2)
+
+    def meas(t, fs, weight="normal"):
+        probe.set_text(t); probe.set_fontsize(fs); probe.set_fontweight(weight)
+        bb = probe.get_window_extent(rend)
+        return bb.width, bb.height
 
     for e, px, py, pw, ph, col, val in pending:
-        # patch size in display pixels
         (x0, y0), (x1, y1) = ax.transData.transform([(px, py), (px + pw, py + ph)])
         bw, bh = abs(x1 - x0) - 4, abs(y1 - y0) - 4
-        if bw < 14 or bh < 9:
+        tally["patches"] += 1
+        if bw < 10 or bh < 7:
+            tally["blank"] += 1
             continue
         full = short(e["name"])
-        initials = "".join(w[0] for w in full.replace("/", " ").replace("-", " ").split()
-                           if w[:1].isalnum()).upper()
+        two = wrap_name(full)
         ic = ink_on(col)
-        best = None
-        for text in ([full] if len(initials) < 2 else [full, initials]):
-            for fs in (9.5, 8.0, 7.0, 6.2, 5.6, 5.0, 4.4, 4.0):
-                probe.set_text(text); probe.set_fontsize(fs)
-                bb = probe.get_window_extent(rend)
-                if bb.width <= bw and bb.height * 2.25 <= bh:
-                    best = (text, fs, True); break        # room for a value line too
-                if bb.width <= bw and bb.height <= bh:
-                    best = best or (text, fs, False)
-            if best and best[2]:
-                break
-        if not best:
+        plan = None                           # (lines, fs, show_value, rotated)
+
+        for fs in SIZES:                      # name on one line, value beneath
+            w, h = meas(full, fs)
+            vw, vh = meas(val, fs * 0.82, "bold")
+            if w <= bw and vw <= bw and h + vh * 1.25 <= bh:
+                plan = ([full], fs, True, False); break
+        if plan is None and two:              # name on two lines, value beneath
+            for fs in SIZES:
+                w = max(meas(two[0], fs)[0], meas(two[1], fs)[0])
+                h = meas("\n".join(two), fs)[1]
+                vw, vh = meas(val, fs * 0.82, "bold")
+                if w <= bw and vw <= bw and h + vh * 1.25 <= bh:
+                    plan = (list(two), fs, True, False); break
+        if plan is None:                      # name alone; the value is in the table
+            for fs in SIZES:
+                w, h = meas(full, fs)
+                if w <= bw and h <= bh:
+                    plan = ([full], fs, False, False); break
+        if plan is None and two:
+            for fs in SIZES:
+                w = max(meas(two[0], fs)[0], meas(two[1], fs)[0])
+                h = meas("\n".join(two), fs)[1]
+                if w <= bw and h <= bh:
+                    plan = (list(two), fs, False, False); break
+        if plan is None:                      # tall and narrow: turn it on its side
+            for fs in SIZES:
+                w, h = meas(full, fs)
+                if w <= bh and h <= bw:
+                    plan = ([full], fs, False, True); break
+        if plan is None and two:
+            for fs in SIZES:
+                w = max(meas(two[0], fs)[0], meas(two[1], fs)[0])
+                h = meas("\n".join(two), fs)[1]
+                if w <= bh and h <= bw:
+                    plan = (list(two), fs, False, True); break
+        if plan is None:                      # last resort, the number on its own
+            for fs in SIZES:
+                vw, vh = meas(val, fs, "bold")
+                if vw <= bw and vh <= bh:
+                    plan = ([], fs, True, False); break
+        if plan is None:
+            tally["blank"] += 1
             continue
-        text, fs, two = best
+        tally["named" if plan[0] else "number_only"] += 1
+
+        lines, fs, with_val, rot = plan
         cx, cy = px + pw / 2, py + ph / 2
-        dy = ph * 0.145 if two else 0
-        ax.text(cx, cy - dy, text, fontsize=fs, color=ic, ha="center", va="center",
-                zorder=6)
-        if two:
-            ax.text(cx, cy + dy * 1.45, val, fontsize=fs * 0.82, weight="bold",
-                    color=ic, ha="center", va="center", zorder=6, alpha=0.93)
+        body = "\n".join(lines)
+        if rot:
+            ax.text(cx, cy, body, fontsize=fs, color=ic, ha="center", va="center",
+                    rotation=90, linespacing=1.12, zorder=6)
+            continue
+        if not with_val:
+            ax.text(cx, cy, body, fontsize=fs, color=ic, ha="center", va="center",
+                    linespacing=1.12, zorder=6)
+            continue
+        # centre the name-and-value block rather than guessing an offset from patch
+        # height: a two-line name and a one-line name do not sit in the same place.
+        scale = ph / max(abs(y1 - y0), 1e-9)          # data units per display pixel
+        hn = meas(body, fs)[1] if lines else 0.0
+        hv = meas(val, fs * 0.82, "bold")[1]
+        total = hn + hv * 1.25
+        if lines:
+            ax.text(cx, cy - (total / 2 - hn / 2) * scale, body, fontsize=fs, color=ic,
+                    ha="center", va="center", linespacing=1.12, zorder=6)
+        ax.text(cx, cy + (total / 2 - hv / 2) * scale, val, fontsize=fs * 0.82,
+                weight="bold", color=ic, ha="center", va="center", zorder=6, alpha=0.93)
     probe.remove()
+
+
+place_labels.tally = None
 
 
 # ------------------------------------------------------------------ build
@@ -384,6 +473,7 @@ def build(power, stem, note, scheme=None):
     colA = lambda v: shade(v, elo, ehi, cmap)
     colB = lambda v: shade(v, plo, phi, cmap)
 
+    place_labels.tally = dict(patches=0, named=0, number_only=0, blank=0)
     fig, axes = plt.subplots(1, 2, figsize=(14.2, 7.4))
     fig.subplots_adjust(left=0.012, right=0.988, top=0.800, bottom=0.120, wspace=0.055)
 
@@ -398,11 +488,16 @@ def build(power, stem, note, scheme=None):
           lambda v: f"{v:.2f}" if v and v < 10 else (f"{v:.0f}" if v else "0"), colB)
 
     ratio = (max(e["cases_true"] for e in ents) / min(e["cases_true"] for e in ents))
+    # The caption states the compression, so the caption has to be generated from the
+    # numbers it describes. Typed once and left alone, it goes stale the first time an
+    # entity gains an incidence anchor -- which is exactly what happened.
+    note = note.format(true_ratio=f"{ratio:,.0f}", shown_ratio=f"{ratio ** power:,.0f}",
+                       power=f"{power:.2f}", n=len(ents) + len(norate))
     shown = ratio ** power
     fig.suptitle("The quilt of unmet need: patch area is how common the disease is, "
                  "colour is how much of its chromatin anyone has read",
                  fontsize=11.2, weight="bold", x=0.012, y=0.980, ha="left", color=INK)
-    sub = ("Each patch is one of the 45 named entities, grouped into three regions by "
+    sub = (f"Each patch is one of the {len(ents) + len(norate)} named entities, grouped into three regions by "
            "age class and sized within them by US incidence. ")
     sub += ("The same tiling is coloured two ways. Colour runs loud-to-quiet as coverage "
             "improves, so the entities with\nthe least data are the ones that reach the "
@@ -418,14 +513,18 @@ def build(power, stem, note, scheme=None):
             "loud end and is cross-hatched, "
             "because none is a different statement from few. Epigenomic means every "
             "assay in the atlas, DNA methylation included. Incidence is US cases per "
-            f"year over the 45 named entities; {len(norate)} "
+            f"year over the {len(ents) + len(norate)} named entities; {len(norate)} "
             f"{'entity has' if len(norate) == 1 else 'entities have'} no population rate "
             "published anywhere and "
             f"{'is' if len(norate) == 1 else 'are'} shown at equal width in the strip "
             "beneath, excluded from every area and from panel B.", width=168, size=6.2)
     p = os.path.join(FIGURES, stem + ".pdf")
     fig.savefig(p); plt.close(fig)
-    print(f"  wrote {os.path.basename(p)}")
+    t = place_labels.tally
+    # A patch that carries no name is a patch the reader cannot identify on paper, so
+    # the count is printed on every build rather than left to be noticed.
+    print(f"  wrote {os.path.basename(p)}  ·  {t['patches']} patches: "
+          f"{t['named']} named, {t['number_only']} number only, {t['blank']} blank")
     return shown, ratio
 
 
@@ -468,8 +567,9 @@ def legend(fig, elo, ehi, plo, phi, sch=None, cmap=None):
              fontsize=6.2, color=MUTED, ha="left", va="center")
 
 
-BUF = ("Patch area is proportional to (US cases per year) raised to the power 0.55, "
-       "which compresses a 311-fold spread in incidence to roughly 24-fold so that "
+BUF = ("Patch area is proportional to (US cases per year) raised to the power {power}, "
+       "which compresses a {true_ratio}-fold spread in incidence to roughly "
+       "{shown_ratio}-fold, so that "
        "the rarest entities remain legible. Area still ranks burden correctly, but "
        "differences in area understate differences in incidence; the case count is "
        "printed on every patch that has room for it.")
@@ -490,9 +590,4 @@ if __name__ == "__main__":
     print("WP5 burden quilt:")
     build(1.00, "WP5_burden_quilt",
           "Patch area is directly proportional to US cases per year.", scheme=CHOSEN)
-    build(0.55, "WP5b_burden_quilt_buffered", scheme=CHOSEN, note=
-          "Patch area is proportional to (US cases per year) raised to the power 0.55, "
-          "which compresses a 311-fold spread in incidence to roughly 24-fold so that "
-          "the rarest entities remain legible. Area still ranks burden correctly, but "
-          "differences in area understate differences in incidence; the case count is "
-          "printed on every patch that has room for it.")
+    build(0.55, "WP5b_burden_quilt_buffered", BUF, scheme=CHOSEN)

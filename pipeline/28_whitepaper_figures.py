@@ -310,7 +310,7 @@ def fig_composition(d):
     axB.set_title("What is missing, and for how many entities", fontsize=8.6,
                   weight="bold", loc="left", pad=6)
     axB.spines["left"].set_visible(False); axB.tick_params(axis="y", length=0)
-    tidy(axB); panel_tag(axB, "B", dx=-0.62, dy=1.13)
+    tidy(axB); panel_tag(axB, "C", dx=-0.62, dy=1.13)
 
     # ---- C: per-entity patient-derived regulatory
     have = sorted([r for r in T13 if I(r, "patient_derived_regulatory") > 0],
@@ -341,7 +341,7 @@ def fig_composition(d):
     axC.set_xlabel("regulatory epigenomic profiles of patient-derived material "
                    "(tumor, metastasis, recurrence, PDX or organoid)", fontsize=7.5)
     axC.spines["left"].set_visible(False)
-    tidy(axC); panel_tag(axC, "C", dx=-0.42, dy=1.008)
+    tidy(axC); panel_tag(axC, "B", dx=-0.42, dy=1.008)
 
     cl, pdx, pt = split(reg)
     # entities that have gained patient-derived regulatory data, by era
