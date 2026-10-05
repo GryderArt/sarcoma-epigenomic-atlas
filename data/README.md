@@ -13,7 +13,7 @@ Large tables are gzipped; the pipeline reads either form transparently (`pipelin
 | `T12_ebi_all.tsv` | 2.3 MB | 9,589 rows | Full EBI sweep: ArrayExpress/BioStudies, ENA, EGA and EpiRR. Includes GEO mirrors, flagged as such. |
 | `T12b_ebi_sarcoma_epigenomic.tsv` | 60 KB | 290 rows | The subset whose title is both sarcoma and epigenomic. |
 | `T12c_ebi_unique.tsv` | 5 KB | 23 rows | The 23 studies a GEO-only search can never return (E-MTAB, PRJEB, PRJDB). |
-| `T13_incidence_vs_data.tsv` | 11 KB | 45 rows | THE BURDEN JOIN. Curated US incidence per entity with its basis and low/high bracket, against epigenomic coverage: regulatory, methylation, H3K27ac, accessibility, 3D, primary-tumor and patient-derived counts, study concentration, and the adversarial verification caveat for every zero. |
+| `T13_incidence_vs_data.tsv` | 12 KB | 45 rows | THE BURDEN JOIN. Curated US incidence per entity with its basis and low/high bracket, against epigenomic coverage: regulatory, methylation, H3K27ac, accessibility, 3D, primary-tumor and patient-derived counts, study concentration, and the adversarial verification caveat for every zero. |
 | `T14_ega_sarcoma_datasets.tsv` | 335 KB | 560 rows | All 560 sarcoma datasets in EGA with sample counts, technologies, governing policy and data-access committee. All controlled access. |
 | `T15_controlled_access.tsv` | 23 KB | 94 rows | The epigenomic subset of EGA plus St Jude, mapped onto atlas entities and split regulatory versus methylation. |
 | `T16_stjude_cstn_inventory.tsv` | 12 KB | 50 rows | St Jude Childhood Solid Tumor Network resource inventory: accessions, repository, access model, assay, sample counts, diseases, PMIDs. |

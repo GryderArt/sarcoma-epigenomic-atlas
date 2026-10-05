@@ -71,7 +71,8 @@ WORD = {0: "zero", 16: "sixteen", 1: "one", 2: "two", 3: "three", 4: "four", 5: 
         26: "twenty-six", 27: "twenty-seven", 28: "twenty-eight", 29: "twenty-nine",
         30: "thirty", 31: "thirty-one", 40: "forty", 44: "forty-four", 45: "forty-five"}
 ORD = {1: "first", 2: "second", 3: "third", 4: "fourth", 5: "fifth",
-       13: "thirteenth", 14: "fourteenth", 15: "fifteenth", 20: "twentieth",
+       13: "thirteenth", 14: "fourteenth", 15: "fifteenth", 26: "twenty-sixth",
+       27: "twenty-seventh", 28: "twenty-eighth", 29: "twenty-ninth", 30: "thirtieth", 20: "twentieth",
        21: "twenty-first", 22: "twenty-second", 23: "twenty-third",
        24: "twenty-fourth", 25: "twenty-fifth", 26: "twenty-sixth"}
 

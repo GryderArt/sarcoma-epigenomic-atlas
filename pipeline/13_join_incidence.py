@@ -85,15 +85,32 @@ A = [
   "low-grade ~275 + high-grade ~53"),
  ("LGFMS/SEF","LGFMS / SEF",229,180,280,"adult","LGFMS 0.515 + SEF 0.155/million"),
  ("Intimal sarcoma","Intimal sarcoma",60,45,75,"adult","NETSARC 0.174/million"),
- # entities now visible in the atlas for which no population rate exists anywhere
- ("Myoepithelial carcinoma","Myoepithelial carcinoma of soft tissue",0,0,0,"adult",
-  "NO population rate published; NETSARC coded 2 cases in 4 years"),
+ # Four entities had no rate and so no area on WP5 -- invisible on the one figure meant
+ # to show what is unserved. Three now carry an anchor; the bases differ in strength and
+ # each says which it is, because a bounded estimate and a national registry rate are not
+ # the same kind of number.
+ ("AFX/PDS","Atypical fibroxanthoma / pleomorphic dermal sarcoma",1710,684,2565,"adult",
+  "Danish National Pathology Register, nationwide 2002-2022: age-adjusted 0.5/100,000 "
+  "in 2022, 1,118 patients [PUBMEDID: 39388966]. Spain (A Coruna) independently 0.59/"
+  "100,000 for AFX alone [PUBMEDID: 31264202]. US count = 5.0/million x 342M. Bracket "
+  "spans the Danish series' own range, 0.2/100,000 in 2002 to a 0.75 peak in 2014; much "
+  "of that rise is ascertainment. Absent from sarcoma registries because it is coded as "
+  "a cutaneous tumor -- which is why the atlas had no rate for it, not because it is rare"),
+ ("Myoepithelial carcinoma","Myoepithelial carcinoma of soft tissue",50,40,65,"adult",
+  "BOUNDED ESTIMATE. No population rate published. SEER held 234 resected cases "
+  "[PUBMEDID: 26886377]; over a 13-40 year window at SEER's 28% coverage that is "
+  "roughly 40-65/yr. OVERSTATED: SEER's myoepithelial carcinoma includes salivary gland "
+  "primaries, which are not the soft tissue entity. NETSARC coded 2 cases in 4 years "
+  "nationwide in France, which implies far fewer. Treat as an upper bound"),
+ ("Angiomatoid fibrous histiocytoma","Angiomatoid fibrous histiocytoma",42,28,56,"both",
+  "BOUNDED ESTIMATE. No population rate published. Quoted at 0.3% of soft tissue tumors "
+  "[PUBMEDID: 39144665], applied to the ACS 2026 US soft tissue sarcoma total of 13,910. "
+  "The 0.3% figure traces to Enzinger's original series and has never been re-derived "
+  "from a population denominator"),
  ("Ossifying fibromyxoid tumor","Ossifying fibromyxoid tumor",0,0,0,"adult",
-  "NO population rate published"),
- ("Angiomatoid fibrous histiocytoma","Angiomatoid fibrous histiocytoma",0,0,0,"both",
-  "NO population rate published"),
- ("AFX/PDS","Atypical fibroxanthoma / pleomorphic dermal sarcoma",0,0,0,"adult",
-  "NO sarcoma-registry rate; captured as cutaneous, not sarcoma"),
+  "NO population rate published and none derivable. Searched: no incidence study, and no "
+  "quoted proportion of soft tissue tumors with a stated denominator. Remains off every "
+  "per-case figure rather than carrying a fabricated anchor"),
 ]
 
 # Adversarial verification (independent GEO/SRA/ENCODE/ChIP-Atlas/ArrayExpress/GDC sweep +

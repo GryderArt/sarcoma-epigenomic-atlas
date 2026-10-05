@@ -26,22 +26,23 @@ and a README that states figures it cannot re-derive is worse than no README at 
 
 ## Six findings the atlas was built to support
 
-**1. Adult sarcoma carries the burden; pediatric sarcoma has the data.** 90% of the ~27,000
+**1. Adult sarcoma carries the burden; pediatric sarcoma has the data.** 90% of the ~29,000
 US sarcoma cases per year arise in entities that are adult-predominant or span both age
 ranges, but pediatric-predominant entities hold 70% of all regulatory epigenomic data ever
-generated — **23× more per new case diagnosed**. This is a distribution correctable by
+generated — **27× more per new case diagnosed**. This is a distribution correctable by
 allocation, not by any new technology.
 
 **2. Thirteen of 45 named entities have no regulatory epigenomics at all.** No ChIP-seq, no
-CUT&RUN, no ATAC, no Hi-C, in any sample type, open or controlled. Nine have a published
-incidence rate, so the gap can be costed per patient: dermatofibrosarcoma protuberans
-(1,400/yr), angiosarcoma (1,312/yr), myxofibrosarcoma (820/yr), pleomorphic liposarcoma
-(185/yr), then inflammatory myofibroblastic tumor, extraskeletal myxoid chondrosarcoma,
-intimal sarcoma, clear cell sarcoma of the kidney, BCOR-CCNB3 sarcoma. Together they account
-for roughly 4,100 new US cases a year. Every one of these zeros was independently verified
-against GEO, SRA, ENCODE, ChIP-Atlas, ArrayExpress, GDC, dbGaP and Europe PMC full text;
-surviving caveats are recorded per entity in
-[`data/T13_incidence_vs_data.tsv`](data/T13_incidence_vs_data.tsv).
+CUT&RUN, no ATAC, no Hi-C, in any sample type, open or controlled. Twelve have a published
+incidence rate, so the gap can be costed per patient: atypical fibroxanthoma / pleomorphic
+dermal sarcoma (1,710/yr), dermatofibrosarcoma protuberans (1,400/yr), angiosarcoma
+(1,312/yr), myxofibrosarcoma (820/yr), then pleomorphic liposarcoma, inflammatory
+myofibroblastic tumor, extraskeletal myxoid chondrosarcoma, intimal sarcoma, myoepithelial
+carcinoma of soft tissue, angiomatoid fibrous histiocytoma, clear cell sarcoma of the
+kidney, BCOR-CCNB3 sarcoma. Together they account for roughly 5,900 new US cases a year.
+Every one of these zeros was independently verified against GEO, SRA, ENCODE, ChIP-Atlas,
+ArrayExpress, GDC, dbGaP and Europe PMC full text; surviving caveats are recorded per entity
+in [`data/T13_incidence_vs_data.tsv`](data/T13_incidence_vs_data.tsv).
 
 **3. Twenty-five of 45 entities have never had a patient's tumor profiled** for active
 chromatin, accessibility or 3D architecture — counting tumor tissue, PDX and patient-derived
@@ -178,7 +179,7 @@ Paths resolve relative to the checkout. Override with `SASS_ROOT`, `SASS_DATA`,
 - **Incidence anchors are curated, not computed.** Each carries its basis in T13, and
   `US_low`/`US_high` bracket the disagreement between US registry coding and European
   central-pathology-review series, which for several entities differ two-fold.
-- **Classification is rule-based over free text.** Eighteen substantive errors were caught
+- **Classification is rule-based over free text.** Nineteen substantive errors were caught
   against ground truth during construction. Each was fixed, and each is logged with what
   caught it in [`docs/methods.md` §7](docs/methods.md) — published as a measure of how
   error-prone this is, not as a list of outstanding problems. The reassignment logs `T9b`

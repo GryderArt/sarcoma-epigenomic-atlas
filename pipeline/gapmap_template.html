@@ -137,6 +137,12 @@
   .qctl input[type=range]{width:110px;accent-color:var(--s450)}
   .qleg{display:flex;align-items:center;gap:3px;margin-left:auto}
   .qleg i{width:15px;height:11px;display:inline-block;border-radius:2px}
+  .qseg{display:inline-flex;border:1px solid var(--axis);border-radius:7px;overflow:hidden}
+  .qseg button{font:inherit;font-size:12px;color:var(--ink-2);background:var(--surface-1);
+        border:0;border-right:1px solid var(--axis);padding:4px 11px;cursor:pointer}
+  .qseg button:last-child{border-right:0}
+  .qseg button:hover{background:var(--plane)}
+  .qseg button.on{background:var(--s450);color:#fff;font-weight:600}
   .qcell{cursor:pointer}
   .qcell:hover rect{stroke:var(--ink);stroke-width:1.5}
   .tip{position:fixed;pointer-events:none;background:var(--surface-1);border:1px solid var(--axis);
@@ -238,6 +244,12 @@
       anyone has read. A large pale patch is a common sarcoma nobody has profiled.
       Hover for the numbers, click to open the entity.</span></div>
   <div class="qctl">
+    <span class="qseg" id="qage" role="group" aria-label="Age class">
+      <button data-a="" class="on">All ages</button
+      ><button data-a="pediatric">Pediatric</button
+      ><button data-a="both">Both</button
+      ><button data-a="adult">Adult</button>
+    </span>
     <label>Colour by
       <select id="qcolor">
         <option value="per">samples per new case per year</option>
@@ -547,8 +559,13 @@ function placeLabels(svg, anchors, marks, frame){
    Bruls, Huizing & van Wijk: lay each row against the rectangle's SHORTER side, so cells
    stay near square and their areas are comparable by eye. Against the longer side it
    degenerates to slice-and-dice slivers.                                               */
-const QRAMP = ["#cde2fb","#b7d3f6","#9ec5f4","#86b6ef","#6da7ec","#5598e7",
-               "#3987e5","#2a78d6","#256abf","#1c5cab","#184f95","#104281","#0d366b"];
+// The ramp WP5 uses in the paper, so the page and the figure read as one thing: red for
+// the deficit, the house blue for adequacy, grey between. It runs LOUD TO QUIET as
+// coverage improves, which inverts the usual sequential convention on purpose -- the
+// figure exists to show what is missing, so the least-served entity has to reach the eye
+// first rather than sit in the palest corner.
+const QRAMP = ["#8c1d1d","#a82a22","#c0392b","#d4685a","#e08b7a","#eab5a8","#ddd9d2",
+               "#b9cfe9","#7fb0e4","#4e93dc","#2a78d6","#1a56a0","#0d366b"];
 const QAGE = [["pediatric","Pediatric-predominant"],["both","Both ages"],
               ["adult","Adult-predominant"]];
 const QSHORT = {"Undifferentiated pleomorphic sarcoma":"UPS / MFH",
@@ -617,6 +634,8 @@ const qink = hex => {
   return L < 140 ? "#fff" : "#0b0b0b";
 };
 
+const qstate = {age: ""};
+
 function drawQuilt(){
   const svg = $("#quilt"), W = 1000, H = 520;
   const key = $("#qcolor").value;
@@ -624,17 +643,29 @@ function drawQuilt(){
   // named, anchored entities with a published rate -- the only ones that have an area
   const all = E.filter(e => e.kind === "named" && e.cases > 0);
   const val = e => key === "n" ? e.n : (e.cases ? e.n/e.cases : 0);
+  const shown = qstate.age ? all.filter(e=>e.age===qstate.age) : all;
+  // The colour range stays on the WHOLE atlas even when one age class is shown. Scaling
+  // it to the visible subset would use more of the ramp, but it would also repaint the
+  // survivors: FN-RMS would be one colour under "Pediatric" and another under "All",
+  // which makes the filter a liar. An entity's colour means its coverage, full stop.
   const pos = all.map(val).filter(v=>v>0);
   const lo = Math.min(...pos), hi = Math.max(...pos);
-  const ratio = Math.max(...all.map(e=>e.cases)) / Math.min(...all.map(e=>e.cases));
+  const ratio = Math.max(...shown.map(e=>e.cases)) / Math.min(...shown.map(e=>e.cases));
   $("#qpowlab").textContent = pow >= 0.999
     ? "true area · " + Math.round(ratio) + ":1"
     : "^" + pow.toFixed(2) + " · " + Math.round(Math.pow(ratio,pow)) + ":1 shown of "
       + Math.round(ratio) + ":1 true";
 
-  const groups = QAGE.map(([a,lab]) => [lab, all.filter(e=>e.age===a)]);
-  const outer = qsquarify(groups.map(([,g]) => g.reduce((t,e)=>t+Math.pow(e.cases,pow),0)),
-                          0, 0, W, H);
+  // One age class selected: it gets the whole canvas rather than the slice of it its
+  // share of the burden would buy. The point of the filter is to read that class's
+  // entities, and at a third of the width the small ones are unreadable.
+  const pick = qstate.age;
+  const groups = QAGE.filter(([a]) => !pick || a === pick)
+                     .map(([a,lab]) => [lab, all.filter(e=>e.age===a)]);
+  const outer = pick
+    ? [[0, 0, W, H]]
+    : qsquarify(groups.map(([,g]) => g.reduce((t,e)=>t+Math.pow(e.cases,pow),0)),
+                0, 0, W, H);
   let g = "";
   groups.forEach(([lab, list], gi) => {
     const [gx,gy,gw,gh] = outer[gi];
@@ -707,6 +738,12 @@ $("#quilt").addEventListener("click", ev => {
 });
 $("#qcolor").addEventListener("change", drawQuilt);
 $("#qpow").addEventListener("input", drawQuilt);
+$("#qage").addEventListener("click", ev => {
+  const b = ev.target.closest("button"); if(!b) return;
+  qstate.age = b.dataset.a;
+  [...$("#qage").children].forEach(x => x.classList.toggle("on", x === b));
+  drawQuilt();
+});
 
 /* ---------- detail ---------- */
 function drawDetail(e){

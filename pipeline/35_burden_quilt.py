@@ -38,11 +38,44 @@ import matplotlib.transforms as mtrans
 
 I, F = WP.I, WP.F
 
-# Sequential blue, steps 100-700 of the validated ramp (docs/methods.md; the same scale
-# the gap map's coverage matrix uses, so the two read as one system).
-RAMP = ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7",
-        "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#104281", "#0d366b"]
-CMAP = LinearSegmentedColormap.from_list("atlas_blue", RAMP)
+# Both panels run LOW to HIGH with the loud colour at the LOW end. That inverts the usual
+# sequential convention, where dark means more -- deliberately. The figure exists to show
+# what is missing, so the entities with the least data have to be the ones that reach the
+# eye first; a conventional ramp buries them in the palest corner.
+#
+# Four candidates, each validated with the data-viz skill's checker. Traffic-light
+# red-amber-green is absent on merit: its poles separate by only dE 4.1 under
+# deuteranopia, so the two ends of the argument would look the same to roughly one man in
+# twelve. Every ramp below keeps its endpoints well clear of that.
+SCHEMES = {
+  "A_red_amber_pale": dict(
+      label="Red → amber → pale",
+      ramp=["#7f0d0d", "#b51b1b", "#d9442b", "#ef7e35", "#f8b25c", "#fcd9a0", "#f3ece0"],
+      note="The alarm reading: deepest red is the least-served entity, and coverage "
+           "fades to near-paper as it improves. Loudest of the four, and the one that "
+           "needs no key to interpret."),
+  "B_magma": dict(
+      label="Magma",
+      ramp=["#3b0f52", "#7d1e6d", "#b5306b", "#df5454", "#f3834a", "#fbb961", "#fcf0ba"],
+      note="Perceptually uniform and colourblind-safe along its whole length, so equal "
+           "steps in the data look like equal steps on the page. Reads as a heat map, "
+           "which some reviewers will expect and some will find busy."),
+  "C_red_grey_blue": dict(
+      label="Red → grey → blue",
+      ramp=["#8c1d1d", "#c0392b", "#e08b7a", "#ddd9d2", "#7fb0e4", "#2a78d6", "#0d366b"],
+      note="Deficit in red, adequacy in the house blue, a grey passage between. The "
+           "quietest of the four and the closest to the other four figures in the set."),
+  "D_purple_gold": dict(
+      label="Purple → gold",
+      ramp=["#3d0f6b", "#6a2596", "#9b4a9e", "#c47191", "#dd9a6f",
+            "#edc25f", "#f7e9a8"],
+      note="Avoids red entirely, which some journals reserve for statistical "
+           "significance. Separates well for every form of colour vision."),
+}
+
+SEQ = ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7",
+       "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#104281", "#0d366b"]
+CMAP = LinearSegmentedColormap.from_list("atlas_blue", SEQ)
 NONE = "#d03b3b"          # status: critical. Zero is not the pale end of a ramp.
 INK, MUTED, SURF = "#0b0b0b", "#52514e", "#fcfcfb"
 GAP = 0.055               # surface gap between patches, in data units
@@ -149,12 +182,38 @@ def _squarify(norm, x, y, w, h):
 
 
 # ------------------------------------------------------------------ colour
-def shade(v, lo, hi):
-    """Log-scaled position on the ramp; zero is handled by the caller."""
+def shade(v, lo, hi, cmap=None):
+    """Log-scaled position on a ramp. Zero takes the ramp's loud end and is additionally
+    cross-hatched by the caller: on a scheme whose deficit end is already red, a red
+    swatch for "none" says the same thing as "very little", which is the one distinction
+    this figure cannot afford to lose."""
+    if v <= 0:
+        return (cmap if cmap is not None else CMAP)(0.0)
+    c = cmap if cmap is not None else CMAP
+    t = (math.log10(v) - math.log10(lo)) / (math.log10(hi) - math.log10(lo))
+    return c(min(max(t, 0.0), 1.0))
+
+
+def diverging(sch):
+    """Build the two-armed map for a scheme, deficit first."""
+    warm = list(sch["poles"])[::-1]          # pale -> deep, reversed to run deep -> pale
+    return LinearSegmentedColormap.from_list(
+        "div", list(sch["poles"]) + [sch["mid"]] + list(sch["cool"]))
+
+
+def diverge_at(v, lo, hi, mid, cmap):
+    """Position v on a diverging ramp whose neutral sits at `mid`, each arm scaled to its
+    own span so the midpoint lands at 0.5 even when the arms differ in length."""
     if v <= 0:
         return NONE
-    t = (math.log10(v) - math.log10(lo)) / (math.log10(hi) - math.log10(lo))
-    return CMAP(min(max(t, 0.0), 1.0))
+    lv, lm = math.log10(v), math.log10(mid)
+    if lv <= lm:
+        span = lm - math.log10(lo)
+        t = 0.5 * (lv - math.log10(lo)) / span if span else 0.5
+    else:
+        span = math.log10(hi) - lm
+        t = 0.5 + 0.5 * (lv - lm) / span if span else 0.5
+    return cmap(min(max(t, 0.0), 1.0))
 
 
 def ink_on(rgb):
@@ -166,7 +225,7 @@ def ink_on(rgb):
 
 
 # ------------------------------------------------------------------ one panel
-def panel(ax, ents, norate, key, lo, hi, title, sub, fmt):
+def panel(ax, ents, norate, key, lo, hi, title, sub, fmt, col_of=None):
     """Draw the quilt once. `key` picks the value that colours each patch."""
     ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.invert_yaxis()
     ax.set_xticks([]); ax.set_yticks([])
@@ -197,10 +256,12 @@ def panel(ax, ents, norate, key, lo, hi, title, sub, fmt):
         for e, (px, py, pw, ph) in zip(g, squarify([e["cases"] for e in g],
                                                    hx, hy, hw, hh)):
             v = e[key]
-            col = shade(v, lo, hi)
+            col = col_of(v) if col_of else shade(v, lo, hi)
             ax.add_patch(Rectangle((px + GAP, py + GAP),
                                    max(pw - 2 * GAP, 0), max(ph - 2 * GAP, 0),
-                                   facecolor=col, edgecolor="none", zorder=3))
+                                   facecolor=col, edgecolor="none", zorder=3,
+                                   hatch="xxx" if v <= 0 else None,
+                                   linewidth=0))
             pending.append((e, px, py, pw, ph, col, fmt(v)))
 
     # Entities with no population rate have no area to occupy; they get a strip rather
@@ -217,7 +278,8 @@ def panel(ax, ents, norate, key, lo, hi, title, sub, fmt):
         # there would say "no data" when what is missing is the incidence rate: three of
         # the four do have epigenomic samples. They are drawn unfilled instead.
         if key == "epi":
-            col, txt = shade(e["epi"], lo, hi), fmt(e["epi"])
+            col = col_of(e["epi"]) if col_of else shade(e["epi"], lo, hi)
+            txt = fmt(e["epi"])
         else:
             col, txt = "#f0efec", "no incidence rate"
         px = i * cw
@@ -298,10 +360,11 @@ def load():
     return ents, norate
 
 
-def build(power, stem, note):
+def build(power, stem, note, scheme=None):
     """One figure. `power` warps patch area: 1.0 is true area, below 1 compresses the
     range so rare entities stay legible. The exponent is stated on the figure, because an
-    area encoding that is not proportional to its quantity and does not say so is a lie."""
+    area encoding that is not proportional to its quantity and does not say so is a lie.
+    `scheme` selects a diverging palette for panel B; None keeps the one-hue ramp."""
     ents, norate = load()
     for e in ents:
         e["cases"] = e["cases_true"] = e.get("cases_true", e["cases"])
@@ -311,81 +374,123 @@ def build(power, stem, note):
     pers = [e["per"] for e in ents if e["per"] > 0]
     elo, ehi = min(epis), max(epis)
     plo, phi = min(pers), max(pers)
+    # The reference: samples per case if the whole atlas were spread evenly over the
+    # whole burden. Computed, not chosen.
+    mid = sum(e["epi"] for e in ents) / sum(e["cases_true"] for e in ents)
+
+    sch = SCHEMES[scheme] if scheme else None
+    # One ramp, both panels, loud end at the low end: least data reaches the eye first.
+    cmap = LinearSegmentedColormap.from_list("sch", sch["ramp"]) if sch else CMAP
+    colA = lambda v: shade(v, elo, ehi, cmap)
+    colB = lambda v: shade(v, plo, phi, cmap)
 
     fig, axes = plt.subplots(1, 2, figsize=(14.2, 7.4))
     fig.subplots_adjust(left=0.012, right=0.988, top=0.800, bottom=0.120, wspace=0.055)
 
     panel(axes[0], sized, norate, "epi", elo, ehi,
           "A   Coloured by epigenomic samples",
-          f"absolute count, log scale · {elo:,} to {ehi:,} · red = none",
-          lambda v: f"{v:,.0f}" if v else "0")
+          f"absolute count, log scale \u00b7 {elo:,} to {ehi:,} \u00b7 loud = least data",
+          lambda v: f"{v:,.0f}" if v else "0", colA)
     panel(axes[1], sized, norate, "per", plo, phi,
           "B   Coloured by samples per new case per year",
-          f"coverage against need, log scale · {plo:.2f} to {phi:.1f} · red = none",
-          lambda v: f"{v:.2f}" if v and v < 10 else (f"{v:.0f}" if v else "0"))
+          f"coverage against need, log scale \u00b7 {plo:.2f} to {phi:.1f} \u00b7 "
+          f"loud = least data",
+          lambda v: f"{v:.2f}" if v and v < 10 else (f"{v:.0f}" if v else "0"), colB)
 
     ratio = (max(e["cases_true"] for e in ents) / min(e["cases_true"] for e in ents))
     shown = ratio ** power
     fig.suptitle("The quilt of unmet need: patch area is how common the disease is, "
                  "colour is how much of its chromatin anyone has read",
                  fontsize=11.2, weight="bold", x=0.012, y=0.980, ha="left", color=INK)
-    fig.text(0.012, 0.952,
-             "Each patch is one of the 45 named entities, grouped into three regions by "
-             "age class and sized within them by US incidence. The same tiling is "
-             "coloured two ways: a patch that pales from A to B\nhad only looked "
-             "well-covered because the disease is rare.",
-             fontsize=7.6, color=MUTED, ha="left", va="top", linespacing=1.55,
-             wrap=False)
+    sub = ("Each patch is one of the 45 named entities, grouped into three regions by "
+           "age class and sized within them by US incidence. ")
+    sub += ("The same tiling is coloured two ways. Colour runs loud-to-quiet as coverage "
+            "improves, so the entities with\nthe least data are the ones that reach the "
+            "eye first; a patch that quietens from A to B had only looked well-covered "
+            "because the disease is rare.")
+    fig.text(0.012, 0.952, sub, fontsize=7.6, color=MUTED, ha="left", va="top",
+             linespacing=1.55)
 
-    legend(fig, elo, ehi, plo, phi)
+    legend(fig, elo, ehi, plo, phi, sch, cmap)
     WP.foot(fig, 0.012, 0.080,
-            note + " Colour is log-scaled in both panels; an entity with no epigenomic "
-            "data of any kind is drawn in red rather than at the pale end of the ramp, "
+            note + " Colour is log-scaled in both panels and runs loud to quiet as "
+            "coverage improves; an entity with no epigenomic data of any kind takes the "
+            "loud end and is cross-hatched, "
             "because none is a different statement from few. Epigenomic means every "
             "assay in the atlas, DNA methylation included. Incidence is US cases per "
-            "year over the 45 named entities; four entities have no population rate "
-            "published anywhere and are shown at equal width in the strip beneath, "
-            "excluded from every area and from panel B.", width=168, size=6.2)
+            f"year over the 45 named entities; {len(norate)} "
+            f"{'entity has' if len(norate) == 1 else 'entities have'} no population rate "
+            "published anywhere and "
+            f"{'is' if len(norate) == 1 else 'are'} shown at equal width in the strip "
+            "beneath, excluded from every area and from panel B.", width=168, size=6.2)
     p = os.path.join(FIGURES, stem + ".pdf")
     fig.savefig(p); plt.close(fig)
-    print(f"  wrote {os.path.basename(p)}   area exponent {power:g} · "
-          f"largest:smallest patch {shown:,.0f}:1 (true burden ratio {ratio:,.0f}:1)")
+    print(f"  wrote {os.path.basename(p)}")
     return shown, ratio
 
 
-def legend(fig, elo, ehi, plo, phi):
-    """Two ramps and the zero swatch, drawn as real marks rather than a colorbar so the
-    log steps are legible as steps."""
-    for i, (lab, lo, hi, fmt) in enumerate(
-            [("samples (panel A)", elo, ehi, lambda v: f"{v:,.0f}"),
-             ("per case (panel B)", plo, phi,
-              lambda v: f"{v:.2f}".rstrip("0").rstrip("."))]):
-        x0 = 0.012 + i * 0.215
-        y0 = 0.878
-        fig.text(x0, y0 + 0.030, lab, fontsize=6.2, color=MUTED, ha="left", va="bottom")
-        n = 9
-        for k in range(n):
-            t = k / (n - 1)
-            v = 10 ** (math.log10(lo) + t * (math.log10(hi) - math.log10(lo)))
-            fig.patches.append(plt.Rectangle(
-                (x0 + k * 0.0155, y0), 0.0145, 0.016, transform=fig.transFigure,
-                facecolor=CMAP(t), edgecolor="none", zorder=5))
-        fig.text(x0, y0 - 0.004, fmt(lo), fontsize=5.6, color=MUTED, ha="left", va="top")
-        fig.text(x0 + n * 0.0155 - 0.002, y0 - 0.004, fmt(hi), fontsize=5.6,
-                 color=MUTED, ha="right", va="top")
-    x0 = 0.012 + 2 * 0.215
-    fig.patches.append(plt.Rectangle((x0, 0.878), 0.0145, 0.016,
-                                     transform=fig.transFigure, facecolor=NONE,
-                                     edgecolor="none", zorder=5))
-    fig.text(x0 + 0.020, 0.886, "no epigenomic data of any kind",
+def legend(fig, elo, ehi, plo, phi, sch=None, cmap=None):
+    """Two ramps and the zero swatch, drawn as discrete steps rather than a colorbar so
+    the log stepping is legible, and so the diverging midpoint is a mark a reader can
+    point at rather than a position they have to infer."""
+    n = 9
+    # --- panel A, sequential
+    x0, y0 = 0.012, 0.878
+    fig.text(x0, y0 + 0.030, "samples (panel A)", fontsize=6.2, color=MUTED,
+             ha="left", va="bottom")
+    for k in range(n):
+        fig.patches.append(plt.Rectangle(
+            (x0 + k * 0.0155, y0), 0.0145, 0.016, transform=fig.transFigure,
+            facecolor=(cmap or CMAP)(k / (n - 1)), edgecolor="none", zorder=5))
+    fig.text(x0, y0 - 0.004, f"{elo:,.0f}", fontsize=5.6, color=MUTED, ha="left", va="top")
+    fig.text(x0 + n * 0.0155 - 0.002, y0 - 0.004, f"{ehi:,.0f}", fontsize=5.6,
+             color=MUTED, ha="right", va="top")
+
+    # --- panel B
+    x1 = 0.012 + 0.215
+    lab = "per case (panel B)  \u2014 least data on the left"
+    fig.text(x1, y0 + 0.030, lab, fontsize=6.2, color=MUTED, ha="left", va="bottom")
+    m = 11
+    for k in range(m):
+        c = (cmap or CMAP)(k / (m - 1))
+        fig.patches.append(plt.Rectangle(
+            (x1 + k * 0.0155, y0), 0.0145, 0.016, transform=fig.transFigure,
+            facecolor=c, edgecolor="none", zorder=5))
+    fig.text(x1, y0 - 0.004, f"{plo:.2f}", fontsize=5.6, color=MUTED, ha="left", va="top")
+    fig.text(x1 + m * 0.0155 - 0.002, y0 - 0.004, f"{phi:.1f}", fontsize=5.6,
+             color=MUTED, ha="right", va="top")
+
+    x2 = 0.012 + 2 * 0.215
+    fig.patches.append(plt.Rectangle((x2, y0), 0.0145, 0.016, transform=fig.transFigure,
+                                     facecolor=(cmap or CMAP)(0.0), edgecolor="none",
+                                     hatch="xxx", linewidth=0, zorder=5))
+    fig.text(x2 + 0.020, y0 + 0.008, "cross-hatched: no epigenomic data of any kind",
              fontsize=6.2, color=MUTED, ha="left", va="center")
 
 
+BUF = ("Patch area is proportional to (US cases per year) raised to the power 0.55, "
+       "which compresses a 311-fold spread in incidence to roughly 24-fold so that "
+       "the rarest entities remain legible. Area still ranks burden correctly, but "
+       "differences in area understate differences in incidence; the case count is "
+       "printed on every patch that has room for it.")
+
+# Chosen for the paper: red for the deficit, the house blue for adequacy, a grey passage
+# between. The quietest of the four candidates and the closest to WP1-WP4, so the figure
+# set still reads as one system.
+CHOSEN = "C_red_grey_blue"
+
 if __name__ == "__main__":
+    import sys
+    if "--schemes" in sys.argv:
+        print("WP5 colour-scheme candidates:")
+        for k, v in SCHEMES.items():
+            build(0.55, "WP5_scheme_" + k, BUF, scheme=k)
+            print(f"      {v['label']}: {v['note']}")
+        raise SystemExit
     print("WP5 burden quilt:")
     build(1.00, "WP5_burden_quilt",
-          "Patch area is directly proportional to US cases per year.")
-    build(0.55, "WP5b_burden_quilt_buffered",
+          "Patch area is directly proportional to US cases per year.", scheme=CHOSEN)
+    build(0.55, "WP5b_burden_quilt_buffered", scheme=CHOSEN, note=
           "Patch area is proportional to (US cases per year) raised to the power 0.55, "
           "which compresses a 311-fold spread in incidence to roughly 24-fold so that "
           "the rarest entities remain legible. Area still ranks burden correctly, but "
