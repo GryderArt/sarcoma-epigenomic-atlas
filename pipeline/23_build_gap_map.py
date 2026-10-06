@@ -4,7 +4,7 @@
 Payload is dictionary-encoded columnar arrays so the whole atlas -- every
 model x assay x target x series combination -- travels inside one file with no
 network dependency."""
-import csv, json, importlib.util, collections, os, re
+import csv, json, importlib.util, collections, datetime, os, re
 from _paths import (DATA, SAMPLES, INCIDENCE, FIGURES, WORKBOOKS, DOCS,
                     WORK, topen, twrite, dpath)
 csv.field_size_limit(10**7)
@@ -60,6 +60,15 @@ def kindof(name, anchored):
     if name in RESIDUAL or n.endswith(" nos") or "unspecified" in n: return "residual"
     return "named" if anchored else "residual"
 REG_LANES = set(LANES[:7])
+
+# The page carries the moment it was generated. Without it, a cached copy and the live
+# one look identical, and the only way to tell them apart is to read the source.
+_NOW = datetime.datetime.now(datetime.timezone.utc)
+BUILT = "built " + _NOW.strftime("%-d %b %Y") if os.name != "nt" else \
+        "built " + _NOW.strftime("%d %b %Y").lstrip("0")
+BUILT_LONG = "page built " + _NOW.strftime("%-d %B %Y, %H:%M UTC") if os.name != "nt" else \
+             "page built " + _NOW.strftime("%d %B %Y, %H:%M UTC").lstrip("0")
+
 
 def main():
     rows = list(csv.DictReader(topen("T4_samples_atomic.tsv"), delimiter="\t"))
@@ -209,7 +218,7 @@ def main():
 
     payload = {"dict": D, "recs": recs, "ents": ents, "lanes": LANES,
                "reglanes": sorted(REG_LANES), "unres": unres,
-               "built": "atlas v3 (all ages)",
+               "built": BUILT, "builtlong": "atlas v3, all ages · " + BUILT_LONG,
                "kinds": {"named": sum(1 for e in ents if e["kind"]=="named"),
                          "residual": sum(1 for e in ents if e["kind"]=="residual"),
                          "control": sum(1 for e in ents if e["kind"]=="control")},

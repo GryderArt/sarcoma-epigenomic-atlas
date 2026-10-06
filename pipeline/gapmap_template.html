@@ -150,6 +150,11 @@
        z-index:60;max-width:330px;opacity:0;transition:opacity .08s}
   .tip b{display:block;margin-bottom:2px}
   svg text{font-family:Arial,Helvetica,sans-serif}
+  /* So "am I looking at the current page?" is a glance, not a guess: a browser
+     serving a cached copy shows an older date here than the repository's. */
+  .stamp{font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.02em;
+         vertical-align:middle;margin-left:10px;border:1px solid var(--axis);
+         border-radius:10px;padding:2px 8px;white-space:nowrap}
   .hide{display:none}
   footer{color:var(--muted);font-size:11px;margin-top:26px;line-height:1.7}
   @media (max-width:900px){ .ent{max-width:170px} .scroll{max-height:520px} }
@@ -159,7 +164,7 @@
 <div class="wrap">
 <header>
   <div>
-    <h1>Sarcoma Epigenomic Gap Map</h1>
+    <h1>Sarcoma Epigenomic Gap Map <span id="stamp" class="stamp"></span></h1>
     <p class="sub">Every public epigenomic sample for sarcoma, all ages, at the resolution of
       one assay on one model in one study. Open data from GEO, controlled-access holdings from
       EGA and the St&nbsp;Jude Childhood Solid Tumor Network. Click any entity for its full record.</p>
@@ -929,6 +934,8 @@ function sortList(list){
     return (va-vb)*d;
   });
 }
+if($("#stamp")) $("#stamp").textContent = P.built;
+
 function render(){
   const list = sortList(E.filter(matches));
   stats(list); drawMatrix(list); drawScatter(list); drawQuilt();
@@ -939,7 +946,7 @@ function render(){
   $("#foot").innerHTML =
     `Showing <b>${list.length}</b> of ${P.kinds.named} named entities
      (${P.kinds.residual} unresolved bins and ${P.kinds.control} control tissue excluded) ·
-     payload built from ${P.built}.
+     ${P.builtlong}.
      Regulatory = ChIP-seq, CUT&amp;RUN, CUT&amp;Tag, ChIP-exo/chip, ATAC, scATAC, DNase, FAIRE,
      MNase, Hi-C, HiChIP, Micro-C, Capture-HiC, ChIA-PET, 4C — input and IgG controls excluded.
      Patient-derived = tumor tissue, metastasis, recurrence, PDX or patient-derived organoid.<br>
