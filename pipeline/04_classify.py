@@ -268,6 +268,300 @@ GLIOMA_CTX = re.compile(r"gliom|\bdipg\b|diffuse\s+midline|astrocytom|\bgbm\b|br
 
 def first(pats, blob): return [k for k, p in pats if p.search(blob)]
 
+# ------------------------------------------------------- what counts as a patient sample
+# Correction #20 (docs/methods.md §7). `sample_type` was decided by the first matching
+# phrase, and tumour words were tested before cell-line words: "highly metastatic
+# osteosarcoma cell line" read as a metastasis, so 143B, MG-63 and GIST-T1 were counted as
+# patient tumours. The model override only ran when nothing else had matched. Three other
+# routes led to the same place: a model-name collision ("BT12" for breast tumour 12 became
+# the ATRT line BT-12), non-human material ("primary tumour" of a mouse, zebrafish or dog),
+# and comparison samples whose own record names a different cancer (Wilms tumours inside a
+# CCSK series). A record is now counted as patient material only after it passes all four
+# checks below. Stage 39 applies this same function to the shipped table, so a fresh run
+# and the corrected table cannot drift.
+PATIENT_ST = {"primary_tumor", "metastasis", "recurrence"}
+_CANON_KEYS = collections.defaultdict(set)
+_CANON_TYPE, _MURINE = {}, set()
+for _n, _v in MODELS.items():
+    _CANON_KEYS[_v[0]].add(_norm(_n)); _CANON_KEYS[_v[0]].add(_norm(_v[0]))
+    _CANON_TYPE.setdefault(_v[0], (_v[3] or "").lower())
+    if re.search(r"^\s*mouse|murine|\((balb|c3h|c57)", _v[1] or "", re.I) \
+            or "murine" in (_v[3] or "").lower():
+        _MURINE.add(_v[0])
+
+# phrases describing a reference channel or a pool, not the sample itself
+_REFPOOL = re.compile(r"universal\s+(human\s+)?reference|common\s+reference|stratagene|"
+                      r"\(mammary\s+gland\)|\(t\s+lymphoblast\)|plasmacytoma|"  # make-up of the UHR pool
+                      r"human\s+genomic\s+dna|\broche\b|\bpromega\b|(gender|sex)[\s\-]+matched|"
+                      r"healthy\s+(donor|individual|volunteer)s?\b|\bpool(ed)?\b|"
+                      r"reference\s+(rna|dna|channel|pool)|equal\s+quantities\s+of\s+total\s+rna|"
+                      r"pooled\s+(\w+\s+){0,4}cell\s*lines?|\b\d+\s+(human\s+)?(cancer\s+)?cell\s+lines\s+from",
+                      re.I)
+_CELLKEY = re.compile(r"^\s*(cell[\s_]*lines?|cell[\s_]*line[\s_]*name|cell|line|cell[\s_]*name|"
+                      r"model|model[\s_]*name|pdx|pdx[\s_]*(id|model|name)|xenograft|organoid)\s*$",
+                      re.I)
+_MODELWORD = re.compile(r"\bcell[\s_\-]*lines?\b|cellline|\bsub-?lines?\b|immortali[sz]ed|"
+                        r"cell\s+cultur|\bcultured\b|\bin[\s_\-]+vitro\b|\bpassages?\b|xenograft|"
+                        r"\bpdx\b|\bcdx\b|organoid|spheroid|\binjected\b|\bimplanted\b", re.I)
+_CELLWORD = re.compile(r"\bcell[\s_\-]*lines?\b|cellline|\bsub-?lines?\b|immortali[sz]ed", re.I)
+_INVITRO_TS = re.compile(r"\bcells?\b|cell[\s_\-]*lines?|cellline|sub-?lines?|immortali[sz]ed|"
+                         r"spheroid|cultur|in[\s_\-]+vitro", re.I)
+_INVIVO = re.compile(r"xenograft|\binjected\b|\bimplanted\b|\bin[\s_\-]+vivo\b|orthotopic|"
+                     r"subcutaneous|tail[\s\-]+vein|\bscid\b|\bnsg\b|nude\s+mice|\bstrain\s*:|"
+                     r"from\s+mice|mice\s+model|tumou?rs?\s+in\s+mice", re.I)
+_INVIVO_TITLE = re.compile(r"\bprimary[\s_\-]+tumou?r\b|\b(lung|liver|bone[\s_\-]+marrow|brain|kidney|"
+                           r"lymph[\s_\-]+node|tibia|femur|flank)[\s_\-]+(metastas[ie]s|mets?|"
+                           r"tumou?rs?)\b", re.I)
+_TISSUE = re.compile(r"\bffpe\b|formalin|frozen\s+tissue|tissue\s+(sample|specimen|block)|"
+                     r"tumou?r\s+(tissue|sample|specimen|resection|biops)|\bbiops|\bresect|\bsurg|"
+                     r"\bautops|patient\s+(sample|tumou?r|biops|tissue|specimen)|"
+                     r"\bpatient\s*(id|#|no)\b|\bcase\s*\d|\bdonor\b", re.I)
+# a different diagnosis named by the record itself
+_OTHER_DX = re.compile(
+    r"carcinoma|(?<![a-z])pdac(?![a-z])|pancreatic\s+(cancer|ductal)|breast\s+(cancer|tumou?r)|colon\s+(tumou?r|"
+    r"cancer)|colorectal|gastric\s+cancer|hepatocellular|(?<![a-z])(hcc|nsclc)(?![a-z])|lung\s+cancer|"
+    r"squamous|(?<![a-z])(scc|hnscc)(?![a-z])|cervical\s+cancer|ovarian\s+cancer|prostate\s+cancer|melanoma|"
+    r"leukemi|(?<![a-z])aml(?![a-z])|acute\s+myeloid|lymphoma|(?<![a-z])ptcl(?![a-z])|myeloma|(?<![a-z])gliom|glioblastoma|(?<![a-z])dipg(?![a-z])|"
+    r"medulloblastoma|paraganglioma|pheochromocytoma|"
+    r"neuroblastoma|retinoblastoma|ependymoma|meningioma|(?<![a-z])etmr(?![a-z])|multilayered\s+rosettes|"
+    r"(?<![a-z])wilms|psoria|alopecia|thyroid\s+cancer|urothelial|mesothelioma", re.I)
+# ... plus tissues and sites, used only when a model name is all that ties a record to a sarcoma
+_OTHER_ANY = re.compile(_OTHER_DX.pattern + r"|\bbreast\b|\bcolon\b|intestin|\bmouth\b|oropharyn|"
+                        r"pituitary|lesional|allograft|\bkidney\b|\bliver\b|skeletal\s+muscle", re.I)
+_SARCOMA_WORD = re.compile(r"sarcom", re.I)
+# blood and immune cells drawn from a patient: patient material, but not tumour
+_BLOOD = re.compile(r"peripheral\s+blood|(?<![a-z])pbmcs?(?![a-z])|apheresis|buffy\s+coat|whole\s+blood|"
+                    r"(?<![a-z])t[\s\-]?cells?(?![a-z])|(?<![a-z])nk[\s\-]?cells?(?![a-z])|leukocytes?|"
+                    r"lymphocytes?|(?<![a-z])tils?(?![a-z])|tumou?r[\s\-]infiltrating\s+lymph", re.I)
+# normal tissue taken alongside a tumour
+_NORMAL_TISSUE = re.compile(
+    r"surgical\s+waste|normal[\s\-]+adjacent|adjacent[\s\-]+normal|tumou?r[\s\-]+adjacent|"
+    r"non[\s\-]?(tumou?r|malignant|neoplastic)(al)?\s+(tissue|sample|control)|"
+    r"healthy\s+(donor|tissue|control|individual)s?|matched\s+normal\s+(tissue|sample)|"
+    r"normal\s+(tissue|control|bone|muscle|skin|fat|adipose|kidney|liver|lung|breast|colon|"
+    r"myometrium|uterus|brain)", re.I)
+# cells changed at the bench, which no resected tumour is
+_ENGINEERED = re.compile(r"\binfected\b|transduc|transfect|(?<![a-z])sh[\s\-]?rnas?(?![a-z])|"
+                         r"(?<![a-z])si[\s\-]?rnas?(?![a-z])|(?<![a-z])sgrnas?(?![a-z])|crispr|"
+                         r"knock[\s\-]?(down|out)|lentivir|retrovir|overexpress", re.I)
+_PDX_PLURAL = re.compile(r"(?<![a-z])pdxs(?![a-z])|tumou?rs?\s+in\s+pdx", re.I)
+_RODENT = re.compile(r"mus\s+musculus|rattus|nannospalax|cricetulus|mesocricetus|peromyscus", re.I)
+_NOT_A_HOST = re.compile(r"virus|synthetic|other\s+sequences|metagenome|unidentified", re.I)
+
+
+def _windows(text, keys, maxw=6):
+    toks = _TOK.findall((text or "").lower())
+    for i in range(len(toks)):
+        acc = ""
+        for j in range(i, min(i + maxw, len(toks))):
+            acc += toks[j]
+            if acc in keys:
+                return True
+            if len(acc) > 48:
+                break
+    return False
+
+
+def _model_cells(text, keys):
+    """'<model> cells', allowing up to three words between ("HT1080 human fibrosarcoma cells")."""
+    toks = _TOK.findall((text or "").lower())
+    for i, t in enumerate(toks):
+        if t in ("cell", "cells"):
+            if _windows(" ".join(toks[max(0, i - 4):i]), keys):
+                return True
+    return False
+
+
+_UHR_MIX = re.compile(r"hepatoblastoma|plasmacytoma|histiocytic\s+lymphoma|embryonal\s+carcinoma|"
+                      r"lymphoblastic\s+leuk", re.I)
+
+
+def _is_reference(p):
+    """A phrase describing a reference channel or pool -- including the make-up of the
+    Universal Human Reference RNA, whose ten source lines include a liposarcoma."""
+    return bool(_REFPOOL.search(p) or (re.search(r"liposarcoma", p, re.I)
+                                        and len(_UHR_MIX.findall(p)) >= 2))
+
+
+def _own_source(r):
+    return " ;; ".join(p for p in re.split(r"\s\|\s", r.get("source_name", "") or "")
+                       if not _is_reference(p))
+
+
+def _own_text(r):
+    """The sample's own words, minus any phrase that describes a reference channel."""
+    parts = []
+    for f in (r.get("title", ""), r.get("source_name", "")):
+        parts += [p for p in re.split(r"\s\|\s", f or "") if not _is_reference(p)]
+    parts += [p for p in (r.get("characteristics", "") or "").split(";;")
+              if not _is_reference(p)]
+    return " ;; ".join(parts)
+
+
+def host(organism):
+    """'' for human (or no usable host); otherwise the sample type non-human material takes."""
+    o = (organism or "").strip()
+    if not o or "homo sapiens" in o.lower() or _NOT_A_HOST.search(o):
+        return ""
+    return "mouse_model" if _RODENT.search(o) else "non-human"
+
+
+def sarcoma_named(text):
+    return bool(_SARCOMA_WORD.search(text) or any(p.search(text) for k, p in DIS_PATS
+                                                  if k != "Sarcoma NOS"))
+
+
+def judge_model(r):
+    """Was the catalogued model matched to this record the material actually profiled?
+
+    Returns (verdict, reason). verdict: 'model' -- the record presents the sample as that
+    model; 'patient-label' -- patient tissue whose label happens to be a model name;
+    'collision' -- the name occurs only incidentally; 'unclear' -- named, nothing else.
+    """
+    m = r.get("model_matched") or ""
+    keys = _CANON_KEYS.get(m) or {_norm(m)}
+    own = _own_text(r)
+    if host(r.get("organism")) and m not in _MURINE and not _INVIVO.search(own):
+        return "collision", f"a human model ({m}) matched in a {r.get('organism')} sample"
+    named = (_windows(r.get("title", ""), keys) or _windows(r.get("source_name", ""), keys)
+             or _windows(r.get("title", "") + " " + r.get("source_name", ""), keys))
+    strong = _norm(r.get("source_name", "")) in keys
+    for f in (r.get("characteristics", "") or "").split(";;"):
+        if ":" not in f or _is_reference(f):
+            continue
+        k, v = f.split(":", 1)
+        if len(re.split(r"[,;/]", v)) >= 3:
+            continue              # a list of lines, e.g. the make-up of a reference pool
+        if _CELLKEY.match(k) and _windows(v, keys):
+            named = True
+            strong = strong or _norm(v) in keys
+        elif (_MODELWORD.search(f) or _INVIVO.search(f)) and _windows(v, keys):
+            named = True          # "tissue: tumor (from mice model; injected A673 human cells)"
+    if not named:
+        return "collision", f"{m} is not named as this sample, only inside another identifier or a list"
+    mw = bool(_MODELWORD.search(own) or _INVIVO.search(own)) or _model_cells(own, keys)
+    if _TISSUE.search(own) and not mw:
+        return "patient-label", f"the record describes patient tissue; '{m}' is a sample label"
+    if _OTHER_ANY.search(own) and not strong and not sarcoma_named(own):
+        return "collision", (f"the record names another diagnosis or tissue "
+                             f"('{_OTHER_ANY.search(own).group(0)}'); '{m}' is a sample label")
+    if strong or mw:
+        return "model", f"the record presents the sample as {m}"
+    if _CELLWORD.search(r.get("gse_title", "")):
+        return "model", f"named in the record; the series describes cell lines"
+    return "unclear", ""
+
+
+def model_sample_type(r):
+    """Sample type for a record judged to BE its catalogued model."""
+    m = r.get("model_matched") or ""
+    mt = _CANON_TYPE.get(m, "")
+    ts = " ;; ".join((r.get("title", ""), r.get("source_name", "")))
+    # what the sample is, not where the line came from: drop "origin: derived by injecting ..."
+    now = " ;; ".join([ts] + [f for f in (r.get("characteristics", "") or "").split(";;")
+                              if not re.match(r"\s*(origin|derived|derivation|history|"
+                                              r"description|cell\s+origin)\b", f, re.I)])
+    if re.search(r"\bpdx\b|patient[\-\s]derived\s+xenograft", now, re.I):
+        return "PDX"
+    if re.search(r"\bstrain\s*:\s*(?!-|none|n/?a\b|not\s)\w", now, re.I) or _INVIVO.search(ts):
+        invivo = True
+    elif _INVITRO_TS.search(ts):
+        invivo = False
+    else:
+        invivo = bool(_INVIVO.search(now) or _INVIVO_TITLE.search(r.get("title", "")))
+    if invivo and "pdx" in mt and not mt.startswith("cell"):
+        return "PDX"
+    if invivo:
+        return "mouse_model" if (m in _MURINE and host(r.get("organism"))) else "xenograft(CDX)"
+    if "organoid" in mt and not mt.startswith("cell"):
+        return "organoid"
+    if "pdx" in mt and not mt.startswith("cell"):
+        return "PDX"
+    if "cdx" in mt and not mt.startswith("cell"):
+        return "xenograft(CDX)"
+    return "cell_line"
+
+
+def patient_material(r):
+    """Corrections for one record, as a list of (rule, change, reason).
+
+    change is a dict: {'sample_type': new} | {'clear_model': True} | {'exclude': True}.
+    Only patient-typed records are re-typed; for PDX and organoid records only a model
+    collision that alone supplied the entity is acted on.
+    """
+    out, st = [], r.get("sample_type", "")
+    if st not in PATIENT_ST and st not in ("PDX", "organoid"):
+        return out
+    own = _own_text(r)
+    if r.get("model_matched"):
+        verdict, why = judge_model(r)
+        if verdict == "model" and st in PATIENT_ST:
+            out.append(("20a", {"sample_type": model_sample_type(r)}, why))
+            return out
+        if verdict in ("collision", "patient-label"):
+            if r.get("disease_source") == "model":
+                out.append(("20c", {"clear_model": True, "exclude": True},
+                            why + "; the model was the only link to a sarcoma entity"))
+                return out
+            if st in PATIENT_ST:
+                out.append(("20b", {"clear_model": True}, why))
+    if st == "organoid" or st in PATIENT_ST:
+        h = host(r.get("organism"))
+        if h:
+            out.append(("20d", {"sample_type": h},
+                        f"{r.get('organism')} material is not a patient sample"))
+            return out
+    if st not in PATIENT_ST:
+        return out
+    m = _OTHER_DX.search(own)
+    if m and not sarcoma_named(own):
+        out.append(("20e", {"exclude": True},
+                    f"the record names a different diagnosis ('{m.group(0)}') and no sarcoma; "
+                    f"it entered the entity through its series"))
+        return out
+    full = " ;; ".join((r.get("title", ""), r.get("source_name", ""), r.get("characteristics", "")))
+    if r.get("disease_source") == "sample" and not sarcoma_named(own) and sarcoma_named(full):
+        out.append(("20i", {"exclude": True},
+                    "the only sarcoma the record names is in the description of its reference "
+                    "RNA or DNA"))
+        return out
+    src = _own_source(r)
+    b = _BLOOD.search(src)
+    if b and not re.search(r"tumou?r|specimen|biops|resect|neoplas|sarcom|carcinom|cancer|lesion|"
+                           r"metasta", src, re.I):
+        out.append(("20g", {"sample_type": "normal/reference"},
+                    f"blood or immune cells drawn from the patient ('{b.group(0)}'), not tumour"))
+        return out
+    n = _NORMAL_TISSUE.search(own)
+    if n:
+        out.append(("20g", {"sample_type": "normal/reference"},
+                    f"normal tissue taken from the patient ('{n.group(0)}'), not tumour"))
+        return out
+    if _PDX_PLURAL.search(own):
+        out.append(("20h", {"sample_type": "PDX"}, "the record calls the samples tumours in PDXs"))
+        return out
+    e = _ENGINEERED.search(own)
+    if e:
+        out.append(("20h", {"sample_type": "cell_line"},
+                    f"cultured cells modified at the bench ('{e.group(0)}'), not a resected tumour"))
+        return out
+    ts = " ;; ".join(p for p in re.split(r"\s\|\s", r.get("title", ""))
+                     + re.split(r"\s\|\s", r.get("source_name", "")) if not _is_reference(p))
+    c = _CELLWORD.search(ts)
+    if c and not re.search(r"\bpatient", ts, re.I):
+        out.append(("20f", {"sample_type": "cell_line"},
+                    f"the record's own title or source calls it a cell line ('{c.group(0)}')"))
+        return out
+    for f in (r.get("characteristics", "") or "").split(";;"):
+        if ":" in f and not _is_reference(f):
+            k, v = f.split(":", 1)
+            if _CELLKEY.match(k) and _CELLWORD.search(v):
+                out.append(("20f", {"sample_type": "cell_line"},
+                            f"the record's cell-line field names a cell line ('{v.strip()[:40]}')"))
+                break
+    return out
+
+
 def sample_type(blob, organism):
     b = blob.lower()
     if re.search(r"\bpdx\b|patient[\-\s]derived\s+xenograft|o-pdx", b): return "PDX"
@@ -364,6 +658,22 @@ def classify(r, ctx):
     if stype == "unspecified" and not model and TISSUEY.search(sblob): stype = "primary_tumor"
     if NORMALY.search(r.get("source_name","")) and not TUMORY.search(r.get("source_name","")):
         stype = "normal/reference"
+    # Correction #20: a patient sample has to survive patient_material(), which stage 39 also
+    # applies to the shipped table.
+    view = {"title": r.get("title",""), "source_name": r.get("source_name",""),
+            "characteristics": r.get("characteristics",""), "organism": r.get("organism",""),
+            "gse_title": gctx.split(" || ")[0][:300], "model_matched": model,
+            "disease_source": dsrc, "sample_type": stype}
+    excluded = False
+    for _rule, change, _why in patient_material(view):
+        if change.get("clear_model"):
+            model = mdis = msub = rrid = mprob = ""
+            if dsrc == "model":
+                disease, dsrc = "", "none"
+        if change.get("exclude"):
+            excluded = True
+        if change.get("sample_type"):
+            stype = change["sample_type"]
 
     if model: relevance = "model_confirmed"
     elif sp_s: relevance = "sample_explicit"
@@ -373,6 +683,8 @@ def classify(r, ctx):
     in_scope = "Y" if (relevance != "off_target" and
                        (disease in IN_SCOPE_DIS or model)) else "N"
     if NONSARC.search(sblob) and not model and not sp_s and disease in ("", "Sarcoma NOS"):
+        relevance, in_scope = "off_target", "N"
+    if excluded:
         relevance, in_scope = "off_target", "N"
 
     rec = {**r, "assay_class": assay, "epi_target_norm": target, "antibody_raw": ab,

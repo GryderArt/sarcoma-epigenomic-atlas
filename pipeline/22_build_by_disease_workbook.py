@@ -38,7 +38,8 @@ MODELISH = {"cell_line","organoid","xenograft(CDX)","mouse_model","PDX"}
 MODEL_TYPE = {"cell_line":"cell line","organoid":"organoid","xenograft(CDX)":"CDX",
               "mouse_model":"GEM / mouse model","PDX":"PDX","primary_tumor":"primary tumor",
               "metastasis":"metastasis","recurrence":"recurrence",
-              "normal/reference":"normal / reference","unspecified":"unspecified"}
+              "normal/reference":"normal / reference","unspecified":"unspecified",
+              "non-human":"non-human (animal or plant)"}
 
 COLS = ["model type","model name","datatype","GEO source","epigenetic target",
         "n samples","sample type","organism","assay class","subtype evidence",

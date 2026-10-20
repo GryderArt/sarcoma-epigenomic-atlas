@@ -43,6 +43,7 @@ SHEETS = [
     ("GSE140686_recovered", "GSE140686_recovered_diagnoses.tsv"),
     ("T9b_RMS_recall_log", "T9b_rms_subtype_log.tsv"),
     ("T9c_Purity_log",    "T9c_purity_log.tsv"),
+    ("T33_Patient_material_log", "T33_patient_material_corrections.tsv"),
     ("T11_H3K27ac_fidelity", "T11_h3k27ac_fidelity.tsv"),
     ("T11b_fidelity_by_study", "T11b_fidelity_by_study.tsv"),
 ]
@@ -71,6 +72,14 @@ README = [
   "removed. GCTB uses G34W/L, chondroblastoma uses K36M.", ""),
  ("4. ChIP/CUT&RUN input and IgG controls are excluded from 'regulatory epigenomic "
   "samples' — they are controls, not profiles.", ""),
+ ("5. What counts as a patient sample (correction #20). A sample is counted as patient "
+  "tumor only if it is human, its own record does not present it as a cell line, PDX, "
+  "xenograft or other model, and its own record does not name a different cancer. "
+  "143B, MG-63, GIST-T1 and other cell lines had been typed as metastases because "
+  "'metastatic osteosarcoma cell line' was read for its tumor word; model-name collisions "
+  "('BT12' for breast tumor 12) had carried other cancers into sarcoma entities; and "
+  "mouse, zebrafish, canine and plant samples had been typed as primary tumors. Every "
+  "change is listed with its rule and basis in tab T33_Patient_material_log.", ""),
  ("", ""),
  ("KEY DEFINITIONS", "head"),
  ("regulatory epigenomics = ChIP-seq, ChIP-exo, ChIP-chip, CUT&RUN, CUT&Tag, ATAC-seq, "

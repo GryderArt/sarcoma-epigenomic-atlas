@@ -207,6 +207,7 @@ Each was a real error caught against ground truth, and each is logged.
 | 8 | ChIP input controls counted as profiles | inflated sparse entities most | excluded from every regulatory count |
 | 9 | Mixed genome builds and mouse bigWigs compared at human coordinates | models beat the patient-patient ceiling | build detection, liftOver, mouse dropped; then restricted to within-study comparisons after same-study ρ 0.714 vs cross-study 0.452 |
 | 10 | "Entities cataloged" mixed diseases with residual bins and a control tissue | inconsistent denominators across figures | `entity_kind`; 45 named entities carry every denominator |
+| 20 | Material that is not a patient's tumor was counted as one. 143B, MG-63, GIST-T1 and other cell lines were typed as metastases because "highly metastatic osteosarcoma cell line" was read for its tumor word, and the catalogued model type could only overrule a record that had matched nothing. Three further routes led to the same column: model-name collisions ("BT12", breast tumor 12, read as the ATRT line BT-12; "Giant cell tumor" is an alias of the GCT line), non-human samples typed as primary tumors (mouse, zebrafish, canine, Arabidopsis), and comparison samples whose own records name a different cancer (Wilms tumors in a CCSK series, breast tumors in an Ewing series) | the user saw 143B with a PATIENT badge on the gap map | a record now counts as patient tumor only if it is human, does not present itself as a model, and does not name a different cancer: nine rules, shared by `04` and stage `39` (§7f), each change logged with its basis. 7,495 samples changed, 565 of them epigenomic. Across the 45 entities, regulatory profiles on patient tumor fall 622 → 346 and on patient-derived material 839 → 566; 18 entities rather than 20 have patient-derived regulatory data, and 18 rather than 20 of the 31 in the validation figure can be checked against patient tissue. Osteosarcoma's patient-tumor regulatory count falls 142 → 36, GIST 84 → 36, FP-RMS 35 → 7; adult fibrosarcoma and UPS fall to none. An earlier estimate of this correction flipped 30 genuine osteosarcoma patient samples in GSE74230 by series; series-level rules were dropped for that reason. Entity totals barely move: most of what changed changed column, not entity. `39`, `T33` |
 | 19 | Four entities had no incidence anchor and so no area on WP5 — invisible on the one figure built to show what is unserved | asking why the quilt showed only 41 of 45 entities | three now carry one. AFX / pleomorphic dermal sarcoma has a real national rate all along — 0.5/100,000 in the Danish National Pathology Register, 1,118 patients [PUBMEDID: 39388966], corroborated at 0.59/100,000 in Spain [PUBMEDID: 31264202] — and was missing only because it is coded as a cutaneous tumor, not a sarcoma. At ~1,710 US cases a year it is among the more common entities in the atlas and holds 14 epigenomic samples. Myoepithelial carcinoma and angiomatoid fibrous histiocytoma take bounded estimates with their weakness stated; ossifying fibromyxoid tumor has no derivable rate and stays off every per-case figure. The pediatric/adult gap widens 23× to 27× and the entities with no regulatory data now represent 5,900 US cases a year rather than 4,100. `13` |
 | 18 | The St Jude data administrator's per-model diagnoses governed the browser tracks they were obtained for, but not the GEO samples generated on the same models — which carry no diagnosis of their own, so their subtype came from the curated catalogue instead | the same student asked why GSE174376's single-cell ATAC-seq was not under FN-RMS | 250 samples across 6 series were filed under the wrong RMS subtype, 186 of them belonging to FN-RMS. Precedence follows correction #3 one level out: the institution that derived, holds and diagnosed the model outranks our catalogue's reading of it. Matching is on the model base, asserted safe because no base carries conflicting calls across passages. Five epigenomic samples move; the rest are transcriptomic and fix the tables rather than the counts. `37`, `T32` |
 | 18b | Fifteen `*_barcode` samples in GSE174376 — `protocol: Barcode dialout PCR`, `library_strategy: OTHER` — were classified scATAC-seq because the series is a single-cell ATAC study | counting GSE174376's scATAC and getting 22 where the deposit describes 7 | a barcode dial-out is a PCR readout of lineage labels, not a chromatin profile. The series-context leak of corrections #4 and #15 once more, in a record whose own words were clear enough to prevent it. Demoted to non-epigenomic; single-cell epigenomes atlas-wide fall 246 to 231. `37` |
@@ -305,7 +306,7 @@ sweep bounded to dates after the latest series already held reaches only what is
 `31_reharvest_delta.py` runs that bounded sweep and classifies the result by **importing**
 `classify` from `04`, not by reimplementing it, so a sample deposited last month is
 annotated by exactly the rules that annotated one deposited in 2012. `32_merge_delta.py`
-appends the delta, then `06`, `07` and `30` are re-run over the whole merged table.
+appends the delta, then `06`, `07`, `30` and `39` are re-run over the whole merged table.
 
 The 2026-09-01 re-harvest swept 658 queries, fetched 98,638 sample records from 4,357
 series the atlas did not hold, and kept 6,440 in scope. Stage `07` then moved 296 of those
@@ -329,6 +330,43 @@ Nothing numeric is typed into the document. `33` imports `28_whitepaper_figures.
 reuses its loaders, its `REG` / `MODERN` / `MODALITY` definitions and its bootstrap, so a
 sentence and the panel it describes cannot print different numbers — they did, for six
 quantities, when `33` first carried its own copies of those definitions.
+
+## 7f. What counts as a patient sample
+
+`sample_type` decides which column a sample is counted in, and every patient-tumor figure in
+the white paper reads that column. It was assigned by the first phrase that matched, with
+tumor words tested before cell-line words, so a record could be a cell line and say so and
+still be counted as a metastasis. Correction #20 replaces "the first tumor word wins" with a
+test the record has to pass. `04_classify.patient_material()` holds the rules and stage `39`
+applies the same function to the shipped table; every change is in
+`T33_patient_material_corrections.tsv` with the rule and the basis.
+
+| rule | the record ... | becomes | samples |
+|---|---|---|---|
+| 20a | names a catalogued model as the sample and describes it as cultured, engrafted or derived | the model's own type: cell line; CDX when it places the line in an animal; PDX; organoid | 397 |
+| 20b | carries a model name only as a patient label (GIST-48, RMS13, Case 27) or inside a list, such as the eight lines of a reference RNA pool | the model link is removed and the sample stays patient tissue; an RMS subtype that came only from that model reverts to RMS-NOS. Kept as a donor link where the same series profiles the derived model | 105 |
+| 20c | ... and that model was its only link to a sarcoma | `EXCLUDED - not a sarcoma` | 45 |
+| 20d | comes from a non-human host | `mouse_model` for rodents, `non-human` otherwise | 5,085 |
+| 20e | names a different cancer and no sarcoma | `EXCLUDED - not a sarcoma` | 1,451 |
+| 20i | names a sarcoma only in the description of its reference RNA (the Stratagene pool includes a liposarcoma line) | `EXCLUDED - not a sarcoma` | 91 |
+| 20g | is blood, immune cells or normal tissue taken from the patient | `normal/reference` | 167 |
+| 20h | describes cells modified at the bench, or "tumors in PDXs" | cell line, or PDX | 76 |
+| 20f | calls itself a cell line in its own title, source or cell-line field | cell line | 75 |
+
+Two principles carry over from earlier corrections. **Only the sample's own words count**
+(correction #4): a rule that re-typed every patient-labelled sample of an all-cell-line
+series was tested and dropped, because GSE74230 also holds five patients' primary tumors and
+lung metastases. **A model name is evidence only where the record names it as the sample**
+(correction #7): in a title, a source or a cell-line field, not inside a list, an identifier
+or a reference description.
+
+What #20 does not do. It re-types patient material; it does not re-audit the entity of every
+model sample, and a patient sample whose record names neither a sarcoma nor another cancer
+keeps the entity its series gave it. Four entity calls on patient tissue surfaced during the
+audit and are listed for review rather than changed: angiomatoid fibrous histiocytomas filed
+under clear cell sarcoma (the two share EWSR1::ATF1), CCSK tumors filed under clear cell
+sarcoma of soft tissue, an ASPS H3K36me3 profile filed under GCTB, and plexiform
+neurofibromas filed under MPNST.
 
 ## 8. What this cannot tell you
 

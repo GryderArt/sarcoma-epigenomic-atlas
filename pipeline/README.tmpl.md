@@ -146,6 +146,7 @@ pip install openpyxl matplotlib
 
 # everything downstream of the harvest, from the shipped tables — about a minute
 cd pipeline
+python3 39_correct_patient_material.py # what counts as a patient  -> T4, T33
 python3 08_aggregate_entities.py      # entity-level counts        -> T3
 python3 13_join_incidence.py          # incidence join             -> T13
 python3 12_merge_controlled_access.py # EGA + St Jude mapping      -> T15
@@ -165,7 +166,7 @@ shipped so you do not have to. `09`–`11` re-harvest EBI and EGA (minutes).
 
 **Bringing it up to date** does not need the full sweep. `31_reharvest_delta.py` runs the
 same term sweep bounded to GEO release dates after the latest series already held, and
-`32_merge_delta.py` appends the result; `06`, `07` and `30` then re-run over the merged
+`32_merge_delta.py` appends the result; `06`, `07`, `30` and `39` then re-run over the merged
 table so every correction in the log applies to the new material by the same code that
 applied it to the old. See [`docs/methods.md` §7d](docs/methods.md).
 
@@ -186,7 +187,8 @@ Paths resolve relative to the checkout. Override with `SASS_ROOT`, `SASS_DATA`,
   were caught against ground truth during construction. Each was fixed, and each is logged
   with what caught it in [`docs/methods.md` §7](docs/methods.md) — published as a measure
   of how error-prone this is, not as a list of outstanding problems. The reassignment logs
-  `T9b` and `T9c` record every call so you can audit them rather than trust them.
+  `T9b`, `T9c`, `T29`, `T32` and `T33` record every call so you can audit them rather than
+  trust them.
 - **The delta harvest does not re-run the cross-series duplicate pass.** Samples added
   after the initial build carry no `is_duplicate` flag. The bound is small and stated:
   correction #16 in `docs/methods.md`.

@@ -268,7 +268,7 @@ def fig_composition(d):
     for i2, (lab, rr) in enumerate(rows):
         cl, pdx, pt = split(rr)
         tot = cl + pdx + pt
-        left = 0
+        left, small = 0, []
         for v, col in ((cl, LINE), (pdx, PDER), (pt, TUMR)):
             pct = 100 * v / tot
             axA.barh(i2, pct, left=left, color=col, height=0.5, edgecolor="white",
@@ -277,9 +277,16 @@ def fig_composition(d):
                 axA.text(left + pct / 2, i2, f"{pct:.0f}%", ha="center", va="center",
                          fontsize=7, weight="bold", color="white" if col != LINE else DARK)
             else:
-                axA.text(left + pct / 2, i2 + 0.42, f"{pct:.0f}%", ha="center", va="bottom",
-                         fontsize=6, color=col if col != LINE else DARK)
+                small.append([left + pct / 2, pct, col])
             left += pct
+        # two thin segments side by side would print their labels on top of each other;
+        # keep each label over its own segment where possible, and at least 6 points apart
+        for k in range(len(small) - 1, 0, -1):
+            if small[k][0] - small[k - 1][0] < 6:
+                small[k - 1][0] = small[k][0] - 6
+        for x, pct, col in small:
+            axA.text(x, i2 + 0.42, f"{pct:.0f}%", ha="center", va="bottom",
+                     fontsize=6, color=col if col != LINE else DARK)
     axA.set_yticks([0, 1]); axA.set_yticklabels([r[0] for r in rows], fontsize=6.8)
     axA.set_ylim(-0.55, 1.75)
     axA.set_xlim(0, 100); axA.set_xlabel("% of samples", fontsize=7)
@@ -352,15 +359,17 @@ def fig_composition(d):
         if yv.isdigit() and r["disease"] in {t["atlas_disease"] for t in T13}:
             firstpd.setdefault(r["disease"], int(yv))
     grew = {yy: sum(1 for v in firstpd.values() if v <= yy) for yy in (2015, 2020, 2026)}
-    fig.suptitle(f"Patient-derived profiling has extended from {grew[2015]} entities to "
-                 f"{grew[2026]} in a decade; {len(none_)} of {len(T13)} remain",
+    start = "none" if grew[2015] == 0 else f"{grew[2015]} entities"
+    fig.suptitle(f"Patient-derived profiling has extended from {start} to "
+                 f"{grew[2026]} entities in a decade; {len(none_)} of {len(T13)} remain",
                  fontsize=9.8, weight="bold", x=0.0, y=0.995, ha="left")
     n_prov = cl + pdx + pt
     foot(fig, 0.0, -0.012,
          f"Panel A denominator is the {n_prov:,} de-duplicated sarcoma regulatory samples "
          f"whose material of origin is stated: {100*cl/n_prov:.0f}% are established cell "
          f"lines and {100*pt/n_prov:.0f}% are patient tumor. Samples recorded only as "
-         f"normal/reference, mouse model or unspecified are excluded from that denominator "
+         f"normal/reference, mouse or other non-human material, or unspecified are excluded "
+         f"from that denominator "
          f"rather than assigned by guesswork; against the full de-duplicated set the "
          f"cell-line share is {100*cl/len(reg):.0f}%.\n\n"
          f"Panel C counts patient-derived material only, which is its purpose; the "
