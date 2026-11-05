@@ -1,5 +1,5 @@
 {
- "accessibility": 1563,
+ "accessibility": 1564,
  "arrival": {
   "acc": 2011,
   "chip": 2007,
@@ -15,7 +15,7 @@
   ],
   [
    "CIC::DUX4 sarcoma",
-   4.4
+   4.0
   ]
  ],
  "burden_x": 5,
@@ -26,53 +26,53 @@
  "cases_topography": 18020,
  "cases_total": 28881,
  "cases_total_round": 29000,
- "chip": 7935,
+ "chip": 7578,
  "controlled_datasets": 67,
  "controlled_reg": 905,
  "controlled_total": 3350,
  "coverage": {
   "2010": 8,
-  "2015": 21,
+  "2015": 20,
   "2020": 44,
   "2026": 44
  },
  "coverage_2010": 8,
- "coverage_2015": 21,
+ "coverage_2015": 20,
  "coverage_2020": 44,
- "cutoff": "2026-09-01",
- "cutoff_human": "1 September 2026",
- "cutoff_month": "September 2026",
- "cutrun": 1427,
+ "cutoff": "2026-10-01",
+ "cutoff_human": "1 October 2026",
+ "cutoff_month": "October 2026",
+ "cutrun": 1486,
  "early_hi": 2015,
  "early_lo": 2011,
  "entities": 45,
  "entities_word": "forty-five",
- "epi_adult": 2166,
- "epi_ped": 10329,
- "epi_rated_total": 15571,
+ "epi_adult": 2128,
+ "epi_ped": 9944,
+ "epi_rated_total": 15204,
  "ess_normal": 9,
  "ess_normal_word": "nine",
- "ess_reg": 12,
- "ess_reg_word": "twelve",
+ "ess_reg": 10,
+ "ess_reg_word": "ten",
  "fam": {
-  "acc": 1563,
-  "chip": 7935,
-  "cnr": 1427,
-  "meth": 3847,
-  "sc": 231,
-  "td": 880
+  "acc": 1564,
+  "chip": 7578,
+  "cnr": 1486,
+  "meth": 3795,
+  "sc": 230,
+  "td": 860
  },
- "fam_total": 15883,
+ "fam_total": 15513,
  "fidelity_hi": 6,
  "fidelity_hi_word": "six",
  "fidelity_n": 7,
  "fidelity_n_word": "seven",
  "fprms": [
   110,
-  668
+  664
  ],
- "gap": 27,
- "gap_word": "twenty-seventh",
+ "gap": 26,
+ "gap_word": "twenty-sixth",
  "gse140686_labels": 66,
  "gse140686_n": 1505,
  "gse140686_only": 10,
@@ -96,9 +96,9 @@
  "latest_year": 2026,
  "lgfms_reg": 8,
  "lgfms_reg_word": "eight",
- "methylation": 3847,
- "modern_early": "6",
- "modern_late": "33",
+ "methylation": 3795,
+ "modern_early": "7",
+ "modern_late": "35",
  "n_corrections": 20,
  "n_corrections_word": "twenty",
  "n_have_pd": 18,
@@ -146,12 +146,12 @@
  "pct_cases_adult": 90,
  "pct_cell_line": 94,
  "pct_cell_line_all": 77,
- "pct_chip": 49,
+ "pct_chip": 48,
  "pct_control": 3,
  "pct_last10": 87,
  "pct_last10_word": "87",
- "pct_last5": 51,
- "pct_last5_word": "51",
+ "pct_last5": 50,
+ "pct_last5_word": "50",
  "pct_pdx": 2,
  "pct_pdx_all": 2,
  "pct_tumor": 4,
@@ -164,49 +164,49 @@
   "2026": 18
  },
  "proj6": [
-  619,
-  895,
-  1308
+  638,
+  898,
+  1264
  ],
- "rate_adult": 0.09393476383445161,
- "rate_ped": 2.4907670454545454,
+ "rate_adult": 0.09141035009632631,
+ "rate_ped": 2.374289772727273,
  "ratrt": [
   95,
   966
  ],
- "reg_adult": 1414,
- "reg_ped": 7014,
- "reg_rated_total": 10046,
- "reg_samples": 10384,
- "samples": 16270,
- "singlecell": 231,
- "studies": 884,
- "threed": 880,
+ "reg_adult": 1376,
+ "reg_ped": 6686,
+ "reg_rated_total": 9724,
+ "reg_samples": 10062,
+ "samples": 15900,
+ "singlecell": 230,
+ "studies": 853,
+ "threed": 860,
  "us_population_m": 342,
  "worst": [
   [
    "MPNST",
-   158
+   176
+  ],
+  [
+   "giant cell tumor of bone",
+   65
   ],
   [
    "FP-RMS (PAX3/7::FOXO1)",
    58
   ],
   [
-   "giant cell tumor of bone",
-   53
-  ],
-  [
-   "liposarcoma NOS",
-   28
-  ],
-  [
    "fusion-negative rhabdomyosarcoma",
    26
+  ],
+  [
+   "Liposarcoma, myxoid / round cell",
+   24
   ]
  ],
- "zero_3d": 29,
- "zero_3d_word": "twenty-nine",
+ "zero_3d": 30,
+ "zero_3d_word": "thirty",
  "zero_acc": 21,
  "zero_acc_word": "twenty-one",
  "zero_k27ac": 21,

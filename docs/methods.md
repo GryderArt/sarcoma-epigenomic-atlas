@@ -368,6 +368,102 @@ under clear cell sarcoma (the two share EWSR1::ATF1), CCSK tumors filed under cl
 sarcoma of soft tissue, an ASPS H3K36me3 profile filed under GCTB, and plexiform
 neurofibromas filed under MPNST.
 
+## 7g. What the material is
+
+Every GEO sample carries an organism, the harvest has always stored it, and until this
+correction nothing read it. A collaborator opened the GEO link for ESS-1, an endometrial
+stromal sarcoma line, and found *Saccharomyces cerevisiae*: GSE147927 is a budding-yeast
+ChIP-exo atlas and `Ess1`, a yeast prolyl isomerase, had been read as the cell line.
+
+The classifier did hold a guard for exactly this -- `judge_model()` refuses a human model
+matched in non-human material -- but it was reached only through `patient_material()`,
+which returns immediately for anything not typed as patient tissue, PDX or organoid. The
+yeast samples were typed `cell_line`, so the guard never ran on them. Scope, not logic,
+was the defect: the check rode into the tree on correction #20, whose subject was patient
+counts, and inherited its reach.
+
+Correction #21 gives the check a route of its own. Stage `40` resolves each of the
+72 distinct organism strings the atlas holds against NCBI Taxonomy once and stores
+the answer in `T34_organism_taxonomy.tsv`; `04_classify.host_class()` reads it, and
+`species_material()` runs on every record whatever its `sample_type`. Stage `41` applies
+the same function to the shipped table and logs each change in
+`T35_species_corrections.tsv`. Two columns now travel with every sample, `species` and
+`host_class`, hidden by default in both workbooks.
+
+The governing fact is that a sarcoma is a malignancy of mesenchymal tissue, so only a
+vertebrate can carry one. Viruses, synthetic constructs and metagenomes are passengers in
+a sample rather than its material and never decide a record on their own; an organism that
+does not resolve is never held against one.
+
+| rule | the record ... | becomes | samples |
+|---|---|---|---|
+| 21a | is made of material that cannot carry a sarcoma -- fungus, plant, bacterium, archaeon, invertebrate | `EXCLUDED - not a sarcoma` | 931 |
+| 21b | matches a human model name in non-human material, with nothing in the record saying the line was engrafted or cultured there | the model link is removed; the entity its series or its own words gave it stands | 223 |
+| 21c | ... and that model was its only link to a sarcoma | `EXCLUDED - not a sarcoma` | 1090 |
+
+931 + 223 + 1090 = 2244 records, 318 of them
+epigenomic. The 21a material divides as 272 archaeon, 248 fungus, 223 plant, 155 invertebrate, 22 bacterium, 11 other.
+
+The collisions are the same shape as the one that was reported. `LPS1`, `LPS2` and `LPS3`,
+three liposarcoma lines, matched **lipopolysaccharide** across macrophage, microglia and B
+cell experiments; `NOS-1` matched the **Nos1** gene in mouse brain single-cell atlases;
+`MG-63` matched a *Mycoplasma gallisepticum* sample called `Mg63`, `AS-02` a *Plasmodium
+falciparum* sample called `AS02`, and `U-CH1` a thalamus sample called `UCH1`. On the
+series side, "chromosome **arms**" matched the ARMS abbreviation and carried 150
+*Arabidopsis* samples into FP-RMS. A mixed series is corrected per sample, not per series:
+GSE295218 profiles both human U2OS and *E. coli*, and only the four bacterial samples left.
+
+One tightening came with it. `judge_model()` accepted a bare `strain:` field as evidence
+that a model had been placed in an animal, and every mouse record carries one; that is
+husbandry metadata, not a statement about a cell line. The species gate asks instead for a
+word that says so -- engrafted, injected, implanted, orthotopic, or cultured as a line --
+and exempts models the catalogue already marks as murine, so MOS-J, LM8 and K7M2 stand in
+their own species.
+
+What #21 does not do. It judges the material, not the diagnosis: a vertebrate record whose
+entity is wrong for other reasons is untouched. Canine osteosarcoma is real data and stays,
+but the model catalogue records no species, so a canine line matched in a dog reads as a
+collision and loses its model link while keeping its entity -- COS-33 in GSE76128 and
+GSE14033 is the case to fix by adding a species column to `T2_models.tsv`.
+
+## 7h. The oncohistone and the methyl mark
+
+Chondroblastoma carries an H3.3 K36M substitution and giant cell tumour of bone a G34W, so
+the entity pattern for `GCTB/Chondroblastoma` carried `k36m`. Written without a lookahead,
+`k36m` also matches the four characters inside **H3K36me1**, **H3K36me2** and
+**H3K36me3** -- the name of an antibody on a large share of all ChIP-seq and CUT&RUN
+deposited anywhere. `K27M_GLIOMA`, which separates the glioma oncohistones from the bone
+ones, carried the same flaw against H3K27me1/2/3.
+
+The effect was quiet and large. Any H3K36me3 experiment that reached the sweep read as
+chondroblastoma: ENCODE histone tracks, neuroblastoma, multiple myeloma, prostate cancer,
+mouse embryonic stem cells. Worse than the extra samples, it overwrote entities that were
+right: a synovial sarcoma organoid series, two PAX3::FOXO1 rhabdomyosarcoma KDM4 series and
+an ASPSCR1::TFE3 series were all filed under chondroblastoma because they profiled H3K36me3.
+
+Correction #22. The patterns in `04_classify` now require the mutation form,
+`k36m(?!e)` and `k27m(?!e)`. Stage `43` repairs the shipped table and acts only where the
+call rested on the collision alone -- a record keeps its entity if anything else in its
+text supports it, whether "giant cell tumour of bone", "chondroblastoma", G34W or a real
+K36M. Where the call was spurious the entity is re-derived from the record's own words by
+the same precedence `classify` uses, so an overwritten sarcoma returns to itself rather
+than being discarded.
+
+| rule | the record ... | becomes | samples |
+|---|---|---|---|
+| 22a | matched only the K36 methyl mark, and its own words name another entity | re-filed under that entity | 130 |
+| 22b | matched only the K36 methyl mark, and names no sarcoma at all | `EXCLUDED - not a sarcoma` | 589 |
+
+719 records, 566 of them epigenomic. The 130 re-filed go to
+92 Sarcoma NOS, 14 Fibrosarcoma NOS, 8 FP-RMS, 8 MPNST, 6 Synovial sarcoma, 2 ASPS.
+
+One thing the table could not answer on its own. `T4` keeps a series title but not its
+summary, and a call made on the summary cannot be re-tested from the table. Stage 43
+re-fetches the summary for every series-sourced call still in question and caches it in
+`T36b_series_summaries.tsv`; without that step a multiple-myeloma SETD2 series and a
+mesenchymal-stromal-cell series stayed under chondroblastoma, because the words that
+matched were never in the stored title.
+
 ## 8. What this cannot tell you
 
 **Absence in this atlas means absence of a public, entity-labeled deposit.** It is not

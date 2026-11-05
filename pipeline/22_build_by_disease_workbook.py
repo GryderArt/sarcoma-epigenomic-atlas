@@ -42,7 +42,8 @@ MODEL_TYPE = {"cell_line":"cell line","organoid":"organoid","xenograft(CDX)":"CD
               "non-human":"non-human (animal or plant)"}
 
 COLS = ["model type","model name","datatype","GEO source","epigenetic target",
-        "n samples","sample type","organism","assay class","subtype evidence",
+        "n samples","sample type","organism","species","host class","assay class",
+        "subtype evidence",
         "series title","PubMed","year","GEO link","PubMed link","model flag",
         "duplicate note"]
 
@@ -134,7 +135,8 @@ def main():
             flag = prob.get((r["model_matched"] or "").strip().lower(), "")
             dup = "input / IgG control" if target in ("input/none","none") else ""
             vals = [MODEL_TYPE.get(st, st), name, assay, gse,
-                    target or "—", a["n"], st, r["organism"], assay,
+                    target or "—", a["n"], st, r["organism"],
+                    r.get("species",""), r.get("host_class",""), assay,
                     r.get("subtype_evidence") or r.get("rms_call_basis") or "",
                     r["gse_title"][:110], pm, (r["gse_date"] or "")[:4],
                     f"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc={gse}",
@@ -142,14 +144,18 @@ def main():
                     flag, dup]
             for j, v in enumerate(vals, 1):
                 c = ws.cell(row=i, column=j, value=v)
-                c.font = LINK if (j in (14, 15) and v) else BODY
+                c.font = LINK if (j in (16, 17) and v) else BODY
                 if j in (14, 15) and v: c.hyperlink = v
                 if j == 16 and v: c.fill = WARN
             i += 1
         ws.freeze_panes = "A2"
         if i > 2: ws.auto_filter.ref = f"A1:{get_column_letter(len(COLS))}{i-1}"
-        for j, w in enumerate([17,30,15,13,26,10,17,15,15,34,52,11,7,17,17,34,20], 1):
+        for j, w in enumerate([17,30,15,13,26,10,17,15,24,12,15,34,52,11,7,17,17,34,20], 1):
             ws.column_dimensions[get_column_letter(j)].width = w
+        # species and host class ride along on every row but stay out of the way until a
+        # record looks wrong for its label -- unhide columns I and J to check one
+        for col in ("I", "J"):
+            ws.column_dimensions[col].hidden = True
 
     wb.save(OUT)
     print(f"{len(order)} entity tabs + INDEX -> {OUT} ({os.path.getsize(OUT)/1e6:.1f} MB)")

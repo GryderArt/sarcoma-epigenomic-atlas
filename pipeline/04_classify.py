@@ -34,7 +34,8 @@ DIS = [
                          r"smarcb1[\-\s]deficient|ini1[\-\s]deficient"),
  ("DSRCT",   r"desmoplastic\s+small\s+round\s+cell|ewsr1[\-\s/:]*wt1"),
  ("Infantile fibrosarcoma", r"infantile\s+fibrosarcoma|congenital\s+fibrosarcoma|etv6[\-\s/:]*ntrk3"),
- ("GCTB/Chondroblastoma", r"giant\s+cell\s+tumou?r\s+of\s+bone|\bgctb\b|chondroblastoma|g34w|k36m"),
+ ("GCTB/Chondroblastoma", r"giant\s+cell\s+tumou?r\s+of\s+bone|\bgctb\b|chondroblastoma|g34w|"
+                            r"k36m(?!e)"),   # K36M the oncohistone, not K36me the mark
  # ---- shared pediatric/adult
  ("Synovial sarcoma", r"synovial\s+sarcoma|ss18[\-\s/:]*ssx|syt[\-\s/:]*ssx"),
  ("MPNST",   r"malignant\s+peripheral\s+nerve\s+sheath|\bmpnst\b|neurofibrosarcoma"),
@@ -263,7 +264,7 @@ NORMALY = re.compile(r"\b(normal|healthy|non[\-\s]?(tumou?r|malignant)|human\s+m
  r"primary\s+(fibroblast|osteoblast|chondrocyte)|\bhfob\b|\bimr[\-\s]?90\b|huvec)\b", re.I)
 TUMORY = re.compile(r"tumou?r|sarcom|carcinom|blastom|malignan|cancer|metasta|neoplas|biopsy|"
  r"chemo(sensitive|resistant)|patient|\bpdx\b|xenograft", re.I)
-K27M_GLIOMA = re.compile(r"k27m|g34r|g34v", re.I)
+K27M_GLIOMA = re.compile(r"k27m(?!e)|g34r|g34v", re.I)   # not H3K27me1/2/3
 GLIOMA_CTX = re.compile(r"gliom|\bdipg\b|diffuse\s+midline|astrocytom|\bgbm\b|brain\s*stem|pons|thalam", re.I)
 
 def first(pats, blob): return [k for k, p in pats if p.search(blob)]
@@ -309,6 +310,11 @@ _INVITRO_TS = re.compile(r"\bcells?\b|cell[\s_\-]*lines?|cellline|sub-?lines?|im
 _INVIVO = re.compile(r"xenograft|\binjected\b|\bimplanted\b|\bin[\s_\-]+vivo\b|orthotopic|"
                      r"subcutaneous|tail[\s\-]+vein|\bscid\b|\bnsg\b|nude\s+mice|\bstrain\s*:|"
                      r"from\s+mice|mice\s+model|tumou?rs?\s+in\s+mice", re.I)
+# _INVIVO minus the bare "strain:" field: words that actually place a model in an animal.
+_ENGRAFTED = re.compile(r"xenograft|\binjected\b|\bimplanted\b|\bin[\s_\-]+vivo\b|orthotopic|"
+                        r"subcutaneous|tail[\s\-]+vein|\bscid\b|\bnsg\b|nude\s+mice|"
+                        r"from\s+mice|mice\s+model|tumou?rs?\s+in\s+mice|\bcdx\b|\bpdx\b",
+                        re.I)
 _INVIVO_TITLE = re.compile(r"\bprimary[\s_\-]+tumou?r\b|\b(lung|liver|bone[\s_\-]+marrow|brain|kidney|"
                            r"lymph[\s_\-]+node|tibia|femur|flank)[\s_\-]+(metastas[ie]s|mets?|"
                            r"tumou?rs?)\b", re.I)
@@ -347,6 +353,66 @@ _ENGINEERED = re.compile(r"\binfected\b|transduc|transfect|(?<![a-z])sh[\s\-]?rn
 _PDX_PLURAL = re.compile(r"(?<![a-z])pdxs(?![a-z])|tumou?rs?\s+in\s+pdx", re.I)
 _RODENT = re.compile(r"mus\s+musculus|rattus|nannospalax|cricetulus|mesocricetus|peromyscus", re.I)
 _NOT_A_HOST = re.compile(r"virus|synthetic|other\s+sequences|metagenome|unidentified", re.I)
+
+# ------------------------------------------------------------- what the material can be
+# Correction #21 (docs/methods.md §8). GEO records an organism per sample and the harvest
+# has always carried it, but nothing ever asked what it was, so "Ess1" -- a budding-yeast
+# prolyl isomerase -- was read as the endometrial stromal sarcoma line ESS-1 and filed
+# yeast ChIP-exo under a sarcoma. Stage 40 resolves every organism string the atlas holds
+# against NCBI Taxonomy; `host_class` below is that answer. A sarcoma is a malignancy of
+# mesenchymal tissue, so only a vertebrate can carry one: material that resolves to a
+# fungus, plant, bacterium, archaeon or invertebrate is not a sarcoma sample under any
+# reading, whatever its title says.
+_TAXON = None
+_SARCOMA_CAPABLE = {"human", "vertebrate"}
+
+
+def _taxonomy():
+    """{organism string -> host_class}, from stage 40. Empty if it has not been run."""
+    global _TAXON
+    if _TAXON is None:
+        _TAXON = {}
+        try:
+            for r in csv.DictReader(topen("T34_organism_taxonomy.tsv"), delimiter="\t"):
+                _TAXON[r["organism"]] = r["host_class"]
+        except FileNotFoundError:
+            pass
+    return _TAXON
+
+
+def host_class(organism):
+    """The kind of organism the sample is made of: 'human', 'vertebrate', 'fungus',
+    'plant', 'bacterium', 'archaeon', 'invertebrate', 'other', or 'unknown'.
+
+    Viruses, synthetic constructs and metagenomes are passengers in a sample rather than
+    its material, so they never decide the answer on their own. A record naming several
+    organisms takes the most permissive: a human/mouse pair is a xenograft, not a mouse.
+    """
+    tax, seen = _taxonomy(), []
+    for part in re.split(r"[;/]", organism or ""):
+        part = part.strip()
+        if not part:
+            continue
+        cls = tax.get(part)
+        if cls is None:                       # not resolved: fall back on the old reading
+            cls = ("passenger" if _NOT_A_HOST.search(part) else
+                   "human" if "homo sapiens" in part.lower() else
+                   "vertebrate" if _RODENT.search(part) else "unknown")
+        if cls != "passenger":
+            seen.append(cls)
+    if not seen:
+        return "unknown"
+    if "human" in seen:
+        return "human"
+    if all(c == "vertebrate" for c in seen):
+        return "vertebrate"
+    return sorted(c for c in seen if c not in ("human", "vertebrate"))[0]
+
+
+def can_host_sarcoma(organism):
+    """False only when the material is positively known to be something that cannot carry
+    a sarcoma. An unresolved or absent organism is never held against a record."""
+    return host_class(organism) in _SARCOMA_CAPABLE | {"unknown"}
 
 
 def _windows(text, keys, maxw=6):
@@ -400,10 +466,10 @@ def _own_text(r):
 
 def host(organism):
     """'' for human (or no usable host); otherwise the sample type non-human material takes."""
-    o = (organism or "").strip()
-    if not o or "homo sapiens" in o.lower() or _NOT_A_HOST.search(o):
+    hc = host_class(organism)
+    if hc in ("human", "unknown"):
         return ""
-    return "mouse_model" if _RODENT.search(o) else "non-human"
+    return "mouse_model" if _RODENT.search(organism or "") else "non-human"
 
 
 def sarcoma_named(text):
@@ -480,6 +546,48 @@ def model_sample_type(r):
     if "cdx" in mt and not mt.startswith("cell"):
         return "xenograft(CDX)"
     return "cell_line"
+
+
+def species_material(r):
+    """Corrections that follow from what the sample is made of, as (rule, change, reason).
+
+    Correction #21. Unlike `patient_material`, this runs on every record whatever its
+    sample_type. That distinction is the whole point: the organism check used to live
+    inside the patient-material pass, which returns immediately for anything typed
+    cell_line, so a yeast ChIP-exo record that had been matched to the cell line ESS-1 was
+    typed cell_line and never reached the check at all.
+
+      21a  the material cannot carry a sarcoma (fungus, plant, bacterium, archaeon,
+           invertebrate)                                    -> EXCLUDED - not a sarcoma
+      21b  a human model name matched in non-human material -> model link removed
+      21c  ... and the model was the only link to an entity -> EXCLUDED - not a sarcoma
+    """
+    org = r.get("organism", "")
+    hc = host_class(org)
+    if hc not in _SARCOMA_CAPABLE | {"unknown"}:
+        return [("21a", {"clear_model": True, "exclude": True},
+                 f"the sample is {org or 'unknown'} ({hc}); a sarcoma is a malignancy of "
+                 f"mesenchymal tissue and only a vertebrate can carry one")]
+    m = r.get("model_matched") or ""
+    if not m or hc in ("human", "unknown"):
+        return []
+    verdict, why = judge_model(r)
+    if verdict not in ("collision", "patient-label"):
+        # `judge_model` accepts a bare "strain:" field as in-vivo evidence, which every
+        # mouse record carries: that is husbandry metadata, not a statement that a human
+        # line was engrafted. Putting a human model in non-human material needs a word
+        # that says so -- engrafted, injected, implanted, or cultured as a line.
+        own = _own_text(r)
+        if verdict == "model" and m not in _MURINE and not _ENGRAFTED.search(own) \
+                and not _MODELWORD.search(own):
+            why = (f"a human model ({m}) matched in {org or 'non-human'} material whose "
+                   f"record never says it was engrafted or cultured")
+        else:
+            return []
+    if r.get("disease_source") == "model":
+        return [("21c", {"clear_model": True, "exclude": True},
+                 why + "; the model was the only link to a sarcoma entity")]
+    return [("21b", {"clear_model": True}, why)]
 
 
 def patient_material(r):
@@ -647,7 +755,7 @@ def classify(r, ctx):
     if not disease and mdis: disease, dsrc = mdis, "model"
     # H3.3 residue guard: keep glioma out of the bone-tumor bin
     if disease == "GCTB/Chondroblastoma" and (K27M_GLIOMA.search(blob) or GLIOMA_CTX.search(blob)) \
-       and not re.search(r"g34w|g34l|k36m", blob, re.I):
+       and not re.search(r"g34w|g34l|k36m(?!e)", blob, re.I):
         disease = ""
 
     stype = sample_type(sblob, r.get("organism",""))
@@ -665,7 +773,10 @@ def classify(r, ctx):
             "gse_title": gctx.split(" || ")[0][:300], "model_matched": model,
             "disease_source": dsrc, "sample_type": stype}
     excluded = False
-    for _rule, change, _why in patient_material(view):
+    acts = species_material(view)
+    if not any(c.get("exclude") for _r, c, _w in acts):
+        acts += patient_material(view)
+    for _rule, change, _why in acts:
         if change.get("clear_model"):
             model = mdis = msub = rrid = mprob = ""
             if dsrc == "model":

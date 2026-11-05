@@ -19,6 +19,11 @@ BODY    = Font(name=ARIAL, size=9)
 TITLE   = Font(name=ARIAL, size=11, bold=True, color="0D366B")
 NOTE    = Font(name=ARIAL, size=9, italic=True, color="4A5560")
 
+# Resolved from the organism string by stage 40 and carried on every sample. Most readers
+# want the entity and the assay, not the taxonomy, so these ship hidden: unhide them from
+# the column headers (or Format > Hide & Unhide) when a record looks wrong for its label.
+HIDDEN_BY_DEFAULT = {"species", "host_class"}
+
 SHEETS = [
     ("README",            None),
     ("T13_Incidence_vs_Data", "T13_incidence_vs_data.tsv"),
@@ -44,6 +49,9 @@ SHEETS = [
     ("T9b_RMS_recall_log", "T9b_rms_subtype_log.tsv"),
     ("T9c_Purity_log",    "T9c_purity_log.tsv"),
     ("T33_Patient_material_log", "T33_patient_material_corrections.tsv"),
+    ("T35_Species_log",   "T35_species_corrections.tsv"),
+    ("T36_Oncohistone_log", "T36_oncohistone_corrections.tsv"),
+    ("T34_Organism_taxonomy", "T34_organism_taxonomy.tsv"),
     ("T11_H3K27ac_fidelity", "T11_h3k27ac_fidelity.tsv"),
     ("T11b_fidelity_by_study", "T11b_fidelity_by_study.tsv"),
 ]
@@ -181,7 +189,11 @@ def main():
         for j in range(1, min(ws.max_column, 40) + 1):
             w = max((len(str(ws.cell(row=i, column=j).value or ""))
                      for i in range(1, min(ws.max_row, 250) + 1)), default=10)
-            ws.column_dimensions[get_column_letter(j)].width = min(max(w + 2, 9), 52)
+            dim = ws.column_dimensions[get_column_letter(j)]
+            dim.width = min(max(w + 2, 9), 52)
+            if str(ws.cell(row=1, column=j).value or "") in HIDDEN_BY_DEFAULT \
+                    and not name.startswith(("T35", "T34")):
+                dim.hidden = True
         print(f"  {name:26s} {ws.max_row-1:7,d} rows x {ws.max_column} cols")
     wb.save(OUT)
     print(f"\nwrote {OUT}  ({os.path.getsize(OUT)/1e6:.1f} MB)")

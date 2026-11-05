@@ -1,327 +1,178 @@
 gsm	gse	from	to	basis	sample_type	title	source_name
-GSM8128744	GSE260959	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_Et_100 nM	rhabdomyosarcoma cell
-GSM8128745	GSE260959	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_DHT_100 nM	rhabdomyosarcoma cell
-GSM8128747	GSE260959	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_DHT_10 nM	rhabdomyosarcoma cell
-GSM8867719	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishNTC, Day 7, Rep 1	cell line
-GSM8867720	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishNTC, Day 7, Rep 2	cell line
-GSM8867721	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishNTC, Day 7, Rep 3	cell line
-GSM8867725	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishNTC, Day 2, Rep 1	cell line
-GSM8867726	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishNTC, Day 2, Rep 2	cell line
-GSM8867727	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishNTC, Day 2, Rep 3	cell line
-GSM8867728	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishFANCM_SMC, Day 2, Rep 1	cell line
-GSM8867729	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishFANCM_SMC, Day 2, Rep 2	cell line
-GSM8867730	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishFANCM_SMC, Day 2, Rep 3	cell line
-GSM8867731	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishFANCM, Day 2, Rep 1	cell line
-GSM8867732	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishFANCM, Day 2, Rep 2	cell line
-GSM8867733	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, ishFANCM, Day 2, Rep 3	cell line
-GSM9805555	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, Parental, Rep1	Rh4 Clone
-GSM9805556	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, Parental, Rep2	Rh4 Clone
-GSM9805557	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, Parental, Rep3	Rh4 Clone
-GSM9805558	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, Treated IR24hrs, Rep1	Rh4 Clone
-GSM9805559	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, Treated IR24hrs, Rep2	Rh4 Clone
-GSM9805560	GSE292872	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Clone Cells, Treated IR24hrs, Rep3	Rh4 Clone
-GSM8867839	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, H3K27Ac (ChIP), Rep1	Rh4 Native
-GSM8867840	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, H3K27Ac (WCE), Rep1	Rh4 Native
-GSM8867841	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, H3K27Ac (ChIP), Rep2	Rh4 Native
-GSM8867842	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, H3K27Ac (WCE), Rep2	Rh4 Native
-GSM8867843	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, H3K27Ac (ChIP), Rep3	Rh4 Native
-GSM8867844	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, H3K27Ac (WCE), Rep3	Rh4 Native
-GSM8867845	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM_SMC, pRPA32 (ChIP), R	Rh4 Native
-GSM8867846	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM_SMC, pRPA32 (WCE), Re	Rh4 Native
-GSM8867847	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM_SMC, pRPA32 (ChIP), R	Rh4 Native
-GSM8867848	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM_SMC, pRPA32 (WCE), Re	Rh4 Native
-GSM8867849	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM_SMC, pRPA32 (ChIP), R	Rh4 Native
-GSM8867850	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM_SMC, pRPA32 (WCE), Re	Rh4 Native
-GSM8867851	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM, pRPA32 (ChIP), Rep1	Rh4 Native
-GSM8867852	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM, pRPA32 (WCE), Rep1	Rh4 Native
-GSM8867853	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM, pRPA32 (ChIP), Rep2	Rh4 Native
-GSM8867854	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM, pRPA32 (WCE), Rep2	Rh4 Native
-GSM8867855	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM, pRPA32 (ChIP), Rep3	Rh4 Native
-GSM8867856	GSE292876	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 Native Cells, ishFANCM, pRPA32 (WCE), Rep3	Rh4 Native
-GSM8867981	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, 2D Culture, TKOv3 sgRNA Library, Tfin	cell line
-GSM8867982	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, 2D Culture, TKOv3 sgRNA Library, Tfin	cell line
-GSM8867983	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, 3D Culture, TKOv3 sgRNA Library, Tfin	cell line
-GSM8867984	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, 3D Culture, TKOv3 sgRNA Library, Tfin	cell line
-GSM8868025	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, sgFANCM Tiling Screen, Tfinal Sample,	cell line
-GSM8868026	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, sgFANCM Tiling Screen, Tfinal Sample,	cell line
-GSM8868027	GSE292882	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4 Clone, sgFANCM Tiling Screen, Tfinal Sample,	cell line
-GSM8868028	GSE292882	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD, sgFANCM Tiling Screen, Tfinal Sample, Rep1	cell line
-GSM8868029	GSE292882	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD, sgFANCM Tiling Screen, Tfinal Sample, Rep2	cell line
-GSM8868030	GSE292882	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD, sgFANCM Tiling Screen, Tfinal Sample, Rep3	cell line
-GSM9738020	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 0 ng/mL doxycycline, RD-iP3F, replicat	RD-iP3F
-GSM9738021	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 75 ng/mL doxycycline, RD-iP3F, replica	RD-iP3F
-GSM9738022	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 250 ng/mL doxycycline, RD-iP3F, replic	RD-iP3F
-GSM9738023	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 500 ng/mL doxycycline, RD-iP3F, replic	RD-iP3F
-GSM9738024	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 0 ng/mL doxycycline, RD-iP3F, replicat	RD-iP3F
-GSM9738025	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 75 ng/mL doxycycline, RD-iP3F, replica	RD-iP3F
-GSM9738026	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 250 ng/mL doxycycline, RD-iP3F, replic	RD-iP3F
-GSM9738027	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, 500 ng/mL doxycycline, RD-iP3F, replic	RD-iP3F
-GSM9738028	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, RD, replicate 1	RD
-GSM9738029	GSE297122	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	ATAC-seq, RD, replicate 2	RD
-GSM9738030	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 0 ng/mL doxycycline, SMS-CTR-iP3F, rep	SMS-CTR-iP3F
-GSM9738031	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 75 ng/mL doxycycline, SMS-CTR-iP3F, re	SMS-CTR-iP3F
-GSM9738032	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 250 ng/mL doxycycline, SMS-CTR-iP3F, r	SMS-CTR-iP3F
-GSM9738033	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 500 ng/mL doxycycline, SMS-CTR-iP3F, r	SMS-CTR-iP3F
-GSM9738034	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 0 ng/mL doxycycline, SMS-CTR-iP3F, rep	SMS-CTR-iP3F
-GSM9738035	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 75 ng/mL doxycycline, SMS-CTR-iP3F, re	SMS-CTR-iP3F
-GSM9738036	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 250 ng/mL doxycycline, SMS-CTR-iP3F, r	SMS-CTR-iP3F
-GSM9738037	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, 500 ng/mL doxycycline, SMS-CTR-iP3F, r	SMS-CTR-iP3F
-GSM9738038	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, SMS-CTR, replicate 1	SMS-CTR
-GSM9738039	GSE297122	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	ATAC-seq, SMS-CTR, replicate 2	SMS-CTR
-GSM9224361	GSE307448	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_ATAC	Rhabdomyosarcoma
-GSM9224362	GSE307448	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_ATAC	Rhabdomyosarcoma
-GSM9224364	GSE307448	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_ATAC	Rhabdomyosarcoma
-GSM9224369	GSE307450	RMS-NOS	FP-RMS	curated subtype of model CW9019	cell_line	CW9019_H3K27ac	Rhabdomyosarcoma
-GSM9224370	GSE307450	RMS-NOS	FP-RMS	curated subtype of model CW9019	cell_line	CW9019_Input	Rhabdomyosarcoma
-GSM9224373	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_H3K27ac	Rhabdomyosarcoma
-GSM9224374	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_Input	Rhabdomyosarcoma
-GSM9224375	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_H3K27ac	Rhabdomyosarcoma
-GSM9224376	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_Input	Rhabdomyosarcoma
-GSM9224377	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH30	cell_line	Rh30_H3K27ac	Rhabdomyosarcoma
-GSM9224378	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH30	cell_line	Rh30_Input	Rhabdomyosarcoma
-GSM9224379	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_H3K27ac	Rhabdomyosarcoma
-GSM9224380	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_Input	Rhabdomyosarcoma
-GSM9224381	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH41	cell_line	Rh41_H3K27ac	Rhabdomyosarcoma
-GSM9224382	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH41	cell_line	Rh41_Input	Rhabdomyosarcoma
-GSM9224385	GSE307450	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	SMSCTR_H3K27ac	Rhabdomyosarcoma
-GSM9224386	GSE307450	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	SMSCTR_Input	Rhabdomyosarcoma
-GSM9224387	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD c-MYC	Rhabdomyosarcoma
-GSM9224388	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD MYCN	Rhabdomyosarcoma
-GSM9224389	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD MYOD1	Rhabdomyosarcoma
-GSM9224390	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD SIX1	Rhabdomyosarcoma
-GSM9224391	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD SOX8	Rhabdomyosarcoma
-GSM9224392	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD TCF12	Rhabdomyosarcoma
-GSM9224393	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD ZEB2	Rhabdomyosarcoma
-GSM9224394	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD TF Input	Rhabdomyosarcoma
-GSM9224395	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 MYCN	Rhabdomyosarcoma
-GSM9224396	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 c-MYC	Rhabdomyosarcoma
-GSM9224397	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 MYOD1	Rhabdomyosarcoma
-GSM9224398	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 SOX8	Rhabdomyosarcoma
-GSM9224399	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 TCF12	Rhabdomyosarcoma
-GSM9224400	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 ZEB2	Rhabdomyosarcoma
-GSM9224401	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 SIX1	Rhabdomyosarcoma
-GSM9224402	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 TF Input	Rhabdomyosarcoma
-GSM9224411	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 c-MYC	Rhabdomyosarcoma
-GSM9224412	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 MYCN	Rhabdomyosarcoma
-GSM9224413	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 MYOD1	Rhabdomyosarcoma
-GSM9224414	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 SIX1	Rhabdomyosarcoma
-GSM9224415	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 SOX8	Rhabdomyosarcoma
-GSM9224416	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 TCF12	Rhabdomyosarcoma
-GSM9224417	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 ZEB2	Rhabdomyosarcoma
-GSM9224418	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28 TF Input	Rhabdomyosarcoma
-GSM9224419	GSE307450	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD EYA2	Rhabdomyosarcoma
-GSM9224420	GSE307450	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4 EYA2	Rhabdomyosarcoma
-GSM9224427	GSE307451	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_0h_A485_1	Rhabdomyosarcoma
-GSM9224428	GSE307451	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_0h_A485_2	Rhabdomyosarcoma
-GSM9224429	GSE307451	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_0h_A485_3	Rhabdomyosarcoma
-GSM9224430	GSE307451	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_2h_A485_1	Rhabdomyosarcoma
-GSM9224431	GSE307451	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_2h_A485_2	Rhabdomyosarcoma
-GSM9224432	GSE307451	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RD_2h_A485_3	Rhabdomyosarcoma
-GSM9224433	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_0h_A485_1	Rhabdomyosarcoma
-GSM9224434	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_0h_A485_2	Rhabdomyosarcoma
-GSM9224435	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_0h_A485_3	Rhabdomyosarcoma
-GSM9224436	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_2h_A485_1	Rhabdomyosarcoma
-GSM9224437	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_2h_A485_2	Rhabdomyosarcoma
-GSM9224438	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH28	cell_line	Rh28_2h_A485_3	Rhabdomyosarcoma
-GSM9224439	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_0h_A485_1	Rhabdomyosarcoma
-GSM9224440	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_0h_A485_2	Rhabdomyosarcoma
-GSM9224441	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_0h_A485_3	Rhabdomyosarcoma
-GSM9224442	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_2h_A485_1	Rhabdomyosarcoma
-GSM9224443	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_2h_A485_2	Rhabdomyosarcoma
-GSM9224444	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	Rh4_2h_A485_3	Rhabdomyosarcoma
-GSM9224445	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	A485_S239	Rhabdomyosarcoma
-GSM9224446	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	A485_S240	Rhabdomyosarcoma
-GSM9224447	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	A485_S81	Rhabdomyosarcoma
-GSM9224448	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	Combo_S244	Rhabdomyosarcoma
-GSM9224449	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	Combo_S245	Rhabdomyosarcoma
-GSM9224450	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	Combo_S82	Rhabdomyosarcoma
-GSM9224451	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	LG1_S241	Rhabdomyosarcoma
-GSM9224452	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	LG1_S242	Rhabdomyosarcoma
-GSM9224453	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	LG1_S243	Rhabdomyosarcoma
-GSM9224454	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	Vehicle_S236	Rhabdomyosarcoma
-GSM9224455	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	Vehicle_S237	Rhabdomyosarcoma
-GSM9224456	GSE307451	RMS-NOS	FP-RMS	curated subtype of model RH4	xenograft(CDX)	Vehicle_S238	Rhabdomyosarcoma
-GSM10054186	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_0h_H3K27ac_S274	Rhabdomyosarcoma
-GSM10054187	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_0h_IgG_S283	Rhabdomyosarcoma
-GSM10054188	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_A485_2hr_H3K27ac_S276	Rhabdomyosarcoma
-GSM10054189	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_A485_2hr_IgG_S285	Rhabdomyosarcoma
-GSM10054190	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_Combo_2hr_H3K27ac_S278	Rhabdomyosarcoma
-GSM10054191	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_Combo_2hr_IgG_S287	Rhabdomyosarcoma
-GSM10054192	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_DMSO_2hr_H3K27ac_S275	Rhabdomyosarcoma
-GSM10054193	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_DMSO_2hr_IgG_S284	Rhabdomyosarcoma
-GSM10054194	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_LG_2hr_H3K27ac_S277	Rhabdomyosarcoma
-GSM10054195	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_LG_2hr_IgG_S286	Rhabdomyosarcoma
-GSM10054204	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_DMSO_EYA2_Sigma_S12	Rhabdomyosarcoma
-GSM10054205	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_DMSO_Input_S9	Rhabdomyosarcoma
-GSM10054206	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_DMSO_SIX1_S10	Rhabdomyosarcoma
-GSM10054207	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_LG134_EYA2_Sigma_S18	Rhabdomyosarcoma
-GSM10054208	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_LG134_Input_S15	Rhabdomyosarcoma
-GSM10054209	GSE307452	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4_LG134_SIX1_S16	Rhabdomyosarcoma
-GSM9504305	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013757_X2_DYE 6176_3D	Cells
-GSM9504306	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013757_X2_DYE 6177_2D	Cells
-GSM9504309	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X1_DYE 6180_3D	Cells
-GSM9504311	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X1_DYE 6182_2D	Cells
-GSM9504315	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010927_X1_DYE 6186_3D	Cells
-GSM9504316	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010927_X1_DYE 6187_2D	Cells
-GSM9504317	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE 6188_3D	Cells
-GSM9504318	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE 6189_2D	Cells
-GSM9504321	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE 6192_3D	Cells
-GSM9504322	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE 6193_2D	Cells
-GSM9504330	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010468_X1_DY8368_3D	Cells
-GSM9504331	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010468_X1_DY8369_2D	Cells
-GSM9504332	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DY8370_3D	Cells
-GSM9504333	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DY8371_2D	Cells
-GSM9504334	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013759_X1_DY8372_3D	Cells
-GSM9504335	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013759_X1_DY8373_2D	Cells
-GSM9504336	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013759_X1_DY8374_VT	Tumor
-GSM9504388	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_X_DY8430_3D	Cells
-GSM9504389	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_X_DY8431_2D	Cells
-GSM9504390	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013_X_DY8432_3D	Cells
-GSM9504391	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013_X_DY8433_2D	Cells
-GSM9504392	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB011_X_DY8434_3D	Cells
-GSM9504393	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB011_X_DY8435_2D	Cells
-GSM9504394	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB011_X_DY8436_VT	Tumor
-GSM9504395	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_Y_DY8437_3D	Cells
-GSM9504396	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_Y_DY8438_2D	Cells
-GSM9504397	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_Y_DY8439_VT	Tumor
-GSM9504398	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_Z_DY8440_3D	Cells
-GSM9504399	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_Z_DY8441_2D	Cells
-GSM9504400	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_Z_DY8442_VT	Tumor
-GSM9504402	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE8548_VT	Tumor
-GSM9504403	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010927_X1_DYE8549_VT	Tumor
-GSM9504404	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DYE8550_VT	Tumor
-GSM9504406	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X1_DYE8552_VT	Tumor
-GSM9504407	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE8553_VT	Tumor
-GSM9504414	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB012_X_DYE8561_VT	Tumor
-GSM9504415	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013_X_DYE8562_VT	Tumor
-GSM9504416	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X1_DYE8732_T0	Tumor
-GSM9504417	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE8733_T0	Tumor
-GSM9504419	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013757_X2_DYE8735_T0	Tumor
-GSM9504420	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013757_X2_DYE8736_3D	Cells
-GSM9504421	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013757_X2_DYE8737_2D	Cells
-GSM9504422	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE8739_T0	Tumor
-GSM9504423	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010927_X1_DYE8740_T0	Tumor
-GSM9504473	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010468_X1_DYE0716_T0	Tumor
-GSM9504474	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010468_X1_DYE0717_3D	Cells
-GSM9504475	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010468_X1_DYE0718_2D	Cells
-GSM9504476	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB015721_X1_DYE0719_T0	Tumor
-GSM9504477	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB015721_X1_DYE0720_3D	Cells
-GSM9504478	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB015721_X1_DYE0721_2D	Cells
-GSM9504487	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB011_Y_DYE0730_VT	Tumor
-GSM9504514	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB011_X_DYE1850_T0	Tumor
-GSM9504516	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DYE1852_T0	Tumor
-GSM9504539	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE1678_CCLF	Cells
-GSM9504540	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DYE1698_CCLF	Cells
-GSM9504541	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE1803_CCLF-VT	Tumor
-GSM9504542	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE1804_CCLF-VT	Tumor
-GSM9504548	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DYE2066_CCLF-VT	Tumor
-GSM9504549	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB010928_X1_DYE2067_CCLF-VT	Tumor
-GSM9504551	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE2420_CCLF	Cells
-GSM9504556	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE2426_RA-CCLF-VT	Tumor
-GSM9504563	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DY2693_CCLF-VT	Tumor
-GSM9504567	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DY2697_RA-CCLF	Cells
-GSM9504571	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE2798_RA-CCLF-VT	Tumor
-GSM9504575	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE2802_RA-CCLF-VT	Tumor
-GSM9504578	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB000026_X1_DYE2568_RA-CCLF	Cells
-GSM9504584	GSE318841	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	cell_line	SJRHB013758_X2_DYE3650_RA-CCLF-VT	Tumor
-GSM9511122	GSE319124	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE2379	tumor
-GSM9511123	GSE319124	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE2511	tumor
-GSM9511139	GSE319124	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010927_X1_DYE2580	tumor
-GSM9511140	GSE319124	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE2618	tumor
-GSM9734528	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE2349	cells
-GSM9734536	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE2343	cells
-GSM9734537	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DY1666	cells
-GSM9734563	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010463_X16_DYE1727	tumor
-GSM9734565	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013757_X2_DYE7926	cells
-GSM9734566	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013757_X2_DYE1293	cells
-GSM9734567	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013757_X2_DYE1726	tumor
-GSM9734574	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE2743	tumor
-GSM9734575	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE2746	cells
-GSM9734586	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE1885	tumor
-GSM9734587	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE1886	tumor
-GSM9734588	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DY1665	cells
-GSM9734589	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X1_DY7581	cells
-GSM9734590	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X1_DYE1290	cells
-GSM9734592	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X1_DYE1263	cells
-GSM9734593	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X1_DYE1724	tumor
-GSM9734594	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013759_X1_DYE7941	cells
-GSM9734595	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DY7584	cells
-GSM9734596	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE1308	cells
-GSM9734597	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DY7558	cells
-GSM9734598	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE1265	cells
-GSM9734599	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE1725	tumor
-GSM9734600	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB015721_X1_DY7585	cells
-GSM9734601	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB015721_X1_DYE1307	cells
-GSM9734602	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB015721_X1_DY7559	cells
-GSM9734606	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE2741	tumor
-GSM9734607	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X2_DYE2748	tumor
-GSM9734630	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE7929	cells
-GSM9734631	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE1309	cells
-GSM9734632	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE7940	cells
-GSM9734633	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB000026_X1_DYE1304	cells
-GSM9734673	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010463_X16_DYE7928	cells
-GSM9734674	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010463_X16_DYE1295	cells
-GSM9734675	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010463_X16_DY7563	cells
-GSM9734676	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE1718	cells
-GSM9734688	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010927_X1_DY7583	cells
-GSM9734690	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010927_X1_DYE1264	cells
-GSM9734691	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE7925	cells
-GSM9734692	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE7936	cells
-GSM9734693	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE1300	cells
-GSM9734694	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE1723	tumor
-GSM9734697	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013758_X1_DY7555	cells
-GSM9734698	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010927_X1_DY7557	cells
-GSM9734701	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE1884	tumor
-GSM9734702	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB010928_X1_DYE1887	tumor
-GSM9734703	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013757_X2_DYE7937	cells
-GSM9734704	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013757_X2_DYE1301	cells
-GSM9734706	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_X_DY7593	cells
-GSM9734707	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_X_DY7570	cells
-GSM9734708	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_X_DYE1273	cells
-GSM9734709	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013_X_DYE1286	cells
-GSM9734710	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013_X_DY7594	cells
-GSM9734711	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013_X_DY7571	cells
-GSM9734712	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB013_X_DYE1274	cells
-GSM9734713	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB011_X_DY7596	cells
-GSM9734714	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB011_X_DYE1315	cells
-GSM9734715	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB011_X_DY7573	cells
-GSM9734716	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB011_X_DYE1276	cells
-GSM9734717	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Y_DY7600	cells
-GSM9734718	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Y_DY7577	cells
-GSM9734719	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Y_DYE1280	cells
-GSM9734720	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Z_DYE7927	cells
-GSM9734721	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Z_DYE1283	cells
-GSM9734722	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Z_DYE7938	cells
-GSM9734723	GSE330883	RMS-NOS	RMS-MYOD1	curated subtype of model St Jude CSTN O-PDX RMS series	PDX	SJRHB012_Z_DYE1302	cells
-GSM9737585	GSE331021	RMS-NOS	FP-RMS	curated subtype of model RH30	cell_line	RH30, DEGS1 overexpress	RH30
-GSM9737586	GSE331021	RMS-NOS	FP-RMS	curated subtype of model RH30	cell_line	RH30, control	RH30
-GSM9737587	GSE331021	RMS-NOS	FP-RMS	curated subtype of model RH41	cell_line	RH41, DEGS1 overexpress	RH41
-GSM9737588	GSE331021	RMS-NOS	FP-RMS	curated subtype of model RH41	cell_line	RH41, control	RH41
-GSM9737995	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 0 ng/mL doxycycline 2 weeks, r	RD-iP3F
-GSM9737996	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 75 ng/mL doxycycline 2 weeks, 	RD-iP3F
-GSM9737997	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 250 ng/mL doxycycline 2 weeks,	RD-iP3F
-GSM9737998	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 500 ng/mL doxycycline 2 weeks,	RD-iP3F
-GSM9737999	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 0 ng/mL doxycycline 2 weeks, r	RD-iP3F
-GSM9738000	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 75 ng/mL doxycycline 2 weeks, 	RD-iP3F
-GSM9738001	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 250 ng/mL doxycycline 2 weeks,	RD-iP3F
-GSM9738002	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD-iP3F, 500 ng/mL doxycycline 2 weeks,	RD-iP3F
-GSM9738003	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD, 0 ng/mL doxycycline 2 weeks, replic	RD
-GSM9738004	GSE331041	RMS-NOS	FN-RMS	curated subtype of model RD	cell_line	RNA-seq, RD, 0 ng/mL doxycycline 2 weeks, replic	RD
-GSM9738005	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 0 ng/mL doxycycline 2 wee	SMS-CTR-iP3F
-GSM9738006	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 75 ng/mL doxycycline 2 we	SMS-CTR-iP3F
-GSM9738007	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 250 ng/mL doxycycline 2 w	SMS-CTR-iP3F
-GSM9738008	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 500 ng/mL doxycycline 2 w	SMS-CTR-iP3F
-GSM9738009	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 0 ng/mL doxycycline 2 wee	SMS-CTR-iP3F
-GSM9738010	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 75 ng/mL doxycycline 2 we	SMS-CTR-iP3F
-GSM9738011	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 250 ng/mL doxycycline 2 w	SMS-CTR-iP3F
-GSM9738012	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR-iP3F, 500 ng/mL doxycycline 2 w	SMS-CTR-iP3F
-GSM9738013	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR, 0 ng/mL doxycycline 2 weeks, r	SMS-CTR
-GSM9738014	GSE331041	RMS-NOS	FN-RMS	curated subtype of model SMS-CTR	cell_line	RNA-seq, SMS-CTR, 0 ng/mL doxycycline 2 weeks, r	SMS-CTR
-GSM9978939	GSE344432	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4, control, rep1	Rhabdomyosarcoma
-GSM9978940	GSE344432	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4, control, rep2	Rhabdomyosarcoma
-GSM9978941	GSE344432	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4, dox, rep1	Rhabdomyosarcoma
-GSM9978942	GSE344432	RMS-NOS	FP-RMS	curated subtype of model RH4	cell_line	RH4, dox, rep2	Rhabdomyosarcoma
-GSM8867996	GSE292882	FP-RMS	FN-RMS	model authority: RD is a curated FN-RMS line	cell_line	RD, ARMS sgRNA Library, Tf Sample, Rep1	cell line
-GSM8867997	GSE292882	FP-RMS	FN-RMS	model authority: RD is a curated FN-RMS line	cell_line	RD, ARMS sgRNA Library, Tf Sample, Rep2	cell line
-GSM8867998	GSE292882	FP-RMS	FN-RMS	model authority: SMS-CTR is a curated FN-RMS line	cell_line	SMS_CTR, ARMS sgRNA Library, Tf Sample, Rep1	cell line
-GSM8867999	GSE292882	FP-RMS	FN-RMS	model authority: SMS-CTR is a curated FN-RMS line	cell_line	SMS_CTR, ARMS sgRNA Library, Tf Sample, Rep2	cell line
+GSM9329143	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-CTL1	cell
+GSM9329144	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-CTL2	cell
+GSM9329145	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-CTL3	cell
+GSM9329146	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_1-1	cell
+GSM9329147	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_1-2	cell
+GSM9329148	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_1-3	cell
+GSM9329149	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_2-1	cell
+GSM9329150	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_2-2	cell
+GSM9329151	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_2-3	cell
+GSM9329152	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-CTL1	cell
+GSM9329153	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-CTL2	cell
+GSM9329154	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_1-1	cell
+GSM9329155	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_1-2	cell
+GSM9329156	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_2-1	cell
+GSM9329157	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_2-2	cell
+GSM2571998	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_Y	Human FN-RMS PDX sample
+GSM2571999	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X	Human FN-RMS PDX sample
+GSM2572000	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_X	Human FN-RMS PDX sample
+GSM2572001	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Y	Human FN-RMS PDX sample
+GSM2572002	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z	Human FN-RMS PDX sample
+GSM5390475	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1	Orthotopic patient-derived xenograft
+GSM5390477	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1	Orthotopic patient-derived xenograft
+GSM5390478	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1	Orthotopic patient-derived xenograft
+GSM5390479	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X	Orthotopic patient-derived xenograft
+GSM5390480	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Y	Orthotopic patient-derived xenograft
+GSM5390481	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z	Orthotopic patient-derived xenograft
+GSM5390482	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012405_X1	Orthotopic patient-derived xenograft
+GSM5390483	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1	Orthotopic patient-derived xenograft
+GSM5390484	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2	Orthotopic patient-derived xenograft
+GSM5390487	GSE174376	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010468_X1	Orthotopic patient-derived xenograft
+GSM5390493	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_barcode	Orthotopic patient-derived xenograft
+GSM5390495	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1_barcode	Orthotopic patient-derived xenograft
+GSM5390496	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_barcode	Orthotopic patient-derived xenograft
+GSM5390497	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X_barcode	Orthotopic patient-derived xenograft
+GSM5390498	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Y_barcode	Orthotopic patient-derived xenograft
+GSM5390499	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z_barcode	Orthotopic patient-derived xenograft
+GSM5390500	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012405_X1_barcode	Orthotopic patient-derived xenograft
+GSM5390501	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_barcode	Orthotopic patient-derived xenograft
+GSM5390502	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_barcode	Orthotopic patient-derived xenograft
+GSM5390508	GSE174376	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010468_X1_scATAC	Orthotopic patient-derived xenograft
+GSM5390509	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1_scATAC	Orthotopic patient-derived xenograft
+GSM5390510	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_scATAC	Orthotopic patient-derived xenograft
+GSM5390511	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_scATAC	Orthotopic patient-derived xenograft
+GSM5390512	GSE174376	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_scATAC	Orthotopic patient-derived xenograft
+GSM8781526	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB011_X-frozen	Skull
+GSM8781535	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB012_Z-frozen	Bladder/Prostate
+GSM8781539	GSE289017	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB010468_X1-frozen	Thigh
+GSM8781543	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB000026_X1-frozen	Pelvis
+GSM8781584	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB012_X-FFPE	Prostate
+GSM8781586	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB010927_X1-frozen	Parapharyngeal
+GSM8781587	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB010928_X1-frozen	Bladder/Prostate
+GSM8781588	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB012405_X1-frozen	Bladder
+GSM8781589	GSE289017	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB013759_X1-frozen	Groin
+GSM8781590	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB011_Y-frozen	Neck
+GSM8781591	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB013758_X1-frozen	Pelvis
+GSM8781592	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB013758_X2-frozen	Abdomen
+GSM8781599	GSE289017	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB013757_X2-frozen	Calf
+GSM8781600	GSE289017	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	xenograft(CDX)	RMS_Xenograft-SJRHB012_Y-frozen	Prostate
+GSM9504305	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013757_X2_DYE 6176_3D	Cells
+GSM9504306	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013757_X2_DYE 6177_2D	Cells
+GSM9504309	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X1_DYE 6180_3D	Cells
+GSM9504311	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X1_DYE 6182_2D	Cells
+GSM9504315	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010927_X1_DYE 6186_3D	Cells
+GSM9504316	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010927_X1_DYE 6187_2D	Cells
+GSM9504317	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE 6188_3D	Cells
+GSM9504318	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE 6189_2D	Cells
+GSM9504321	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE 6192_3D	Cells
+GSM9504322	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE 6193_2D	Cells
+GSM9504330	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010468_X1_DY8368_3D	Cells
+GSM9504331	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010468_X1_DY8369_2D	Cells
+GSM9504332	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DY8370_3D	Cells
+GSM9504333	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DY8371_2D	Cells
+GSM9504334	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013759_X1_DY8372_3D	Cells
+GSM9504335	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013759_X1_DY8373_2D	Cells
+GSM9504336	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013759_X1_DY8374_VT	Tumor
+GSM9504388	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_X_DY8430_3D	Cells
+GSM9504389	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_X_DY8431_2D	Cells
+GSM9504392	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB011_X_DY8434_3D	Cells
+GSM9504393	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB011_X_DY8435_2D	Cells
+GSM9504394	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB011_X_DY8436_VT	Tumor
+GSM9504395	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_Y_DY8437_3D	Cells
+GSM9504396	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_Y_DY8438_2D	Cells
+GSM9504397	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_Y_DY8439_VT	Tumor
+GSM9504398	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_Z_DY8440_3D	Cells
+GSM9504399	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_Z_DY8441_2D	Cells
+GSM9504400	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_Z_DY8442_VT	Tumor
+GSM9504402	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE8548_VT	Tumor
+GSM9504403	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010927_X1_DYE8549_VT	Tumor
+GSM9504404	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DYE8550_VT	Tumor
+GSM9504406	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X1_DYE8552_VT	Tumor
+GSM9504407	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE8553_VT	Tumor
+GSM9504414	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB012_X_DYE8561_VT	Tumor
+GSM9504416	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X1_DYE8732_T0	Tumor
+GSM9504417	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE8733_T0	Tumor
+GSM9504419	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013757_X2_DYE8735_T0	Tumor
+GSM9504420	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013757_X2_DYE8736_3D	Cells
+GSM9504421	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013757_X2_DYE8737_2D	Cells
+GSM9504422	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE8739_T0	Tumor
+GSM9504423	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010927_X1_DYE8740_T0	Tumor
+GSM9504473	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010468_X1_DYE0716_T0	Tumor
+GSM9504474	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010468_X1_DYE0717_3D	Cells
+GSM9504475	GSE318841	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010468_X1_DYE0718_2D	Cells
+GSM9504487	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB011_Y_DYE0730_VT	Tumor
+GSM9504514	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB011_X_DYE1850_T0	Tumor
+GSM9504516	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DYE1852_T0	Tumor
+GSM9504539	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE1678_CCLF	Cells
+GSM9504540	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DYE1698_CCLF	Cells
+GSM9504541	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE1803_CCLF-VT	Tumor
+GSM9504542	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE1804_CCLF-VT	Tumor
+GSM9504548	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DYE2066_CCLF-VT	Tumor
+GSM9504549	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB010928_X1_DYE2067_CCLF-VT	Tumor
+GSM9504551	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE2420_CCLF	Cells
+GSM9504556	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE2426_RA-CCLF-VT	Tumor
+GSM9504563	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DY2693_CCLF-VT	Tumor
+GSM9504567	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DY2697_RA-CCLF	Cells
+GSM9504571	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE2798_RA-CCLF-VT	Tumor
+GSM9504575	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE2802_RA-CCLF-VT	Tumor
+GSM9504578	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB000026_X1_DYE2568_RA-CCLF	Cells
+GSM9504584	GSE318841	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	cell_line	SJRHB013758_X2_DYE3650_RA-CCLF-VT	Tumor
+GSM9511122	GSE319124	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE2379	tumor
+GSM9511123	GSE319124	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE2511	tumor
+GSM9511139	GSE319124	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1_DYE2580	tumor
+GSM9511140	GSE319124	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE2618	tumor
+GSM9734528	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE2349	cells
+GSM9734536	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE2343	cells
+GSM9734537	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DY1666	cells
+GSM9734565	GSE330883	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013757_X2_DYE7926	cells
+GSM9734566	GSE330883	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013757_X2_DYE1293	cells
+GSM9734567	GSE330883	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013757_X2_DYE1726	tumor
+GSM9734574	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE2743	tumor
+GSM9734575	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE2746	cells
+GSM9734586	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE1885	tumor
+GSM9734587	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE1886	tumor
+GSM9734588	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DY1665	cells
+GSM9734589	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_DY7581	cells
+GSM9734590	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_DYE1290	cells
+GSM9734592	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_DYE1263	cells
+GSM9734593	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_DYE1724	tumor
+GSM9734594	GSE330883	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013759_X1_DYE7941	cells
+GSM9734595	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DY7584	cells
+GSM9734596	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE1308	cells
+GSM9734597	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DY7558	cells
+GSM9734598	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE1265	cells
+GSM9734599	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE1725	tumor
+GSM9734606	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE2741	tumor
+GSM9734607	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X2_DYE2748	tumor
+GSM9734630	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE7929	cells
+GSM9734631	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE1309	cells
+GSM9734632	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE7940	cells
+GSM9734633	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB000026_X1_DYE1304	cells
+GSM9734676	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE1718	cells
+GSM9734688	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1_DY7583	cells
+GSM9734690	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1_DYE1264	cells
+GSM9734691	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE7925	cells
+GSM9734692	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE7936	cells
+GSM9734693	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE1300	cells
+GSM9734694	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE1723	tumor
+GSM9734697	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013758_X1_DY7555	cells
+GSM9734698	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010927_X1_DY7557	cells
+GSM9734701	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE1884	tumor
+GSM9734702	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB010928_X1_DYE1887	tumor
+GSM9734703	GSE330883	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013757_X2_DYE7937	cells
+GSM9734704	GSE330883	FP-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB013757_X2_DYE1301	cells
+GSM9734706	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_X_DY7593	cells
+GSM9734707	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_X_DY7570	cells
+GSM9734708	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_X_DYE1273	cells
+GSM9734713	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X_DY7596	cells
+GSM9734714	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X_DYE1315	cells
+GSM9734715	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X_DY7573	cells
+GSM9734716	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X_DYE1276	cells
+GSM9734717	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Y_DY7600	cells
+GSM9734718	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Y_DY7577	cells
+GSM9734719	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Y_DYE1280	cells
+GSM9734720	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z_DYE7927	cells
+GSM9734721	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z_DYE1283	cells
+GSM9734722	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z_DYE7938	cells
+GSM9734723	GSE330883	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_Z_DYE1302	cells

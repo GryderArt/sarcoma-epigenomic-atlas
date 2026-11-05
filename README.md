@@ -4,7 +4,7 @@ A sample-level census of every publicly recorded epigenomic experiment on sarcom
 ages, bone and soft tissue — built to answer one question: **where are the holes?**
 
 Assembled for the *Critical assessment of existing datasets* section of the SASS Epigenetics
-Working Group white paper. Census closes **1 September 2026**.
+Working Group white paper. Census closes **1 October 2026**.
 
 **[→ Open the interactive gap map](https://gryderart.github.io/sarcoma-epigenomic-atlas/)**
 
@@ -14,10 +14,10 @@ Working Group white paper. Census closes **1 September 2026**.
 
 | | |
 |---|---|
-| **16,270** | sarcoma epigenomic samples, de-duplicated, each with a deposition date |
-| **4,570** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
-| **884** | GEO series, plus 67 controlled-access datasets |
-| **45** | named diagnostic entities (plus 6 unresolved bins and 1 control tissue) |
+| **15,900** | sarcoma epigenomic samples, de-duplicated, each with a deposition date |
+| **4,385** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
+| **853** | GEO series, plus 67 controlled-access datasets |
+| **45** | named diagnostic entities (plus 5 unresolved bins and 1 control tissue) |
 | **550** | cataloged cell lines and PDX models, 95 flagged for identity problems |
 
 Every number in this file is generated from the tables by `pipeline/34_render_readme.py`.
@@ -28,8 +28,8 @@ and a README that states figures it cannot re-derive is worse than no README at 
 
 **1. Adult sarcoma carries the burden; pediatric sarcoma has the data.** 90% of the ~29,000
 US sarcoma cases per year arise in entities that are adult-predominant or span both age
-ranges, but pediatric-predominant entities hold 70% of all regulatory epigenomic data ever
-generated — **27× more per new case diagnosed**. This is a distribution correctable by
+ranges, but pediatric-predominant entities hold 69% of all regulatory epigenomic data ever
+generated — **26× more per new case diagnosed**. This is a distribution correctable by
 allocation, not by any new technology.
 
 **2. Thirteen of 45 named entities have no regulatory epigenomics at all.** No ChIP-seq, no
@@ -103,9 +103,9 @@ MYOD1-mutant; WD / DD / myxoid / pleomorphic / NOS), because that is the resolut
 paper argues at. There are **45**.
 
 The atlas also carries bins that are *not* entities and are excluded from every denominator:
-six **unresolved residual bins** (`Sarcoma NOS`, `RMS-NOS` and other one-off cases — samples
-whose diagnosis the deposit never states, a metadata-quality measure rather than a disease)
-and one **control tissue** category.
+five **unresolved residual bins** (`Sarcoma NOS`, `RMS-NOS` and other one-off cases —
+samples whose diagnosis the deposit never states, a metadata-quality measure rather than a
+disease) and one **control tissue** category.
 
 RMS subtype is assigned by the rule that fusion-negative means *neither a PAX3/PAX7 fusion
 nor a mutant MYOD1* — a RAS mutation is explicitly **not** the criterion, since some FN-RMS
@@ -115,7 +115,7 @@ carry none. Every call carries its evidence in `rms_call_basis`.
 
 ```
 data/          the atlas tables, T1–T30, tab-separated (see data/README.md)
-  samples/     the atomic sample table — one row per GSM, 92,138 rows, gzipped
+  samples/     the atomic sample table — one row per GSM, 93,675 rows, gzipped
   incidence/   the curated incidence evidence behind every rate in T13
 pipeline/      the harvest → classify → aggregate → publish stages, numbered in order
 figures/       F18–F26 exploratory, WP1–WP4 for the white-paper section

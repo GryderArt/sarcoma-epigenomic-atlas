@@ -1129,15 +1129,6 @@ GSM5244257	GSE172221	20d	primary_tumor	mouse_model	MPNST	MPNST			Mus musculus	RN
 GSM5244258	GSE172221	20d	primary_tumor	mouse_model	MPNST	MPNST			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	Lats-Plp Tumor 1 Grade II
 GSM5244259	GSE172221	20d	primary_tumor	mouse_model	MPNST	MPNST			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	Lats-Plp Tumor 2 Grade II
 GSM5244260	GSE172221	20d	primary_tumor	mouse_model	MPNST	MPNST			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	Lats-Plp Tumor 3 Grade II
-GSM5281515	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	Control_1
-GSM5281516	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	Control_2
-GSM5281517	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	Control_3
-GSM5281518	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	FUSR521C_1
-GSM5281519	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	FUSR521C_2
-GSM5281520	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	FUSR521C_3
-GSM5281521	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	FUSWT_1
-GSM5281522	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	FUSWT_2
-GSM5281523	GSE173838	20d	primary_tumor	non-human	Sarcoma NOS	Sarcoma NOS			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	FUSWT_3
 GSM5311508	GSE174441	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	m1_primary_tumor1
 GSM5311509	GSE174441	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	m1_primary_tumor2
 GSM5311512	GSE174441	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	m2_primary_tumor1
@@ -2704,17 +2695,6 @@ GSM8780635	GSE289001	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus
 GSM8780636	GSE289001	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus musculus	Spatial	N	Mus musculus material is not a patient sample	HDT361_kidney_1_tumor_b
 GSM8780637	GSE289001	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus musculus	Spatial	N	Mus musculus material is not a patient sample	HDT365_kidney_2_tumor
 GSM8780638	GSE289001	20d	primary_tumor	mouse_model	Sarcoma NOS	Sarcoma NOS			Mus musculus	Spatial	N	Mus musculus material is not a patient sample	HDT291_kidney_1_tumor
-GSM8801932	GSE289944	20d	primary_tumor	non-human	GCTB/Chondroblastoma	GCTB/Chondroblastoma			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	h3.3ko;HTR5_G34W_rep1
-GSM8801933	GSE289944	20d	primary_tumor	non-human	GCTB/Chondroblastoma	GCTB/Chondroblastoma			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	h3.3ko;HTR5_G34W_rep2
-GSM8801934	GSE289944	20d	primary_tumor	non-human	GCTB/Chondroblastoma	GCTB/Chondroblastoma			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	h3.3ko;HTR5_G34W_rep3
-GSM8809668	GSE290278	20d	primary_tumor	non-human	GCTB/Chondroblastoma	GCTB/Chondroblastoma			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	h3.3ko;HTR5_G34W_BS_rep1
-GSM8809669	GSE290278	20d	primary_tumor	non-human	GCTB/Chondroblastoma	GCTB/Chondroblastoma			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	h3.3ko;HTR5_G34W_BS_rep2
-GSM8879320	GSE293258	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	adult brain, wildtype ZT14 repeat-1, paired with Prp3RNAi_REP1
-GSM8879321	GSE293258	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	adult brain, wildtype ZT14 repeat-2, paired with Prp3RNAi_REP2
-GSM8879322	GSE293258	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	adult brain, wildtype ZT14 repeat-3, paired with Prp3RNAi_REP3
-GSM8879323	GSE293258	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	adult brain, Prp3-RNAi ZT14 repeat-1
-GSM8879324	GSE293258	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	adult brain, Prp3-RNAi ZT14 repeat-2
-GSM8879325	GSE293258	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Drosophila melanogaster	RNA-seq	N	Drosophila melanogaster material is not a patient sample	adult brain, Prp3-RNAi ZT14 repeat-3
 GSM8899713	GSE294169	20d	primary_tumor	mouse_model	Ewing	Ewing			Mus musculus	scRNA-seq	N	Mus musculus material is not a patient sample	Lig4_WT_Spl, mRNA-derived cDNA
 GSM8899714	GSE294169	20d	primary_tumor	mouse_model	Ewing	Ewing			Mus musculus	scRNA-seq	N	Mus musculus material is not a patient sample	Lig4_WT_Spl, TCR-derived cDNA
 GSM8899715	GSE294169	20d	primary_tumor	mouse_model	Ewing	Ewing			Mus musculus	scRNA-seq	N	Mus musculus material is not a patient sample	Lig4_Homo1_Spl, mRNA-derived cDNA
@@ -2888,124 +2868,6 @@ GSM9142604	GSE304066	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Can
 GSM9142605	GSE304066	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Canis lupus familiaris	RNA-seq	N	Canis lupus familiaris material is not a patient sample	COTC030 0505 tumor sample
 GSM9142606	GSE304066	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Canis lupus familiaris	RNA-seq	N	Canis lupus familiaris material is not a patient sample	COTC030 0701 tumor sample
 GSM9142607	GSE304066	20d	primary_tumor	non-human	Osteosarcoma	Osteosarcoma			Canis lupus familiaris	RNA-seq	N	Canis lupus familiaris material is not a patient sample	COTC030 0703 tumor sample
-GSM9151962	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep1_sample7_sRNA-seq
-GSM9151963	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep1_sample8_sRNA-seq
-GSM9151964	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep1_sample9_sRNA-seq
-GSM9151965	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep1_sample10_sRNA-seq
-GSM9151966	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep1_sample11_sRNA-seq
-GSM9151967	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep1_sample12_sRNA-seq
-GSM9151968	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep2_sample13_sRNA-seq
-GSM9151969	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep2_sample14_sRNA-seq
-GSM9151970	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep2_sample15_sRNA-seq
-GSM9151971	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep2_sample16_sRNA-seq
-GSM9151972	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep2_sample17_sRNA-seq
-GSM9151973	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep2_sample18_sRNA-seq
-GSM9151974	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep3_sample19_sRNA-seq
-GSM9151975	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep3_sample20_sRNA-seq
-GSM9151976	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep3_sample21_sRNA-seq
-GSM9151977	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep3_sample22_sRNA-seq
-GSM9151978	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep3_sample23_sRNA-seq
-GSM9151979	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep3_sample24_sRNA-seq
-GSM9623103	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_1wpt_rep1_Sample1_sRNA-seq
-GSM9623104	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_1wpt_rep2_Sample2_sRNA-seq
-GSM9623105	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_1wpt_rep1_Sample3_sRNA-seq
-GSM9623106	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_1wpt_rep2_Sample4_sRNA-seq
-GSM9623107	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_1wpt_rep3_Sample9_sRNA-seq
-GSM9623108	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_1wpt_rep3_Sample10_sRNA-seq
-GSM9623109	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2wpt_rep1_Sample13_sRNA-seq
-GSM9623110	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2wpt_rep2_Sample16_sRNA-seq
-GSM9623111	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2wpt_rep1_Sample17_sRNA-seq
-GSM9623112	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2wpt_rep3_Sample19_sRNA-seq
-GSM9623113	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2wpt_rep2_Sample20_sRNA-seq
-GSM9623114	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2wpt_rep3_Sample22_sRNA-seq
-GSM9623115	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep1_Sample31_sRNA-seq
-GSM9623116	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep1_Sample32_sRNA-seq
-GSM9623117	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep1_Sample33_sRNA-seq
-GSM9623118	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep1_Sample34_sRNA-seq
-GSM9623119	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep2_Sample35_sRNA-seq
-GSM9623120	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep2_Sample36_sRNA-seq
-GSM9623121	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep2_Sample37_sRNA-seq
-GSM9623122	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep2_Sample38_sRNA-seq
-GSM9623123	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep3_Sample39_sRNA-seq
-GSM9623124	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep3_Sample40_sRNA-seq
-GSM9623125	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep3_Sample41_sRNA-seq
-GSM9623126	GSE304519	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep3_Sample42_sRNA-seq
-GSM9151980	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep1_sample7_Bisulfite-seq
-GSM9151981	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep1_sample8_Bisulfite-seq
-GSM9151982	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep1_sample9_Bisulfite-seq
-GSM9151983	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep1_sample10_Bisulfite-seq
-GSM9151984	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep1_sample11_Bisulfite-seq
-GSM9151985	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep1_sample12_Bisulfite-seq
-GSM9151986	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep2_sample13_Bisulfite-seq
-GSM9151987	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep2_sample14_Bisulfite-seq
-GSM9151988	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep2_sample15_Bisulfite-seq
-GSM9151989	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep2_sample16_Bisulfite-seq
-GSM9151990	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep2_sample17_Bisulfite-seq
-GSM9151991	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep2_sample18_Bisulfite-seq
-GSM9151992	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep3_sample19_Bisulfite-seq
-GSM9151993	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep3_sample20_Bisulfite-seq
-GSM9151994	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep3_sample21_Bisulfite-seq
-GSM9151995	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep3_sample22_Bisulfite-seq
-GSM9151996	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep3_sample23_Bisulfite-seq
-GSM9151997	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep3_sample24_Bisulfite-seq
-GSM9623157	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_1wpt_rep1_SampleExpRT25_Bisulfite-seq
-GSM9623158	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_1wpt_rep2_SampleExpRT25_Bisulfite-seq
-GSM9623159	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_1wpt_rep1_SampleExpRT25_Bisulfite-seq
-GSM9623160	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_1wpt_rep2_SampleExpRT25_Bisulfite-seq
-GSM9623161	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_1wpt_rep3_SampleExpRT25_Bisulfite-seq
-GSM9623162	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_1wpt_rep3_SampleExpRT25_Bisulfite-seq
-GSM9623163	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2wpt_rep1_SampleExpRT25_Bisulfite-seq
-GSM9623164	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2wpt_rep2_SampleExpRT25_Bisulfite-seq
-GSM9623165	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_2wpt_rep1_SampleExpRT25_Bisulfite-seq
-GSM9623166	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2wpt_rep3_SampleExpRT25_Bisulfite-seq
-GSM9623167	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_2wpt_rep2_SampleExpRT25_Bisulfite-seq
-GSM9623168	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_2wpt_rep3_SampleExpRT25_Bisulfite-seq
-GSM9623169	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep1_SampleExpRT31_Bisulfite-seq
-GSM9623170	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep1_SampleExpRT31_Bisulfite-seq
-GSM9623171	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep1_SampleExpRT31_Bisulfite-seq
-GSM9623172	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep1_SampleExpRT31_Bisulfite-seq
-GSM9623173	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep2_SampleExpRT31_Bisulfite-seq
-GSM9623174	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep2_SampleExpRT31_Bisulfite-seq
-GSM9623175	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep2_SampleExpRT31_Bisulfite-seq
-GSM9623176	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep2_SampleExpRT31_Bisulfite-seq
-GSM9623177	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep3_SampleExpRT31_Bisulfite-seq
-GSM9623178	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep3_SampleExpRT31_Bisulfite-seq
-GSM9623179	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep3_SampleExpRT31_Bisulfite-seq
-GSM9623180	GSE304520	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	WGBS	Y	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep3_SampleExpRT31_Bisulfite-seq
-GSM9152086	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep1_sample7_RNA-seq
-GSM9152087	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep1_sample8_RNA-seq
-GSM9152088	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep1_sample9_RNA-seq
-GSM9152089	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep1_sample10_RNA-seq
-GSM9152090	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep1_sample11_RNA-seq
-GSM9152091	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep1_sample12_RNA-seq
-GSM9152092	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep2_sample13_RNA-seq
-GSM9152093	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep2_sample14_RNA-seq
-GSM9152094	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep2_sample15_RNA-seq
-GSM9152095	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep2_sample16_RNA-seq
-GSM9152096	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep2_sample17_RNA-seq
-GSM9152097	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep2_sample18_RNA-seq
-GSM9152098	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_DMSO_rep3_sample19_RNA-seq
-GSM9152099	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	Col0_E2_rep3_sample20_RNA-seq
-GSM9152100	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep3_sample21_RNA-seq
-GSM9152101	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep3_sample22_RNA-seq
-GSM9152102	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_DMSO_rep3_sample23_RNA-seq
-GSM9152103	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L7_E2_rep3_sample24_RNA-seq
-GSM9623145	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep1_Sample31_mRNA-seq
-GSM9623146	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep1_Sample32_mRNA-seq
-GSM9623147	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep1_Sample33_mRNA-seq
-GSM9623148	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep1_Sample34_mRNA-seq
-GSM9623149	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep2_Sample35_mRNA-seq
-GSM9623150	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep2_Sample36_mRNA-seq
-GSM9623151	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep2_Sample37_mRNA-seq
-GSM9623152	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep2_Sample38_mRNA-seq
-GSM9623153	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_DMSO_2dpt_rep3_Sample39_mRNA-seq
-GSM9623154	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_DMSO_2dpt_rep3_Sample40_mRNA-seq
-GSM9623155	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	clsy3L5_E2_2dpt_rep3_Sample41_mRNA-seq
-GSM9623156	GSE304523	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	RNA-seq	N	Arabidopsis thaliana material is not a patient sample	L5_E2_2dpt_rep3_Sample42_mRNA-seq
-GSM9152104	GSE304524	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	other/unknown	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep2_ONT-seq
-GSM9152105	GSE304524	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	other/unknown	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep2_ONT-seq
-GSM9152106	GSE304524	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	other/unknown	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_DMSO_rep3_ONT-seq
-GSM9152107	GSE304524	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Arabidopsis thaliana	other/unknown	N	Arabidopsis thaliana material is not a patient sample	XVEROS1_L5_E2_rep3_ONT-seq
 GSM9195316	GSE306234	20d	primary_tumor	non-human	Ewing	Ewing			Danio rerio	CUT&RUN	Y	Danio rerio material is not a patient sample	24hpf_Embryo_FLAG_CUT&RUN_rep1
 GSM9195317	GSE306234	20d	primary_tumor	non-human	Ewing	Ewing			Danio rerio	CUT&RUN	Y	Danio rerio material is not a patient sample	24hpf_Embryo_Input_CUT&RUN_rep1
 GSM9195318	GSE306234	20d	primary_tumor	non-human	Ewing	Ewing			Danio rerio	CUT&RUN	Y	Danio rerio material is not a patient sample	24hpf_Embryo_FLAG_CUT&RUN_rep2
@@ -3419,56 +3281,6 @@ GSM9682372	GSE328407	20d	primary_tumor	mouse_model	CIC-DUX4	CIC-DUX4			Mus muscu
 GSM9682373	GSE328407	20d	primary_tumor	mouse_model	CIC-DUX4	CIC-DUX4			Mus musculus	scRNA-seq	N	Mus musculus material is not a patient sample	dFLEx CDS tumors_0.42mg/kg Minnelide_21days
 GSM9764930	GSE333438	20d	primary_tumor	mouse_model	Osteosarcoma	Osteosarcoma			Mus musculus	scRNA-seq	N	Mus musculus material is not a patient sample	p21_3w_1
 GSM9764931	GSE333438	20d	primary_tumor	mouse_model	Osteosarcoma	Osteosarcoma			Mus musculus	scRNA-seq	N	Mus musculus material is not a patient sample	p21_3w_2
-GSM9895261	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, black, rep1
-GSM9895262	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, blue, rep1
-GSM9895263	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, black, rep1
-GSM9895264	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, blue, rep1
-GSM9895265	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, black, rep1
-GSM9895266	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, blue, rep1
-GSM9895267	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, black, rep2
-GSM9895268	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, blue, rep2
-GSM9895269	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, black, rep1
-GSM9895270	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, blue, rep1
-GSM9895271	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, black, rep2
-GSM9895272	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, blue, rep2
-GSM9895273	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, black, rep2
-GSM9895274	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, blue, rep2
-GSM9895275	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, black, rep3
-GSM9895276	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, blue, rep3
-GSM9895277	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, black, rep1
-GSM9895278	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, blue, rep1
-GSM9895279	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, black, rep2
-GSM9895280	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, blue, rep2
-GSM9895281	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, black, rep3
-GSM9895282	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, blue, rep3
-GSM9895283	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, black, rep4
-GSM9895284	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, blue, rep4
-GSM9895285	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, black, rep2
-GSM9895286	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, blue, rep2
-GSM9895287	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, black, rep3
-GSM9895288	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, blue, rep3
-GSM9895289	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, black, rep3
-GSM9895290	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, blue, rep3
-GSM9895291	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, black, rep3
-GSM9895292	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, blue, rep3
-GSM9895293	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, black, rep4
-GSM9895294	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, blue, rep4
-GSM9895295	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, black, rep5
-GSM9895296	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day2, blue, rep5
-GSM9895297	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, black, rep4
-GSM9895298	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, blue, rep4
-GSM9895299	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, black, rep4
-GSM9895300	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, blue, rep4
-GSM9895301	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, black, rep5
-GSM9895302	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day4, blue, rep5
-GSM9895303	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, black, rep4
-GSM9895304	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, blue, rep4
-GSM9895305	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, black, rep5
-GSM9895306	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day5, blue, rep5
-GSM9895307	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, black, rep5
-GSM9895308	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day6, blue, rep5
-GSM9895309	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, black, rep5
-GSM9895310	GSE339405	20d	primary_tumor	non-human	Ewing	Ewing			Heliconius sara	Proteomics	N	Heliconius sara material is not a patient sample	day3, blue, rep5
 GSM9918061	GSE341836	20d	primary_tumor	mouse_model	Ewing	Ewing			Mus musculus	ChIP-seq	Y	Mus musculus material is not a patient sample	MOE.Tex15KO.H3K9me3_1
 GSM9918062	GSE341836	20d	primary_tumor	mouse_model	Ewing	Ewing			Mus musculus	ChIP-seq	Y	Mus musculus material is not a patient sample	MOE.Tex15KO.H3K9me3_2
 GSM9918063	GSE341836	20d	primary_tumor	mouse_model	Ewing	Ewing			Mus musculus	ChIP-seq	Y	Mus musculus material is not a patient sample	MOE.Tex15KO.H3K9me3_3
@@ -3598,14 +3410,6 @@ GSM847946	GSE34382	20d	primary_tumor	non-human	Fibrosarcoma NOS	Fibrosarcoma NOS
 GSM847947	GSE34382	20d	primary_tumor	non-human	Fibrosarcoma NOS	Fibrosarcoma NOS			Canis lupus familiaris	Expr-array	N	Canis lupus familiaris material is not a patient sample	PNST-1
 GSM847948	GSE34382	20d	primary_tumor	non-human	Fibrosarcoma NOS	Fibrosarcoma NOS			Canis lupus familiaris	Expr-array	N	Canis lupus familiaris material is not a patient sample	PNST-2
 GSM847949	GSE34382	20d	primary_tumor	non-human	Fibrosarcoma NOS	Fibrosarcoma NOS			Canis lupus familiaris	Expr-array	N	Canis lupus familiaris material is not a patient sample	PNST-3
-GSM10041591	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	2dpf, Early gastrula, first culture
-GSM10041592	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	6dpf, 4 arm pluteus, first culture
-GSM10041593	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	13dpf, 6 arm pluteus, first culture
-GSM10041594	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	22dpf, 8 arm pluteus, first culture
-GSM10041595	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	27dpf, metamorphosis-competent pluteus, first culture
-GSM10041596	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	2dpf, Early gastrula, diet-restricted, second culture
-GSM10041597	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	7dpf, 4 arm pluteus, diet-restricted, second culture
-GSM10041598	GSE346854	20d	primary_tumor	non-human	FP-RMS	FP-RMS			Strongylocentrotus droebachiensis	RNA-seq	N	Strongylocentrotus droebachiensis material is not a patient sample	38dpf, 6 arm pluteus, diet-restricted, second culture
 GSM10054765	GSE347530	20d	primary_tumor	mouse_model	UPS/MFH	UPS/MFH			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	KO1
 GSM10054766	GSE347530	20d	primary_tumor	mouse_model	UPS/MFH	UPS/MFH			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	KO2
 GSM10054767	GSE347530	20d	primary_tumor	mouse_model	UPS/MFH	UPS/MFH			Mus musculus	RNA-seq	N	Mus musculus material is not a patient sample	KO3

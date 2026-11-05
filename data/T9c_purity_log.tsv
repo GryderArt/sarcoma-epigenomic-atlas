@@ -1,297 +1,209 @@
 gsm	gse	from	to	reason	title	gse_title
-GSM7711238	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT9, Control diet, H3K36me3, rep1	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711239	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT9, Control diet, H3K36me3, rep2	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711240	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT21, Control diet, H3K36me3, rep1	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711241	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT21, Control diet, H3K36me3, rep2	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711242	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT9, MD diet, H3K36me3, rep1	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711243	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT9, MD diet, H3K36me3, rep2	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711244	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT21, MD diet, H3K36me3, rep1	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM7711245	GSE240881	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	liver, ZT21, MD diet, H3K36me3, rep2	Reprograming of Circadian Rhythms by Dietary Methionine Starvation
-GSM8601060	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me1, rep1	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601064	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	U251, H3K36me1, rep1	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601084	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me2, rep1	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601088	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	U251, H3K36me2, rep1	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601108	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me3, rep1	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601112	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	U251, H3K36me3, rep1	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601252	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me1, rep2	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601256	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	U251, H3K36me1, rep2	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601276	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me2, rep2	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601280	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	U251, H3K36me2, rep2	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601379	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me3, rep2	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8601403	GSE280574	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	SNB19, H3K36me3, rep3	mChIP-seq for high-throughput epigenomic profiling reveals a decouplin
-GSM8669504	GSE283685	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_FT	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669505	GSE283685	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_lam_P5	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669506	GSE283685	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_NS_P5	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669507	GSE283686	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_H3K27Ac	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669508	GSE283686	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_H3K27me3	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669509	GSE283686	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_H3K36me3	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669510	GSE283686	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_RNAPol2	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8669511	GSE283686	GCTB/Chondroblastoma	EXCLUDED	H3.3 glioma residue (K27M / G34R / G34V), not the GCTB G34W/L or CB K36M allele	CXJ074_Input	An exceptionally rare case of a diffuse midline glioma with concomitan
-GSM8751000	GSE287761	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_DMSO4h	Maintenance of nucleosome organization through replication and transcr
-GSM8751001	GSE287761	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_dTAG4h	Maintenance of nucleosome organization through replication and transcr
-GSM9131268	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K27me3_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131269	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K27me3_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131270	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K9me3_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131271	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K9me3_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131278	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131279	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131280	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1_delC4_H3K27me3_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131281	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1_delC4_H3K27me3_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131282	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1_delC4_H3K9me3_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131283	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1_delC4_H3K9me3_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131290	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1_delC4_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131291	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1_delC4_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131292	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K27me3_rep3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131293	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K27me3_rep4	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131294	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K9me3_rep3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131295	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_H3K9me3_rep4	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131296	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_MTA1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131297	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_MTA1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131298	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_sg1_Mta1_H3K27me3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131299	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_sg1_Mta1_H3K9me3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131301	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_sg2_Mta1_H3K27me3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131302	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_sg2_Mta1_H3K9me3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768238	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_TOP1_rep1_new	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768239	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_TOP1_rep2_new	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768240	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_CPT_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768241	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_CPT_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768242	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1delC4_CPT_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768243	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1delC4_CPT_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768244	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_PolII_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768245	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_WT_PolII_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768246	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1delC4_PolII_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768247	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_Top1delC4_PolII_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768248	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_PolII_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768249	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_PolII_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768250	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_WT_Top1_PolII_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768251	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_WT_Top1_PolII_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768252	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_Top1_delC4_PolII_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768253	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_Top1_delC4_PolII_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768254	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768255	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768256	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_WT_Top1_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768257	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_WT_Top1_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768258	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_Top1_delC4_TOP1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768259	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	shTop1_Top1_delC4_TOP1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768260	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_sg1_Mta1_MTA1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768261	GSE303600	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cuttag_sg2_Mta1_MTA1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131224	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ttseq_WT_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131225	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ttseq_WT_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131226	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ttseq_Top1_delC4_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131227	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ttseq_Top1_delC4_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131228	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_WT_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131229	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_WT_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131230	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sg1_Mta1_H3K36me2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131231	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sg2_Mta1_H3K36me2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131234	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1_delC4_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131235	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1_delC4_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131236	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1_delC4_sg1_Mta1_H3K36me2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131237	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1_delC4_sg2_Mta1_H3K36me2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131238	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	wt_re1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131239	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	wt_re2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131240	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	nsd1_ko1_re1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131241	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	nsd1_ko1_re2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131242	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	nsd2_ko1_re1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131243	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	nsd2_ko1_re2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131244	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	nsd3_ko1_re1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131245	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	nsd3_ko1_re2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131322	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_WT_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131323	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_WT_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131324	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_WT_rep3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131325	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_WT_rep4	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131326	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131327	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131328	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_rep3	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131329	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_rep4	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131330	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Mta1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131331	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Mta1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131332	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Mta1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131333	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Mta1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131334	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Trim28_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131335	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Trim28_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131336	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Trim28_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131337	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Trim28_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131338	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Smarca5_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131339	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Smarca5_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131340	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Smarca5_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131341	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Smarca5_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131342	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Ybx1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131343	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg1_Ybx1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131344	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Ybx1_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9131345	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	rnaseq_Top1_delC4_sg2_Ybx1_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768271	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_WT_NSD2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768272	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_WT_NSD2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768273	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_NSD2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768274	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_NSD2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768275	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sgMta1_NSD2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768276	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sgMta1_NSD2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768277	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_sgMta1_NSD2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768278	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_sgMta1_NSD2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768279	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_shTop1_WT_Top1_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768280	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_shTop1_WT_Top1_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768281	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_shTop1_Top1_delC4_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768282	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_shTop1_Top1_delC4_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768283	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sgMTA1_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768284	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sgMTA1_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768285	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sgMTA1_sgNSD2_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768286	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_sgMTA1_sgNSD2_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768287	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768288	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768289	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_sgNSD1_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768290	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_sgNSD1_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768291	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_sgNSD2_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768292	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_Top1delC4_sgNSD2_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768293	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_H3K36me2_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9768294	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_H3K36me2_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9859806	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_WT_rep1	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9859807	GSE303603	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	chip_WT_rep2	Spatial partitioning of NSD2 deposits H3K36me2 as an active histone ma
-GSM9222384	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Empty, H3K36me2, rep1	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222385	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Empty, H3K36me3, rep1	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222389	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Empty, H3K36me2, rep2	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222390	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Empty, H3K36me3, rep2	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222394	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2, H3K36me2, rep1	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222395	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2, H3K36me3, rep1	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222399	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2, H3K36me2, rep2	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222400	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2, H3K36me3, rep2	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222404	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2-dead, H3K36me2, rep1	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222405	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2-dead, H3K36me3, rep1	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222409	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2-dead, H3K36me2, rep2	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9222410	GSE307338	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	PRC2-dead, H3K36me3, rep2	Synthetic facultative heterochromatin as a driver of evolvability
-GSM9270575	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	control_CA1200_auxin_H3K36me3_rep1	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270576	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	control_CA1200_auxin_H3K36me3_rep2	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270577	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	control_CA1200_auxin_H3K36me3_rep3	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270587	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	top-1_top-2_auxin_H3K36me3_rep1	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270588	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	top-1_top-2_auxin_H3K36me3_rep2	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270589	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	top-1_top-2_auxin_H3K36me3_rep3	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270599	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	top-1_top-2_no_auxin_H3K36me3_rep1	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270600	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	top-1_top-2_no_auxin_H3K36me3_rep2	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9270601	GSE309620	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	top-1_top-2_no_auxin_H3K36me3_rep3	Gene Arrangement Shapes Transcriptional Responses to DNA Supercoiling 
-GSM9497825	GSE318578	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ATAC_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497826	GSE318578	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ATAC_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497827	GSE318578	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ATAC_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497828	GSE318578	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ATAC_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497884	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_ChIP_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497885	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_ChIP_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497886	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_ChIP_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497887	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_ChIP_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497888	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_Input_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497889	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_Input_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497890	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_Input_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9497891	GSE318582	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me3_Input_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498011	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_Treg_rep1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498012	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_Treg_rep2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498013	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_Treg_rep3	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498014	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_Treg_rep4	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498015	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_Treg_rep1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498016	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_Treg_rep2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498017	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_Treg_rep3	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498018	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_Treg_rep4	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498019	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_cTreg_rep1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498020	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_cTreg_rep2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498021	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_cTreg_rep1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498022	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_cTreg_rep2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498023	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_eTreg_rep1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498024	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	WT_eTreg_rep2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498025	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_eTreg_rep1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498026	GSE318591	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	cKO_eTreg_rep2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498066	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3.3-HA_CUTTag_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498067	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3.3-HA_CUTTag_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498068	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3.3-HA_CUTTag_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498069	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3.3-HA_CUTTag_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498070	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27ac_CUTTag_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498071	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27ac_CUTTag_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498072	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27ac_CUTTag_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498073	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27ac_CUTTag_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498074	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27me3_CUTTag_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498075	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27me3_CUTTag_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498076	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27me3_CUTTag_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498077	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K27me3_CUTTag_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498078	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K4me3_CUTTag_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498079	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K4me3_CUTTag_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498080	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K4me3_CUTTag_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498081	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K4me3_CUTTag_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498082	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Batf_CUTTag_WT_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498083	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Batf_CUTTag_WT_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498084	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Batf_CUTTag_cKO_eTreg_1	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9498085	GSE318593	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Batf_CUTTag_cKO_eTreg_2	H3.3 chaperone Hira primes the effector program and function of regula
-GSM9848306	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	F3 Fertile,1	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848307	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	F3 Fertile,3	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848308	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	P0 wt,1	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848309	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	P0 wt,2	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848310	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	P0 wt,3	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848311	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	P0 Array,2	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848312	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	P0 Array,3	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848313	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	F3 Subfertile,1	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9848314	GSE337109	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	F3 Subfertile,3	Transgenerational inheritance of altered H3K27me3 in wildtype Caenorha
-GSM9956534	GSE342764	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	anti-H3K36me2 sgNTC-transduced Cas9+ P14 T cells	Targeting ZMYND8 unleashes IL-2 signaling to override T cell exhaustio
-GSM10043396	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, WT P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043397	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, WT P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043398	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, Nsd2CKO P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043399	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, Nsd2CKO P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043400	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, WT P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043401	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, WT P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043402	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, Nsd2CKO P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10043403	GSE346975	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, Nsd2CKO P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10044579	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 wildtype (WT) cells, sense strand	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044580	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 wildtype (WT) cells, antisense strand	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044581	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044582	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044583	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044584	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044585	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044586	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044587	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-double knockout (DKO) cells, sens	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044588	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-double knockout (DKO) cells, anti	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044589	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044590	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044591	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044592	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044593	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044594	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044595	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2 knockout (KO) cells, sense strand	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044596	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2 knockout (KO) cells, antisense stran	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044597	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044598	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044599	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044600	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044601	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044602	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044603	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 H3K36 methyltransferase (NSD1, NSD2, NSD3,	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044604	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 H3K36 methyltransferase (NSD1, NSD2, NSD3,	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044605	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044606	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044607	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044608	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044609	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044610	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044611	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant + promoter de	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044612	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant + promoter de	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044613	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant + promoter de	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044614	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant + promoter de	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044615	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant + promoter de	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044616	GSE347032	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant + promoter de	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044621	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 wildtype (WT) cells	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044622	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044623	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044624	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 Prdx1 splice acceptor mutant cells, clone 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044625	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-double knockout (DKO) cells	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044626	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044627	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044628	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 DNMT3A/B-DKO Prdx1 splice acceptor mutant 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044629	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2 knockout (KO) cells	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044630	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044631	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044632	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 SETD2-KO Prdx1 splice acceptor mutant cell	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044633	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 H3K36 methyltransferase (NSD1, NSD2, NSD3,	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044634	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044635	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10044636	GSE347034	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	C3H10T1/2 QuiKO Prdx1 splice acceptor mutant cells, 	Molecular mechanisms of promoter silencing by transcriptional readthro
-GSM10049562	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, WT P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049563	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, WT P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049564	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, Nsd2CKO P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049565	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SLECs, Nsd2CKO P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049566	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, WT P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049567	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, WT P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049568	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, Nsd2CKO P14 cells, Day 15, biol rep1	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10049569	GSE347286	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	MPECs, Nsd2CKO P14 cells, Day 15, biol rep2	Histone methyltransferase NSD2 shapes CD8+ T cell fates through the H3
-GSM10077861	GSE348666	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Testes H3K36me3	Dosage compensation is regulated by segregated chromatin modules durin
+GSM9493230	GSE231905	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ChIP-seq H3K36me3_V6.5	P-TEFb regulates nucleosome positioning at promoters
+GSM9493231	GSE231905	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ChIP-seq H3K36me3_V6.5_CHD1-SA	P-TEFb regulates nucleosome positioning at promoters
+GSM9493232	GSE231905	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ChIP-seq H3K36me3_V6.5_CHD1-SE	P-TEFb regulates nucleosome positioning at promoters
+GSM9493240	GSE231905	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ChIP-seq H3K36me3_V6.5_CDK9_AID_DMSO	P-TEFb regulates nucleosome positioning at promoters
+GSM9493241	GSE231905	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	ChIP-seq H3K36me3_V6.5_CDK9_AID_Auxin 2h	P-TEFb regulates nucleosome positioning at promoters
+GSM9526797	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526798	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526799	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526800	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526801	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526802	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526803	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_10dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526804	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_30dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526805	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_2HdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526806	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6HdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526807	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526808	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_10dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526809	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526810	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526811	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6HdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526812	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526813	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526814	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526815	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526816	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526817	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DMSO_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526818	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_10dTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526819	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_30dTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526820	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_2HdTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526821	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6HdTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526822	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526823	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_10dTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526824	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526825	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526826	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6HdTAG_K36me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526827	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526828	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526829	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526830	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526831	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526832	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DMSO_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526833	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_10dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526834	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_30dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526835	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_2HdTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526836	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6HdTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526837	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526838	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_10dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526839	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526840	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526841	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6HdTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526842	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526843	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526844	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526845	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526846	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526847	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DMSO_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526848	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_10dTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526849	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_30dTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526850	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_2HdTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526851	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6HdTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526852	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526853	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_10dTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526854	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526855	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526856	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6HdTAG_OCT4	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526857	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526858	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526859	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526860	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526861	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526862	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DMSO_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526863	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_10dTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526864	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_30dTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526865	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_2HdTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526866	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6HdTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526867	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526868	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_10dTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526869	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526870	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526871	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6HdTAG_Pol2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526872	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_rep1_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526873	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_rep1_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526874	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_rep1_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526875	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_rep1_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526876	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_rep1_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526877	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_rep2_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526878	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_rep2_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526879	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_rep2_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526880	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_rep2_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526881	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_rep2_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526882	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526883	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526884	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526885	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526886	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526887	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DMSO_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526888	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_10dTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526889	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_30dTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526890	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_2HdTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526891	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6HdTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526892	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526893	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_10dTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526894	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526895	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526896	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6HdTAG_IgG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526897	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DMSO_NANOG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526898	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_30dTAG_NANOG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526899	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_60dTAG_NANOG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526900	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2HdTAG_NANOG	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526901	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2h_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526902	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2h_dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526903	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526904	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRBdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526905	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2h_DMSO_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526906	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2h_dTAG_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526907	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526908	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRBdTAG_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526913	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2h_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526914	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_2h_dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526915	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DRB_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526916	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DRBdTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526917	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526918	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526919	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_DMSO_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526920	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526921	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_DMSO_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526922	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DRB_dTAG_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526923	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DRB_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526924	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DRB_dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526925	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DRB_DMSO_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526926	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_DRB_dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526927	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DRB_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526928	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DRB_dTAG_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526929	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DRB_DMSO_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526930	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_DRB_dTAG_SOX2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526931	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2H_DMSO_K4me3_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526932	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2H_DMSO_K4me3_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526933	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2HdTAG_K4me3_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526934	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2HdTAG_K4me3_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526935	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2H_DMSO_IgG_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526936	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2H_DMSO_IgG_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526937	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2HdTAG_IgG_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526938	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Sox2_2HdTAG_IgG_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526939	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2H_DMSO_K4me3_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526940	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2H_DMSO_K4me3_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526941	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2HdTAG_K4me3_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526942	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2HdTAG_K4me3_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526943	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2H_DMSO_IgG_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526944	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2H_DMSO_IgG_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526945	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2HdTAG_IgG_rep1	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526946	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	Nanog_2HdTAG_IgG_rep2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526947	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_DMSO_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526948	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_DMSO_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526949	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_DMSO_MLN_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526950	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_dTAG_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526951	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_dTAG_DMSO_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526952	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_dTAG_DMSO_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526953	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_dTAG_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526954	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_dTAG_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526955	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6h_dTAG_MLN_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526956	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6h_DMSO_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526957	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6h_DMSO_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526958	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6h_dTAG_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526959	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6h_dTAG_DMSO_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526960	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6h_dTAG_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526961	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_6h_dTAG_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526962	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6h_DMSO_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526963	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6h_DMSO_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526964	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6h_dTAG_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526965	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6h_dTAG_DMSO_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526966	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6h_dTAG_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526967	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_6h_dTAG_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526968	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_DMSO_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526969	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_DMSO_DMSO_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526970	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_DMSO_DMSO_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526971	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_DMSO_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526972	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_DMSO_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526973	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_DMSO_MLN_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526974	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_dTAG_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526975	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_dTAG_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526976	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_24h_dTAG_MLN_V5	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526977	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_24h_DMSO_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526978	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_24h_DMSO_DMSO_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526979	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_24h_DMSO_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526980	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_24h_DMSO_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526981	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_24h_dTAG_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526982	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone1_24h_dTAG_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526983	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_24h_DMSO_DMSO_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526984	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_24h_DMSO_DMSO_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526985	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_24h_DMSO_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526986	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_24h_DMSO_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526987	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_24h_dTAG_MLN_K4me3	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9526988	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SSRP1_clone2_24h_dTAG_MLN_Sox2	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM10041993	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_DMSO_RNAPII_S2P	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM10041994	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_10dTAG_RNAPII_S2P	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM10041995	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_30dTAG_RNAPII_S2P	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM10041996	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_2HdTAG_RNAPII_S2P	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM10041997	GSE319809	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	SPT16_6HdTAG_RNAPII_S2P	FACT depletion results in a temporal cascade of chromatin disruption p
+GSM9706397	GSE329557	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me2_Phosphorus-repletion_C0_replicat1	Genome-wide maps of histone modifications in response to Phosphorus de
+GSM9706398	GSE329557	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me2_Phosphorus-repletion_C0_replicat2	Genome-wide maps of histone modifications in response to Phosphorus de
+GSM9706403	GSE329557	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me2_Phosphorus-deprivation_P1_replicat1	Genome-wide maps of histone modifications in response to Phosphorus de
+GSM9706404	GSE329557	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me2_Phosphorus-deprivation_P1_replicat2	Genome-wide maps of histone modifications in response to Phosphorus de
+GSM9706409	GSE329557	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me2_Phosphorus-deprivation_P2_replicat1	Genome-wide maps of histone modifications in response to Phosphorus de
+GSM9706410	GSE329557	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	H3K36me2_Phosphorus-deprivation_P2_replicat2	Genome-wide maps of histone modifications in response to Phosphorus de
+GSM10174217	GSE353322	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	BlCa: NPCs_Control_H3K36me3_rep1	BlCa: MSL2 is an allelic dosage sensor in mammals [2]
+GSM10174218	GSE353322	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	BlCa: NPCs_Control_H3K36me3_rep2	BlCa: MSL2 is an allelic dosage sensor in mammals [2]
+GSM10174249	GSE353322	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	BlCa: NPCs_MSL2KO1_H3K36me3_rep1	BlCa: MSL2 is an allelic dosage sensor in mammals [2]
+GSM10174250	GSE353322	GCTB/Chondroblastoma	EXCLUDED	non-human H3.3 model system, not a bone tumor	BlCa: NPCs_MSL2KO1_H3K36me3_rep2	BlCa: MSL2 is an allelic dosage sensor in mammals [2]
