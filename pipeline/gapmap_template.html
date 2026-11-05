@@ -237,7 +237,24 @@
 <div class="panel" id="scatterPanel">
   <div class="ptitle">Disease burden against regulatory epigenomics
     <span>US cases per year (all ages) versus open regulatory samples. Entities on the red
-      floor line have none. Hover a point for detail.</span></div>
+      floor line have none. Narrow the vertical axis to one assay family, one kind of
+      material, or both: the question "which subtypes have ChIP-seq on an actual patient
+      tumor" is the two filters together. Hover a point for detail.</span></div>
+  <div class="qctl">
+    <span class="qseg" id="sassay" role="group" aria-label="Assay family">
+      <button data-a="" class="on">All regulatory</button
+      ><button data-a="chip">ChIP-seq family</button
+      ><button data-a="acc">Accessibility</button
+      ><button data-a="d3">3D genome</button>
+    </span>
+    <span class="qseg" id="smat" role="group" aria-label="Material of origin">
+      <button data-m="" class="on">All material</button
+      ><button data-m="pt">Primary tumor</button
+      ><button data-m="pder">Patient-derived</button
+      ><button data-m="cl">Cell line</button>
+    </span>
+    <span class="muted" id="slab"></span>
+  </div>
   <div style="padding:6px 10px 14px"><svg id="scatter" width="100%" height="380"
        viewBox="0 0 1000 380" preserveAspectRatio="xMidYMid meet" role="img"
        aria-label="Scatter of US cases per year against regulatory epigenomic samples"></svg></div>
@@ -414,6 +431,43 @@ function drawMatrix(list){
 }
 
 /* ---------- scatter ---------- */
+/* The y value is recomputed from the record array rather than read off e.reg, so the
+   axis can be narrowed to an assay family, a kind of material, or both at once. Both
+   together is the question worth asking: an entity can look covered on the strength of
+   ChIP-seq done entirely in cell lines, and selecting "ChIP-seq family" with "Primary
+   tumor" is what separates those from the ones with a mark read on a patient's tumor.
+   Targets are not distinguished -- any ChIP target counts -- but input and IgG controls
+   never do, because they measure background rather than anything in particular.
+
+   The axis keeps the whole atlas's range under every filter. Rescaling to the survivors
+   would use more of the plot, but it would also hide the collapse the filter exists to
+   show: twelve samples would sit as high under "primary tumor" as twelve hundred do
+   under "all regulatory". Same reasoning as the quilt's colour range. */
+const SASSAY = {chip: new Set(["ChIP-seq","CUT&RUN","CUT&Tag","ChIP-exo","ChIP-chip"]),
+                acc:  new Set(["ATAC-seq","scATAC-seq","DNase-seq","FAIRE-seq","MNase-seq"]),
+                d3:   new Set(["Hi-C","HiChIP","Micro-C","Capture-HiC","ChIA-PET","4C-seq"])};
+const SMAT = {pt: PATIENT, pder: PDER, cl: new Set(["cell_line"])};
+const sstate = {assay:"", mat:""};
+const CTRL_LANE = "Input / control";
+
+function scatterReg(e){
+  if(!sstate.assay && !sstate.mat) return e.reg;
+  const as = SASSAY[sstate.assay], mt = SMAT[sstate.mat];
+  let n = 0;
+  for(const i of (byEnt[e.d] || [])){
+    if(!REG.has(recLane(i)) || recLane(i) === CTRL_LANE) continue;
+    if(as && !as.has(recAs(i))) continue;
+    if(mt && !mt.has(recSt(i))) continue;
+    n += recN(i);
+  }
+  return n;
+}
+const SA_LAB = {"":"regulatory", chip:"ChIP-seq family", acc:"accessibility", d3:"3D genome"};
+const SM_LAB = {"":"", pt:" on primary tumor, metastasis or recurrence",
+                pder:" on patient-derived material", cl:" on cell lines"};
+const SM_AXIS = {"":"", pt:" on patient tumor", pder:" on patient-derived material",
+                 cl:" on cell lines"};
+
 function drawScatter(list){
   const svg = $("#scatter"), W=1000, H=380, L=68, Rr=18, T=16, B=44;
   const pts = list.filter(e => e.cases>0);
@@ -435,7 +489,7 @@ function drawScatter(list){
         <text x="${L-7}" y="${FLOOR+3.5}" font-size="11" fill="var(--absent)" text-anchor="end"
         font-weight="700">0</text>`;
   pts.forEach(e=>{
-    const zero = e.reg===0, x = xs(e.cases), y = ys(e.reg);
+    const v = scatterReg(e), zero = v===0, x = xs(e.cases), y = ys(v);
     const col = zero ? "var(--absent)" : (AGEC[e.age]||"var(--muted)");
     g += zero
       ? `<path d="M${x-5.5},${y-5} L${x+5.5},${y-5} L${x},${y+5.5} Z" fill="${col}"
@@ -457,19 +511,43 @@ function drawScatter(list){
                 "GCTB / chondroblastoma":"GCTB"};
   const slab = n => { const k = n.split(" (")[0];
     return ABBR[k] || (k.length>26 ? k.slice(0,25).replace(/[\s,/]+$/,"")+"\u2026" : k); };
-  const big = pts.filter(e => e.cases>900 || e.reg>900).slice(0,14);
+  // Under a filter most points fall to the zero line, and labelling by burden alone
+  // stacks a dozen names along it. Name the entities that still have the data -- the
+  // answer to what was asked -- and only the few largest burdens sitting at zero.
+  // The zero line is one row, so it can only carry names that are far enough apart in x
+  // to be read: take the largest burdens, skipping any that would land on one already
+  // taken. Without this, Desmoid and UPS / MFH -- within 20px of each other -- printed
+  // on top of one another under every filter that emptied the plot.
+  const spread = (list, gap) => {
+    const out = [];
+    for (const e of list) if (out.every(o => Math.abs(xs(o.cases) - xs(e.cases)) > gap))
+      out.push(e);
+    return out;
+  };
+  const big = (sstate.assay || sstate.mat)
+    ? [...pts.filter(e => scatterReg(e) > 0)
+            .sort((a,b) => scatterReg(b) - scatterReg(a)).slice(0,9),
+       ...spread(pts.filter(e => scatterReg(e) === 0).sort((a,b) => b.cases - a.cases), 110)
+            .slice(0,5)]
+    : pts.filter(e => e.cases>900 || scatterReg(e)>900).slice(0,14);
   big.forEach((e,i)=>{
-    g += `<text class="slab" data-i="${i}" x="${xs(e.cases)}" y="${ys(e.reg)-10}"
+    g += `<text class="slab" data-i="${i}" x="${xs(e.cases)}" y="${ys(scatterReg(e))-10}"
            font-size="10.5" fill="var(--ink-2)" text-anchor="middle"
            >${slab(e.name)}</text>`;
   });
   g += `<text x="${(L+W-Rr)/2}" y="${H-6}" font-size="11.5" fill="var(--ink-2)"
          text-anchor="middle">US cases per year (all ages, log scale)</text>
         <text transform="translate(15,${(T+H-B)/2}) rotate(-90)" font-size="11.5"
-         fill="var(--ink-2)" text-anchor="middle">Open regulatory epigenomic samples</text>`;
+         fill="var(--ink-2)" text-anchor="middle">Open ${SA_LAB[sstate.assay]} samples${
+           SM_AXIS[sstate.mat]}</text>`;
   svg.innerHTML = g;
-  placeLabels(svg, big.map(e=>[xs(e.cases), ys(e.reg)]),
-              pts.map(e=>[xs(e.cases), ys(e.reg)]), {L, R:W-Rr, T, B:H-B, floor:FLOOR});
+  const kept = pts.filter(e => scatterReg(e) > 0).length;
+  $("#slab").textContent = (sstate.assay || sstate.mat)
+    ? `${kept} of ${pts.length} entities have ${SA_LAB[sstate.assay]} data`
+      + `${SM_LAB[sstate.mat]} \u2014 ${fmt(pts.reduce((t,e)=>t+scatterReg(e),0))} samples`
+    : "";
+  placeLabels(svg, big.map(e=>[xs(e.cases), ys(scatterReg(e))]),
+              pts.map(e=>[xs(e.cases), ys(scatterReg(e))]), {L, R:W-Rr, T, B:H-B, floor:FLOOR});
 }
 
 /* Collision-aware label placement for the scatter above.
@@ -486,7 +564,13 @@ function drawScatter(list){
 const LAB_CAND = [[0,-11,"middle"],[0,14,"middle"],[9,3.5,"start"],[-9,3.5,"end"],
                   [8,-8,"start"],[-8,-8,"end"],[8,11,"start"],[-8,11,"end"],
                   [0,-22,"middle"],[0,25,"middle"],[20,-9,"start"],[-20,-9,"end"],
-                  [20,12,"start"],[-20,12,"end"],[0,-33,"middle"],[0,36,"middle"]];
+                  [20,12,"start"],[-20,12,"end"],[0,-33,"middle"],[0,36,"middle"],
+                  // Extra tiers for the zero line, where a filter can put a dozen points
+                  // on one row and the sixteen offsets above all collide.
+                  [30,-20,"start"],[-30,-20,"end"],[0,-44,"middle"],
+                  [34,-31,"start"],[-34,-31,"end"],[0,-55,"middle"],
+                  // Two wide labels over the same x separate sideways, not upward.
+                  [52,-11,"start"],[-52,-11,"end"],[66,-24,"start"],[-66,-24,"end"]];
 
 function placeLabels(svg, anchors, marks, frame){
   const NS = "http://www.w3.org/2000/svg";
@@ -513,7 +597,10 @@ function placeLabels(svg, anchors, marks, frame){
       const t = Math.hypot(mx-ax, my-ay);
       if (t > 0.5 && t < best){ best = t; nx = mx; ny = my; }
     });
-    const away = c => -((c[0])*(nx-ax) + (c[1])*(ny-ay));
+    // Direction only: without normalising, a long offset outscores a short one pointing
+    // the same way, and labels drift off their points even when there is room next door.
+    const away = c => { const m = Math.hypot(c[0], c[1]) || 1;
+                        return -((c[0]*(nx-ax) + c[1]*(ny-ay)) / m); };
     const cands = LAB_CAND.slice().sort((a,b)=>away(b)-away(a));
     let won = null, fallback = null, fbCost = Infinity;
     for (const [dx,dy,anc] of cands){
@@ -977,8 +1064,11 @@ $("#scatter").addEventListener("mousemove", ev=>{
   const p = ev.target.closest(".pt");
   if(!p){ tip.style.opacity=0; return; }
   const e = E.find(x=>x.d===decodeURIComponent(p.dataset.e));
+  const sv = scatterReg(e), filt = sstate.assay || sstate.mat;
   tip.innerHTML = `<b>${e.name}</b>${fmt(e.cases)} US cases/yr<br>
-    ${e.reg?fmt(e.reg)+" open regulatory samples":"<span style='color:var(--absent)'>no regulatory data</span>"}
+    ${sv?fmt(sv)+` open ${SA_LAB[sstate.assay]} samples${SM_LAB[sstate.mat]}`
+        :`<span style='color:var(--absent)'>no ${SA_LAB[sstate.assay]} data${SM_LAB[sstate.mat]}</span>`}
+    ${filt && e.reg!==sv?`<br><span style="color:var(--muted)">${fmt(e.reg)} regulatory samples in all</span>`:""}
     ${e.creg?`<br>${fmt(e.creg)} controlled-access`:""}
     <br><span style="color:var(--muted)">click the row in the table for the full record</span>`;
   tip.style.opacity=1;
@@ -990,6 +1080,18 @@ $("#scatter").addEventListener("click", ev=>{
   const p = ev.target.closest(".pt"); if(!p) return;
   state.sel = decodeURIComponent(p.dataset.e); render();
   drawDetail(E.find(x=>x.d===state.sel));
+});
+$("#sassay").addEventListener("click", ev=>{
+  const b = ev.target.closest("button"); if(!b) return;
+  sstate.assay = b.dataset.a;
+  [...$("#sassay").children].forEach(x => x.classList.toggle("on", x === b));
+  drawScatter(sortList(E.filter(matches)));
+});
+$("#smat").addEventListener("click", ev=>{
+  const b = ev.target.closest("button"); if(!b) return;
+  sstate.mat = b.dataset.m;
+  [...$("#smat").children].forEach(x => x.classList.toggle("on", x === b));
+  drawScatter(sortList(E.filter(matches)));
 });
 let qt; $("#q").addEventListener("input", e=>{
   clearTimeout(qt); qt = setTimeout(()=>{ state.q = e.target.value.trim(); render(); }, 160); });
