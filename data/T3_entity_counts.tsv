@@ -1,13 +1,13 @@
 disease	entity_kind	age_class	model_units	pdx_units	patient_epigenomes	model_H3K27ac	patient_H3K27ac	pdx_H3K27ac	model_accessibility	patient_accessibility	model_3D	patient_3D	model_DNAme	patient_DNAme	epigenomic_samples_raw	epigenomic_samples_dedup	epi_ChIPseq	epi_accessibility	epi_3D	epi_DNAme	total_samples_any_assay
-Osteosarcoma	sarcoma	pediatric	30	1	319	115	10	21	469	16	311	0	76	273	4340	4327	2485	578	312	480	22908
-Ewing	sarcoma	pediatric	50	0	510	145	3	0	131	0	74	79	87	410	2145	2145	1238	154	157	557	13091
-Rhabdoid tumor/ATRT	sarcoma	pediatric	18	0	351	83	11	0	199	22	10	0	119	288	1585	1545	823	221	10	488	5091
-EXCLUDED - not a sarcoma	nonsarcoma	pediatric	4	0	329	27	0	0	25	0	36	1	45	78	1417	1415	1183	25	37	168	4855
-FP-RMS	sarcoma	pediatric	12	2	81	57	7	0	126	0	26	0	9	67	866	866	619	139	32	76	3827
+Osteosarcoma	sarcoma	pediatric	30	1	319	117	10	21	469	16	311	0	76	273	4581	4568	2726	578	312	480	22908
+Ewing	sarcoma	pediatric	50	0	510	153	3	0	131	0	74	79	87	410	2170	2170	1263	154	157	557	13091
+Rhabdoid tumor/ATRT	sarcoma	pediatric	18	0	351	220	11	0	199	22	10	0	119	288	1883	1843	1121	221	10	488	5091
+EXCLUDED - not a sarcoma	nonsarcoma	pediatric	4	0	329	27	0	0	25	0	36	1	45	78	1436	1434	1202	25	37	168	4855
+FP-RMS	sarcoma	pediatric	12	2	81	67	7	0	126	0	26	0	9	67	972	972	725	139	32	76	3827
 Synovial sarcoma	sarcoma	both	9	1	79	38	0	0	36	0	69	0	11	79	757	757	547	36	72	102	2256
 MPNST	sarcoma	both	13	0	60	63	0	0	33	2	0	0	83	58	703	703	387	35	0	281	3082
-Kaposi sarcoma	sarcoma	adult	4	0	8	19	0	0	6	0	54	0	19	8	505	505	411	7	54	28	2725
-Sarcoma NOS	sarcoma	both	31	0	186	6	0	0	24	0	0	0	17	186	384	384	108	24	0	252	7648
+Kaposi sarcoma	sarcoma	adult	4	0	8	19	0	0	6	0	54	0	28	8	533	533	424	7	54	43	2725
+Sarcoma NOS	sarcoma	both	31	0	186	22	0	0	24	0	0	0	17	186	433	433	157	24	0	252	7648
 GCTB/Chondroblastoma	sarcoma	pediatric	2	0	58	24	0	0	0	0	0	0	8	52	380	380	315	0	0	65	660
 Fibrosarcoma NOS	sarcoma	adult	4	0	1	5	0	0	24	0	48	0	13	1	368	368	272	24	48	14	2522
 GIST	sarcoma	both	11	0	151	67	17	0	11	0	13	0	4	96	360	360	234	11	13	102	2255
@@ -17,22 +17,22 @@ Chondrosarcoma	sarcoma	both	12	0	212	4	0	0	6	0	0	0	31	212	330	330	30	6	0	294	129
 Clear cell sarcoma	sarcoma	both	4	0	80	24	5	0	12	0	4	0	0	58	290	290	185	28	4	73	593
 Leiomyosarcoma	sarcoma	adult	8	0	90	11	0	0	38	0	0	0	1	90	249	244	115	38	0	91	2221
 Chordoma	sarcoma	both	6	0	96	16	16	0	8	0	0	0	13	80	215	215	68	8	0	139	889
-ASPS	sarcoma	both	2	0	47	37	6	1	10	0	84	10	0	23	189	189	54	18	94	23	555
+ASPS	sarcoma	both	2	0	47	37	6	1	10	0	84	10	0	23	195	195	60	18	94	23	555
 RMS-NOS	sarcoma	pediatric	12	0	35	14	0	0	17	0	17	0	0	34	183	183	108	19	17	39	3064
 DSRCT	sarcoma	pediatric	4	0	57	30	3	0	5	1	4	0	0	38	167	167	119	6	4	38	596
+Endometrial stromal sarcoma	sarcoma	adult	1	0	45	0	0	0	0	0	0	0	12	43	155	155	100	0	0	55	276
 Epithelioid sarcoma	sarcoma	both	6	0	28	8	0	0	24	0	4	0	5	28	125	125	64	24	4	33	230
 Non-malignant human fetal osteoblast (control)	sarcoma		1	0	0	0	0	0	0	0	0	0	0	0	124	121	59	62	0	0	287
 Liposarcoma-dediff	sarcoma	adult	5	0	36	0	2	0	7	0	0	3	1	29	110	110	70	7	3	30	1247
 Liposarcoma-myxoid	sarcoma	both	9	0	52	6	2	0	7	0	0	0	0	48	103	103	48	7	0	48	420
 UPS/MFH	sarcoma	adult	3	0	15	9	0	0	9	0	0	0	1	15	77	77	52	9	0	16	1151
-Endometrial stromal sarcoma	sarcoma	adult	1	0	43	0	0	0	0	0	0	0	12	43	69	69	14	0	0	55	276
 Solitary fibrous tumor	sarcoma	adult	0	0	33	0	0	0	0	0	0	0	0	33	69	69	36	0	0	33	171
 CIC-DUX4	sarcoma	pediatric	4	0	27	9	3	0	0	0	0	0	0	15	65	65	50	0	0	15	238
 EHE	sarcoma	both	0	0	11	0	0	0	0	0	0	0	0	11	56	56	45	0	0	11	234
 PEComa	sarcoma	adult	2	0	47	0	0	0	2	0	0	0	0	47	49	49	0	2	0	47	188
 Angiosarcoma	sarcoma	both	6	0	46	0	0	0	0	0	0	0	0	46	46	46	0	0	0	46	638
+Liposarcoma-WD	sarcoma	adult	3	0	13	0	0	0	3	0	0	0	0	13	46	46	19	14	0	13	355
 DFSP	sarcoma	both	0	0	40	0	0	0	0	0	0	0	0	40	40	40	0	0	0	40	120
-Liposarcoma-WD	sarcoma	adult	3	0	13	0	0	0	3	0	0	0	0	13	39	39	12	14	0	13	355
 Desmoid	sarcoma	both	0	0	34	0	0	0	0	0	0	0	0	34	38	38	4	0	0	34	589
 Infantile fibrosarcoma	sarcoma	pediatric	1	0	14	4	0	0	0	0	0	0	0	14	36	36	22	0	0	14	264
 RMS-MYOD1	sarcoma	pediatric	1	1	12	0	0	0	6	0	0	0	0	12	34	34	12	10	0	12	104

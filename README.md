@@ -14,9 +14,9 @@ Working Group white paper. Census closes **1 October 2026**.
 
 | | |
 |---|---|
-| **15,900** | sarcoma epigenomic samples, de-duplicated, each with a deposition date |
-| **4,385** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
-| **853** | GEO series, plus 67 controlled-access datasets |
+| **16,746** | sarcoma epigenomic samples, de-duplicated, each with a deposition date |
+| **4,502** | assay × model × study records — the "H3K27ac ChIP-seq for RH4" grain |
+| **879** | GEO series, plus 67 controlled-access datasets |
 | **45** | named diagnostic entities (plus 5 unresolved bins and 1 control tissue) |
 | **550** | cataloged cell lines and PDX models, 95 flagged for identity problems |
 
@@ -28,7 +28,7 @@ and a README that states figures it cannot re-derive is worse than no README at 
 
 **1. Adult sarcoma carries the burden; pediatric sarcoma has the data.** 90% of the ~29,000
 US sarcoma cases per year arise in entities that are adult-predominant or span both age
-ranges, but pediatric-predominant entities hold 69% of all regulatory epigenomic data ever
+ranges, but pediatric-predominant entities hold 70% of all regulatory epigenomic data ever
 generated — **26× more per new case diagnosed**. This is a distribution correctable by
 allocation, not by any new technology.
 
@@ -44,9 +44,9 @@ Every one of these zeros was independently verified against GEO, SRA, ENCODE, Ch
 ArrayExpress, GDC, dbGaP and Europe PMC full text; surviving caveats are recorded per entity
 in [`data/T13_incidence_vs_data.tsv`](data/T13_incidence_vs_data.tsv).
 
-**3. Twenty-seven of 45 entities have never had a patient's tumor profiled** for active
+**3. Twenty-six of 45 entities have never had a patient's tumor profiled** for active
 chromatin, accessibility or 3D architecture — counting tumor tissue, PDX and patient-derived
-organoids together. Kaposi sarcoma is the sharpest case: 417 regulatory epigenomes exist for
+organoids together. Kaposi sarcoma is the sharpest case: 423 regulatory epigenomes exist for
 it and not one of them comes from a patient.
 
 **4. The largest sarcoma epigenomic resource in existence is unfindable by disease.**

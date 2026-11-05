@@ -105,8 +105,10 @@ ASSAY_RULES = [
  ("Micro-C", r"micro[\-\s]?c\b"), ("Capture-HiC", r"capture\s*hi[\-\s]?c|promoter\s*capture"),
  ("Hi-C", r"\bhi[\-\s]?c\b|in\s?situ\s?hic"), ("4C-seq", r"\b4c[\-\s]?seq\b"),
  ("Repli-seq", r"repli[\-\s]?seq"),
- ("CUT&Tag", r"cut&tag|cut\s*and\s*tag|cut[\-\s]?tag|cuttag"),
- ("CUT&RUN", r"cut&run|cut\s*and\s*run|cut[\-\s]?run|cutrun"),
+ ("CUT&Tag", r"cut&tag|cut\s*and\s*tag|cut[\-\s]?tag|cuttag|(?<![a-z])c\s*&\s*t(?![a-z])"),
+ # GEO lets CUT&RUN declare library_strategy OTHER, so the title has to carry it, and
+ # depositors abbreviate: "CnR-FLI" matched already, "C&R_Rh30_P3F_rep1" did not.
+ ("CUT&RUN", r"cut&run|cut\s*and\s*run|cut[\-\s]?run|cutrun|(?<![a-z])c\s*&\s*r(?![a-z])"),
  ("ChIP-exo", r"chip[\-\s]?exo"),
  ("scATAC-seq", r"\bsc[\-\s]?atac|single[\-\s]cell\s+atac|sn[\-\s]?atac|single[\-\s]nucle\w+\s+atac|multiome"),
  ("ATAC-seq", r"\batac\b|assay\s+for\s+transposase"),
@@ -698,8 +700,17 @@ def classify(r, ctx):
                          r.get("characteristics","")[:500]])
     blob = sblob + " ;; " + gctx
     ls = r.get("library_strategy","").strip()
-    hits = first(ASSAY_PATS, sblob) or first(ASSAY_PATS, blob)
+    own_hits = first(ASSAY_PATS, sblob)
+    hits = own_hits or first(ASSAY_PATS, blob)
     assay = hits[0] if hits else ""
+    # A series that also ran a CRISPR screen stamped "CRISPR-screen" on its ChIP-seq
+    # samples, whose own titles name a mark but no assay ("NChIP-H3K27ac"): the word
+    # came from the series summary, and the depositor's own library_strategy said
+    # ChIP-Seq. When the sample's own words name no assay and the context's answer is
+    # not an epigenomic assay at all, the strategy wins. Narrow on purpose -- a HiChIP
+    # deposit also declares ChIP-Seq, and that reading has to survive.
+    if not own_hits and assay not in EPI and LIBSTRAT.get(ls) in EPI:
+        assay = LIBSTRAT[ls]
     # The depositor's own library_strategy outranks any assay word found in the
     # text. Multi-assay series ("ChIP-seq and RNA-seq of ...") otherwise stamp
     # their epigenomic assay onto the RNA-seq samples sitting beside it, and the

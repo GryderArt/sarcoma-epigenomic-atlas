@@ -464,6 +464,48 @@ re-fetches the summary for every series-sourced call still in question and cache
 mesenchymal-stromal-cell series stayed under chondroblastoma, because the words that
 matched were never in the stored title.
 
+## 7i. The depositor's own assay, against the series' word for it
+
+Correction #23, found while checking whether two Cancer Discovery papers on CDK8 in
+fusion-driven sarcoma had reached the atlas. Both had, and both were under-counted, by
+two routes that turned out to be general.
+
+GEO carries a `library_strategy` on every sample, set by the depositor. The classifier
+took it as authoritative for CUT&RUN, CUT&Tag, ATAC-seq and Hi-C, and otherwise only
+when no assay word had been found anywhere. That left a gap. In GSE302426 the sample
+titles name the mark but no assay -- `A673_EWSFLI-AID_NChIP-H3K27ac_DMSO_rep1` -- so the
+search fell through to the series summary, which describes the paper's pooled CRISPR
+screen, and 22 H3K27ac ChIP-seq samples were filed as CRISPR-screen. The same shape
+appears wherever a series runs more than one assay: PRO-seq, single-cell RNA-seq and
+proteomics each stamped themselves on the ChIP-seq samples sitting beside them.
+
+The second route is narrower. GEO permits `library_strategy: OTHER` for CUT&RUN, so the
+title has to carry the assay, and depositors abbreviate it. The pattern knew `CnR` but
+not `C&R`, which is how GSE303028 deposited 50 CUT&RUN samples that read as
+other/unknown.
+
+Both rules are now in `04_classify`. A stated `library_strategy` naming an epigenomic
+assay outranks an assay word that appears only in the series context and is not itself
+an epigenomic assay -- deliberately narrow, because a HiChIP deposit also declares
+`ChIP-Seq`, and that reading has to survive. `C&R` and `C&T` join the CUT&RUN and
+CUT&Tag patterns. Stage `44` applies both to the shipped table and logs each change in
+`T37_assay_strategy_corrections.tsv`.
+
+| rule | the record ... | becomes | samples |
+|---|---|---|---|
+| 23a | names no assay in its own words, carries a non-epigenomic assay read off its series, and has a `library_strategy` that names an epigenomic one | the strategy's assay | 776 |
+| 23b | names CUT&RUN or CUT&Tag in its own title while typed as something non-epigenomic | that assay | 89 |
+
+865 samples recovered, every one of them with a depositor-set strategy of
+ChIP-Seq, MBD-Seq, OTHER. They had been read as
+254 CRISPR-screen, 189 GRO/PRO-seq, 155 scRNA-seq, 144 Proteomics. Targets are re-derived on every
+re-typed row, because a record that was not a ChIP-family assay never had one read:
+761 ChIP-seq, 78 CUT&RUN, 15 MeDIP/hMeDIP, with 0 of
+them correctly identified as input or IgG controls and excluded from any target.
+
+What #23 does not do. It trusts `library_strategy` only where the sample's own words are
+silent; a record that names its own assay keeps that reading, even against the strategy.
+
 ## 8. What this cannot tell you
 
 **Absence in this atlas means absence of a public, entity-labeled deposit.** It is not

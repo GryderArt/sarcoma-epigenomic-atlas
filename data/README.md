@@ -36,8 +36,8 @@ Large tables are gzipped; the pipeline reads either form transparently (`pipelin
 | `T33_patient_material_corrections.tsv` | 1.4 MB | 7,299 rows | Correction #20: every sample whose patient typing changed — re-typed as the cell line, PDX or xenograft it is, as non-human or normal material, or removed from its entity because its own record names another cancer — with the rule, the values before and after, and the basis. |
 | `T2_models.tsv` | 164 KB | 550 rows | Cell line and PDX catalog. 550 models with aliases, type, disease, subtype or fusion, key alterations, RRID/Cellosaurus, source repository, origin PMID and a problematic_flag for the 95 with identity problems. |
 | `T3_entity_counts.tsv` | 7 KB | 80 rows | Per-entity roll-up: epigenomic samples by assay family, distinct models, distinct PDX, patient epigenomes, and H3K27ac / accessibility / 3D / methylation counts split by model versus patient. |
-| `T9b_rms_subtype_log.tsv` | 27 KB | 177 rows | Every RMS subtype reassignment with the rule that fired: mutant MYOD1 named, PAX fusion named, curated model identity, explicit fusion-negative wording, driver genotype annotated, or systematically-genotyped series. |
-| `T9c_purity_log.tsv` | 40 KB | 208 rows | Samples removed from the bone-tumor bin. H3F3A/H3F3B capture pulls in the pediatric glioma residues K27M and G34R/V plus plant and mouse H3.3 model systems; GCTB uses G34W/L and chondroblastoma K36M. |
+| `T9b_rms_subtype_log.tsv` | 25 KB | 162 rows | Every RMS subtype reassignment with the rule that fired: mutant MYOD1 named, PAX fusion named, curated model identity, explicit fusion-negative wording, driver genotype annotated, or systematically-genotyped series. |
+| `T9c_purity_log.tsv` | 0 KB | 0 rows | Samples removed from the bone-tumor bin. H3F3A/H3F3B capture pulls in the pediatric glioma residues K27M and G34R/V plus plant and mouse H3.3 model systems; GCTB uses G34W/L and chondroblastoma K36M. |
 | `ega_datasets_raw.json` | 13.1 MB |  |  |
 
 ## `incidence/`

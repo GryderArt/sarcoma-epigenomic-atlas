@@ -1,19 +1,4 @@
 gsm	gse	from	to	basis	sample_type	title	source_name
-GSM9329143	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-CTL1	cell
-GSM9329144	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-CTL2	cell
-GSM9329145	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-CTL3	cell
-GSM9329146	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_1-1	cell
-GSM9329147	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_1-2	cell
-GSM9329148	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_1-3	cell
-GSM9329149	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_2-1	cell
-GSM9329150	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_2-2	cell
-GSM9329151	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh30-sgUCHL5_2-3	cell
-GSM9329152	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-CTL1	cell
-GSM9329153	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-CTL2	cell
-GSM9329154	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_1-1	cell
-GSM9329155	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_1-2	cell
-GSM9329156	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_2-1	cell
-GSM9329157	GSE311666	RMS-NOS	FP-RMS	PAX3/7 fusion named in sample record	cell_line	Rh4-sgUCHL5_2-2	cell
 GSM2571998	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_Y	Human FN-RMS PDX sample
 GSM2571999	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB011_X	Human FN-RMS PDX sample
 GSM2572000	GSE97553	FN-RMS	RMS-MYOD1	model authority: St Jude CSTN O-PDX RMS series is a curated RMS-MYOD1 line	PDX	SJRHB012_X	Human FN-RMS PDX sample
