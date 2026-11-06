@@ -52,6 +52,7 @@ SHEETS = [
     ("T35_Species_log",   "T35_species_corrections.tsv"),
     ("T36_Oncohistone_log", "T36_oncohistone_corrections.tsv"),
     ("T37_Assay_strategy_log", "T37_assay_strategy_corrections.tsv"),
+    ("T38_Control_sample_log", "T38_control_sample_corrections.tsv"),
     ("T34_Organism_taxonomy", "T34_organism_taxonomy.tsv"),
     ("T11_H3K27ac_fidelity", "T11_h3k27ac_fidelity.tsv"),
     ("T11b_fidelity_by_study", "T11b_fidelity_by_study.tsv"),

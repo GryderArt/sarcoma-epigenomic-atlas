@@ -14,8 +14,8 @@
    1.0
   ],
   [
-   "Chordoma",
-   2.9
+   "CIC::DUX4 sarcoma",
+   2.7
   ]
  ],
  "burden_x": 5,
@@ -69,7 +69,7 @@
  "fidelity_n_word": "seven",
  "fprms": [
   110,
-  763
+  746
  ],
  "gap": 26,
  "gap_word": "twenty-sixth",
@@ -167,16 +167,16 @@
   955,
   1344
  ],
- "rate_adult": 0.09792068026307048,
- "rate_ped": 2.5916193181818183,
+ "rate_adult": 0.0946655151796984,
+ "rate_ped": 2.4630681818181817,
  "ratrt": [
   95,
-  1237
+  1093
  ],
- "reg_adult": 1474,
- "reg_ped": 7298,
- "reg_rated_total": 10437,
- "reg_samples": 10824,
+ "reg_adult": 1425,
+ "reg_ped": 6936,
+ "reg_rated_total": 9930,
+ "reg_samples": 10292,
  "samples": 16746,
  "singlecell": 230,
  "studies": 879,
@@ -185,11 +185,11 @@
  "worst": [
   [
    "MPNST",
-   176
+   167
   ],
   [
    "FP-RMS (PAX3/7::FOXO1)",
-   66
+   65
   ],
   [
    "giant cell tumor of bone",
@@ -197,11 +197,11 @@
   ],
   [
    "fusion-negative rhabdomyosarcoma",
-   26
+   25
   ],
   [
-   "Liposarcoma, myxoid / round cell",
-   24
+   "liposarcoma NOS",
+   21
   ]
  ],
  "zero_3d": 30,

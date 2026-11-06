@@ -506,6 +506,43 @@ them correctly identified as input or IgG controls and excluded from any target.
 What #23 does not do. It trusts `library_strategy` only where the sample's own words are
 silent; a record that names its own assay keeps that reading, even against the strategy.
 
+## 7j. A control is not an experiment
+
+Correction #24. Correction #8 took ChIP input controls out of the regulatory counts --
+they measure background chromatin, not a mark or a factor -- but it could only find them
+where a word boundary saw the word, and underscore is a word character. `_input_`, the
+commonest way a GEO title separates its fields, was invisible to it.
+
+  GSM2967370  "160831_CHOR_input (MGH_4)"     counted as a chordoma H3K27ac profile
+  GSM3100242  "GIST-T1_DMSO_input"            counted as a GIST H3K27ac profile
+  GSM3326011  "TTC1240_Input_dBRD9_ChIP-Seq"  counted with target "n/a"
+
+The first two carry a mark anyway: the depositor left the series-wide antibody field
+filled in on the input as well, and in GSE113207 the supplementary file is literally
+named `GISTT1_DMSO_H3K27Ac_control`. So the title has to be read as a separator-split
+string, and `input` has to outrank a named antibody.
+
+`04_classify.control_sample()` holds the rule and stage `45` applies it to the shipped
+table, logging every change in `T38_control_sample_corrections.tsv` with the word that
+decided it. Two words are decisive wherever they appear, because neither is ever a
+target: `input` and `WCE` / whole-cell extract. Two are not, and both would have cost
+real data:
+
+  mock  "ARID1A_MOCK_G401" is an ARID1A ChIP in mock-TREATED cells, not a mock IP. The
+        word is never read from a title.
+  IgG   "Stanford_ChipSeq_IMR90_CTCF_(SC-15914)_IgG-rab" names the antibody's class on a
+        real CTCF ChIP. IgG decides only where the record names no mark, no factor and
+        no usable antibody.
+
+587 samples re-typed: 500 by input, 38 by IgG, 37 by antibody, 12 by wce. They
+had been credited to 230 unspecified, 135 H3K27ac, 21 SMARCB1, 20 SS18-SSX.
+
+The effect falls hardest where the record is thinnest, which is what #8 was written to
+prevent: CIC::DUX4 loses 27% of its regulatory samples, chordoma 22%, myxoid liposarcoma
+16%, GIST 12% and rhabdoid tumor/ATRT 11%, against 4.9% across all entities. An entity
+whose chromatin has been read a few dozen times is the one a handful of miscounted
+inputs can flatter.
+
 ## 8. What this cannot tell you
 
 **Absence in this atlas means absence of a public, entity-labeled deposit.** It is not

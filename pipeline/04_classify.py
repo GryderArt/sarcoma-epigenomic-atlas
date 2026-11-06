@@ -174,6 +174,9 @@ TF_RULES = [("PAX3-FOXO1",r"pax3[\-\s/:]*foxo1|pax3[\-\s/:]*fkhr|\bp3f\b"),
  ("TP53",r"\btp53\b|\bp53\b"),("input",r"\binput\b|\bwce\b|whole\s+cell\s+extract"),
  ("IgG",r"\bigg\b|\bmock\b|no\s+antibody")]
 TF_PATS = [(k, re.compile(v, re.I)) for k, v in TF_RULES]
+REG_ASSAYS = {"ChIP-seq","CUT&RUN","CUT&Tag","ChIP-exo","ChIP-chip","ATAC-seq","scATAC-seq",
+              "DNase-seq","FAIRE-seq","MNase-seq","Hi-C","HiChIP","Micro-C","Capture-HiC",
+              "ChIA-PET","4C-seq"}
 EPI = {"ChIP-seq","CUT&RUN","CUT&Tag","ChIP-exo","ChIP-chip","ATAC-seq","scATAC-seq","DNase-seq",
        "FAIRE-seq","MNase-seq","WGBS","RRBS","Methyl-array","MeDIP/hMeDIP","Bisulfite-PCR",
        "Hi-C","HiChIP","ChIA-PET","Micro-C","Capture-HiC","4C-seq","Repli-seq"}
@@ -270,6 +273,41 @@ K27M_GLIOMA = re.compile(r"k27m(?!e)|g34r|g34v", re.I)   # not H3K27me1/2/3
 GLIOMA_CTX = re.compile(r"gliom|\bdipg\b|diffuse\s+midline|astrocytom|\bgbm\b|brain\s*stem|pons|thalam", re.I)
 
 def first(pats, blob): return [k for k, p in pats if p.search(blob)]
+
+
+# ------------------------------------------------- telling a control from an experiment
+# Correction #24 (docs/methods.md §7j). Correction #8 excluded ChIP input controls from
+# the regulatory counts, but could only recognise them where \b saw the word. Underscore
+# is a word character, so `_input_` -- the commonest way a title separates fields -- was
+# invisible: "160831_CHOR_input (MGH_4)" counted as a chordoma H3K27ac profile, because
+# the depositor had left the series-wide `antibody: H3K27ac` field filled in on the
+# input as well.
+#
+# Two words are decisive wherever they appear, even against a named antibody, because
+# neither is ever a target: `input` and `WCE`/whole-cell extract. Two are not:
+#   mock   "ARID1A_MOCK_G401" is an ARID1A ChIP in mock-TREATED cells, not a mock IP.
+#   IgG    "Stanford_ChipSeq_IMR90_CTCF_(SC-15914)_IgG-rab" names the antibody's class
+#          on a real CTCF ChIP. IgG only means a control when the record names no target.
+_SEP = re.compile(r"[_.]+")
+_CONTROL_HARD = re.compile(r"\binput\b|\bwce\b|whole[\-\s]cell\s+extract", re.I)
+_CONTROL_SOFT = re.compile(r"\bigg\b|\bmock[\-\s]?ip\b", re.I)
+_NO_ANTIBODY = {"none", "n/a", "na", "-", "--", "no antibody", "not applicable", "nan"}
+
+
+def control_sample(r, has_target):
+    """True when the record presents itself as a ChIP control rather than an experiment.
+
+    `has_target` is whether a histone mark or factor was found for it; an IgG label only
+    decides the question when nothing else did.
+    """
+    fields = " ;; ".join([r.get("title", ""), r.get("source_name", "")])
+    flat = _SEP.sub(" ", fields)
+    if _CONTROL_HARD.search(flat):
+        return True
+    a = AB_RE.search(r.get("characteristics", "") or "")
+    if a and a.group(1).strip().lower().strip(".") in _NO_ANTIBODY:
+        return True
+    return bool(_CONTROL_SOFT.search(flat)) and not has_target
 
 # ------------------------------------------------------- what counts as a patient sample
 # Correction #20 (docs/methods.md §7). `sample_type` was decided by the first matching
@@ -737,13 +775,18 @@ def classify(r, ctx):
     target = ""; ab = ""
     if assay in ("ChIP-seq","CUT&RUN","CUT&Tag","ChIP-exo","ChIP-chip","HiChIP","ChIA-PET"):
         m = ENRICH.search(r.get("characteristics",""))
-        if m and INPUTY.search(m.group(1)): target = "input/none"
-        elif INPUTY.search(r.get("title","")): target = "input/none"
+        a = AB_RE.search(r.get("characteristics",""))
+        ab = (a.group(1).strip() if a else "")[:40]
+        combo = ab + " ;; " + sblob
+        mk = first(MARK_PATS, combo); tf = first(TF_PATS, combo)
+        # a usable antibody value counts as a named target too: an obscure one the
+        # pattern tables do not know is still an antibody, so "IgG" beside it is the
+        # antibody's class rather than a control
+        named = bool(mk or tf or (ab and ab.lower().strip(".") not in _NO_ANTIBODY))
+        if (m and INPUTY.search(m.group(1))) or INPUTY.search(r.get("title","")) \
+                or control_sample(r, named):
+            target = "input/none"; ab = ""
         else:
-            a = AB_RE.search(r.get("characteristics",""))
-            ab = (a.group(1).strip() if a else "")[:40]
-            combo = ab + " ;; " + sblob
-            mk = first(MARK_PATS, combo); tf = first(TF_PATS, combo)
             target = mk[0] if mk else (tf[0] if tf else (ab or "unspecified"))
             if target in ("input","IgG"): target = "input/none"
     elif assay in ("WGBS","RRBS","Methyl-array","MeDIP/hMeDIP","Bisulfite-PCR"):
